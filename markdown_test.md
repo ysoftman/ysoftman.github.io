@@ -31,3 +31,8 @@ void main() {
 
 \*\*백슬레시로 마크다운 문접 무시하기\*\*
 
+
+```
+![](imgs/sentimental_programmer.png)
+```
+![](imgs/sentimental_programmer.png)
