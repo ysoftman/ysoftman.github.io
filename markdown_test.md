@@ -17,7 +17,7 @@ _이탤릭_
 ```
 
 ```cpp
-// 코드영역 시작시 cpp 명시하여 syntax highlight
+// 코드영역 시작시 cpp 명시하면 syntax highlight
 #include <stdio.h>
 void main() {
   printf("hello ysoftman~\n");
