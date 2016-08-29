@@ -13,7 +13,11 @@ _이탤릭_
 >인용문구
 
 ```
-# code
+코드영역
+```
+
+```cpp
+// 코드영식 시작시 cpp 명시하여 syntax highlight 하기
 #include <stdio.h>
 void main() {
   printf("hello ysoftman~\n");
