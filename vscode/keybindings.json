@@ -123,9 +123,21 @@
     "key": "f2",
     "command": "bookmarks.listFromAllFiles"
 }, {
+    "key": "ctrl+f2",
+    "command": "bookmarks.toggle",
+    "when": "editorTextFocus"
+}, {
     "key": "ctrl+left",
     "command": "cursorWordLeft"
 }, {
     "key": "ctrl+right",
     "command": "cursorWordRight"
+}, {
+    "key": "ctrl+backspace",
+    "command": "deleteWordLeft",
+    "when": "editorTextFocus"
+}, {
+    "key": "ctrl+delete",
+    "command": "deleteWordRight",
+    "when": "editorTextFocus"
 }]
