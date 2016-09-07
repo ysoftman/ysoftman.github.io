@@ -122,8 +122,4 @@
 }, {
     "key": "f2",
     "command": "bookmarks.listFromAllFiles"
-}, {
-    "key": "ctrl+f2",
-    "command": "bookmarks.toggle",
-    "when": "editorTextFocus"
 }]
