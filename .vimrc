@@ -8,7 +8,6 @@ set tabstop=4
 set autoindent
 
 
-
 call plug#begin('~/.vim/plugged')
 
 " Make sure you use single quotes
