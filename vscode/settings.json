@@ -12,12 +12,9 @@
     "go.formatTool": "goreturns",
     "go.gocodeAutoBuild": false,
     "go.goroot": "/usr/local/go",
-    "go.gopath": "/Users/ysoftman/workspace",
+    "go.gopath": "/Users/ysoftman/workspace/gopath",
 
-    "beautify.onSave": true,
-
-    "lualinter.enable": true,
-    "lualinter.warnOnSave": false,
+    "beautify.onSave": false,
 
     "bookmarks.useStickyBookmarks": true,
     "bookmarks.navigateThroughAllFiles": true,
