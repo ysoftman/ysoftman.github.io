@@ -40,7 +40,7 @@ void main() {
 ```
 ![](imgs/sentimental_programmer.png)
 ```
-![이미지](imgs/sentimental_programmer.png)
+![](imgs/sentimental_programmer.png)
 
 # 이모지(emoji) 사용
 :+1: :smile:
