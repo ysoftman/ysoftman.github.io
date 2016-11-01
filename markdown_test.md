@@ -33,13 +33,14 @@ void main() {
 - [x] 해야할일1
 - [ ] 해야할일2
 
-\*\*백슬레시로 마크다운 문접 무시하기\*\*
+\*\*백슬레시로 마크다운 문법 무시하기\*\*
 
+[구글링크](http://www.google.com)
 
 ```
 ![](imgs/sentimental_programmer.png)
 ```
-![](imgs/sentimental_programmer.png)
+![이미지](imgs/sentimental_programmer.png)
 
 # 이모지(emoji) 사용
 :+1: :smile:
