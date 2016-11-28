@@ -50,10 +50,6 @@
     "command": "editor.action.blockComment",
     "when": "editorTextFocus"
 }, {
-    "key": "ctrl+f2",
-    "command": "editor.action.changeAll",
-    "when": "editorTextFocus"
-}, {
     "key": "ctrl+a",
     "command": "editor.action.selectAll",
     "when": "editorTextFocus"
@@ -91,7 +87,7 @@
     "when": "editorTextFocus"
 }, {
     "key": "shift+alt+f",
-    "command": "editor.action.format",
+    "command": "editor.action.formatDocument",
     "when": "editorTextFocus"
 }, {
     "key": "shift+ctrl+[",
