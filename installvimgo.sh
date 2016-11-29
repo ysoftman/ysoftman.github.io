@@ -68,8 +68,7 @@ cp -v ./vim-pathogen/autoload/pathogen.vim ./
 #vi ~/.vimrc
 echo '
 execute pathogen#infect()
-filetype plugin indent on
-' >> ~/.vimrc
+filetype plugin indent on' >> ~/.vimrc
 
 # vim 패키지(플러그인) 관지자 - vundle
 # ruby 가 설치되어 있어야함
@@ -120,7 +119,7 @@ git clone https://github.com/majutsushi/tagbar.git
 # vim 에서 :TagbarToggle 을 사용하면 오른쪽에 태그 창이 보인다.
 # Ctrl+F12 단축키 설정
 #vi ~/.vimrc
-echo 'nmap <C-F12> :TagbarToggle<CR>' >> ~/.vimrc
+echo 'nmap <c-f12> :TagbarToggle<cr>' >> ~/.vimrc
 
 # NertdTree (파일 브라우저) 설치
 cd ~/.vim/bundle
@@ -128,7 +127,20 @@ git clone https://github.com/scrooloose/nerdtree.git
 # vim 에서 :NERDTreeToggle 을 사용하면 오른쪽에 태그 창이 보인다.
 # F11 단축키 설정
 #vi ~/.vimrc
-echo 'nmap <C-F11> :NERDTreeToggle<CR>' >> ~/.vimrc
+echo 'nmap <c-f11> :NERDTreeToggle<cr>' >> ~/.vimrc
+
+# vim-go 명령들
+#:GoRun (go 실행)
+#:GoBuild (go 빌드)
+#:GoDoc (go 문서)
+#:GoDef (go 변수 정의)
+#:GoFmt(go 형식 맞춤)
+#:GoImports (go 패키지 자동 임포트)
+# 단축키 설정하자
+echo 'nmap <f5> :GoRun<cr>
+nmap <f7> :GoBuild<cr>
+nmap <c-i> :GoFmt<cr>
+nmap <c-p> :GoImports<cr>' >> ~/.vimrc
 
 echo '" ysoftman_settings_end' >>  ~/.vimrc
 
