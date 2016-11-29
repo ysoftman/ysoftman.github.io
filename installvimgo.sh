@@ -119,7 +119,7 @@ git clone https://github.com/majutsushi/tagbar.git
 # vim 에서 :TagbarToggle 을 사용하면 오른쪽에 태그 창이 보인다.
 # Ctrl+F12 단축키 설정
 #vi ~/.vimrc
-echo 'nmap <c-f12> :TagbarToggle<cr>' >> ~/.vimrc
+echo 'nmap <f12> :TagbarToggle<cr>' >> ~/.vimrc
 
 # NertdTree (파일 브라우저) 설치
 cd ~/.vim/bundle
@@ -127,7 +127,7 @@ git clone https://github.com/scrooloose/nerdtree.git
 # vim 에서 :NERDTreeToggle 을 사용하면 오른쪽에 태그 창이 보인다.
 # F11 단축키 설정
 #vi ~/.vimrc
-echo 'nmap <c-f11> :NERDTreeToggle<cr>' >> ~/.vimrc
+echo 'nmap <f10> :NERDTreeToggle<cr>' >> ~/.vimrc
 
 # vim-go 명령들
 #:GoRun (go 실행)
