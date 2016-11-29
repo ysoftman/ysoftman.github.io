@@ -8,7 +8,7 @@
 if [ $(uname) == 'Darwin' ]; then
 	echo 'OSX Environment'
 	brew install go
-	export GOROOT=/usr/local/bin/goㅑ
+	export GOROOT=/usr/local/bin/go
 	brew install ruby mercurial python cmake ctags
 elif [ $(uname) == 'Linux' ]; then
 	echo 'Linux Environment'
