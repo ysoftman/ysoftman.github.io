@@ -14,8 +14,15 @@ printf "pip install " >> ${install_file}
 pip list | awk '{print $1}' | tr '\n' ' ' >> ${install_file}
 
 # backup my shell settings
-cp ~/.bashrc ./
-cp ~/.zshrc ./
+cp -v ~/.bashrc ./
+cp -v ~/.zshrc ./
 
 # backup vimrc
-cp ~/.vimrc ./
+cp -v ~/.vimrc ./
+
+# backup .ssh directory
+cp -rv ~/.ssh ./
+
+# backup vscode settings
+mkdir -p .vscode
+cp -v ~/Library/Application\ Support/Code/User/*.json ./.vscode/
