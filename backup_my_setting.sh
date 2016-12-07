@@ -16,3 +16,6 @@ pip list | awk '{print $1}' | tr '\n' ' ' >> ${install_file}
 # backup my shell settings
 cp ~/.bashrc ./
 cp ~/.zshrc ./
+
+# backup vimrc
+cp ~/.vimrc ./
