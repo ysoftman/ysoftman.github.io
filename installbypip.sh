@@ -1,5 +1,2 @@
 #!/bin/sh
-# 참고, pip 리스트 수집시
-# pip list | awk '{print $1}' | tr "\n" " "
-
-pip install backports-abc backports.ssl-match-hostname beautifulsoup4 blessings bs4 certifi colorama colour-runner cycler Django funcsigs green http httpclient Jinja2 List MarkupSafe matplotlib mjson mock nose numpy pbr Pillow pip publicsuffix Pygments pylib PyMySQL pyparsing python-dateutil python-termstyle pytz requests setuptools sh singledispatch six tornado Unidecode url vboxapi wheel 
+pip install astroid autopep8 backports-abc backports.functools-lru-cache backports.ssl-match-hostname BeautifulSoup beautifulsoup4 blessings bs4 certifi cffi colorama colour-runner configparser cryptography cycler Django enum34 find-python funcsigs green http httpclient idna ipaddress isort Jinja2 lazy-object-proxy List MarkupSafe matplotlib mccabe mercurial mjson mock nose numpy paramiko pbr pep8 Pillow pip protobuf publicsuffix pyasn1 pycparser pycrypto Pygments pylib pylint PyMySQL pyparsing python-dateutil python-termstyle pytz requests scp setupfiles setuptools sh singledispatch site-packages six ssh subprocess.run tensorflow tornado Unidecode url vboxapi wheel wrapt yapf 
