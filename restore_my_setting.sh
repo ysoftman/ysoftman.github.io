@@ -1,6 +1,11 @@
 #!/bin/sh
 # restore my settings
 
+# install zsh and prezto
+brew install zsh
+#chsh -s /usr/local/bin/zsh
+zsh ./installprezto.sh
+
 # restore brew, pip programs
 sh ./installbybrew.sh
 sh ./installbypip.sh
@@ -20,14 +25,3 @@ cp -fv ./.vscode/*.json ~/Library/Application\ Support/Code/User/
 
 # restore vscode extension
 sh ./install_vscode_extension.sh
-
-# install zsh
-brew install zsh
-chsh -s /usr/local/bin/zsh
-git clone --recursive https://github.com/sorin-ionescu/prezto.git "${ZDOTDIR:-$HOME}/.zprezto"
-setopt EXTENDED_GLOB
-for rcfile in "${ZDOTDIR:-$HOME}"/.zprezto/runcoms/^README.md(.N); do
-    ln -s "$rcfile" "${ZDOTDIR:-$HOME}/.${rcfile:t}"
-done
-#echo 'source ~/.zprezto/init.zsh' >> ~/.zshrc
-source ~/.zprezto/init.zsh
