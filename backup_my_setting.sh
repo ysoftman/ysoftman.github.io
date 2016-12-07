@@ -26,3 +26,8 @@ cp -rv ~/.ssh ./
 # backup vscode settings
 mkdir -p .vscode
 cp -v ~/Library/Application\ Support/Code/User/*.json ./.vscode/
+
+# backup vscode extension and make install script
+install_file="install_vscode_extension.sh"
+echo '#!/bin/sh' > ${install_file}
+code --list-extensions  | sed 's/^/code --install-extension /g' >> ${install_file}
