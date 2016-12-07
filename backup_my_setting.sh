@@ -12,3 +12,7 @@ install_file="installbypip.sh"
 echo '#!/bin/sh' > ${install_file}
 printf "pip install " >> ${install_file}
 pip list | awk '{print $1}' | tr '\n' ' ' >> ${install_file}
+
+# backup my shell settings
+cp ~/.bashrc ./
+cp ~/.zshrc ./
