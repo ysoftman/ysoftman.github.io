@@ -1,18 +1,17 @@
 # 가장 큰 제목
+
 ## 두번째로 큰 제목
+
 ### 가장 작은 제목
 
 **볼드**
-
 _이탤릭_
-
 ~~취소선~~
-
 **볼드안에 _이탤릭_ 문자**
 
 >인용문구
 
-```
+```text
 코드영역
 ```
 
@@ -37,10 +36,12 @@ void main() {
 
 [구글링크](http://www.google.com)
 
+```text
+![센티멘탈 프로그래머](imgs/sentimental_programmer.png)
 ```
-![](imgs/sentimental_programmer.png)
-```
-![](imgs/sentimental_programmer.png)
 
-# 이모지(emoji) 사용
+![센티멘탈 프로그래머](imgs/sentimental_programmer.png)
+
+## 이모지(emoji) 사용
+
 :+1: :smile:
