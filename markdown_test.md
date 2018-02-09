@@ -32,6 +32,14 @@ void main() {
 - [x] 해야할일1
 - [ ] 해야할일2
 
+
+| Tables | col1  | col2 |
+| ----- |--------| -----|
+| line1 | lemon |  100 |
+| line2 | apple |  50 |
+| line3 | banana | 30 |
+
+
 \*\*백슬레시로 마크다운 문법 무시하기\*\*
 
 [구글링크](http://www.google.com)
