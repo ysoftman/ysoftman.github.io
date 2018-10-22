@@ -9,4 +9,17 @@
 /____/
 ```
 
-blabla~
+## local 테스트시
+
+- node 사용하는 경우
+
+```bash
+node server.js
+```
+
+- http-server 툴 이용시
+
+```bash
+npm install http-server -g
+http-server
+```
