@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <!-- bootstrap css -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M"
+        crossorigin="anonymous">
+    <title>sentimental programmer - github pages</title>
+</head>
+
+<body>
+    <script src="https://code.jquery.com/jquery-1.9.1.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $("#navigation").load("navbar.html", function () {
+                console.log("navbar.html loaded");
+            });
+            console.log("document ready");
+        });
+    </script>
+    <div id="navigation"></div>
+
+    <h1>
+        <p class="text-center">sentimental programmer - github pages</p>
+    </h1>
+
+
+</body>
+
+</html>
