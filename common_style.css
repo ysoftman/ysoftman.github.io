@@ -1,0 +1,14 @@
+body {
+    padding: 50 !important;
+    color: #bababa !important;
+    background-color: #222 !important;
+}
+
+/* markdown pre code 영역 */
+pre {
+    color: rgb(225, 62, 62) !important;
+}
+
+#md_content {
+    padding: 10px;
+}
