@@ -19,7 +19,8 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.1/js/bootstrap.min.js"
         integrity="sha384-XEerZL0cuoUbHE4nZReLT7nx9gQrQreJekYhJD9WNWhH8nEW+0c5qq7aIo2Wl30J" crossorigin="anonymous">
     </script>
-    <script src="https://unpkg.com/showdown/dist/showdown.min.js"></script>
+    <!-- <script src="https://unpkg.com/showdown/dist/showdown.min.js"></script> -->
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
     <script>
         $(document).ready(function () {
             $("#navigation").load("navbar.html", function () {
@@ -28,10 +29,10 @@
             console.log("document ready");
         });
 
-        let converter = new showdown.Converter();
         // 리스트 하위 항목 들여쓰기가 개본 4공백 비활성화 기능이 동작하지 않는다.
         // https://github.com/showdownjs/showdown/issues/615
-        converter.disableForced4SpacesIndentedSublists = true;
+        // let converter = new showdown.Converter();
+        // converter.disableForced4SpacesIndentedSublists = true;
         /*text = '# hello, markdown!',*/
         /*$.ajax({
             url: "./markdown_test.md",
@@ -52,8 +53,11 @@
         });*/
         $.get("./about_me.md", function (data,
             status) {
-            /*console.log(status + "\n", data);*/
-            html = converter.makeHtml(data);
+            // showdown 사용할때
+            //html = converter.makeHtml(data);
+            // marked 사용할때
+            html = marked(data);
+            //document.getElementById('md_content').innerHTML = html;
             $("#md_content").html(html);
         });
     </script>
