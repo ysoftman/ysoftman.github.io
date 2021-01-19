@@ -45,5 +45,5 @@ yarn run build && yarn run deploy
 
 # 깃헙 페이지 소스는 gh-pages 브랜치로 설정(최초설정)
 https://github.com/ysoftman/ysoftman.github.io/settings
--> gihub pages -> source -> gh-pages 브랜치 설정
+-> github pages -> source -> gh-pages 브랜치 설정
 ```
