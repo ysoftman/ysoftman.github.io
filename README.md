@@ -9,17 +9,11 @@
 /____/
 ```
 
-## local 테스트시
-
-- node 사용하는 경우
+## local 빌드 & 테스트
 
 ```bash
-node server.js
-```
 
-- http-server 툴 이용시
-
-```bash
+# http-server 툴 이용시
 npm install http-server -g
 http-server
 ```
