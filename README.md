@@ -40,7 +40,7 @@ yarn global add webpack webpack-cli
 yarn run start
 
 # webpack 으로 빌드 해서 ./dist 생성 후 ./dist gh-pages 로 푸시
-# 주의 gh-page 브래치 마스터에 머지 금지!!!
+# 주의 gh-page 브랜치 마스터에 머지 금지!!!
 yarn run build && yarn run deploy
 
 # 깃헙 페이지 소스는 gh-pages 브랜치로 설정(최초설정)
