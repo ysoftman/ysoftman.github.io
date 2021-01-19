@@ -1,4 +1,4 @@
-# ysoftman github pages :smile: ^^
+# <https://ysoftman.github.io> :smile: ^^
 
 ```text
                      ______
