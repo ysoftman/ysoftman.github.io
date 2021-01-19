@@ -1,0 +1,26 @@
+{
+  "name": "ysoftman.github.io",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/ysoftman/ysoftman.github.io",
+  "homepage": "https://github.com/ysoftman/ysoftman.github.io",
+  "author": "ysoftman <ysoftman@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "axios": "^0.21.1",
+    "connect": "^3.7.0",
+    "gh-pages": "^3.1.0",
+    "marked": "^1.2.7",
+    "showdown": "^1.9.1",
+    "webpack": "^5.15.0",
+    "webpack-node-externals": "^2.5.2"
+  },
+  "scripts": {
+    "build": "webpack",
+    "deploy": "cp -v *.html *.css *.md ./dist; gh-pages -d dist"
+  },
+  "devDependencies": {
+    "@webpack-cli/init": "^1.1.1",
+    "webpack-cli": "^4.3.1"
+  }
+}
