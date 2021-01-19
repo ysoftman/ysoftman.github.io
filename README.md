@@ -23,24 +23,22 @@ http-server
 ```bash
 # 최초 설정
 yarn init
-yarn add gh-pages marked showdown axios connect webpack-node-externals
+yarn add marked showdown axios connect gh-pages
 yarn install
 
 # 웹펙 전역 설치
 yarn global add webpack webpack-cli
 
-# package.json 추가
-
+# package.json 설정
 "scripts": {
   "build": "webpack",
-  "deploy": "gh-pages -d dist"
+  "deploy": "cp -v *.html *.css *.md ./dist; gh-pages -d dist"
 }
 
 # 실행
 # node server.js
 yarn run start
 
-# webpack 으로 빌드 해서 ./dist 생성
-# dist 디렉토리의 내용을 gh-pages 브랜치로 푸시(배포)
+# webpack 으로 빌드 해서 ./dist 생성 후 ./dist gh-pages 로 푸시
 yarn run build && yarn run deploy
 ```
