@@ -147,8 +147,6 @@
                 item + `"target="_blank">` + item + `</a> `;
         })
 
-        //const axios = require('axios');
-
         axios.get('https://raw.githubusercontent.com/ysoftman/myenv/master/installcommon.sh')
             .then(function (response) {
                 let data = response.data.split('sudo_cmd=')[0];
