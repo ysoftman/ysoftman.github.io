@@ -1,13 +1,4 @@
-# <https://ysoftman.github.io> :smile: ^^
-
-```text
-                     ______
-   __  ___________  / __/ /_____ ___  ____ _____
-  / / / / ___/ __ \/ /_/ __/ __ `__ \/ __ `/ __ \
- / /_/ (__  ) /_/ / __/ /_/ / / / / / /_/ / / / /
- \__, /____/\____/_/  \__/_/ /_/ /_/\__,_/_/ /_/
-/____/
-```
+# <https://ysoftman.github.io> :smile:
 
 ## local 테스트
 
@@ -43,4 +34,6 @@ https://github.com/ysoftman/ysoftman.github.io/settings/pages
 
 # 다음과 같이 빌드 후 배포하면 자동으로 ./dist 내용이 gh-pages 브랜치로 푸시된다.
 yarn run build && yarn run deploy
+
+# 주의 gh-page 브랜치 마스터에 머지 금지!!!
 ```
