@@ -46,7 +46,6 @@ yarn run start
 https://github.com/ysoftman/ysoftman.github.io/settings/pages
 -> github pages -> source -> gh-pages 브랜치 설정
 
-# webpack 으로 빌드 해서 ./dist 생성 후 ./dist gh-pages 로 푸시
-# 주의 gh-page 브랜치 마스터에 머지 금지!!!
+# 다음과 같이 빌드 후 배포하면 자동으로 ./dist 내용이 gh-pages 브랜치로 푸시된다.
 yarn run build && yarn run deploy
 ```
