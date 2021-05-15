@@ -22,6 +22,8 @@ http-server
 
 ```bash
 # 최초 설정
+nvm install 10.19.0
+nvm ls
 yarn init
 yarn add marked showdown axios connect gh-pages
 yarn install
@@ -39,11 +41,12 @@ yarn global add webpack webpack-cli
 # node server.js
 yarn run start
 
+# 배포
+# 깃헙 페이지 소스는 gh-pages 브랜치로 설정(최초설정)
+https://github.com/ysoftman/ysoftman.github.io/settings/pages
+-> github pages -> source -> gh-pages 브랜치 설정
+
 # webpack 으로 빌드 해서 ./dist 생성 후 ./dist gh-pages 로 푸시
 # 주의 gh-page 브랜치 마스터에 머지 금지!!!
 yarn run build && yarn run deploy
-
-# 깃헙 페이지 소스는 gh-pages 브랜치로 설정(최초설정)
-https://github.com/ysoftman/ysoftman.github.io/settings
--> github pages -> source -> gh-pages 브랜치 설정
 ```
