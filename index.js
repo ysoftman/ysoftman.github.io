@@ -1,4 +1,4 @@
-// 리스트 하위 항목 들여쓰기가 개본 4공백 비활성화 기능이 동작하지 않는다.
+// showdownjs 은 리스트 하위 항목 들여쓰기 기능이 동작하지 않는다.
 // https://github.com/showdownjs/showdown/issues/615
 // let converter = new showdown.Converter();
 // converter.disableForced4SpacesIndentedSublists = true;});
