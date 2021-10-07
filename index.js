@@ -1,7 +1,8 @@
 // showdownjs 은 리스트 하위 항목 들여쓰기 기능이 동작하지 않는다.
 // https://github.com/showdownjs/showdown/issues/615
 // let converter = new showdown.Converter();
-// converter.disableForced4SpacesIndentedSublists = true;});
+// converter.disableForced4SpacesIndentedSublists = true;
+
 let pt = new Promise(function (success, fail) {
     success("success")
 });
@@ -22,9 +23,9 @@ pt.then(function () {
     } else {
         $.get("/about_me.md", function (data, status) {
             // showdown 사용할때
-            //html = converter.makeHtml(data);
+            // let html = converter.makeHtml(data);
             // marked 사용할때
-            html = marked(data);
+            let html = marked(data);
             //document.getElementById('main_view').innerHTML = html;
             $("#main_view").html(html);
             console.log("about_me loaded")
