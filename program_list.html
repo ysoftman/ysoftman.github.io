@@ -4,7 +4,7 @@
 <body>
     <ul class="list-group">
         windows programs... click to googling (2017-01 updated)
-        <li class="list-group-item">
+        <li class="list-group-item color-blue">
             <div id="windows_programs">
             </div>
         </li>
@@ -12,7 +12,7 @@
     <ul class="list-group">
         <div>linux programs...(from <a href="https://github.com/ysoftman/myenv"
                 target="_blank">https://github.com/ysoftman/myenv</a>)</div>
-        <li class="list-group-item">
+        <li class="list-group-item color-yellow">
             <div id="linux_programs">
             </div>
         </li>
@@ -20,15 +20,23 @@
     <ul class="list-group">
         <div>brew programs...(from <a href="https://github.com/ysoftman/myenv"
                 target="_blank">https://github.com/ysoftman/myenv</a>)</div>
-        <li class="list-group-item">
+        <li class="list-group-item color-green">
             <div id="brew_programs">
+            </div>
+        </li>
+    </ul>
+    <ul class="list-group">
+        <div>cargo programs...(from <a href="https://github.com/ysoftman/myenv"
+                target="_blank">https://github.com/ysoftman/myenv</a>)</div>
+        <li class="list-group-item color-red">
+            <div id="cargo_programs">
             </div>
         </li>
     </ul>
     <ul class="list-group">
         <div>pip programs...(from <a href="https://github.com/ysoftman/myenv"
                 target="_blank">https://github.com/ysoftman/myenv</a>)</div>
-        <li class="list-group-item">
+        <li class="list-group-item color-purple">
             <div id="pip_programs">
             </div>
         </li>
@@ -146,7 +154,8 @@
             "wireshark",
         ];
         windowsPrograms.forEach(function (item, index) {
-            document.getElementById('windows_programs').innerHTML += `<a href="http://www.google.com/search?q=` +
+            document.getElementById('windows_programs').innerHTML +=
+                `<a href="http://www.google.com/search?q=` +
                 item + `"target="_blank">` + item + `</a> `;
         })
 
@@ -165,6 +174,16 @@
             .then(function (response) {
                 let data = response.data.replace(/(?:\r\n|\r|\n)/g, '<br>');
                 document.getElementById('brew_programs').innerHTML = data
+            })
+            .catch(function (error) {
+                console.log(error);
+            })
+            .then(function () {});
+
+        axios.get('https://raw.githubusercontent.com/ysoftman/myenv/master/installcargo.sh')
+            .then(function (response) {
+                let data = response.data.replace(/(?:\r\n|\r|\n)/g, '<br>');
+                document.getElementById('cargo_programs').innerHTML = data
             })
             .catch(function (error) {
                 console.log(error);

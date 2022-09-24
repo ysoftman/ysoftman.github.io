@@ -41,16 +41,3 @@ pre {
 .list-group-item {
     background:#282C34
 }
-
-#window_programs a {
-    color : #61AFEF
-}
-#linux_programs {
-    color: #E5C07B
-}
-#brew_programs {
-    color: #98C379
-}
-#pip_programs {
-    color: #C678DD
-}
