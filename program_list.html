@@ -41,6 +41,14 @@
             </div>
         </li>
     </ul>
+    <ul class="list-group">
+        <div>vscode extensions...(from <a href="https://github.com/ysoftman/myenv"
+                target="_blank">https://github.com/ysoftman/myenv</a>)</div>
+        <li class="list-group-item color-yellow">
+            <div id="vscode_extensions">
+            </div>
+        </li>
+    </ul>
     <script>
         let windowsPrograms = [
             "4kvideodownloader",
@@ -194,6 +202,15 @@
             .then(function (response) {
                 let data = response.data.replace(/(?:\r\n|\r|\n)/g, '<br>');
                 document.getElementById('pip_programs').innerHTML = data
+            })
+            .catch(function (error) {
+                console.log(error);
+            })
+            .then(function () {});
+        axios.get('https://raw.githubusercontent.com/ysoftman/myenv/master/installvscodeextension.sh')
+            .then(function (response) {
+                let data = response.data.replace(/(?:\r\n|\r|\n)/g, '<br>');
+                document.getElementById('vscode_extensions').innerHTML = data
             })
             .catch(function (error) {
                 console.log(error);
