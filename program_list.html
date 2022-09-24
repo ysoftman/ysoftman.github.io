@@ -42,6 +42,14 @@
         </li>
     </ul>
     <ul class="list-group">
+        <div>vim plugins...(from <a href="https://github.com/ysoftman/myenv"
+                target="_blank">https://github.com/ysoftman/myenv</a>)</div>
+        <li class="list-group-item color-cyan">
+            <div id="vim_plugins">
+            </div>
+        </li>
+    </ul>
+    <ul class="list-group">
         <div>vscode extensions...(from <a href="https://github.com/ysoftman/myenv"
                 target="_blank">https://github.com/ysoftman/myenv</a>)</div>
         <li class="list-group-item color-yellow">
@@ -187,7 +195,6 @@
                 console.log(error);
             })
             .then(function () {});
-
         axios.get('https://raw.githubusercontent.com/ysoftman/myenv/master/installcargo.sh')
             .then(function (response) {
                 let data = response.data.replace(/(?:\r\n|\r|\n)/g, '<br>');
@@ -197,11 +204,23 @@
                 console.log(error);
             })
             .then(function () {});
-
         axios.get('https://raw.githubusercontent.com/ysoftman/myenv/master/installpip.sh')
             .then(function (response) {
                 let data = response.data.replace(/(?:\r\n|\r|\n)/g, '<br>');
                 document.getElementById('pip_programs').innerHTML = data
+            })
+            .catch(function (error) {
+                console.log(error);
+            })
+            .then(function () {});
+        axios.get('https://raw.githubusercontent.com/ysoftman/myenv/master/.vimrc')
+            .then(function (response) {
+                let data = response.data.match(/^call plug.*|^Plug.*|.*:Plug.*/gm)
+                let result = ""
+                for (v of data) {
+                    result += v + '<br>'
+                }
+                document.getElementById('vim_plugins').innerHTML = result
             })
             .catch(function (error) {
                 console.log(error);
