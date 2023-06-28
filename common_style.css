@@ -27,7 +27,9 @@ body {
 
 /* markdown pre code 영역 */
 pre {
-    color: rgb(225, 62, 62) !important;
+    /* color: rgb(225, 62, 62) !important; */
+    color:  #bababa !important;
+    font-size: large;
 }
 
 #main_view {
