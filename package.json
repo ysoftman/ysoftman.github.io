@@ -4,7 +4,7 @@
   "main": "index.js",
   "repository": "https://github.com/ysoftman/ysoftman.github.io",
   "author": "ysoftman <ysoftman@gmail.com>",
-  "private": "true",
+  "private": true,
   "license": "MIT",
   "dependencies": {
     "axios": "^0.22.0",
