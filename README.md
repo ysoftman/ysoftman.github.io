@@ -23,7 +23,7 @@ yarn init
 yarn add marked showdown axios connect gh-pages
 yarn install
 yarn global add webpack webpack-cli
-# (최초 한번만 설정) - package.json 빌드, 배포 명령 설정 
+# package.json 빌드, 배포 명령이 다음과 같이 설정되어 있음
 "scripts": {
   "build": "webpack",
   "deploy": "cp -v *.html *.css *.md ./dist; gh-pages -d dist"
