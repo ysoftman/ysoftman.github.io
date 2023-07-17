@@ -43,3 +43,8 @@ pre {
 .list-group-item {
     background:#282C34
 }
+
+.navbar-nav {
+    /*flex-direction: row;*/
+    display: contents;
+}
