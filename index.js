@@ -13,12 +13,12 @@ pt.then(function () {
     })
 }).then(function () {
     let param = window.location.search.substring(1);
-    // console.log('param:', param);
-    if (param == "programlist") {
-        // $("#main_view").load("/program_list.html", function () { console.log("program_list loaded") });
-        $.get("/program_list.html", function (data, status) {
+    let pathname = window.location.pathname;
+    //console.log('param:', param);
+    //console.log("pathname:", pathname)
+    if (param == "programs") {
+        $.get("/programs.html", function (data, status) {
             $("#main_view").html(data);
-            console.log("program_list loaded")
         });
     } else {
         $.get("/about_me.md", function (data, status) {
