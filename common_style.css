@@ -45,8 +45,8 @@ pre {
 }
 
 .navbar-nav .nav-link {
-    padding-left: 10px;
-    padding-right: 10px;
+    padding-left: 1em;
+    padding-right: 1em;
 }
 
 .navbar-nav {
