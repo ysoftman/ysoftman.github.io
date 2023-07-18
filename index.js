@@ -13,12 +13,15 @@ pt.then(function () {
     })
 }).then(function () {
     let param = window.location.search.substring(1);
-    let pathname = window.location.pathname;
     //console.log('param:', param);
-    //console.log("pathname:", pathname)
     if (param == "programs") {
         $.get("/programs.html", function (data, status) {
             $("#main_view").html(data);
+        });
+    } else if (param == "curriculum_vitae") {
+        $.get("/curriculum_vitae.md", function (data, status) {
+            let html = marked(data);
+            $("#main_view").html(html);
         });
     } else {
         $.get("/about_me.md", function (data, status) {
