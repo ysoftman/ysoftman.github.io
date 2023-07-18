@@ -30,7 +30,10 @@ pre {
     /* color: rgb(225, 62, 62) !important; */
     color:  #bababa !important;
     font-size: large;
-    white-space: pre-line;
+}
+
+a {
+	word-wrap: break-word;
 }
 
 #main_view {
