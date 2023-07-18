@@ -1,0 +1,115 @@
+# projects
+
+## daum pc/mo통합검색(통검), kakaotalk # 검색
+- 참여기간: 2016~2022
+- 설명: daum 및 카톡 # 검색에서 사용자 검색 키워드를 받아 관련 결과를 취합해 응답 하는 검색 프론트 서버
+- 개발언어: c++, sh, pyton, lua
+- 빌드/배포: jenkins pipeline(script)
+  - 배포 스크립트: ansible
+- 서비스 구성: client --> nginx --> apache --> 통합검색 서버
+- cache: memcached
+- 모니터링
+  - log: query/access logs --> kafka --> es --> kibana
+  - host(node): 사내 모니터링 시스템
+  - 알람: 사내 카톡 알람 시스템
+- 기여
+  - 통검 로직 구현
+  - 개발자를 위한 로컬 통검 환경 빌드 배포(vagrant, docker)
+  - 배포시 필요한 패키지들 다운로드 할수 있는 파일 서버(caddy) 구축
+  - CI/CD 구성 빌드 jenkins 구축 및 배포 자동을 위한 ansible 작성
+  - 노드 모니터링 agent(script) 구현
+  - access log masking 을 위한 apache 코드수정
+  - apache brotli 압축 적용
+  - AB 테스트 운영
+  - tps 측정을 위한 스트레스 테스트 작업
+  - kibana string 필드 한글 표시를 위한 디코딩 contribute
+    - <https://yoonbh2714.blogspot.com/2018/11/kibana-urlencoding-string-field_63.html>
+  - chromium 주소창 검색(daum omnibox search/suggest) contribute (68.0.3432.3 버전에 포함)
+    - <https://yoonbh2714.blogspot.com/2018/05/chromium_15.html>
+  - grafana로 분석 되지 않는 데이터 산출 툴 구현
+  - elastalert(elasticsearch 데이터 기반으로 timeout 을 슬랙,카톡알림)
+  - phase 분리, idc 이전 작업
+- troubleshooting
+  - log 파일 끊기는 이슈
+    - 오래된 리눅스 버전에서 file write 기능이 atomic 하게 동작 하지 않음.
+    - <https://yoonbh2714.blogspot.com/2017/03/linux-write-atomic_68.html>
+  - jenkins 배포시 간헐적 ssh 연결 실패
+    - socket 파일계속 유지되가 갑자기 삭제 되어 간헐적으로 연결 실패 발생
+    - <https://yoonbh2714.blogspot.com/2019/12/jenkins-job-ssh.html>
+
+## B2B 용 검색 서비스 빌더
+- 참여기간: 2020~2022
+- 설명: 검색 서비스가 필요한 회사가 빌더를 통해 데이터 컬렉션등을 설정하면 k8s에 해당 검색 서비스를 생성해 검색 서비스 제공
+- 개발언어: golang, sh, python
+- 빌드/배포: github action
+- 서비스 환경: k8s, aws eks
+- cache: redis-cluster
+- db: mysql
+- 모니터링
+  - log: k8s node --> fluentd --> es --> kibana
+  - metrics: prometheus, grafana
+  - host(node): 사내 모니터링 시스템
+  - 알람: 사내 카톡 알람 시스템
+- 기여
+  - builder 구현
+  - builder 개발단계에서 사용해 볼 수 있는 UI 구현(vue)
+  - k8s 환경에서 실행 되는 검색 서버 구현
+- troubleshooting
+  - pod 생성시 warning 발생
+    - 테스트를 통해 바로 종료 되는 컨테이너에 발생 가능성 파악 및 sleep 으로 해결
+    - <https://yoonbh2714.blogspot.com/2021/08/k8s-sandbox-oci-runtime-create-failed.html>
+  - 인그레스 설정이 반영되지 않음
+    - 중복된 host,path 의 경우 오래된 ingress 설정이 우선하게 된다.
+    - <https://yoonbh2714.blogspot.com/2021/04/k8s-ingress-controller-model.html>
+
+## kakao i MLOps
+- 참여기간: 2022~
+- 설명: kakao i cloud 환경의 MLops
+- 개발언어: golang, sh, python
+- 빌드/배포: github action(빌드) --> argocd(배포)
+  - argocd 를 사용할 수 없는 외부 환경 배포시: helmfile 사용
+- 서비스 환경: k8s
+- db
+  - 사용자데이터: mongodb
+  - iam 데이터: bitnami-etcd-cluster
+- 모니터링
+  - log: k8s node --> fluentd --> es --> kibana
+  - metrics: prometheus, grafana
+  - host(node): 사내 모니터링 시스템
+  - 알람: 사내 카톡 알람 시스템
+- 기여
+  - cli(command-line-interface) client 구현(python)
+  - 사용자 요청을 처리하는 common-api-server 개발
+  - 사용자 데이터 업로드/조회등을 위한 storage-server 개발
+  - 사용자 인증(Ldap,keystone,oauth) 및 권한(role,policy,resource)처리를 위한 iam-server 개발
+  - 사용자 필요로 하는 리소스(cpu,gpu,mem) 관리(할당, 거부등..)를 위한 quota-server 개발
+  - quota /metric 수집을 위한 prometheus servicemonitor 리소스 추가
+  - 비용 청구를 위한 리소스 사용량 취합서버 report-server 개발
+  - node 장애 처리
+- troubleshooting
+  - windows 환경에서 cli clent 동작에서 에러 발생
+    - 기존 코드를 POSIX 기준으로 변경해 해결
+  - 사용자 권한데이터가 저장된 etcd 의 노드가 장애로 shutdown
+    - snapshot 으로 백업은 되어 있었지만 복구되지 않았음, 시행착오 끝에 bitnami-etcd 시작하면서 snapshot 을 로딩 하는 방법을 알아내 해결
+    - <https://yoonbh2714.blogspot.com/2023/01/bitnami-etcd-snapshot.html>
+  - local 에서 iam 테스트를 위해 etcd 접속시 EOF 에러로 특정개수 이상은 조회가 되지 않음
+    - grpc 소스에서 stream window size 수정으로 해결
+    - <https://yoonbh2714.blogspot.com/2023/02/k8s-etcdctl-unexpected-eof.html>
+  - webdav 로 수천개의 파일 업로드시 hangup 발생
+     - 여러 테스틀 거쳐 keepalive 로 연결 세션이 늘어나면 그에 따로 thread 도 늘어 나야 함
+     - <https://yoonbh2714.blogspot.com/2022/07/wsgidavwebdav-session-hang.html>
+  - webdav 파일 업로드시 cpu 100% 인 상태에서 진행되지 않음
+     - rfc 명세 위한사항으로 특정헤더를 명시해야함
+     - <https://yoonbh2714.blogspot.com/2022/07/webdav-chunked-size.html>
+  - mongodb 조회시 특정크기이상 조회시 에러 발생
+    - <https://yoonbh2714.blogspot.com/2023/02/mongodb-cursor-not-found-error.html>
+  - k8s 클러스터 마이그레이션시 대부분의 리소스는 helm chart 로 관리되어 마이그레이션이 수월한데, 회사별로 n 개의 nas 를 마운트해서 사용하는 pv,pvc 를 일괄마이그레이션 해야함
+    - 모든 pv,pvc manifect(.yaml)을 생성후 sd 로ip 를 변경해 apply 하는 sh script 작성해 해결
+    - <https://yoonbh2714.blogspot.com/2023/05/k8s-persistentvolume.html>
+  - 사용자에 제공된 ssh (websocket 을 접속 할 수 있는 pod)에서 커서가 프롬프트가 아닌 다음 줄에 표시됨
+    - kubernetes > pyton > ws_clinet.py 에서 socket 수신 조건이 https 일때 동작 하지 않음
+    - <https://yoonbh2714.blogspot.com/2023/05/nginx-https-websocket-newline-error.html>
+  - 사용자가 ssh 접속시 바로 종료됨
+    - ~/.ssh/environment 크기가 너무 크다.
+    - <https://yoonbh2714.blogspot.com/2023/04/ssh.html>
+
