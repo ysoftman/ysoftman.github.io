@@ -44,6 +44,10 @@ pre {
     background:#282C34
 }
 
+.navbar-nav .nav-link {
+    padding-left: 10px;
+}
+
 .navbar-nav {
     /*flex-direction: row;*/
     display: contents;
