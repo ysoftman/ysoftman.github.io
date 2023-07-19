@@ -21,7 +21,7 @@ nvm install --lts
 nvm use --lts
 nvm ls
 yarn init
-yarn add marked showdown axios connect gh-pages
+yarn add serve-static marked showdown axios connect gh-pages
 yarn install
 yarn global add webpack webpack-cli
 # package.json 빌드, 배포 명령이 다음과 같이 설정되어 있음
