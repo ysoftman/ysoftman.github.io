@@ -7,11 +7,12 @@
   "private": true,
   "license": "MIT",
   "dependencies": {
-    "axios": "^0.22.0",
+    "axios": "^1.4.0",
     "connect": "^3.7.0",
-    "gh-pages": "^3.0.0",
-    "marked": "^5.1.0",
-    "showdown": "^1.9.1",
+    "gh-pages": "^5.0.0",
+    "marked": "^5.1.1",
+    "serve-static": "^1.15.0",
+    "showdown": "^2.1.0",
     "webpack": "^5.15.0",
     "webpack-node-externals": "^2.5.2",
     "yarn": "^1.22.19"
