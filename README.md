@@ -16,9 +16,9 @@ yarn run start
 
 ```bash
 # (최초 한번만 설정) - 패키지 설치
-nvm install 14.7.0
+nvm install --lts
+nvm use --lts
 nvm ls
-nvm use v14.7.0
 yarn init
 yarn add marked showdown axios connect gh-pages
 yarn install
