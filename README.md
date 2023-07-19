@@ -9,6 +9,7 @@ http-server
 # 또는
 node server.js
 # 또는
+npm install -g yarn
 yarn run start
 ```
 
@@ -16,11 +17,11 @@ yarn run start
 
 ```bash
 # (최초 한번만 설정) - 패키지 설치
-nvm install 14.7.0
+nvm install --lts
+nvm use --lts
 nvm ls
-nvm use v14.7.0
 yarn init
-yarn add marked showdown axios connect gh-pages
+yarn add serve-static marked showdown axios connect gh-pages
 yarn install
 yarn global add webpack webpack-cli
 # package.json 빌드, 배포 명령이 다음과 같이 설정되어 있음
