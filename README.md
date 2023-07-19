@@ -1,5 +1,18 @@
 # <https://ysoftman.github.io>
 
+## prerequisite
+
+```bash
+# install latest ndoejs
+https://github.com/nodesource/distributions
+
+# install nvm
+curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.3/install.sh | bash
+
+# install yarn
+npm install -g yarn
+```
+
 ## local 테스트
 
 ```bash
@@ -9,7 +22,6 @@ http-server
 # 또는
 node server.js
 # 또는
-npm install -g yarn
 yarn run start
 ```
 
