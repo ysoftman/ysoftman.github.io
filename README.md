@@ -9,6 +9,7 @@ http-server
 # 또는
 node server.js
 # 또는
+npm install -g yarn
 yarn run start
 ```
 
