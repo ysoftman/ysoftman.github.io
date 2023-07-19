@@ -3,7 +3,7 @@
 ## daum pc/mo통합검색(통검), kakaotalk # 검색
 - 참여기간: 2016~2022
 - 설명: daum 및 카톡 # 검색에서 사용자 검색 키워드를 받아 관련 결과를 취합해 응답 하는 검색 프론트 서버
-- 개발언어: c++, sh, pyton, lua
+- 개발언어: c++, sh, python, lua
 - 빌드/배포: jenkins pipeline(script)
   - 배포 스크립트: ansible
 - 서비스 구성: client --> nginx --> apache --> 통합검색 서버
@@ -107,7 +107,7 @@
      - 모든 pv,pvc manifect(.yaml)을 생성후 sd 로ip 를 변경해 apply 하는 sh script 작성해 해결
      - <https://yoonbh2714.blogspot.com/2023/05/k8s-persistentvolume.html>
   - 사용자에 제공된 ssh (websocket 을 접속 할 수 있는 pod)에서 커서가 프롬프트가 아닌 다음 줄에 표시됨
-     - kubernetes > pyton > ws_clinet.py 에서 socket 수신 조건이 https 일때 동작 하지 않음
+     - kubernetes > python > ws_clinet.py 에서 socket 수신 조건이 https 일때 동작 하지 않음
      - <https://yoonbh2714.blogspot.com/2023/05/nginx-https-websocket-newline-error.html>
   - 사용자가 ssh 접속시 바로 종료됨
      - ~/.ssh/environment 크기가 너무 크다.
