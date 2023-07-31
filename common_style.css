@@ -46,14 +46,13 @@ pre {
 
 .navbar {
     justify-content: normal;
-    text-nowrap;
     word-wrap: break-word;
 }
 
 .navbar-nav .nav-link {
     padding-left: 1em;
     padding-right: 1em;
-    text-nowrap;
+    word-wrap: break-word;
 }
 
 .navbar-nav {
