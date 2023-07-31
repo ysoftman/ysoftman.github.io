@@ -52,7 +52,7 @@ pre {
     padding-left: 1em;
     padding-right: 1em;
     text-nowrap;
-    /*word-wrap: break-word;*/
+    word-wrap: break-word;
 }
 
 .navbar-nav {
