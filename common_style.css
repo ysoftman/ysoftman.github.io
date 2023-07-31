@@ -57,6 +57,4 @@ a {
 .navbar-nav {
     /*flex-direction: row;*/
     display: contents;
-    d-none;
-    d-md-block;
 }
