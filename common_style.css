@@ -49,12 +49,12 @@ pre {
     word-wrap: break-word;
 }
 
-.navbar .navbar-nav {
+.navbar-nav {
     /*flex-direction: row;*/
     display: contents;
 }
 
-.navbar .navbar-nav .nav-link {
+.nav-link {
     padding-left: 1em;
     padding-right: 1em;
     word-wrap: break-word;
