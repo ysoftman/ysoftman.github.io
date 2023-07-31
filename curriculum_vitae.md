@@ -90,14 +90,14 @@
 - Description: daum 및 카톡 # 검색에서 사용자 검색 키워드를 받아 관련 결과를 취합해 응답 하는 검색 프론트 서버
 - Programming Language: c++, sh, python, lua
 - OS: linux, mac
-- DB: redis, mysql
-  - Cache: memcached
+- DB: mysql
+  - Cache: memcached, redis
 - Platform: Apache Httpd, Nginx, Docker, vagrant(vm)
 - CI/CD: jenkins pipeline(script)
   - 배포 스크립트: ansible
 - 서비스 구성: client --> nginx --> apache --> 통합검색 서버
 - Monitoring
-  - log: query/access logs --> kafka --> es --> kibana
+  - log: query/access logs --> kafka/redis --> es --> kibana
   - host(node): 사내 모니터링 시스템
   - 알람: 사내 카톡 알람 시스템
 - Achievement
