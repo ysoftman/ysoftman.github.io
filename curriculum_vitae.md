@@ -102,8 +102,8 @@
   - 알람: 사내 카톡 알람 시스템
 - Achievement
   - daum pc, mobile search
-  - https://search.daum.net/search?q=kakao
-  - https://m.search.daum.net/search?q=kakao
+  - <https://search.daum.net/search?q=kakao>
+  - <https://m.search.daum.net/search?q=kakao>
   - kakao sharp search, instant search, search services in kakao app
 - Contribute/Responsibilities
   - 통검 로직 구현
@@ -150,7 +150,6 @@
 - Programming Language: c/c++, java, c#
 - OS: Linux, Windows
 - DB: Oracle, MSSQL, MongoDB
-- Tools: WireShark
 - Achievement
   - Hangame Game Backend Platform
 - Contribute/Responsibilities
@@ -166,7 +165,7 @@
 - DB: MySQL
   - HDFS(Hadoop FileSystem)
 - Achievement
-  - http://lab.naver.com/ocr/
+  - <http://lab.naver.com/ocr/>
 - Contribute/Responsibilities
   - Develop OCR(Optical Character Recognition) System
   - Develop Image Binarization
