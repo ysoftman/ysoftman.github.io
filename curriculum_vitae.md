@@ -5,9 +5,9 @@
 - Participation Period: 2022~
 - Description: kakao i cloud 환경의 MLops
 - Programming Language: golang, sh, python
-- OS: linux, mac
+- OS: Linux, Mac
 - DB
-  - 사용자데이터: mongodb
+  - 사용자데이터: MongoDB
   - iam 데이터: bitnami-etcd-cluster
 - Platform: kubernetes
 - CI/CD: github action(빌드) --> argocd(배포)
@@ -89,15 +89,15 @@
 - Participation Period: 2016~2022
 - Description: daum 및 카톡 # 검색에서 사용자 검색 키워드를 받아 관련 결과를 취합해 응답 하는 검색 프론트 서버
 - Programming Language: c++, sh, python, lua
-- OS: linux, mac
-- DB: redis, mysql
-  - Cache: memcached
+- OS: Linux, Mac
+- DB: MySQL
+  - Cache: Memcached, Redis
 - Platform: Apache Httpd, Nginx, Docker, vagrant(vm)
 - CI/CD: jenkins pipeline(script)
   - 배포 스크립트: ansible
 - 서비스 구성: client --> nginx --> apache --> 통합검색 서버
 - Monitoring
-  - log: query/access logs --> kafka --> es --> kibana
+  - log: query/access logs --> kafka/redis --> es --> kibana
   - host(node): 사내 모니터링 시스템
   - 알람: 사내 카톡 알람 시스템
 - Achievement
@@ -122,7 +122,7 @@
   - grafana로 분석 되지 않는 데이터 산출 툴 구현
   - elastalert(elasticsearch 데이터 기반으로 timeout 을 슬랙,카톡알림)
   - phase 분리, idc 이전 작업
-- troubleshooting
+- Troubleshooting
   - log 파일 끊기는 이슈
      - 오래된 리눅스 버전에서 file write 기능이 atomic 하게 동작 하지 않음.
      - <https://yoonbh2714.blogspot.com/2017/03/linux-write-atomic_68.html>
@@ -130,4 +130,46 @@
      - socket 파일계속 유지되가 갑자기 삭제 되어 간헐적으로 연결 실패 발생
      - <https://yoonbh2714.blogspot.com/2019/12/jenkins-job-ssh.html>
 
+## 한게임 보드게임, 모바일 포커
+- Company: nhn
+- Participation Period: 2013~2016
+- Description:
+- Programming Language: c++, lua, golang, python
+- OS: Windows
+- DB: Oracle, MySQL
+- Platform: Hangame Game Platfrom
+- Achievement
+  - Hangame PC Janggi (https://janggi.hangame.com/)
+  - Hangame Mobile Poker (https://play.google.com/store/apps/details? id=com.nhnent.Qpoker)
+
+## 한게임 게임 플랫폼
+- Company: naver
+- Participation Period: 2011~2013
+- Programming Language: c/c++, java, c#
+- OS: Linux, Windows
+- DB: Oracle, MSSQL, MongoDB
+- Tools: WireShark
+- Achievement
+  - Hangame Game Backend Platform
+- Contribute/Responsibilities
+  - Develop Game Message Server
+  - Develop Game String Server
+  - Develop Game Data Storage Service Server on MongoDB
+
+## OCR(Optical Character Regcognition)
+- Company: naver
+- Participation Period: 2007~2011
+- Programming Language: c/c++, php, javascript
+- OS: Linux, Windows
+- DB: MySQL
+  - HDFS(Hadoop FileSystem)
+- Achievement
+  - http://lab.naver.com/ocr/
+- Contribute/Responsibilities
+  - Develop OCR(Optical Character Recognition) System
+  - Develop Image Binarization
+  - Develop Image Segmentation
+  - Develop Feature Extration
+  - Develop OCR Result Tool for developing
+  - Develop OCR Server
 
