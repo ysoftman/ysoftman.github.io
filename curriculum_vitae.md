@@ -1,83 +1,25 @@
 # projects
 
-## daum pc/mo통합검색(통검), kakaotalk # 검색
-- 참여기간: 2016~2022
-- 설명: daum 및 카톡 # 검색에서 사용자 검색 키워드를 받아 관련 결과를 취합해 응답 하는 검색 프론트 서버
-- 개발언어: c++, sh, python, lua
-- 빌드/배포: jenkins pipeline(script)
-  - 배포 스크립트: ansible
-- 서비스 구성: client --> nginx --> apache --> 통합검색 서버
-- cache: memcached
-- 모니터링
-  - log: query/access logs --> kafka --> es --> kibana
-  - host(node): 사내 모니터링 시스템
-  - 알람: 사내 카톡 알람 시스템
-- 기여
-  - 통검 로직 구현
-  - 개발자를 위한 로컬 통검 환경 빌드 배포(vagrant, docker)
-  - 배포시 필요한 패키지들 다운로드 할수 있는 파일 서버(caddy) 구축
-  - CI/CD 구성 빌드 jenkins 구축 및 배포 자동을 위한 ansible 작성
-  - 노드 모니터링 agent(script) 구현
-  - access log masking 을 위한 apache 코드수정
-  - apache brotli 압축 적용
-  - AB 테스트 운영
-  - tps 측정을 위한 스트레스 테스트 작업
-  - kibana string 필드 한글 표시를 위한 디코딩 contribute
-     - <https://yoonbh2714.blogspot.com/2018/11/kibana-urlencoding-string-field_63.html>
-  - chromium 주소창 검색(daum omnibox search/suggest) contribute (68.0.3432.3 버전에 포함)
-     - <https://yoonbh2714.blogspot.com/2018/05/chromium_15.html>
-  - grafana로 분석 되지 않는 데이터 산출 툴 구현
-  - elastalert(elasticsearch 데이터 기반으로 timeout 을 슬랙,카톡알림)
-  - phase 분리, idc 이전 작업
-- troubleshooting
-  - log 파일 끊기는 이슈
-     - 오래된 리눅스 버전에서 file write 기능이 atomic 하게 동작 하지 않음.
-     - <https://yoonbh2714.blogspot.com/2017/03/linux-write-atomic_68.html>
-  - jenkins 배포시 간헐적 ssh 연결 실패
-     - socket 파일계속 유지되가 갑자기 삭제 되어 간헐적으로 연결 실패 발생
-     - <https://yoonbh2714.blogspot.com/2019/12/jenkins-job-ssh.html>
-
-## B2B 용 검색 서비스 빌더
-- 참여기간: 2020~2022
-- 설명: 검색 서비스가 필요한 회사가 빌더를 통해 데이터 컬렉션등을 설정하면 k8s에 해당 검색 서비스를 생성해 검색 서비스 제공
-- 개발언어: golang, sh, python
-- 빌드/배포: github action
-- 서비스 환경: k8s, aws eks
-- cache: redis-cluster
-- db: mysql
-- 모니터링
-  - log: k8s node --> fluentd --> es --> kibana
-  - metrics: prometheus, grafana
-  - host(node): 사내 모니터링 시스템
-  - 알람: 사내 카톡 알람 시스템
-- 기여
-  - builder 구현
-  - builder 개발단계에서 사용해 볼 수 있는 UI 구현(vue)
-  - k8s 환경에서 실행 되는 검색 서버 구현
-- troubleshooting
-  - pod 생성시 warning 발생
-     - 테스트를 통해 바로 종료 되는 컨테이너에 발생 가능성 파악 및 sleep 으로 해결
-     - <https://yoonbh2714.blogspot.com/2021/08/k8s-sandbox-oci-runtime-create-failed.html>
-  - 인그레스 설정이 반영되지 않음
-     - 중복된 host,path 의 경우 오래된 ingress 설정이 우선하게 된다.
-     - <https://yoonbh2714.blogspot.com/2021/04/k8s-ingress-controller-model.html>
-
 ## kakao i MLOps
-- 참여기간: 2022~
-- 설명: kakao i cloud 환경의 MLops
-- 개발언어: golang, sh, python
-- 빌드/배포: github action(빌드) --> argocd(배포)
-  - argocd 를 사용할 수 없는 외부 환경 배포시: helmfile 사용
-- 서비스 환경: k8s
-- db
+- Company: kakaoenterprise
+- Participation Period: 2022~
+- Description: kakao i cloud 환경의 MLops
+- Programming Language: golang, sh, python
+- OS: linux, mac
+- DB
   - 사용자데이터: mongodb
   - iam 데이터: bitnami-etcd-cluster
-- 모니터링
+- Platform: kubernetes
+- CI/CD: github action(빌드) --> argocd(배포)
+  - argocd 를 사용할 수 없는 외부 환경 배포시: helmfile 사용
+- Monitoring
   - log: k8s node --> fluentd --> es --> kibana
   - metrics: prometheus, grafana
   - host(node): 사내 모니터링 시스템
   - 알람: 사내 카톡 알람 시스템
-- 기여
+- Achievement
+  - kakaoenterprise AIaaS
+- Contribute/Responsibilities
   - cli(command-line-interface) client 구현(python)
   - 사용자 요청을 처리하는 common-api-server 개발
   - 사용자 데이터 업로드/조회등을 위한 storage-server 개발
@@ -86,7 +28,7 @@
   - quota /metric 수집을 위한 prometheus servicemonitor 리소스 추가
   - 비용 청구를 위한 리소스 사용량 취합서버 report-server 개발
   - node 장애 처리
-- troubleshooting
+- Troubleshooting
   - windows 환경에서 cli clent 동작에서 에러 발생
      - 기존 코드를 POSIX 기준으로 변경해 해결
   - 사용자 권한데이터가 저장된 etcd 의 노드가 장애로 shutdown
@@ -112,4 +54,80 @@
   - 사용자가 ssh 접속시 바로 종료됨
      - ~/.ssh/environment 크기가 너무 크다.
      - <https://yoonbh2714.blogspot.com/2023/04/ssh.html>
+
+## B2B 용 검색 서비스 빌더
+- Company: kakaoenterprise
+- Participation Period: 2020~2022
+- Description: 검색 서비스가 필요한 회사가 빌더를 통해 데이터 컬렉션등을 설정하면 k8s에 해당 검색 서비스를 생성해 검색 서비스 제공
+- Programming Language: golang, sh, python
+- OS: linux, mac
+- DB: mysql
+  - Cache: redis-cluster
+- Platform: kubernetes, aws(ec2,vpc,alb,nlb,eks...)
+- CI/CD: github action(빌드& 배포)
+- Monitoring
+  - log: k8s node --> fluentd --> kafka --> es --> kibana
+  - metrics: prometheus, grafana
+  - host(node): 사내 모니터링 시스템
+  - 알람: 사내 카톡 알람 시스템
+- Achievement
+  - Kakao Search Platform
+- Contribute/Responsibilities
+  - (검색)builder 구현
+  - builder 개발단계에서 사용해 볼 수 있는 UI 구현(vue)
+  - k8s 환경에서 실행 되는 검색 서버 구현
+- Troubleshooting
+  - pod 생성시 warning 발생
+     - 테스트를 통해 바로 종료 되는 컨테이너에 발생 가능성 파악 및 sleep 으로 해결
+     - <https://yoonbh2714.blogspot.com/2021/08/k8s-sandbox-oci-runtime-create-failed.html>
+  - 인그레스 설정이 반영되지 않음
+     - 중복된 host,path 의 경우 오래된 ingress 설정이 우선하게 된다.
+     - <https://yoonbh2714.blogspot.com/2021/04/k8s-ingress-controller-model.html>
+
+## daum pc/mo통합검색(통검), kakaotalk # 검색
+- Company: kakao
+- Participation Period: 2016~2022
+- Description: daum 및 카톡 # 검색에서 사용자 검색 키워드를 받아 관련 결과를 취합해 응답 하는 검색 프론트 서버
+- Programming Language: c++, sh, python, lua
+- OS: linux, mac
+- DB: redis, mysql
+  - Cache: memcached
+- Platform: Apache Httpd, Nginx, Docker, vagrant(vm)
+- CI/CD: jenkins pipeline(script)
+  - 배포 스크립트: ansible
+- 서비스 구성: client --> nginx --> apache --> 통합검색 서버
+- Monitoring
+  - log: query/access logs --> kafka --> es --> kibana
+  - host(node): 사내 모니터링 시스템
+  - 알람: 사내 카톡 알람 시스템
+- Achievement
+  - daum pc, mobile search
+  - https://search.daum.net/search?q=kakao
+  - https://m.search.daum.net/search?q=kakao
+  - kakao sharp search, instant search, search services in kakao app
+- Contribute/Responsibilities
+  - 통검 로직 구현
+  - 개발자를 위한 로컬 통검 환경 빌드 배포(vagrant, docker)
+  - 배포시 필요한 패키지들 다운로드 할수 있는 파일 서버(caddy) 구축
+  - CI/CD 구성 빌드 jenkins 구축 및 배포 자동을 위한 ansible 작성
+  - 노드 모니터링 agent(script) 구현
+  - access log masking 을 위한 apache 코드수정
+  - apache brotli 압축 적용
+  - AB 테스트 운영
+  - tps 측정을 위한 스트레스 테스트 작업
+  - kibana string 필드 한글 표시를 위한 디코딩 contribute
+     - <https://yoonbh2714.blogspot.com/2018/11/kibana-urlencoding-string-field_63.html>
+  - chromium 주소창 검색(daum omnibox search/suggest) contribute (68.0.3432.3 버전에 포함)
+     - <https://yoonbh2714.blogspot.com/2018/05/chromium_15.html>
+  - grafana로 분석 되지 않는 데이터 산출 툴 구현
+  - elastalert(elasticsearch 데이터 기반으로 timeout 을 슬랙,카톡알림)
+  - phase 분리, idc 이전 작업
+- troubleshooting
+  - log 파일 끊기는 이슈
+     - 오래된 리눅스 버전에서 file write 기능이 atomic 하게 동작 하지 않음.
+     - <https://yoonbh2714.blogspot.com/2017/03/linux-write-atomic_68.html>
+  - jenkins 배포시 간헐적 ssh 연결 실패
+     - socket 파일계속 유지되가 갑자기 삭제 되어 간헐적으로 연결 실패 발생
+     - <https://yoonbh2714.blogspot.com/2019/12/jenkins-job-ssh.html>
+
 
