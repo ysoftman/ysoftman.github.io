@@ -2,7 +2,7 @@
 
 ## kakao i MLOps
 - Company: kakaoenterprise
-- Participation Period: 2022~
+- Participation Period: 202204~
 - Description: kakao i cloud 환경의 MLops
 - Programming Language: golang, sh, python
 - OS: Linux, Mac
@@ -57,7 +57,7 @@
 
 ## B2B 용 검색 서비스 빌더
 - Company: kakaoenterprise
-- Participation Period: 2020~2022
+- Participation Period: 202001~202203
 - Description: 검색 서비스가 필요한 회사가 빌더를 통해 데이터 컬렉션등을 설정하면 k8s에 해당 검색 서비스를 생성해 검색 서비스 제공
 - Programming Language: golang, sh, python
 - OS: linux, mac
@@ -84,10 +84,10 @@
     - 중복된 host,path 의 경우 오래된 ingress 설정이 우선하게 된다.
     - <https://yoonbh2714.blogspot.com/2021/04/k8s-ingress-controller-model.html>
 
-## daum pc/mo통합검색(통검), kakaotalk # 검색
+## daum pc/mo 통합검색, kakaotalk #검색
 - Company: kakao
-- Participation Period: 2016~2022
-- Description: daum 및 카톡 # 검색에서 사용자 검색 키워드를 받아 관련 결과를 취합해 응답 하는 검색 프론트 서버
+- Participation Period: 201607~202203
+- Description: daum 및 카톡 #검색에서 사용자 검색 키워드를 받아 관련 결과를 취합해 응답 하는 검색 프론트 서버
 - Programming Language: c++, sh, python, lua
 - OS: Linux, Mac
 - DB: MySQL
@@ -106,8 +106,8 @@
   - <https://m.search.daum.net/search?q=kakao>
   - kakao sharp search, instant search, search services in kakao app
 - Contribute/Responsibilities
-  - 통검 로직 구현
-  - 개발자를 위한 로컬 통검 환경 빌드 배포(vagrant, docker)
+  - 통합검색 로직 구현
+  - 개발자를 위한 로컬 통합검색 빌드 배포(vagrant, docker)
   - 배포시 필요한 패키지들 다운로드 할수 있는 파일 서버(caddy) 구축
   - CI/CD 구성 빌드 jenkins 구축 및 배포 자동을 위한 ansible 작성
   - 노드 모니터링 agent(script) 구현
@@ -130,9 +130,22 @@
     - socket 파일계속 유지되가 갑자기 삭제 되어 간헐적으로 연결 실패 발생
     - <https://yoonbh2714.blogspot.com/2019/12/jenkins-job-ssh.html>
 
-## 한게임 보드게임, 모바일 포커
+## 한게임 모바일 포커
 - Company: nhn
-- Participation Period: 2013~2016
+- Participation Period: 201401~201606
+- Description:
+- Programming Language: c++, lua, golang, python
+- OS: Windows
+- DB: Oracle, MySQL
+- Platform: Hangame Game Platfrom
+- Achievement
+  - Hangame Mobile Poker <https://play.google.com/store/apps/details?id=com.nhnent.Qpoker>
+- Contribute/Responsibilities
+  - Develop Mobile Game Server
+
+## 한게임 웹보드게임
+- Company: nhn
+- Participation Period: 201301~201312
 - Description:
 - Programming Language: c++, lua, golang, python
 - OS: Windows
@@ -140,14 +153,13 @@
 - Platform: Hangame Game Platfrom
 - Achievement
   - Hangame PC Janggi <https://janggi.hangame.com/>
-  - Hangame Mobile Poker <https://play.google.com/store/apps/details?id=com.nhnent.Qpoker>
 - Contribute/Responsibilities
   - Develop Mobile Game Server
 
 ## 한게임 게임 플랫폼
 - Company: naver
-- Participation Period: 2011~2013
-- Programming Language: c/c++, java, c#
+- Participation Period: 201102~201201
+- Programming Language: c++, java, c#
 - OS: Linux, Windows
 - DB: Oracle, MSSQL, MongoDB
 - Achievement
@@ -159,7 +171,7 @@
 
 ## OCR(Optical Character Regcognition)
 - Company: naver
-- Participation Period: 2007~2011
+- Participation Period: 200709~201101
 - Programming Language: c/c++, php, javascript
 - OS: Linux, Windows
 - DB: MySQL
