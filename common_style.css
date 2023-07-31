@@ -32,10 +32,6 @@ pre {
     font-size: large;
 }
 
-a {
-	word-wrap: break-word;
-}
-
 #main_view {
     padding: 10px;
 }
@@ -48,13 +44,15 @@ a {
     background:#282C34
 }
 
-.navbar-nav .nav-link {
-    padding-left: 1em;
-    padding-right: 1em;
-    text-nowrap;
-}
-
-.navbar-nav {
+.navbar .navbar-nav {
     /*flex-direction: row;*/
     display: contents;
+    justify-content: normal;
 }
+
+.navbar .navbar-nav .nav-item .nav-link {
+    padding-left: 1em;
+    padding-right: 1em;
+    justify-content: normal;
+}
+
