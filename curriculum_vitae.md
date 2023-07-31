@@ -57,7 +57,7 @@
 
 ## B2B 용 검색 서비스 빌더
 - Company: kakaoenterprise
-- Pariticipation Period: 2020~2022
+- Participation Period: 2020~2022
 - Description: 검색 서비스가 필요한 회사가 빌더를 통해 데이터 컬렉션등을 설정하면 k8s에 해당 검색 서비스를 생성해 검색 서비스 제공
 - Programming Language: golang, sh, python
 - OS: linux, mac
@@ -90,8 +90,8 @@
 - Description: daum 및 카톡 # 검색에서 사용자 검색 키워드를 받아 관련 결과를 취합해 응답 하는 검색 프론트 서버
 - Programming Language: c++, sh, python, lua
 - OS: linux, mac
-- DB: memcached, redis, mysql
-  - cache: memcached
+- DB: redis, mysql
+  - Cache: memcached
 - Platform: Apache Httpd, Nginx, Docker, vagrant(vm)
 - CI/CD: jenkins pipeline(script)
   - 배포 스크립트: ansible
