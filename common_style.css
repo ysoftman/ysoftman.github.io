@@ -56,7 +56,8 @@ a {
 
 .navbar-nav {
     /*flex-direction: row;*/
-    display: contents;
+    /*display: contents;*/
+    display: flex;
     d-none;
     d-md-block;
 }
