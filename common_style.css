@@ -44,18 +44,15 @@ pre {
     background:#282C34
 }
 
-.navbar {
-    justify-content: normal;
-    word-wrap: break-word;
-}
-
-.navbar-nav {
+.navbar .navbar-nav {
     /*flex-direction: row;*/
     display: contents;
+    justify-content: normal;
 }
 
-.nav-item .nav-link {
+.navbar .navbar-nav .nav-item .nav-link {
     padding-left: 1em;
     padding-right: 1em;
-    word-wrap: break-word;
+    justify-content: normal;
 }
+
