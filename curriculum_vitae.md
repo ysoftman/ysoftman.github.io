@@ -133,7 +133,7 @@
 ## 한게임 모바일 포커
 - Company: nhn
 - Participation Period: 201401~201606
-- Description:
+- Description: 한게임 모바일 포커 게임 서버 개발
 - Programming Language: c++, lua, golang, python
 - OS: Windows
 - DB: Oracle, MySQL
@@ -146,7 +146,7 @@
 ## 한게임 웹보드게임
 - Company: naver/nhn(20130801~)
 - Participation Period: 201301~201312
-- Description:
+- Description: 한게임 웹보드 게임(장기, 바둑, 오목) 서버 개발
 - Programming Language: c++, lua, golang, python
 - OS: Windows
 - DB: Oracle, MySQL
@@ -160,6 +160,7 @@
 - Company: naver
 - Participation Period: 201102~201201
 - Programming Language: c++, java, c#
+- Description: 한게임 게임 플랫폼 서버 개발
 - OS: Linux, Windows
 - DB: Oracle, MSSQL, MongoDB
 - Achievement
@@ -169,9 +170,10 @@
   - Develop Game String Server
   - Develop Game Data Storage Service Server on MongoDB
 
-## OCR(Optical Character Regcognition)
+## OCR(Optical Character Recognition)
 - Company: naver
 - Participation Period: 200709~201101
+- Description: OCR 엔진,서비스 서버 개발
 - Programming Language: c/c++, php, javascript
 - OS: Linux, Windows
 - DB: MySQL
@@ -182,7 +184,7 @@
   - Develop OCR(Optical Character Recognition) System
   - Develop Image Binarization
   - Develop Image Segmentation
-  - Develop Feature Extration
+  - Develop Feature Extraction
   - Develop OCR Result Tool for developing
   - Develop OCR Server
 
