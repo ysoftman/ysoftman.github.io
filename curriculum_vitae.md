@@ -15,8 +15,8 @@
 - Monitoring
   - log: k8s node --> fluentd --> es --> kibana
   - metrics: prometheus, grafana
-  - host(node): 사내 모니터링 시스템
-  - 알람: 사내 카톡 알람 시스템
+  - server alarm: 사내 모니터링 시스템
+  - service alarm: 사내 카톡 알람 시스템
 - Achievement
   - kakaoenterprise AIaaS
 - Contribute/Responsibilities
@@ -68,8 +68,8 @@
 - Monitoring
   - log: k8s node --> fluentd --> kafka --> es --> kibana
   - metrics: prometheus, grafana
-  - host(node): 사내 모니터링 시스템
-  - 알람: 사내 카톡 알람 시스템
+  - server alarm: 사내 모니터링 시스템
+  - service alarm: 사내 카톡 알람 시스템
 - Achievement
   - Kakao Search Platform
 - Contribute/Responsibilities
@@ -98,8 +98,8 @@
 - 서비스 구성: client --> nginx --> apache --> 통합검색 서버
 - Monitoring
   - log: query/access logs --> kafka/redis --> es --> kibana
-  - host(node): 사내 모니터링 시스템
-  - 알람: 사내 카톡 알람 시스템
+  - server alarm: 사내 모니터링 시스템
+  - service alarm: 사내 카톡 알람 시스템
 - Achievement
   - daum pc, mobile search
   - <https://search.daum.net/search?q=kakao>
