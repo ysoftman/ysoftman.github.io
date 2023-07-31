@@ -140,7 +140,7 @@
 - Platform: Hangame Game Platfrom
 - Achievement
   - Hangame PC Janggi (https://janggi.hangame.com/)
-  - Hangame Mobile Poker (https://play.google.com/store/apps/details? id=com.nhnent.Qpoker)
+  - Hangame Mobile Poker (https://play.google.com/store/apps/details?id=com.nhnent.Qpoker)
 - Contribute/Responsibilities
   - Develop Mobile Game Server
 
