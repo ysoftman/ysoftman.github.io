@@ -85,7 +85,7 @@
     - <https://yoonbh2714.blogspot.com/2021/04/k8s-ingress-controller-model.html>
 
 ## daum pc/mo 통합검색, kakaotalk #검색
-- Company: kakao
+- Company: kakao/kakaoenterprise(20191201~)
 - Participation Period: 201607~202203
 - Description: daum 및 카톡 #검색에서 사용자 검색 키워드를 받아 관련 결과를 취합해 응답 하는 검색 프론트 서버
 - Programming Language: c++, sh, python, lua
@@ -144,7 +144,7 @@
   - Develop Mobile Game Server
 
 ## 한게임 웹보드게임
-- Company: nhn
+- Company: naver/nhn(20130801~)
 - Participation Period: 201301~201312
 - Description:
 - Programming Language: c++, lua, golang, python
