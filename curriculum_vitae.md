@@ -130,7 +130,7 @@
     - socket 파일계속 유지되가 갑자기 삭제 되어 간헐적으로 연결 실패 발생
     - <https://yoonbh2714.blogspot.com/2019/12/jenkins-job-ssh.html>
 
-## 모바일 포커
+## 한게임 모바일 포커
 - Company: nhn
 - Participation Period: 201401~201606
 - Description:
@@ -143,7 +143,7 @@
 - Contribute/Responsibilities
   - Develop Mobile Game Server
 
-## 한게임 보드게임, 모바일 포커
+## 한게임 웹보드게임
 - Company: nhn
 - Participation Period: 201301~201312
 - Description:
