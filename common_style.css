@@ -54,6 +54,6 @@ pre {
     padding-left: 1em;
     padding-right: 1em;
     justify-content: normal;
-    word-wrap: break-word;
+    word-wrap: none;
 }
 
