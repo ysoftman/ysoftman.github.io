@@ -51,6 +51,7 @@ a {
 .navbar-nav .nav-link {
     padding-left: 1em;
     padding-right: 1em;
+    text-nowrap;
 }
 
 .navbar-nav {
