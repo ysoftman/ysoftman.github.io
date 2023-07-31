@@ -141,6 +141,8 @@
 - Achievement
   - Hangame PC Janggi (https://janggi.hangame.com/)
   - Hangame Mobile Poker (https://play.google.com/store/apps/details? id=com.nhnent.Qpoker)
+- Contribute/Responsibilities
+  - Develop Mobile Game Server
 
 ## 한게임 게임 플랫폼
 - Company: naver
