@@ -23,6 +23,7 @@ body {
     padding: 50 !important;
     color: #bababa !important;
     background-color: #222 !important;
+    word-wrap: break-word;
 }
 
 /* markdown pre code 영역 */
