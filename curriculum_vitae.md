@@ -1,4 +1,4 @@
-# projects
+# Projects
 
 ## Kakao i MLOps
 - Company: kakaoenterprise
