@@ -19,7 +19,7 @@
   - service alarm: 사내 카톡 알람 시스템
 - Achievement
   - kakaoenterprise AIaaS
-- Contribute/Responsibilities
+- Contribution/Responsibilities
   - cli(command-line-interface) client 구현(python)
   - 사용자 요청을 처리하는 common-api-server 개발
   - 사용자 데이터 업로드/조회등을 위한 storage-server 개발
@@ -72,7 +72,7 @@
   - service alarm: 사내 카톡 알람 시스템
 - Achievement
   - Kakao Search Platform
-- Contribute/Responsibilities
+- Contribution/Responsibilities
   - (검색)builder 구현
   - builder 개발단계에서 사용해 볼 수 있는 UI 구현(vue)
   - k8s 환경에서 실행 되는 검색 서버 구현
@@ -105,7 +105,7 @@
   - <https://search.daum.net/search?q=kakao>
   - <https://m.search.daum.net/search?q=kakao>
   - kakao sharp search, instant search, search services in kakao app
-- Contribute/Responsibilities
+- Contribution/Responsibilities
   - 통합검색 로직 구현
   - 개발자를 위한 로컬 통합검색 빌드 배포(vagrant, docker)
   - 배포시 필요한 패키지들 다운로드 할수 있는 파일 서버(caddy) 구축
@@ -115,9 +115,9 @@
   - apache brotli 압축 적용
   - AB 테스트 운영
   - tps 측정을 위한 스트레스 테스트 작업
-  - kibana string 필드 한글 표시를 위한 디코딩 contribute
+  - kibana string 필드 한글 표시를 위한 디코딩 Contribution
     - <https://yoonbh2714.blogspot.com/2018/11/kibana-urlencoding-string-field_63.html>
-  - chromium 주소창 검색(daum omnibox search/suggest) contribute (68.0.3432.3 버전에 포함)
+  - chromium 주소창 검색(daum omnibox search/suggest) Contribution (68.0.3432.3 버전에 포함)
     - <https://yoonbh2714.blogspot.com/2018/05/chromium_15.html>
   - grafana로 분석 되지 않는 데이터 산출 툴 구현
   - elastalert(elasticsearch 데이터 기반으로 timeout 을 슬랙,카톡알림)
@@ -140,7 +140,7 @@
 - Platform: Hangame Game Platfrom
 - Achievement
   - Hangame Mobile Poker <https://play.google.com/store/apps/details?id=com.nhnent.Qpoker>
-- Contribute/Responsibilities
+- Contribution/Responsibilities
   - Develop Mobile Game Server
 
 ## Hangame 웹보드게임
@@ -153,7 +153,7 @@
 - Platform: Hangame Game Platfrom
 - Achievement
   - Hangame PC Janggi <https://janggi.hangame.com/>
-- Contribute/Responsibilities
+- Contribution/Responsibilities
   - Develop Mobile Game Server
 
 ## Hangame 게임 플랫폼
@@ -165,7 +165,7 @@
 - DB: Oracle, MSSQL, MongoDB
 - Achievement
   - Hangame Game Backend Platform
-- Contribute/Responsibilities
+- Contribution/Responsibilities
   - Develop Game Message Server
   - Develop Game String Server
   - Develop Game Data Storage Service Server on MongoDB
@@ -180,7 +180,7 @@
   - HDFS(Hadoop FileSystem)
 - Achievement
   - <http://lab.naver.com/ocr/>
-- Contribute/Responsibilities
+- Contribution/Responsibilities
   - Develop OCR(Optical Character Recognition) System
   - Develop Image Binarization
   - Develop Image Segmentation
