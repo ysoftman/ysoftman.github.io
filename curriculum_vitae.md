@@ -2,7 +2,7 @@
 
 ## Kakao i MLOps
 - Company: kakaoenterprise
-- Participation Period: 202204~
+- Participation Period: 202204~202307
 - Description: kakao i cloud 환경의 MLops
 - Programming Language: golang, sh, python
 - OS: Linux, Mac
