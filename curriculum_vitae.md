@@ -113,8 +113,10 @@
   - 노드 모니터링 agent(script) 구현
   - access log masking 을 위한 apache 코드수정
   - apache brotli 압축 적용
+    - <https://yoonbh2714.blogspot.com/2016/08/apache-httpd-https-http2_5.html>
   - AB 테스트 운영
   - tps 측정을 위한 스트레스 테스트 작업
+    - <https://yoonbh2714.blogspot.com/2020/09/k8s-pod-goroutine.html>
   - kibana string 필드 한글 표시를 위한 디코딩 Contribution
     - <https://yoonbh2714.blogspot.com/2018/11/kibana-urlencoding-string-field_63.html>
   - chromium 주소창 검색(daum omnibox search/suggest) Contribution (68.0.3432.3 버전에 포함)
@@ -123,12 +125,18 @@
   - elastalert(elasticsearch 데이터 기반으로 timeout 을 슬랙,카톡알림)
   - phase 분리, idc 이전 작업
 - Troubleshooting
+  - chi framework cpu 사용률 이슈
+    - <https://yoonbh2714.blogspot.com/2021/06/goalgn-chi-cpu.html>
   - log 파일 끊기는 이슈
     - 오래된 리눅스 버전에서 file write 기능이 atomic 하게 동작 하지 않음.
     - <https://yoonbh2714.blogspot.com/2017/03/linux-write-atomic_68.html>
   - jenkins 배포시 간헐적 ssh 연결 실패
     - socket 파일계속 유지되가 갑자기 삭제 되어 간헐적으로 연결 실패 발생
     - <https://yoonbh2714.blogspot.com/2019/12/jenkins-job-ssh.html>
+  - httpd brotli content-encoding 누락이슈
+    - <https://yoonbh2714.blogspot.com/2019/10/httpd-content-encoding.html>
+  - httpd accesslog null 400 에러
+    - <https://yoonbh2714.blogspot.com/2019/01/tomcat-uri-null.html>
 
 ## Hangame 모바일 포커
 - Company: nhn
