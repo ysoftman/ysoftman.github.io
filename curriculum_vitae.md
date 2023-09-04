@@ -165,7 +165,7 @@
 - Platform: Hangame Game Platfrom
 - Achievement
   - Hangame PC Janggi <https://janggi.hangame.com/>
-  - Hangame PC Baduk <https://baduk.hangame.com/nhn>
+  - Hangame PC Baduk <https://baduk.hangame.com/>
 - Contribution/Responsibilities
   - Develop Mobile Game Server
 
