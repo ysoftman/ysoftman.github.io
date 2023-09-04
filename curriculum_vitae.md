@@ -77,6 +77,8 @@
   - builder 개발단계에서 사용해 볼 수 있는 UI 구현(vue)
   - k8s 환경에서 실행 되는 검색 서버 구현
 - Troubleshooting
+  - 잘못된 ingress 설정 적용 방지
+    - <https://yoonbh2714.blogspot.com/2021/12/k8s-validatingwebhookconfiguration.html>
   - pod 생성시 warning 발생
     - 테스트를 통해 바로 종료 되는 컨테이너에 발생 가능성 파악 및 sleep 으로 해결
     - <https://yoonbh2714.blogspot.com/2021/08/k8s-sandbox-oci-runtime-create-failed.html>
@@ -137,6 +139,8 @@
     - <https://yoonbh2714.blogspot.com/2019/10/httpd-content-encoding.html>
   - httpd accesslog null 400 에러
     - <https://yoonbh2714.blogspot.com/2019/01/tomcat-uri-null.html>
+  - multi ansible 처리시 connection 에러
+    - <https://yoonbh2714.blogspot.com/2017/03/ansible-connection-to-xxx-closed_29.html>
 
 ## Hangame 모바일 포커
 - Company: nhn
