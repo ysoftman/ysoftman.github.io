@@ -9,11 +9,11 @@
 - DB
   - 사용자데이터: MongoDB
   - iam 데이터: bitnami-etcd-cluster
-- Platform: kubernetes
-- CI/CD: github action(빌드) --> argocd(배포)
+- Platform: Kubernetes
+- CI/CD: Github Action(빌드) -> ArgoCD(배포)
   - argocd 를 사용할 수 없는 외부 환경 배포시: helmfile 사용
 - Monitoring
-  - log: k8s node --> fluentd --> es --> kibana
+  - log: k8s node -> fluentd -> es -> kibana
   - metrics: prometheus, grafana
   - server alarm: 사내 모니터링 시스템
   - service alarm: 사내 카톡 알람 시스템
@@ -60,13 +60,13 @@
 - Participation Period: 202001~202203
 - Description: 검색 서비스가 필요한 회사가 빌더를 통해 데이터 컬렉션등을 설정하면 k8s에 해당 검색 서비스를 생성해 검색 서비스 제공
 - Programming Language: golang, sh, python
-- OS: linux, mac
-- DB: mysql
-  - Cache: redis-cluster
-- Platform: kubernetes, aws(ec2,vpc,alb,nlb,eks...)
-- CI/CD: github action(빌드& 배포)
+- OS: Linux, Mac
+- DB: MySQL
+- Cache: Redis-cluster
+- Platform: Kubernetes, AWS(ec2,vpc,alb,nlb,eks)
+- CI/CD: Github Action(빌드& 배포)
 - Monitoring
-  - log: k8s node --> fluentd --> kafka --> es --> kibana
+  - log: k8s node -> fluentd -> kafka -> es -> kibana
   - metrics: prometheus, grafana
   - server alarm: 사내 모니터링 시스템
   - service alarm: 사내 카톡 알람 시스템
@@ -93,13 +93,13 @@
 - Programming Language: c++, sh, python, lua
 - OS: Linux, Mac
 - DB: MySQL
-  - Cache: Memcached, Redis
+- Cache: Memcached, Redis
 - Platform: Apache Httpd, Nginx, Docker, vagrant(vm)
-- CI/CD: jenkins pipeline(script)
+- CI/CD: Jenkins pipeline(script)
   - 배포 스크립트: ansible
-- 서비스 구성: client --> nginx --> apache --> 통합검색 서버
+- 서비스 구성: client -> nginx -> apache -> 통합검색 서버
 - Monitoring
-  - log: query/access logs --> kafka/redis --> es --> kibana
+  - log: query/access logs -> kafka/redis -> es -> kibana
   - server alarm: 사내 모니터링 시스템
   - service alarm: 사내 카톡 알람 시스템
 - Achievement
@@ -148,7 +148,7 @@
 - Description: 한게임 모바일 포커 게임 서버 개발
 - Programming Language: c++, lua, golang, python
 - OS: Windows
-- DB: Oracle, MySQL
+- DB: MySQL
 - Platform: Hangame Game Platfrom
 - Achievement
   - Hangame Mobile Poker <https://play.google.com/store/apps/details?id=com.nhnent.Qpoker>
@@ -161,10 +161,11 @@
 - Description: 한게임 웹보드 게임(장기, 바둑, 오목) 서버 개발
 - Programming Language: c++, lua, golang, python
 - OS: Windows
-- DB: Oracle, MySQL
+- DB: Oracle
 - Platform: Hangame Game Platfrom
 - Achievement
   - Hangame PC Janggi <https://janggi.hangame.com/>
+  - Hangame PC Baduk <https://baduk.hangame.com/nhn>
 - Contribution/Responsibilities
   - Develop Mobile Game Server
 
