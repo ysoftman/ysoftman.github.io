@@ -25,7 +25,7 @@
   - 사용자 데이터 업로드/조회등을 위한 storage-server 개발
   - 사용자 인증(Ldap,keystone,oauth) 및 권한(role,policy,resource)처리를 위한 iam-server 개발
   - 사용자 필요로 하는 리소스(cpu,gpu,mem) 관리(할당, 거부등..)를 위한 quota-server 개발
-  - quota /metric 수집을 위한 prometheus servicemonitor 리소스 추가
+  - quota/metric 수집을 위한 prometheus servicemonitor 리소스 추가
   - 비용 청구를 위한 리소스 사용량 취합서버 report-server 개발
   - node 장애 처리
 - Troubleshooting
@@ -44,7 +44,7 @@
     - rfc 명세 위한사항으로 특정헤더를 명시해야함
     - <https://yoonbh2714.blogspot.com/2022/07/webdav-chunked-size.html>
   - mongodb 조회시 특정크기이상 조회시 에러 발생
-    - <https://yoonbh2714.blogspot.com/2023/02/mongodb-cursor-not-found-error.html>
+    - <https://yoonbh2714.blogspot.com/2023/02/mongodb-go-driver-cursor-not-found-error.html>
   - k8s 클러스터 마이그레이션시 대부분의 리소스는 helm chart 로 관리되어 마이그레이션이 수월한데, 회사별로 n 개의 nas 를 마운트해서 사용하는 pv,pvc 를 일괄마이그레이션 해야함
     - 모든 pv,pvc manifect(.yaml)을 생성후 sd 로ip 를 변경해 apply 하는 sh script 작성해 해결
     - <https://yoonbh2714.blogspot.com/2023/05/k8s-persistentvolume.html>
@@ -115,32 +115,32 @@
   - 노드 모니터링 agent(script) 구현
   - access log masking 을 위한 apache 코드수정
   - apache brotli 압축 적용
-    - <https://yoonbh2714.blogspot.com/2016/08/apache-httpd-https-http2_5.html>
+    - <https://yoonbh2714.blogspot.com/2017/06/nginx-http2-brotli.html>
   - AB 테스트 운영
   - tps 측정을 위한 스트레스 테스트 작업
     - <https://yoonbh2714.blogspot.com/2020/09/k8s-pod-goroutine.html>
-  - kibana string 필드 한글 표시를 위한 디코딩 Contribution
-    - <https://yoonbh2714.blogspot.com/2018/11/kibana-urlencoding-string-field_63.html>
+  - kibana string 필드 한글 표시를 위한 디코딩 contribution
+    - <https://yoonbh2714.blogspot.com/2018/11/kibana-urlencoding-string-field.html>
   - chromium 주소창 검색(daum omnibox search/suggest) Contribution (68.0.3432.3 버전에 포함)
-    - <https://yoonbh2714.blogspot.com/2018/05/chromium_15.html>
+    - <https://yoonbh2714.blogspot.com/2018/05/chromium.html>
   - grafana로 분석 되지 않는 데이터 산출 툴 구현
   - elastalert(elasticsearch 데이터 기반으로 timeout 을 슬랙,카톡알림)
   - phase 분리, idc 이전 작업
 - Troubleshooting
   - chi framework cpu 사용률 이슈
-    - <https://yoonbh2714.blogspot.com/2021/06/goalgn-chi-cpu.html>
+    - <https://yoonbh2714.blogspot.com/2021/06/golang-chi-cpu.html>
   - log 파일 끊기는 이슈
     - 오래된 리눅스 버전에서 file write 기능이 atomic 하게 동작 하지 않음.
-    - <https://yoonbh2714.blogspot.com/2017/03/linux-write-atomic_68.html>
+    - <https://yoonbh2714.blogspot.com/2017/03/linux-write-atomic.html>
   - jenkins 배포시 간헐적 ssh 연결 실패
     - socket 파일계속 유지되가 갑자기 삭제 되어 간헐적으로 연결 실패 발생
     - <https://yoonbh2714.blogspot.com/2019/12/jenkins-job-ssh.html>
   - httpd brotli content-encoding 누락이슈
     - <https://yoonbh2714.blogspot.com/2019/10/httpd-content-encoding.html>
   - httpd accesslog null 400 에러
-    - <https://yoonbh2714.blogspot.com/2019/01/tomcat-uri-null.html>
+    - <https://yoonbh2714.blogspot.com/2019/01/access-log-get-null-400.html>
   - multi ansible 처리시 connection 에러
-    - <https://yoonbh2714.blogspot.com/2017/03/ansible-connection-to-xxx-closed_29.html>
+    - <https://yoonbh2714.blogspot.com/2017/03/ansible-connection-to-xxx-closed.html>
 
 ## Hangame 모바일 포커
 - Company: nhn
