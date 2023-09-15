@@ -29,9 +29,9 @@
   - 비용 청구를 위한 리소스 사용량 취합서버 report-server 개발
   - node 장애 처리
 - Troubleshooting
-  - windows 환경에서 cli clent 동작에서 에러 발생
+  - windows 환경에서 cli client 동작에서 에러 발생
     - 기존 코드를 POSIX 기준으로 변경해 해결
-  - 사용자 권한데이터가 저장된 etcd 의 노드가 장애로 shutdown
+  - 사용자 권한 데이터가 저장된 etcd 의 노드가 장애로 shutdown
     - snapshot 으로 백업은 되어 있었지만 복구되지 않았음, 시행착오 끝에 bitnami-etcd 시작하면서 snapshot 을 로딩 하는 방법을 알아내 해결
     - <https://yoonbh2714.blogspot.com/2023/01/bitnami-etcd-snapshot.html>
   - local 에서 iam 테스트를 위해 etcd 접속시 EOF 에러로 특정개수 이상은 조회가 되지 않음
@@ -45,7 +45,7 @@
     - <https://yoonbh2714.blogspot.com/2022/07/webdav-chunked-size.html>
   - mongodb 조회시 특정크기이상 조회시 에러 발생
     - <https://yoonbh2714.blogspot.com/2023/02/mongodb-go-driver-cursor-not-found-error.html>
-  - k8s 클러스터 마이그레이션시 대부분의 리소스는 helm chart 로 관리되어 마이그레이션이 수월한데, 회사별로 n 개의 nas 를 마운트해서 사용하는 pv,pvc 를 일괄마이그레이션 해야함
+  - k8s 클러스터 마이그레이션시 대부분의 리소스는 helm chart 로 관리돼 마이그레이션이 수월한데, 회사별로 n 개의 nas 를 마운트해서 사용하는 pv,pvc 를 일괄마이그레이션 해야함
     - 모든 pv,pvc manifect(.yaml)을 생성후 sd 로ip 를 변경해 apply 하는 sh script 작성해 해결
     - <https://yoonbh2714.blogspot.com/2023/05/k8s-persistentvolume.html>
   - 사용자에 제공된 ssh (websocket 을 접속 할 수 있는 pod)에서 커서가 프롬프트가 아닌 다음 줄에 표시됨
@@ -64,7 +64,7 @@
 - DB: MySQL
 - Cache: Redis-cluster
 - Platform: Kubernetes, AWS(ec2,vpc,alb,nlb,eks)
-- CI/CD: Github Action(빌드& 배포)
+- CI/CD: Github Action(빌드&배포)
 - Monitoring
   - log: k8s node -> fluentd -> kafka -> es -> kibana
   - metrics: prometheus, grafana
