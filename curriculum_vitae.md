@@ -1,6 +1,6 @@
 # Projects
 
-## Kakao i MLOps
+## Kakao MLOps
 - Company: kakaoenterprise
 - Participation Period: 202204~202307
 - Description: kakao i cloud 환경의 MLops
@@ -55,7 +55,7 @@
     - ~/.ssh/environment 크기가 너무 크다.
     - <https://yoonbh2714.blogspot.com/2023/04/ssh.html>
 
-## Kakao B2B 검색 서비스 빌더
+## Kakao Search Platfrom(B2B 검색 서비스 빌더)
 - Company: kakaoenterprise
 - Participation Period: 202001~202203
 - Description: 검색 서비스가 필요한 회사가 빌더를 통해 데이터 컬렉션등을 설정하면 k8s에 해당 검색 서비스를 생성해 검색 서비스 제공
@@ -86,7 +86,7 @@
     - 중복된 host,path 의 경우 오래된 ingress 설정이 우선하게 된다.
     - <https://yoonbh2714.blogspot.com/2021/04/k8s-ingress-controller-model.html>
 
-## Daum pc/mo 통합검색, kakaotalk #검색
+## Daum pc/mo 통합검색, Kakaotalk #검색
 - Company: kakao/kakaoenterprise(20191201~)
 - Participation Period: 201607~202203
 - Description: daum 및 카톡 #검색에서 사용자 검색 키워드를 받아 관련 결과를 취합해 응답 하는 검색 프론트 서버
