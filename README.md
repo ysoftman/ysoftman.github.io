@@ -3,7 +3,7 @@
 ## prerequisite
 
 ```bash
-# install latest ndoejs
+# install latest nodejs
 https://github.com/nodesource/distributions
 
 # install nvm
