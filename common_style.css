@@ -71,3 +71,34 @@ object {
     justify-content: normal;
 }
 
+
+/*neon effect*/
+#github,
+#blogger,
+#linkedin,
+#watchdust,
+#firebase_test,
+#firebase_restaurant_pangyo,
+#google_map_review
+{
+    Animation: animate 5s linear infinite;
+    text-shadow: 0 0 50px #0072ff, 0 0 10px #0072ff, 0 0 15px #0072ff, 0 0 20px #0072ff;
+}
+#github, #watchdust, #google_map_review {
+    animation-delay: 0.1s;
+}
+#blogger, #firebase_test{
+    animation-delay: 0.3s;
+}
+#linkedin, #firebase_restaurant_pangyo{
+    animation-delay: 0.7s;
+}
+@keyframes animate {
+    from {
+        filter: hue-rotate(0deg);
+    }
+    to {
+        filter: hue-rotate(360deg);
+    }
+}
+
