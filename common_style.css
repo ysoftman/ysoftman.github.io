@@ -73,24 +73,29 @@ object {
 
 
 /*neon effect*/
-#github,
-#blogger,
-#linkedin,
-#watchdust,
-#firebase_test,
-#firebase_restaurant_pangyo,
-#google_map_review
+.fa-user,
+.fa-file,
+.fa-list,
+.fa-github,
+.fa-blogger,
+.fa-linkedin,
+.fa-wind,
+.fa-database,
+.fa-utensils,
+.fa-map
 {
-    Animation: animate 5s linear infinite;
-    text-shadow: 0 0 50px #0072ff, 0 0 10px #0072ff, 0 0 15px #0072ff, 0 0 20px #0072ff;
+    font-size: 2em;
+    color: #ffffff;
+    text-shadow: 0 0 5px #0072ff, 0 0 10px #0072ff, 0 0 20px #0072ff, 0 0 30px #0072ff;
+    animation: animate 3s linear infinite;
 }
-#github, #watchdust, #google_map_review {
+.fa-user,.fa-github,.fa-wind,.fa-map{
     animation-delay: 0.1s;
 }
-#blogger, #firebase_test{
-    animation-delay: 0.3s;
+.fa-file,.fa-blogger,.fa-database{
+    animation-delay: 0.5s;
 }
-#linkedin, #firebase_restaurant_pangyo{
+.fa-list,.fa-linkedin,.fa-utensils{
     animation-delay: 0.7s;
 }
 @keyframes animate {
