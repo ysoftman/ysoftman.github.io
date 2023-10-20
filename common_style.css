@@ -87,37 +87,37 @@ object {
     font-size: 2em;
     color: #ffffff;
     text-shadow: 0 0 5px #0072ff, 0 0 10px #0072ff, 0 0 20px #0072ff, 0 0 30px #0072ff;
-    animation: animate 5s linear infinite;
+    animation: animate 10s linear infinite;
 }
 .fa-user{
-    animation-delay: 0.1s;
+    animation-delay: 0.0s;
 }
 .fa-file{
     animation-delay: 0.2s;
 }
 .fa-list{
-    animation-delay: 0.3s;
-}
-.fa-github{
     animation-delay: 0.4s;
 }
-.fa-blogger{
-    animation-delay: 0.5s;
-}
-.fa-linkedin{
+.fa-github{
     animation-delay: 0.6s;
 }
-.fa-wind{
-    animation-delay: 0.7s;
-}
-.fa-database{
+.fa-blogger{
     animation-delay: 0.8s;
 }
+.fa-linkedin{
+    animation-delay: 1s;
+}
+.fa-wind{
+    animation-delay: 1.2s;
+}
+.fa-database{
+    animation-delay: 1.4s;
+}
 .fa-utensils{
-    animation-delay: 0.9s;
+    animation-delay: 1.6s;
 }
 .fa-map{
-    animation-delay: 1s;
+    animation-delay: 1.8s;
 }
 @keyframes animate {
     from {
