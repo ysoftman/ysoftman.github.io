@@ -10,7 +10,6 @@
     --red         : #e06c75;
     --yellow      : #e5c07b;
 
-
     /* boostrap5 https://getbootstrap.com/docs/5.0/customize/color/ */
     --blue: #0d6efd;
     --indigo: #6610f2;
@@ -25,10 +24,14 @@
     --gray: #adb5bd;
     --black: #000;
     --white: #fff;
+
+    /* custom color */
+    --black1: #333333;
 }
 
 /* ysoftman custom color class */
 .black  {color: var(--black);}
+.black1 {color: var(--black1);}
 .blue   {color: var(--blue);}
 .cyan   {color: var(--cyan);}
 .green  {color: var(--green);}
@@ -36,18 +39,18 @@
 .red    {color: var(--red);}
 .white  {color: var(--white);}
 .yellow {color: var(--yellow);}
+.gray   {color: var(--gray);}
 
 body {
     padding: 0 !imprtant;
-    color: #bababa !important;
-    background-color: #222 !important;
+    color: var(--gray) !important;
+    background-color: var(--black) !important;
     word-wrap: break-word;
 }
 
 /* markdown pre code 영역 */
 pre {
-    /* color: rgb(225, 62, 62) !important; */
-    color:  #bababa !important;
+    color: var(--gray) !important;
     font-size: large;
 }
 
@@ -62,7 +65,7 @@ object {
 }
 
 #navigation {
-    background-color:#333333
+    background-color: var(--black1);
 }
 
 #main_view {
