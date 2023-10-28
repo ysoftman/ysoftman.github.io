@@ -81,7 +81,7 @@ object {
 }
 
 .list-group-item {
-    background: var(--black);
+    background: black;
 }
 
 .navbar .navbar-nav {
