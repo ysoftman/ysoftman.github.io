@@ -1,26 +1,48 @@
+/* ysoftman custom variables */
+:root {
 /* One Half Dark */
-/* programs.html 에서 사용 */
-.color-brightBlack { color: #5A6374 }
-.color-brightBlue { color: #61AFEF }
-.color-brightCyan { color: #56B6C2 }
-.color-brightGreen { color: #98C379 }
-.color-brightPurple { color: #C678DD }
-.color-brightRed { color: #E06C75 }
-.color-brightWhite { color: #DCDFE4 }
-.color-brightYellow { color: #E5C07B }
-.color-black { color: #282C34 }
-.color-blue { color: #61AFEF }
-.color-cyan { color: #56B6C2 }
-.color-green { color: #98C379 }
-.color-purple { color: #C678DD }
-.color-red { color: #E06C75 }
-.color-white { color: #DCDFE4 }
-.color-yellow { color: #E5C07B }
-.color-background { color: #282C34 }
-.color-foreground { color: #DCDFE4 }
+--color-brightBlack : #5a6374;
+--color-brightBlue  : #61afef;
+--color-brightCyan  : #56b6c2;
+--color-brightGreen : #98c379;
+--color-brightPurple: #c678dd;
+--color-brightRed   : #e06c75;
+--color-brightWhite : #dcdfe4;
+--color-brightYellow: #e5c07b;
+--color-black       : #282c34;
+--color-blue        : #61afef;
+--color-cyan        : #56b6c2;
+--color-green       : #98c379;
+--color-purple      : #c678dd;
+--color-red         : #e06c75;
+--color-white       : #dcdfe4;
+--color-yellow      : #e5c07b;
+--color-background  : #282c34;
+--color-foreground  : #dcdfe4;
+}
+
+/* ysoftman custom color class */
+.color-brightBlack  {color: var(--color-brightBlack);}
+.color-brightBlue   {color: var(--color-brightBlue);}
+.color-brightCyan   {color: var(--color-brightCyan);}
+.color-brightGreen  {color: var(--color-brightGreen);}
+.color-brightPurple {color: var(--color-brightPurple)};
+.color-brightRed    {color: var(--color-brightRed);}
+.color-brightWhite  {color: var(--color-brightWhite);}
+.color-brightYellow {color: var(--color-brightYellow)};
+.color-black        {color: var(--color-black);}
+.color-blue         {color: var(--color-blue);}
+.color-cyan         {color: var(--color-cyan);}
+.color-green        {color: var(--color-green);}
+.color-purple       {color: var(--color-purple);}
+.color-red          {color: var(--color-red);}
+.color-white        {color: var(--color-white);}
+.color-yellow       {color: var(--color-yellow);}
+.color-background   {color: var(--color-background);}
+.color-foreground   {color: var(--color-foreground);}
 
 body {
-    padding: 0 !important;
+    padding: 0 !imprtant;
     color: #bababa !important;
     background-color: #222 !important;
     word-wrap: break-word;
