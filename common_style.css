@@ -1,45 +1,48 @@
 /* ysoftman custom variables */
 :root {
-/* One Half Dark */
---color-brightBlack : #5a6374;
---color-brightBlue  : #61afef;
---color-brightCyan  : #56b6c2;
---color-brightGreen : #98c379;
---color-brightPurple: #c678dd;
---color-brightRed   : #e06c75;
---color-brightWhite : #dcdfe4;
---color-brightYellow: #e5c07b;
---color-black       : #282c34;
---color-blue        : #61afef;
---color-cyan        : #56b6c2;
---color-green       : #98c379;
---color-purple      : #c678dd;
---color-red         : #e06c75;
---color-white       : #dcdfe4;
---color-yellow      : #e5c07b;
---color-background  : #282c34;
---color-foreground  : #dcdfe4;
+    /* One Half Dark https://raw.githubusercontent.com/joshdick/onedark.vim/main/img/color_reference.png */
+    --black       : #282c34;
+    --white       : #abb2bf;
+    --blue        : #61afef;
+    --cyan        : #56b6c2;
+    --green       : #98c379;
+    --purple      : #c678dd;
+    --red         : #e06c75;
+    --yellow      : #e5c07b;
+
+    /* boostrap5 https://getbootstrap.com/docs/5.0/customize/color/ */
+    --blue: #007bff;
+    --indigo: #6610f2;
+    --purple: #6f42c1;
+    --pink: #e83e8c;
+    --red: #dc3545;
+    --orange: #fd7e14;
+    --yellow: #ffc107;
+    --green: #28a745;
+    --teal: #20c997;
+    --cyan: #17a2b8;
+    --white: #fff;
+    --gray: #6c757d;
+    --gray-dark: #343a40;
+    --primary: #007bff;
+    --secondary: #6c757d;
+    --success: #28a745;
+    --info: #17a2b8;
+    --warning: #ffc107;
+    --danger: #dc3545;
+    --light: #f8f9fa;
+    --dark: #343a40;
 }
 
 /* ysoftman custom color class */
-.color-brightBlack  {color: var(--color-brightBlack);}
-.color-brightBlue   {color: var(--color-brightBlue);}
-.color-brightCyan   {color: var(--color-brightCyan);}
-.color-brightGreen  {color: var(--color-brightGreen);}
-.color-brightPurple {color: var(--color-brightPurple)};
-.color-brightRed    {color: var(--color-brightRed);}
-.color-brightWhite  {color: var(--color-brightWhite);}
-.color-brightYellow {color: var(--color-brightYellow)};
-.color-black        {color: var(--color-black);}
-.color-blue         {color: var(--color-blue);}
-.color-cyan         {color: var(--color-cyan);}
-.color-green        {color: var(--color-green);}
-.color-purple       {color: var(--color-purple);}
-.color-red          {color: var(--color-red);}
-.color-white        {color: var(--color-white);}
-.color-yellow       {color: var(--color-yellow);}
-.color-background   {color: var(--color-background);}
-.color-foreground   {color: var(--color-foreground);}
+.black  {color: var(--black);}
+.blue   {color: var(--blue);}
+.cyan   {color: var(--cyan);}
+.green  {color: var(--green);}
+.purple {color: var(--purple);}
+.red    {color: var(--red);}
+.white  {color: var(--white);}
+.yellow {color: var(--yellow);}
 
 body {
     padding: 0 !imprtant;
@@ -78,7 +81,7 @@ object {
 }
 
 .list-group-item {
-    background:#282C34
+    background: var(--black);
 }
 
 .navbar .navbar-nav {
