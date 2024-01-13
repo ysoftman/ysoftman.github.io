@@ -18,14 +18,6 @@
         </li>
     </ul>
     <ul class="list-group">
-        <div>vim plugins...(from <a href="https://github.com/ysoftman/myenv"
-                target="_blank">https://github.com/ysoftman/myenv</a>)</div>
-        <li class="list-group-item cyan">
-            <div id="vim_plugins">
-            </div>
-        </li>
-    </ul>
-    <ul class="list-group">
         <div>brew programs...(from <a href="https://github.com/ysoftman/myenv"
                 target="_blank">https://github.com/ysoftman/myenv</a>)</div>
         <li class="list-group-item green">
@@ -46,6 +38,14 @@
                 target="_blank">https://github.com/ysoftman/myenv</a>)</div>
         <li class="list-group-item purple">
             <div id="pip_programs">
+            </div>
+        </li>
+    </ul>
+    <ul class="list-group">
+        <div>vim plugins...(from <a href="https://github.com/ysoftman/myenv"
+                target="_blank">https://github.com/ysoftman/myenv</a>)</div>
+        <li class="list-group-item cyan">
+            <div id="vim_plugins">
             </div>
         </li>
     </ul>
@@ -183,19 +183,6 @@
                 console.log(error);
             })
             .then(function () {});
-        axios.get('https://raw.githubusercontent.com/ysoftman/myenv/master/.vimrc')
-            .then(function (response) {
-                let data = response.data.match(/^call plug.*|^Plug.*|.*:Plug.*/gm)
-                let result = ""
-                for (v of data) {
-                    result += v + '<br>'
-                }
-                document.getElementById('vim_plugins').innerHTML = result
-            })
-            .catch(function (error) {
-                console.log(error);
-            })
-            .then(function () {});
         axios.get('https://raw.githubusercontent.com/ysoftman/myenv/master/installbrew.sh')
             .then(function (response) {
                 let data = response.data.replace(/(?:\r\n|\r|\n)/g, '<br>');
@@ -218,6 +205,19 @@
             .then(function (response) {
                 let data = response.data.replace(/(?:\r\n|\r|\n)/g, '<br>');
                 document.getElementById('pip_programs').innerHTML = data
+            })
+            .catch(function (error) {
+                console.log(error);
+            })
+            .then(function () {});
+        axios.get('https://raw.githubusercontent.com/ysoftman/myenv/master/.vimrc')
+            .then(function (response) {
+                let data = response.data.match(/^call plug.*|^Plug.*|.*:Plug.*/gm)
+                let result = ""
+                for (v of data) {
+                    result += v + '<br>'
+                }
+                document.getElementById('vim_plugins').innerHTML = result
             })
             .catch(function (error) {
                 console.log(error);
