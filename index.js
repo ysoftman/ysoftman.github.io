@@ -9,7 +9,7 @@ let pt = new Promise(function (success, fail) {
 
 pt.then(function () {
     $("#navigation").load("navbar.html", function (response, status, xhr) {
-        console.log("navbar.html loaded,status:", status);
+        console.log("navbar.html loaded, status:", status);
     })
 }).then(function () {
     let param = window.location.search.substring(1);
