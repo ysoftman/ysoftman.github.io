@@ -68,7 +68,7 @@ object {
     background-color: var(--black1);
     list-style-type: none;
     overflow: hidden;
-    position: fixed;
+    /*position: fixed;*/
     top: 0;
     width: 100%;
     flex-wrap: wrap;
@@ -77,7 +77,8 @@ object {
 
 #main_view {
     padding-left: 10px;
-    padding-top: 4em;
+    /*padding-top: 4em;*/
+    padding-top: 10px;
     padding-right: 10px;
     padding-bottom: 10px;
 }
