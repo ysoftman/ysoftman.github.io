@@ -16,15 +16,24 @@ pt.then(function () {
     //console.log('param:', param);
     if (param == "programs") {
         $.get("/programs.html", function (data, status) {
+            document.getElementById('about_me').classList.remove("nav-active")
+            document.getElementById('curriculum_vitae').classList.remove("nav-active")
+            document.getElementById('programs').classList.add("nav-active")
             $("#main_view").html(data);
         });
     } else if (param == "curriculum_vitae") {
         $.get("/curriculum_vitae.md", function (data, status) {
+            document.getElementById('about_me').classList.remove("nav-active")
+            document.getElementById('curriculum_vitae').classList.add("nav-active")
+            document.getElementById('programs').classList.remove("nav-active")
             let html = marked(data);
             $("#main_view").html(html);
         });
     } else {
         $.get("/about_me.md", function (data, status) {
+            document.getElementById('about_me').classList.add("nav-active")
+            document.getElementById('curriculum_vitae').classList.remove("nav-active")
+            document.getElementById('programs').classList.remove("nav-active")
             // showdown 사용할때
             // let html = converter.makeHtml(data);
             // marked 사용할때
@@ -39,3 +48,5 @@ pt.then(function () {
 $(document).ready(function () {
     console.log("document ready");
 });
+
+
