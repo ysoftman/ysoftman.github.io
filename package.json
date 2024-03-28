@@ -19,7 +19,7 @@
   },
   "scripts": {
     "build": "webpack",
-    "deploy": "cp -v *.html *.css *.md ./dist; gh-pages -d dist"
+    "deploy": "cp -rv *.html *.css *.md images ./dist; gh-pages -d dist"
   },
   "devDependencies": {
     "@webpack-cli/init": "^1.1.3",
