@@ -39,7 +39,7 @@ yarn global add webpack webpack-cli
 # package.json 빌드, 배포 명령이 다음과 같이 설정되어 있음
 "scripts": {
   "build": "webpack",
-  "deploy": "cp -v *.html *.css *.md ./dist; gh-pages -d dist"
+  "deploy": "cp -rv *.html *.css *.md images ./dist; gh-pages -d dist"
 }
 
 # (최초 한번만 설정) - 깃헙 페이지 소스는 gh-pages 브랜치로 설정
