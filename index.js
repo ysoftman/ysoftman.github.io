@@ -44,6 +44,15 @@ pt.then(function () {
                 // showdown 사용할때
                 // let html = converter.makeHtml(data);
                 // marked 사용할때
+                // 링크를 새창에서 열기
+                marked.setOptions({
+                    breaks: true,
+                })
+                const renderer = new marked.Renderer();
+                renderer.link = function (href, title, text) {
+                    return `<a target="_blank" href="${href}">${text}`+'</a>'
+                }
+                marked.use({renderer})
                 let html = marked(data);
                 //document.getElementById('main_view').innerHTML = html;
                 $("#main_view").html(html);
