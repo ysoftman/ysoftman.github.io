@@ -119,6 +119,7 @@ object {
 .fa-github,
 .fa-blogger,
 .fa-linkedin,
+.fa-right-left,
 .fa-wind,
 .fa-database,
 .fa-utensils,
@@ -147,17 +148,20 @@ object {
 .fa-linkedin{
     animation-delay: 1s;
 }
-.fa-wind{
+.fa-right-left{
     animation-delay: 1.2s;
 }
-.fa-database{
+.fa-wind{
     animation-delay: 1.4s;
 }
-.fa-utensils{
+.fa-database{
     animation-delay: 1.6s;
 }
-.fa-map{
+.fa-utensils{
     animation-delay: 1.8s;
+}
+.fa-map{
+    animation-delay: 2.0s;
 }
 @keyframes animate {
     from {
