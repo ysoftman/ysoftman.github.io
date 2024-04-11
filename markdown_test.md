@@ -49,10 +49,10 @@ MD034/no-bare-urls: Bare URL usedmarkdownlint(MD034)
 [구글링크](http://www.google.com)
 
 ```text
-![센티멘탈 프로그래머](imgs/sentimental_programmer.png)
+![센티멘탈 프로그래머](images/sentimental_programmer.png)
 ```
 
-![센티멘탈 프로그래머](imgs/sentimental_programmer.png)
+![센티멘탈 프로그래머](images/sentimental_programmer.png)
 
 ## 이모지(emoji) 사용
 
