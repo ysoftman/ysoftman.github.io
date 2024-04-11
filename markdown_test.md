@@ -58,6 +58,8 @@ MD034/no-bare-urls: Bare URL usedmarkdownlint(MD034)
 
 :+1: :smile:
 
+Here is a simple flow chart:
+
 ```mermaid
 graph TD;
     A-->B;
