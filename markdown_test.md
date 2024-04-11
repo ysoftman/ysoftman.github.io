@@ -57,13 +57,3 @@ MD034/no-bare-urls: Bare URL usedmarkdownlint(MD034)
 ## 이모지(emoji) 사용
 
 :+1: :smile:
-
-Here is a simple flow chart:
-
-```mermaid
-graph TD;
-    A-->B;
-    A-->C;
-    B-->D;
-    C-->D;
-```
