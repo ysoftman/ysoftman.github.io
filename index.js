@@ -2,7 +2,8 @@
 // https://github.com/showdownjs/showdown/issues/615
 // let converter = new showdown.Converter();
 // converter.disableForced4SpacesIndentedSublists = true;
-
+//
+import "./common_style.css"
 function sleep(ms=0) {
     return new Promise(msg => setTimeout(msg, ms));
 }
