@@ -57,3 +57,17 @@ MD034/no-bare-urls: Bare URL usedmarkdownlint(MD034)
 ## 이모지(emoji) 사용
 
 :+1: :smile:
+
+## mermaid
+
+```mermaid
+sequenceDiagram
+lemon->>proxy: hello~
+loop Check user
+    proxy->>proxy: 자체 체크
+end
+Note right of proxy: 주석부분
+proxy->>apple: hello~
+apple-->>proxy: nice to meet you!
+proxy-->>lemon: nice to meet you!
+```
