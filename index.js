@@ -27,6 +27,22 @@ function sleep(ms=0) {
     return new Promise(msg => setTimeout(msg, ms));
 }
 
+function md2Html(md) {
+    // showdown 사용할때
+    // let html = converter.makeHtml(data.data);
+    // marked 사용할때
+    // 렌더링된 md 의 링크부분 새창에서 열기
+    marked.setOptions({
+        breaks: true,
+    })
+    const renderer = new marked.Renderer();
+    renderer.link = function (href, title, text) {
+        return `<a target="_blank" href="${href}">${text}`+'</a>'
+    }
+    marked.use({renderer})
+    return marked.parse(md);
+}
+
 let pt = new Promise(function (success, fail) {
     success("success")
 });
@@ -58,29 +74,14 @@ pt.then(function () {
                     document.getElementById('about_me').classList.remove("nav-active")
                     document.getElementById('curriculum_vitae').classList.add("nav-active")
                     document.getElementById('programs').classList.remove("nav-active")
-                    let html = marked.parse(data.data);
-                    document.getElementById('main_view').innerHTML = html
+                    document.getElementById('main_view').innerHTML = md2Html(data.data)
                 });
             } else {
                 axios.get("/about_me.md").then(function (data) {
                     document.getElementById('about_me').classList.add("nav-active")
                     document.getElementById('curriculum_vitae').classList.remove("nav-active")
                     document.getElementById('programs').classList.remove("nav-active")
-                    // showdown 사용할때
-                    // let html = converter.makeHtml(data.data);
-                    // marked 사용할때
-                    // 렌더링된 md 의 링크부분 새창에서 열기
-                    marked.setOptions({
-                        breaks: true,
-                    })
-                    const renderer = new marked.Renderer();
-                    renderer.link = function (href, title, text) {
-                        return `<a target="_blank" href="${href}">${text}`+'</a>'
-                    }
-                    marked.use({renderer})
-                    let html = marked.parse(data.data);
-                    document.getElementById('main_view').innerHTML = html
-                    console.log("about_me loaded")
+                    document.getElementById('main_view').innerHTML = md2Html(data.data)
                 });
             }
         })
