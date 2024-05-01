@@ -15,6 +15,7 @@ module.exports = {
     },
     devServer: {
         open: true,
+        port: 8080,
         host: 'localhost',
     },
     plugins: [
@@ -34,8 +35,6 @@ module.exports = {
             template: './programs.html',
             chunks: ["page3"]
         }),
-        // Add your plugins here
-        // Learn more about plugins from https://webpack.js.org/configuration/plugins/
     ],
     module: {
         rules: [
@@ -50,7 +49,7 @@ module.exports = {
                 }
             },
             {
-                test: /\.(eot|svg|ttf|woff|woff2|png|jpg|gif)$/i,
+                test: /\.(svg|png|jpg|gif)$/i,
                 type: 'asset/resource',
                 use: {
                     loader: 'file-loader',
@@ -59,6 +58,49 @@ module.exports = {
                         outputPath: "./images/"
                     }
                 }
+            },
+            { 
+                test: /\.(eot|ttf|svg)$/,
+                type: 'asset/resource',
+                use: {
+                    loader: 'file-loader',
+                    options: {
+                        name: '[name].[ext]',
+                        outputPath: "./fonts/"
+                    }
+                }
+            },
+            {
+                test: /\.(css)$/,
+                use: [
+                    {
+                        // Adds CSS to the DOM by injecting a `<style>` tag
+                        loader: "style-loader"
+                    },
+                    {
+                        // Interprets `@import` and `url()` like `import/require()` and will resolve them
+                        loader: "css-loader"
+                    },
+                ],
+                //exclude: /node_modules/,
+            },
+            {
+                test: /\.scss$/,
+                use: [
+                    {
+                        // Adds CSS to the DOM by injecting a `<style>` tag
+                        loader: "style-loader"
+                    },
+                    {
+                        // Interprets `@import` and `url()` like `import/require()` and will resolve them
+                        loader: "css-loader"
+                    },
+                    {
+                        // Loads a SASS/SCSS file and compiles it to CSS
+                        loader: 'sass-loader'
+                    }
+                ],
+                exclude: /node_modules/,
             },
             {
                 test: /\.md$/i,
@@ -70,13 +112,6 @@ module.exports = {
                     }
                 }
             },
-            {
-                test: /\.css$/,
-                use: ["style-loader", "css-loader"],
-                exclude: /node_modules/,
-            },
-            // Add your rules for custom modules here
-            // Learn more about loaders from https://webpack.js.org/loaders/
         ],
     },
     watchOptions: {

@@ -14,12 +14,9 @@ import "./images/sprite_download.png"
 import "./about_me.md"
 import "./curriculum_vitae.md"
 import "./markdown_test.md"
-import "./common_style.css"
+import './styles.scss'
 import {loadProgramList} from "./programs.js"
-//import '@fortawesome/fontawesome-free/js/fontawesome'
-//import '@fortawesome/fontawesome-free/js/solid'
-//import '@fortawesome/fontawesome-free/js/regular'
-//import '@fortawesome/fontawesome-free/js/brands'
+import "./common_style.css"  // css, scss 중 마지막에 import 해야 올바르게 적용된다.
 import { marked } from 'marked';
 const axios = require('axios');
 
