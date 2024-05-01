@@ -77,7 +77,6 @@ object {
 
 #main_view {
     padding-left: 10px;
-    /*padding-top: 4em;*/
     padding-top: 10px;
     padding-right: 10px;
     padding-bottom: 10px;
@@ -89,8 +88,11 @@ object {
 
 .list-group-item {
     background: var(--black);
+    border-top-left-radius: 5px !important;
+    border-top-right-radius: 5px !important;
+    border-bottom-left-radius: 5px !important;
+    border-bottom-right-radius: 5px !important;
 }
-
 .navbar .navbar-nav {
     /*flex-direction: row;*/
     display: contents;
