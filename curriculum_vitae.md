@@ -1,0 +1,203 @@
+# Projects
+
+## Kakao MLOps
+- Company: kakaoenterprise
+- Participation Period: 202204~202307
+- Description: kakao i cloud 환경의 MLops
+- Programming Language: golang, sh, python
+- OS: Linux, Mac
+- DB
+  - 사용자데이터: MongoDB
+  - iam 데이터: bitnami-etcd-cluster
+- Platform: Kubernetes
+- CI/CD: Github Action(빌드) -> ArgoCD(배포)
+  - argocd 를 사용할 수 없는 외부 환경 배포시: helmfile 사용
+- Monitoring
+  - log: k8s node -> fluentd -> es -> kibana
+  - metrics: prometheus, grafana
+  - server alarm: 사내 모니터링 시스템
+  - service alarm: 사내 카톡 알람 시스템
+- Achievement
+  - kakaoenterprise AIaaS
+- Contribution/Responsibilities
+  - cli(command-line-interface) client 구현(python)
+  - 사용자 요청을 처리하는 common-api-server 개발
+  - 사용자 데이터 업로드/조회등을 위한 storage-server 개발
+  - 사용자 인증(Ldap,keystone,oauth) 및 권한(role,policy,resource)처리를 위한 iam-server 개발
+  - 사용자 필요로 하는 리소스(cpu,gpu,mem) 관리(할당, 거부등..)를 위한 quota-server 개발
+  - quota/metric 수집을 위한 prometheus servicemonitor 리소스 추가
+  - 비용 청구를 위한 리소스 사용량 취합서버 report-server 개발
+  - node 장애 처리
+- Troubleshooting
+  - windows 환경에서 cli client 동작에서 에러 발생
+    - 기존 코드를 POSIX 기준으로 변경해 해결
+  - 사용자 권한 데이터가 저장된 etcd 의 노드가 장애로 shutdown
+    - snapshot 으로 백업은 되어 있었지만 복구되지 않았음, 시행착오 끝에 bitnami-etcd 시작하면서 snapshot 을 로딩 하는 방법을 알아내 해결
+    - <https://yoonbh2714.blogspot.com/2023/01/bitnami-etcd-snapshot.html>
+  - local 에서 iam 테스트를 위해 etcd 접속시 EOF 에러로 특정개수 이상은 조회가 되지 않음
+    - grpc 소스에서 stream window size 수정으로 해결
+    - <https://yoonbh2714.blogspot.com/2023/02/k8s-etcdctl-unexpected-eof.html>
+  - webdav 로 수천개의 파일 업로드시 hangup 발생
+    - 여러 테스트를 거쳐 keepalive 로 연결 세션이 늘어나면 그에 따로 thread 도 늘어 나야 함
+    - <https://yoonbh2714.blogspot.com/2022/07/wsgidavwebdav-session-hang.html>
+  - webdav 파일 업로드시 cpu 100% 인 상태에서 진행되지 않음
+    - rfc 명세 위한사항으로 특정헤더를 명시해야함
+    - <https://yoonbh2714.blogspot.com/2022/07/webdav-chunked-size.html>
+  - mongodb 조회시 특정크기이상 조회시 에러 발생
+    - <https://yoonbh2714.blogspot.com/2023/02/mongodb-go-driver-cursor-not-found-error.html>
+  - k8s 클러스터 마이그레이션시 대부분의 리소스는 helm chart 로 관리돼 마이그레이션이 수월한데, 회사별로 n 개의 nas 를 마운트해서 사용하는 pv,pvc 를 일괄마이그레이션 해야함
+    - 모든 pv,pvc manifect(.yaml)을 생성후 sd 로ip 를 변경해 apply 하는 sh script 작성해 해결
+    - <https://yoonbh2714.blogspot.com/2023/05/k8s-persistentvolume.html>
+  - 사용자에 제공된 ssh (websocket 을 접속 할 수 있는 pod)에서 커서가 프롬프트가 아닌 다음 줄에 표시됨
+    - kubernetes > python > ws_clinet.py 에서 socket 수신 조건이 https 일때 동작 하지 않음
+    - <https://yoonbh2714.blogspot.com/2023/05/nginx-https-websocket-newline-error.html>
+  - 사용자가 ssh 접속시 바로 종료됨
+    - ~/.ssh/environment 크기가 너무 크다.
+    - <https://yoonbh2714.blogspot.com/2023/04/ssh.html>
+
+## Kakao Search Platfrom(B2B 검색 서비스 빌더)
+- Company: kakaoenterprise
+- Participation Period: 202001~202203
+- Description: 검색 서비스가 필요한 회사가 빌더를 통해 데이터 컬렉션등을 설정하면 k8s에 해당 검색 서비스를 생성해 검색 서비스 제공
+- Programming Language: golang, sh, python
+- OS: Linux, Mac
+- DB: MySQL
+- Cache: Redis-cluster
+- Platform: Kubernetes, AWS(ec2,vpc,alb,nlb,eks)
+- CI/CD: Github Action(빌드&배포)
+- Monitoring
+  - log: k8s node -> fluentd -> kafka -> es -> kibana
+  - metrics: prometheus, grafana
+  - server alarm: 사내 모니터링 시스템
+  - service alarm: 사내 카톡 알람 시스템
+- Achievement
+  - Kakao Search Platform
+- Contribution/Responsibilities
+  - (검색)builder 구현
+  - builder 개발단계에서 사용해 볼 수 있는 UI 구현(vue)
+  - k8s 환경에서 실행 되는 검색 서버 구현
+- Troubleshooting
+  - 잘못된 ingress 설정 적용 방지
+    - <https://yoonbh2714.blogspot.com/2021/12/k8s-validatingwebhookconfiguration.html>
+  - pod 생성시 warning 발생
+    - 테스트를 통해 바로 종료 되는 컨테이너에 발생 가능성 파악 및 sleep 으로 해결
+    - <https://yoonbh2714.blogspot.com/2021/08/k8s-sandbox-oci-runtime-create-failed.html>
+  - 인그레스 설정이 반영되지 않음
+    - 중복된 host,path 의 경우 오래된 ingress 설정이 우선하게 된다.
+    - <https://yoonbh2714.blogspot.com/2021/04/k8s-ingress-controller-model.html>
+
+## Daum pc/mo 통합검색, Kakaotalk #검색
+- Company: kakao/kakaoenterprise(20191201~)
+- Participation Period: 201607~202203
+- Description: daum 및 카톡 #검색에서 사용자 검색 키워드를 받아 관련 결과를 취합해 응답 하는 검색 프론트 서버
+- Programming Language: c++, sh, python, lua
+- OS: Linux, Mac
+- DB: MySQL
+- Cache: Memcached, Redis
+- Platform: Apache Httpd, Nginx, Docker, vagrant(vm)
+- CI/CD: Jenkins pipeline(script)
+  - 배포 스크립트: ansible
+- 서비스 구성: client -> nginx -> apache -> 통합검색 서버
+- Monitoring
+  - log: query/access logs -> kafka/redis -> es -> kibana
+  - server alarm: 사내 모니터링 시스템
+  - service alarm: 사내 카톡 알람 시스템
+- Achievement
+  - daum pc, mobile search
+  - <https://search.daum.net/search?q=kakao>
+  - <https://m.search.daum.net/search?q=kakao>
+  - kakao sharp search, instant search, search services in kakao app
+- Contribution/Responsibilities
+  - 통합검색 로직 구현
+  - 개발자를 위한 로컬 통합검색 빌드 배포(vagrant, docker)
+  - 배포시 필요한 패키지들 다운로드 할수 있는 파일 서버(caddy) 구축
+  - CI/CD 구성 빌드 jenkins 구축 및 배포 자동을 위한 ansible 작성
+  - 노드 모니터링 agent(script) 구현
+  - access log masking 을 위한 apache 코드수정
+  - apache brotli 압축 적용
+    - <https://yoonbh2714.blogspot.com/2017/06/nginx-http2-brotli.html>
+  - AB 테스트 운영
+  - tps 측정을 위한 스트레스 테스트 작업
+    - <https://yoonbh2714.blogspot.com/2020/09/k8s-pod-goroutine.html>
+  - kibana string 필드 한글 표시를 위한 디코딩 contribution
+    - <https://yoonbh2714.blogspot.com/2018/11/kibana-urlencoding-string-field.html>
+  - chromium 주소창 검색(daum omnibox search/suggest) Contribution (68.0.3432.3 버전에 포함)
+    - <https://yoonbh2714.blogspot.com/2018/05/chromium.html>
+  - grafana로 분석 되지 않는 데이터 산출 툴 구현
+  - elastalert(elasticsearch 데이터 기반으로 timeout 을 슬랙,카톡알림)
+  - phase 분리, idc 이전 작업
+- Troubleshooting
+  - chi framework cpu 사용률 이슈
+    - <https://yoonbh2714.blogspot.com/2021/06/golang-chi-cpu.html>
+  - log 파일 끊기는 이슈
+    - 오래된 리눅스 버전에서 file write 기능이 atomic 하게 동작 하지 않음.
+    - <https://yoonbh2714.blogspot.com/2017/03/linux-write-atomic.html>
+  - jenkins 배포시 간헐적 ssh 연결 실패
+    - socket 파일계속 유지되가 갑자기 삭제 되어 간헐적으로 연결 실패 발생
+    - <https://yoonbh2714.blogspot.com/2019/12/jenkins-job-ssh.html>
+  - httpd brotli content-encoding 누락이슈
+    - <https://yoonbh2714.blogspot.com/2019/10/httpd-content-encoding.html>
+  - httpd accesslog null 400 에러
+    - <https://yoonbh2714.blogspot.com/2019/01/access-log-get-null-400.html>
+  - multi ansible 처리시 connection 에러
+    - <https://yoonbh2714.blogspot.com/2017/03/ansible-connection-to-xxx-closed.html>
+
+## Hangame 모바일 포커
+- Company: nhn
+- Participation Period: 201401~201606
+- Description: 한게임 모바일 포커 게임 서버 개발
+- Programming Language: c++, lua, golang, python
+- OS: Windows
+- DB: MySQL
+- Platform: Hangame Game Platfrom
+- Achievement
+  - Hangame Mobile Poker <https://play.google.com/store/apps/details?id=com.nhnent.Qpoker>
+- Contribution/Responsibilities
+  - Develop Mobile Game Server
+
+## Hangame 웹보드게임
+- Company: naver/nhn(20130801~)
+- Participation Period: 201301~201312
+- Description: 한게임 웹보드 게임(장기, 바둑, 오목) 서버 개발
+- Programming Language: c++, lua, golang, python
+- OS: Windows
+- DB: Oracle
+- Platform: Hangame Game Platfrom
+- Achievement
+  - Hangame PC Janggi <https://janggi.hangame.com/>
+  - Hangame PC Baduk <https://baduk.hangame.com/>
+- Contribution/Responsibilities
+  - Develop Mobile Game Server
+
+## Hangame 게임 플랫폼
+- Company: naver
+- Participation Period: 201102~201201
+- Programming Language: c++, java, c#
+- Description: 한게임 게임 플랫폼 서버 개발
+- OS: Linux, Windows
+- DB: Oracle, MSSQL, MongoDB
+- Achievement
+  - Hangame Game Backend Platform
+- Contribution/Responsibilities
+  - Develop Game Message Server
+  - Develop Game String Server
+  - Develop Game Data Storage Service Server on MongoDB
+
+## Naver OCR(Optical Character Recognition)
+- Company: naver
+- Participation Period: 200709~201101
+- Description: OCR 엔진,서비스 서버 개발
+- Programming Language: c/c++, php, javascript
+- OS: Linux, Windows
+- DB: MySQL
+  - HDFS(Hadoop FileSystem)
+- Achievement
+  - <http://lab.naver.com/ocr/>
+- Contribution/Responsibilities
+  - Develop OCR(Optical Character Recognition) System
+  - Develop Image Binarization
+  - Develop Image Segmentation
+  - Develop Feature Extraction
+  - Develop OCR Result Tool for developing
+  - Develop OCR Server
+
