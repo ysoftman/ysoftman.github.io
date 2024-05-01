@@ -16,7 +16,7 @@
   \******************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _common_style_css__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./common_style.css */ \"./common_style.css\");\n// showdownjs 은 리스트 하위 항목 들여쓰기 기능이 동작하지 않는다.\n// https://github.com/showdownjs/showdown/issues/615\n// let converter = new showdown.Converter();\n// converter.disableForced4SpacesIndentedSublists = true;\n//\n\nfunction sleep() {\n  var ms = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : 0;\n  return new Promise(function (msg) {\n    return setTimeout(msg, ms);\n  });\n}\nvar pt = new Promise(function (success, fail) {\n  success(\"success\");\n});\npt.then(function () {\n  //for test\n  //await sleep(1000);\n  //console.log(\"---\");\n\n  //load 는 비동기로 동작,혹시 navbar.html 이 로딩이 선행 후 dom 을 사용하도록 함\n  $(\"#navigation\").load(\"navbar.html\", function (response, status, xhr) {\n    console.log(\"navbar.html loaded, status:\", status);\n    var param = window.location.search.substring(1);\n    //console.log('param:', param);\n    if (param == \"programs\") {\n      $.get(\"/programs.html\", function (data, status) {\n        document.getElementById('about_me').classList.remove(\"nav-active\");\n        document.getElementById('curriculum_vitae').classList.remove(\"nav-active\");\n        document.getElementById('programs').classList.add(\"nav-active\");\n        $(\"#main_view\").html(data);\n      });\n    } else if (param == \"curriculum_vitae\") {\n      $.get(\"/curriculum_vitae.md\", function (data, status) {\n        document.getElementById('about_me').classList.remove(\"nav-active\");\n        document.getElementById('curriculum_vitae').classList.add(\"nav-active\");\n        document.getElementById('programs').classList.remove(\"nav-active\");\n        var html = marked(data);\n        $(\"#main_view\").html(html);\n      });\n    } else {\n      $.get(\"/about_me.md\", function (data, status) {\n        document.getElementById('about_me').classList.add(\"nav-active\");\n        document.getElementById('curriculum_vitae').classList.remove(\"nav-active\");\n        document.getElementById('programs').classList.remove(\"nav-active\");\n        // showdown 사용할때\n        // let html = converter.makeHtml(data);\n        // marked 사용할때\n        // 링크를 새창에서 열기\n        marked.setOptions({\n          breaks: true\n        });\n        var renderer = new marked.Renderer();\n        renderer.link = function (href, title, text) {\n          return \"<a target=\\\"_blank\\\" href=\\\"\".concat(href, \"\\\">\").concat(text) + '</a>';\n        };\n        marked.use({\n          renderer: renderer\n        });\n        var html = marked(data);\n        //document.getElementById('main_view').innerHTML = html;\n        $(\"#main_view\").html(html);\n        console.log(\"about_me loaded\");\n      });\n    }\n  });\n});\n\n// deprecated in jquery 1.8 and it can't be used starting from jquery 3.0\n//$(document).ready(function () {\n//    console.log(\"document ready\");\n//});\n$(function () {\n  console.log(\"document ready\");\n});\n\n//# sourceURL=webpack://ysoftman.github.io/./index.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _images_bg_hr_png__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./images/bg_hr.png */ \"./images/bg_hr.png\");\n/* harmony import */ var _images_blacktocat_png__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./images/blacktocat.png */ \"./images/blacktocat.png\");\n/* harmony import */ var _images_icon_download_png__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./images/icon_download.png */ \"./images/icon_download.png\");\n/* harmony import */ var _images_sentimental_programmer_png__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./images/sentimental_programmer.png */ \"./images/sentimental_programmer.png\");\n/* harmony import */ var _images_sprite_download_png__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./images/sprite_download.png */ \"./images/sprite_download.png\");\n/* harmony import */ var _markdown_test_md__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./markdown_test.md */ \"./markdown_test.md\");\n/* harmony import */ var _common_style_css__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./common_style.css */ \"./common_style.css\");\n// showdownjs 은 리스트 하위 항목 들여쓰기 기능이 동작하지 않는다.\n// https://github.com/showdownjs/showdown/issues/615\n// let converter = new showdown.Converter();\n// converter.disableForced4SpacesIndentedSublists = true;\n//\n\n// for webpack bundling\n\n\n\n\n\n\n\nfunction sleep() {\n  var ms = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : 0;\n  return new Promise(function (msg) {\n    return setTimeout(msg, ms);\n  });\n}\nvar pt = new Promise(function (success, fail) {\n  success(\"success\");\n});\npt.then(function () {\n  //for test\n  //await sleep(1000);\n  //console.log(\"---\");\n\n  //load 는 비동기로 동작,혹시 navbar.html 이 로딩이 선행 후 dom 을 사용하도록 함\n  $(\"#navigation\").load(\"navbar.html\", function (response, status, xhr) {\n    console.log(\"navbar.html loaded, status:\", status);\n    var param = window.location.search.substring(1);\n    //console.log('param:', param);\n    if (param == \"programs\") {\n      $.get(\"/programs.html\", function (data, status) {\n        document.getElementById('about_me').classList.remove(\"nav-active\");\n        document.getElementById('curriculum_vitae').classList.remove(\"nav-active\");\n        document.getElementById('programs').classList.add(\"nav-active\");\n        $(\"#main_view\").html(data);\n      });\n    } else if (param == \"curriculum_vitae\") {\n      $.get(\"/curriculum_vitae.md\", function (data, status) {\n        document.getElementById('about_me').classList.remove(\"nav-active\");\n        document.getElementById('curriculum_vitae').classList.add(\"nav-active\");\n        document.getElementById('programs').classList.remove(\"nav-active\");\n        var html = marked(data);\n        $(\"#main_view\").html(html);\n      });\n    } else {\n      $.get(\"/about_me.md\", function (data, status) {\n        document.getElementById('about_me').classList.add(\"nav-active\");\n        document.getElementById('curriculum_vitae').classList.remove(\"nav-active\");\n        document.getElementById('programs').classList.remove(\"nav-active\");\n        // showdown 사용할때\n        // let html = converter.makeHtml(data);\n        // marked 사용할때\n        // 링크를 새창에서 열기\n        marked.setOptions({\n          breaks: true\n        });\n        var renderer = new marked.Renderer();\n        renderer.link = function (href, title, text) {\n          return \"<a target=\\\"_blank\\\" href=\\\"\".concat(href, \"\\\">\").concat(text) + '</a>';\n        };\n        marked.use({\n          renderer: renderer\n        });\n        var html = marked(data);\n        //document.getElementById('main_view').innerHTML = html;\n        $(\"#main_view\").html(html);\n        console.log(\"about_me loaded\");\n      });\n    }\n  });\n});\n\n// deprecated in jquery 1.8 and it can't be used starting from jquery 3.0\n//$(document).ready(function () {\n//    console.log(\"document ready\");\n//});\n$(function () {\n  console.log(\"document ready\");\n});\n\n//# sourceURL=webpack://ysoftman.github.io/./index.js?");
 
 /***/ }),
 
@@ -118,6 +118,66 @@ eval("\n\n/* istanbul ignore next  */\nfunction apply(styleElement, options, obj
 
 eval("\n\n/* istanbul ignore next  */\nfunction styleTagTransform(css, styleElement) {\n  if (styleElement.styleSheet) {\n    styleElement.styleSheet.cssText = css;\n  } else {\n    while (styleElement.firstChild) {\n      styleElement.removeChild(styleElement.firstChild);\n    }\n    styleElement.appendChild(document.createTextNode(css));\n  }\n}\nmodule.exports = styleTagTransform;\n\n//# sourceURL=webpack://ysoftman.github.io/./node_modules/style-loader/dist/runtime/styleTagTransform.js?");
 
+/***/ }),
+
+/***/ "./images/bg_hr.png":
+/*!**************************!*\
+  !*** ./images/bg_hr.png ***!
+  \**************************/
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+eval("module.exports = __webpack_require__.p + \"278767e53f77b69bafa5.png\";\n\n//# sourceURL=webpack://ysoftman.github.io/./images/bg_hr.png?");
+
+/***/ }),
+
+/***/ "./images/blacktocat.png":
+/*!*******************************!*\
+  !*** ./images/blacktocat.png ***!
+  \*******************************/
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+eval("module.exports = __webpack_require__.p + \"9fe4687a7ae945ecdba4.png\";\n\n//# sourceURL=webpack://ysoftman.github.io/./images/blacktocat.png?");
+
+/***/ }),
+
+/***/ "./images/icon_download.png":
+/*!**********************************!*\
+  !*** ./images/icon_download.png ***!
+  \**********************************/
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+eval("module.exports = __webpack_require__.p + \"01a703532f04d91bf187.png\";\n\n//# sourceURL=webpack://ysoftman.github.io/./images/icon_download.png?");
+
+/***/ }),
+
+/***/ "./images/sentimental_programmer.png":
+/*!*******************************************!*\
+  !*** ./images/sentimental_programmer.png ***!
+  \*******************************************/
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+eval("module.exports = __webpack_require__.p + \"70c1ba5ad5e7f571a8a3.png\";\n\n//# sourceURL=webpack://ysoftman.github.io/./images/sentimental_programmer.png?");
+
+/***/ }),
+
+/***/ "./images/sprite_download.png":
+/*!************************************!*\
+  !*** ./images/sprite_download.png ***!
+  \************************************/
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+eval("module.exports = __webpack_require__.p + \"ba9c3b592e1001526866.png\";\n\n//# sourceURL=webpack://ysoftman.github.io/./images/sprite_download.png?");
+
+/***/ }),
+
+/***/ "./markdown_test.md":
+/*!**************************!*\
+  !*** ./markdown_test.md ***!
+  \**************************/
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+eval("module.exports = __webpack_require__.p + \"83657a666f95072a1306.md\";\n\n//# sourceURL=webpack://ysoftman.github.io/./markdown_test.md?");
+
 /***/ })
 
 /******/ 	});
@@ -185,6 +245,11 @@ eval("\n\n/* istanbul ignore next  */\nfunction styleTagTransform(css, styleElem
 /******/ 			}
 /******/ 			Object.defineProperty(exports, '__esModule', { value: true });
 /******/ 		};
+/******/ 	})();
+/******/ 	
+/******/ 	/* webpack/runtime/publicPath */
+/******/ 	(() => {
+/******/ 		__webpack_require__.p = "dist/";
 /******/ 	})();
 /******/ 	
 /******/ 	/* webpack/runtime/nonce */
