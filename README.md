@@ -28,13 +28,8 @@ https://github.com/ysoftman/ysoftman.github.io/settings/pages
 ## local 테스트
 
 ```bash
-# 실행
-npm install http-server -g
-http-server
-# 또는
-node server.js
-# 또는
-yarn start(server.js 실행)
+# (server.js 실행)
+yarn build && yarn start
 ```
 
 ## 빌드 배포

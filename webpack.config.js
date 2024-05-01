@@ -10,6 +10,8 @@ module.exports = {
     output: {
         path: path.resolve(__dirname, 'dist'),
         filename: "index.js",
+        publicPath: "dist/",
+        clean: true
     },
     devServer: {
         open: true,
@@ -41,15 +43,32 @@ module.exports = {
                 test: /\.js$/,
                 exclude: /(node_modules|bower_components)/,
                 use: {
-                  loader: 'babel-loader',
-                  options: {
-                    presets: ['@babel/preset-env']
-                  }
+                    loader: 'babel-loader',
+                    options: {
+                        presets: ['@babel/preset-env']
+                    }
                 }
             },
             {
                 test: /\.(eot|svg|ttf|woff|woff2|png|jpg|gif)$/i,
-                type: 'asset',
+                type: 'asset/resource',
+                use: {
+                    loader: 'file-loader',
+                    options: {
+                        name: '[name].[ext]',
+                        outputPath: "./images/"
+                    }
+                }
+            },
+            {
+                test: /\.md$/i,
+                type: 'asset/resource',
+                use: {
+                    loader: 'file-loader',
+                    options: {
+                        name: '[name].[ext]',
+                    }
+                }
             },
             {
                 test: /\.css$/,
