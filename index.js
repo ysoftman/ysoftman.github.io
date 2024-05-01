@@ -3,7 +3,26 @@
 // let converter = new showdown.Converter();
 // converter.disableForced4SpacesIndentedSublists = true;
 //
+
+
+// for webpack bundling
+import "./images/bg_hr.png"
+import "./images/blacktocat.png"
+import "./images/icon_download.png"
+import "./images/sentimental_programmer.png"
+import "./images/sprite_download.png"
+import "./about_me.md"
+import "./curriculum_vitae.md"
+import "./markdown_test.md"
 import "./common_style.css"
+import {loadProgramList} from "./programs.js"
+//import '@fortawesome/fontawesome-free/js/fontawesome'
+//import '@fortawesome/fontawesome-free/js/solid'
+//import '@fortawesome/fontawesome-free/js/regular'
+//import '@fortawesome/fontawesome-free/js/brands'
+import { marked } from 'marked';
+const axios = require('axios');
+
 function sleep(ms=0) {
     return new Promise(msg => setTimeout(msg, ms));
 }
@@ -17,50 +36,54 @@ pt.then(function () {
     //await sleep(1000);
     //console.log("---");
 
+    let param = ""
     //load 는 비동기로 동작,혹시 navbar.html 이 로딩이 선행 후 dom 을 사용하도록 함
-    $("#navigation").load("navbar.html", function (response, status, xhr) {
-        console.log("navbar.html loaded, status:", status);
-        let param = window.location.search.substring(1);
-        //console.log('param:', param);
-        if (param == "programs") {
-            $.get("/programs.html", function (data, status) {
-                document.getElementById('about_me').classList.remove("nav-active")
-                document.getElementById('curriculum_vitae').classList.remove("nav-active")
-                document.getElementById('programs').classList.add("nav-active")
-                $("#main_view").html(data);
-            });
-        } else if (param == "curriculum_vitae") {
-            $.get("/curriculum_vitae.md", function (data, status) {
-                document.getElementById('about_me').classList.remove("nav-active")
-                document.getElementById('curriculum_vitae').classList.add("nav-active")
-                document.getElementById('programs').classList.remove("nav-active")
-                let html = marked(data);
-                $("#main_view").html(html);
-            });
-        } else {
-            $.get("/about_me.md", function (data, status) {
-                document.getElementById('about_me').classList.add("nav-active")
-                document.getElementById('curriculum_vitae').classList.remove("nav-active")
-                document.getElementById('programs').classList.remove("nav-active")
-                // showdown 사용할때
-                // let html = converter.makeHtml(data);
-                // marked 사용할때
-                // 링크를 새창에서 열기
-                marked.setOptions({
-                    breaks: true,
-                })
-                const renderer = new marked.Renderer();
-                renderer.link = function (href, title, text) {
-                    return `<a target="_blank" href="${href}">${text}`+'</a>'
-                }
-                marked.use({renderer})
-                let html = marked(data);
-                //document.getElementById('main_view').innerHTML = html;
-                $("#main_view").html(html);
-                console.log("about_me loaded")
-            });
-        }
-    });
+    axios.get("/navbar.html")
+        .then(function (data) {
+            document.getElementById('navigation').innerHTML = data.data
+            console.log("navbar.html loaded");
+            param = window.location.search.substring(1);
+        })
+        .then(function (data) {
+            if (param == "programs") {
+                axios.get("/programs.html").then(function (data) {
+                    document.getElementById('about_me').classList.remove("nav-active")
+                    document.getElementById('curriculum_vitae').classList.remove("nav-active")
+                    document.getElementById('programs').classList.add("nav-active")
+                    document.getElementById('main_view').innerHTML = data.data
+                    loadProgramList()
+                });
+            } else if (param == "curriculum_vitae") {
+                axios.get("/curriculum_vitae.md").then(function (data) {
+                    document.getElementById('about_me').classList.remove("nav-active")
+                    document.getElementById('curriculum_vitae').classList.add("nav-active")
+                    document.getElementById('programs').classList.remove("nav-active")
+                    let html = marked.parse(data.data);
+                    document.getElementById('main_view').innerHTML = html
+                });
+            } else {
+                axios.get("/about_me.md").then(function (data) {
+                    document.getElementById('about_me').classList.add("nav-active")
+                    document.getElementById('curriculum_vitae').classList.remove("nav-active")
+                    document.getElementById('programs').classList.remove("nav-active")
+                    // showdown 사용할때
+                    // let html = converter.makeHtml(data.data);
+                    // marked 사용할때
+                    // 렌더링된 md 의 링크부분 새창에서 열기
+                    marked.setOptions({
+                        breaks: true,
+                    })
+                    const renderer = new marked.Renderer();
+                    renderer.link = function (href, title, text) {
+                        return `<a target="_blank" href="${href}">${text}`+'</a>'
+                    }
+                    marked.use({renderer})
+                    let html = marked.parse(data.data);
+                    document.getElementById('main_view').innerHTML = html
+                    console.log("about_me loaded")
+                });
+            }
+        })
 });
 
 
@@ -68,6 +91,11 @@ pt.then(function () {
 //$(document).ready(function () {
 //    console.log("document ready");
 //});
-$(function(){
+// jquery
+//$(function(){
+//    console.log("document ready");
+//})
+
+document.addEventListener("DOMContentLoaded", function(){
     console.log("document ready");
-})
+});
