@@ -49,24 +49,17 @@ module.exports = {
             },
             {
                 test: /\.(svg|png|jpg|gif)$/i,
+                // webpack5 부터 asset/resource 타입이면 file-loader 없이 자동 번들된다.
                 type: 'asset/resource',
-                use: {
-                    loader: 'file-loader',
-                    options: {
-                        name: '[name].[ext]',
-                        outputPath: "./images/"
-                    }
+                generator: {
+                    filename: './images/[name][ext]'
                 }
             },
-            { 
+            {
                 test: /\.(eot|ttf|svg)$/,
                 type: 'asset/resource',
-                use: {
-                    loader: 'file-loader',
-                    options: {
-                        name: '[name].[ext]',
-                        outputPath: "./fonts/"
-                    }
+                generator: {
+                    filename: '[name][ext]'
                 }
             },
             {
@@ -98,11 +91,8 @@ module.exports = {
             {
                 test: /\.md$/i,
                 type: 'asset/resource',
-                use: {
-                    loader: 'file-loader',
-                    options: {
-                        name: '[name].[ext]',
-                    }
+                generator: {
+                    filename: '[name][ext]'
                 }
             },
         ],
