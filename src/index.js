@@ -51,7 +51,7 @@ pt.then(function () {
 
     let param = ""
     //load 는 비동기로 동작,혹시 navbar.html 이 로딩이 선행 후 dom 을 사용하도록 함
-    axios.get("/navbar.html")
+    axios.get("navbar.html")
         .then(function (data) {
             document.getElementById('navigation').innerHTML = data.data
             console.log("navbar.html loaded");
@@ -59,7 +59,7 @@ pt.then(function () {
         })
         .then(function (data) {
             if (param == "programs") {
-                axios.get("/programs.html").then(function (data) {
+                axios.get("programs.html").then(function (data) {
                     document.getElementById('about_me').classList.remove("nav-active")
                     document.getElementById('curriculum_vitae').classList.remove("nav-active")
                     document.getElementById('programs').classList.add("nav-active")
@@ -67,14 +67,14 @@ pt.then(function () {
                     loadProgramList()
                 });
             } else if (param == "curriculum_vitae") {
-                axios.get("/curriculum_vitae.md").then(function (data) {
+                axios.get("curriculum_vitae.md").then(function (data) {
                     document.getElementById('about_me').classList.remove("nav-active")
                     document.getElementById('curriculum_vitae').classList.add("nav-active")
                     document.getElementById('programs').classList.remove("nav-active")
                     document.getElementById('main_view').innerHTML = md2Html(data.data)
                 });
             } else {
-                axios.get("/about_me.md").then(function (data) {
+                axios.get("about_me.md").then(function (data) {
                     document.getElementById('about_me').classList.add("nav-active")
                     document.getElementById('curriculum_vitae').classList.remove("nav-active")
                     document.getElementById('programs').classList.remove("nav-active")

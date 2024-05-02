@@ -5,7 +5,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
     //target: 'node',
-    entry: './index.js',
+    entry: './src/index.js',
     mode: 'development',
     output: {
         path: path.resolve(__dirname, 'dist'),
@@ -22,17 +22,17 @@ module.exports = {
         new CleanWebpackPlugin(),
         new HtmlWebpackPlugin({
             filename: "index.html",
-            template: './index.html',
+            template: './src/index.html',
             chunks: ["page1"]
         }),
         new HtmlWebpackPlugin({
             filename: "navbar.html",
-            template: './navbar.html',
+            template: './src/navbar.html',
             chunks: ["page2"]
         }),
         new HtmlWebpackPlugin({
             filename: "programs.html",
-            template: './programs.html',
+            template: './src/programs.html',
             chunks: ["page3"]
         }),
     ],
@@ -74,29 +74,23 @@ module.exports = {
                 test: /\.(css)$/,
                 use: [
                     {
-                        // Adds CSS to the DOM by injecting a `<style>` tag
                         loader: "style-loader"
                     },
                     {
-                        // Interprets `@import` and `url()` like `import/require()` and will resolve them
                         loader: "css-loader"
                     },
                 ],
-                //exclude: /node_modules/,
             },
             {
                 test: /\.scss$/,
                 use: [
                     {
-                        // Adds CSS to the DOM by injecting a `<style>` tag
                         loader: "style-loader"
                     },
                     {
-                        // Interprets `@import` and `url()` like `import/require()` and will resolve them
                         loader: "css-loader"
                     },
                     {
-                        // Loads a SASS/SCSS file and compiles it to CSS
                         loader: 'sass-loader'
                     }
                 ],
