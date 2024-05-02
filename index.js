@@ -350,63 +350,13 @@ eval("module.exports = \"data:image/svg+xml,%3csvg xmlns=%27http://www.w3.org/20
 
 /***/ }),
 
-/***/ "./src/images/bg_hr.png":
-/*!******************************!*\
-  !*** ./src/images/bg_hr.png ***!
-  \******************************/
-/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
-
-eval("module.exports = __webpack_require__.p + \"bb04aacf86738c32642f.png\";\n\n//# sourceURL=webpack://ysoftman.github.io/./src/images/bg_hr.png?");
-
-/***/ }),
-
-/***/ "./src/images/blacktocat.png":
-/*!***********************************!*\
-  !*** ./src/images/blacktocat.png ***!
-  \***********************************/
-/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
-
-eval("module.exports = __webpack_require__.p + \"dfdbf93ddc488beb332e.png\";\n\n//# sourceURL=webpack://ysoftman.github.io/./src/images/blacktocat.png?");
-
-/***/ }),
-
-/***/ "./src/images/icon_download.png":
-/*!**************************************!*\
-  !*** ./src/images/icon_download.png ***!
-  \**************************************/
-/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
-
-eval("module.exports = __webpack_require__.p + \"2e065915d58f0706268b.png\";\n\n//# sourceURL=webpack://ysoftman.github.io/./src/images/icon_download.png?");
-
-/***/ }),
-
-/***/ "./src/images/sentimental_programmer.png":
-/*!***********************************************!*\
-  !*** ./src/images/sentimental_programmer.png ***!
-  \***********************************************/
-/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
-
-eval("module.exports = __webpack_require__.p + \"474aa5ca24cd78d8a4fe.png\";\n\n//# sourceURL=webpack://ysoftman.github.io/./src/images/sentimental_programmer.png?");
-
-/***/ }),
-
-/***/ "./src/images/sprite_download.png":
-/*!****************************************!*\
-  !*** ./src/images/sprite_download.png ***!
-  \****************************************/
-/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
-
-eval("module.exports = __webpack_require__.p + \"993d87a25acca111b580.png\";\n\n//# sourceURL=webpack://ysoftman.github.io/./src/images/sprite_download.png?");
-
-/***/ }),
-
 /***/ "./src/about_me.md":
 /*!*************************!*\
   !*** ./src/about_me.md ***!
   \*************************/
 /***/ ((module, __unused_webpack_exports, __webpack_require__) => {
 
-eval("module.exports = __webpack_require__.p + \"eca8a33bc5e55edd314d.md\";\n\n//# sourceURL=webpack://ysoftman.github.io/./src/about_me.md?");
+eval("module.exports = __webpack_require__.p + \"about_me.md\";\n\n//# sourceURL=webpack://ysoftman.github.io/./src/about_me.md?");
 
 /***/ }),
 
@@ -416,7 +366,57 @@ eval("module.exports = __webpack_require__.p + \"eca8a33bc5e55edd314d.md\";\n\n/
   \*********************************/
 /***/ ((module, __unused_webpack_exports, __webpack_require__) => {
 
-eval("module.exports = __webpack_require__.p + \"562c307215e10e5f0005.md\";\n\n//# sourceURL=webpack://ysoftman.github.io/./src/curriculum_vitae.md?");
+eval("module.exports = __webpack_require__.p + \"curriculum_vitae.md\";\n\n//# sourceURL=webpack://ysoftman.github.io/./src/curriculum_vitae.md?");
+
+/***/ }),
+
+/***/ "./src/images/bg_hr.png":
+/*!******************************!*\
+  !*** ./src/images/bg_hr.png ***!
+  \******************************/
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+eval("module.exports = __webpack_require__.p + \"./images/bg_hr.png\";\n\n//# sourceURL=webpack://ysoftman.github.io/./src/images/bg_hr.png?");
+
+/***/ }),
+
+/***/ "./src/images/blacktocat.png":
+/*!***********************************!*\
+  !*** ./src/images/blacktocat.png ***!
+  \***********************************/
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+eval("module.exports = __webpack_require__.p + \"./images/blacktocat.png\";\n\n//# sourceURL=webpack://ysoftman.github.io/./src/images/blacktocat.png?");
+
+/***/ }),
+
+/***/ "./src/images/icon_download.png":
+/*!**************************************!*\
+  !*** ./src/images/icon_download.png ***!
+  \**************************************/
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+eval("module.exports = __webpack_require__.p + \"./images/icon_download.png\";\n\n//# sourceURL=webpack://ysoftman.github.io/./src/images/icon_download.png?");
+
+/***/ }),
+
+/***/ "./src/images/sentimental_programmer.png":
+/*!***********************************************!*\
+  !*** ./src/images/sentimental_programmer.png ***!
+  \***********************************************/
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+eval("module.exports = __webpack_require__.p + \"./images/sentimental_programmer.png\";\n\n//# sourceURL=webpack://ysoftman.github.io/./src/images/sentimental_programmer.png?");
+
+/***/ }),
+
+/***/ "./src/images/sprite_download.png":
+/*!****************************************!*\
+  !*** ./src/images/sprite_download.png ***!
+  \****************************************/
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+eval("module.exports = __webpack_require__.p + \"./images/sprite_download.png\";\n\n//# sourceURL=webpack://ysoftman.github.io/./src/images/sprite_download.png?");
 
 /***/ }),
 
@@ -426,7 +426,7 @@ eval("module.exports = __webpack_require__.p + \"562c307215e10e5f0005.md\";\n\n/
   \******************************/
 /***/ ((module, __unused_webpack_exports, __webpack_require__) => {
 
-eval("module.exports = __webpack_require__.p + \"83657a666f95072a1306.md\";\n\n//# sourceURL=webpack://ysoftman.github.io/./src/markdown_test.md?");
+eval("module.exports = __webpack_require__.p + \"markdown_test.md\";\n\n//# sourceURL=webpack://ysoftman.github.io/./src/markdown_test.md?");
 
 /***/ }),
 
