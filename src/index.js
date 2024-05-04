@@ -89,7 +89,7 @@ pt.then(function () {
                 // Access-Control-Allow-Methods: get
                 axios.get("https://github-webhook-action.appspot.com").then(function (response) {
                     activeMenu("github_webhook_action")
-                    document.getElementById('main_view').innerHTML = "<h3>"+response.data.replace(/(?:\r\n|\r|\n)/g, '<br>')+"</h3>"
+                    document.getElementById('main_view').innerHTML = "<h3>"+text2html(response.data)+"</h3>"
                 })
             } else if (param == "watchdust") {
                 let out = ""
