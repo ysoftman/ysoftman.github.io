@@ -26,7 +26,7 @@ function sleep(ms=0) {
 
 function md2Html(md) {
     // showdown 사용할때
-    // let html = converter.makeHtml(data.data);
+    // let html = converter.makeHtml(md);
     // marked 사용할때
     // 렌더링된 md 의 링크부분 새창에서 열기
     marked.setOptions({
@@ -52,33 +52,50 @@ pt.then(function () {
     let param = ""
     //load 는 비동기로 동작,혹시 navbar.html 이 로딩이 선행 후 dom 을 사용하도록 함
     axios.get("navbar.html")
-        .then(function (data) {
-            document.getElementById('navigation').innerHTML = data.data
+        .then(function (response) {
+            document.getElementById('navigation').innerHTML = response.data
             console.log("navbar.html loaded");
             param = window.location.search.substring(1);
         })
-        .then(function (data) {
+        .then(function (response) {
             if (param == "programs") {
-                axios.get("programs.html").then(function (data) {
+                axios.get("programs.html").then(function (response) {
                     document.getElementById('about_me').classList.remove("nav-active")
                     document.getElementById('curriculum_vitae').classList.remove("nav-active")
                     document.getElementById('programs').classList.add("nav-active")
-                    document.getElementById('main_view').innerHTML = data.data
+                    document.getElementById('watchdust').classList.remove("nav-active")
+                    document.getElementById('main_view').innerHTML = response.data
                     loadProgramList()
                 });
             } else if (param == "curriculum_vitae") {
-                axios.get("curriculum_vitae.md").then(function (data) {
+                axios.get("curriculum_vitae.md").then(function (response) {
                     document.getElementById('about_me').classList.remove("nav-active")
                     document.getElementById('curriculum_vitae').classList.add("nav-active")
                     document.getElementById('programs').classList.remove("nav-active")
-                    document.getElementById('main_view').innerHTML = md2Html(data.data)
+                    document.getElementById('watchdust').classList.remove("nav-active")
+                    document.getElementById('main_view').innerHTML = md2Html(response.data)
                 });
+            } else if (param == "watchdust") {
+                // CORS 이슈로 wAtchdust 서버 응답에 다음 헤더 추가함
+                // Access-Control-Allow-Origin: *
+                // Access-Control-Allow-Methods: get
+                axios.get("https://watchdust.appspot.com").then(function (response) {
+                    document.getElementById('about_me').classList.remove("nav-active")
+                    document.getElementById('curriculum_vitae').classList.remove("nav-active")
+                    document.getElementById('programs').classList.remove("nav-active")
+                    document.getElementById('watchdust').classList.add("nav-active")
+                    document.getElementById('main_view').innerHTML = "<h3>"+response.data.replace(/(?:\r\n|\r|\n)/g, '<br>')+"</h3>"
+                })
+                axios.get("https://watchdust.appspot.com/watchDust").then(function (response) {
+                    document.getElementById('main_view').innerHTML += "<h3>----------<br>"+response.data.replace(/(?:\r\n|\r|\n)/g, '<br>')+"</h3>"
+                })
             } else {
-                axios.get("about_me.md").then(function (data) {
+                axios.get("about_me.md").then(function (response) {
                     document.getElementById('about_me').classList.add("nav-active")
                     document.getElementById('curriculum_vitae').classList.remove("nav-active")
                     document.getElementById('programs').classList.remove("nav-active")
-                    document.getElementById('main_view').innerHTML = md2Html(data.data)
+                    document.getElementById('watchdust').classList.remove("nav-active")
+                    document.getElementById('main_view').innerHTML = md2Html(response.data)
                 });
             }
         })
