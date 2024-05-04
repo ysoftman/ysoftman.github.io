@@ -40,6 +40,20 @@ function md2Html(md) {
     return marked.parse(md);
 }
 
+function activeMenu(id) {
+    document.getElementById('about_me').classList.remove("nav-active")
+    document.getElementById('curriculum_vitae').classList.remove("nav-active")
+    document.getElementById('programs').classList.remove("nav-active")
+    document.getElementById('github_webhook_action').classList.remove("nav-active")
+    document.getElementById('watchdust').classList.remove("nav-active")
+    document.getElementById(id).classList.add("nav-active")
+}
+
+function text2html(text) {
+    text = text.replace(/https?:\/\/([^ (\r\n|\r|\n)]+)/g, '<a target="_blank" href="$&">$&</a>')
+    text = text.replace(/(?:\r\n|\r|\n)/g, '<br>')
+    return text
+}
 let pt = new Promise(function (success, fail) {
     success("success")
 });
@@ -60,41 +74,41 @@ pt.then(function () {
         .then(function (response) {
             if (param == "programs") {
                 axios.get("programs.html").then(function (response) {
-                    document.getElementById('about_me').classList.remove("nav-active")
-                    document.getElementById('curriculum_vitae').classList.remove("nav-active")
-                    document.getElementById('programs').classList.add("nav-active")
-                    document.getElementById('watchdust').classList.remove("nav-active")
+                    activeMenu("programs")
                     document.getElementById('main_view').innerHTML = response.data
                     loadProgramList()
                 });
             } else if (param == "curriculum_vitae") {
                 axios.get("curriculum_vitae.md").then(function (response) {
-                    document.getElementById('about_me').classList.remove("nav-active")
-                    document.getElementById('curriculum_vitae').classList.add("nav-active")
-                    document.getElementById('programs').classList.remove("nav-active")
-                    document.getElementById('watchdust').classList.remove("nav-active")
+                    activeMenu("curriculum_vitae")
                     document.getElementById('main_view').innerHTML = md2Html(response.data)
                 });
+            } else if (param == "github-webhook-action") {
+                // CORS 이슈로 서버 응답에 다음 헤더 추가함
+                // Access-Control-Allow-Origin: *
+                // Access-Control-Allow-Methods: get
+                axios.get("https://github-webhook-action.appspot.com").then(function (response) {
+                    activeMenu("github_webhook_action")
+                    document.getElementById('main_view').innerHTML = "<h3>"+response.data.replace(/(?:\r\n|\r|\n)/g, '<br>')+"</h3>"
+                })
             } else if (param == "watchdust") {
-                // CORS 이슈로 wAtchdust 서버 응답에 다음 헤더 추가함
+                let out = ""
+                // CORS 이슈로 서버 응답에 다음 헤더 추가함
                 // Access-Control-Allow-Origin: *
                 // Access-Control-Allow-Methods: get
                 axios.get("https://watchdust.appspot.com").then(function (response) {
-                    document.getElementById('about_me').classList.remove("nav-active")
-                    document.getElementById('curriculum_vitae').classList.remove("nav-active")
-                    document.getElementById('programs').classList.remove("nav-active")
-                    document.getElementById('watchdust').classList.add("nav-active")
-                    document.getElementById('main_view').innerHTML = "<h3>"+response.data.replace(/(?:\r\n|\r|\n)/g, '<br>')+"</h3>"
-                })
-                axios.get("https://watchdust.appspot.com/watchDust").then(function (response) {
-                    document.getElementById('main_view').innerHTML += "<h3>----------<br>"+response.data.replace(/(?:\r\n|\r|\n)/g, '<br>')+"</h3>"
+                    activeMenu("watchdust")
+                    out +="<h3>"+text2html(response.data)+"</h3>"
+                }).then(function (response){
+                    axios.get("https://watchdust.appspot.com/watchDust").then(function (response) {
+                        out += "<h3>----------<br><br></h3>"
+                        out += "<h3>"+text2html(response.data)+"</h3>"
+                        document.getElementById('main_view').innerHTML = out
+                    })
                 })
             } else {
                 axios.get("about_me.md").then(function (response) {
-                    document.getElementById('about_me').classList.add("nav-active")
-                    document.getElementById('curriculum_vitae').classList.remove("nav-active")
-                    document.getElementById('programs').classList.remove("nav-active")
-                    document.getElementById('watchdust').classList.remove("nav-active")
+                    activeMenu("about_me")
                     document.getElementById('main_view').innerHTML = md2Html(response.data)
                 });
             }
