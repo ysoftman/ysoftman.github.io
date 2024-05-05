@@ -2,7 +2,6 @@
 // https://github.com/showdownjs/showdown/issues/615
 // let converter = new showdown.Converter();
 // converter.disableForced4SpacesIndentedSublists = true;
-//
 
 // for webpack bundling
 import "./images/bg_hr.png";
@@ -15,7 +14,7 @@ import "./curriculum_vitae.md";
 import "./markdown_test.md";
 import "./styles.scss";
 import { loadProgramList } from "./programs.js";
-import "./common_style.css"; // css, scss 중 마지막에 import 해야 올바르게 적용된다.
+import "./common.css"; // css, scss 중 마지막에 import 해야 올바르게 적용된다.
 import { marked } from "marked";
 const axios = require("axios");
 
