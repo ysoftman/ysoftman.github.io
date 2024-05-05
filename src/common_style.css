@@ -1,117 +1,137 @@
 /* ysoftman custom variables */
 :root {
-    /* One Half Dark https://raw.githubusercontent.com/joshdick/onedark.vim/main/img/color_reference.png */
-    --black       : #282c34;
-    --white       : #abb2bf;
-    --blue        : #61afef;
-    --cyan        : #56b6c2;
-    --green       : #98c379;
-    --purple      : #c678dd;
-    --red         : #e06c75;
-    --yellow      : #e5c07b;
+  /* One Half Dark https://raw.githubusercontent.com/joshdick/onedark.vim/main/img/color_reference.png */
+  --black: #282c34;
+  --white: #abb2bf;
+  --blue: #61afef;
+  --cyan: #56b6c2;
+  --green: #98c379;
+  --purple: #c678dd;
+  --red: #e06c75;
+  --yellow: #e5c07b;
 
-    /* boostrap5 https://getbootstrap.com/docs/5.0/customize/color/ */
-    --blue: #0d6efd;
-    --indigo: #6610f2;
-    --purple: #6f42c1;
-    --pink: #d63384;
-    --red: #dc3545;
-    --orange: #fd7e14;
-    --yellow: #ffc107;
-    --green: #198754;
-    --teal: #20c997;
-    --cyan: #0dcaf0;
-    --gray: #adb5bd;
-    --black: #0f0f0f;
-    --white: #fff;
+  /* boostrap5 https://getbootstrap.com/docs/5.0/customize/color/ */
+  --blue: #0d6efd;
+  --indigo: #6610f2;
+  --purple: #6f42c1;
+  --pink: #d63384;
+  --red: #dc3545;
+  --orange: #fd7e14;
+  --yellow: #ffc107;
+  --green: #198754;
+  --teal: #20c997;
+  --cyan: #0dcaf0;
+  --gray: #adb5bd;
+  --black: #0f0f0f;
+  --white: #fff;
 
-    /* custom color */
-    --black1: #333333;
+  /* custom color */
+  --black1: #333333;
 }
 
 /* ysoftman custom color class */
-.black  {color: var(--black);}
-.black1 {color: var(--black1);}
-.blue   {color: var(--blue);}
-.cyan   {color: var(--cyan);}
-.green  {color: var(--green);}
-.purple {color: var(--purple);}
-.red    {color: var(--red);}
-.white  {color: var(--white);}
-.yellow {color: var(--yellow);}
-.gray   {color: var(--gray);}
+.black {
+  color: var(--black);
+}
+.black1 {
+  color: var(--black1);
+}
+.blue {
+  color: var(--blue);
+}
+.cyan {
+  color: var(--cyan);
+}
+.green {
+  color: var(--green);
+}
+.purple {
+  color: var(--purple);
+}
+.red {
+  color: var(--red);
+}
+.white {
+  color: var(--white);
+}
+.yellow {
+  color: var(--yellow);
+}
+.gray {
+  color: var(--gray);
+}
 
 body {
-    padding: 0 !imprtant;
-    color: var(--gray) !important;
-    background-color: var(--black) !important;
-    word-wrap: break-word;
+  padding: 0 !imprtant;
+  color: var(--gray) !important;
+  background-color: var(--black) !important;
+  word-wrap: break-word;
 }
 
 /* markdown pre code 영역 */
 pre {
-    color: var(--gray) !important;
-    font-size: large;
+  color: var(--gray) !important;
+  font-size: large;
 }
 
 iframe {
-    max-width: 100%;
-    width: 100%;
+  max-width: 100%;
+  width: 100%;
 }
 
 object {
-    max-width: 100%;
-    width: 100%;
+  max-width: 100%;
+  width: 100%;
 }
 
 #navigation {
-    background-color: var(--black1);
-    list-style-type: none;
-    overflow: hidden;
-    /*position: fixed;*/
-    top: 0;
-    width: 100%;
-    flex-wrap: wrap;
-    z-index: 1;
+  background-color: var(--black1);
+  list-style-type: none;
+  overflow: hidden;
+  /*position: fixed;*/
+  top: 0;
+  width: 100%;
+  flex-wrap: wrap;
+  z-index: 1;
 }
 
 #main_view {
-    padding-left: 10px;
-    padding-top: 10px;
-    padding-right: 10px;
-    padding-bottom: 10px;
+  padding-left: 10px;
+  padding-top: 10px;
+  padding-right: 10px;
+  padding-bottom: 10px;
 }
 
 .inline-icon {
-    vertical-align: top;
+  vertical-align: top;
 }
 
 .list-group-item {
-    background: var(--black);
-    border-top-left-radius: 5px !important;
-    border-top-right-radius: 5px !important;
-    border-bottom-left-radius: 5px !important;
-    border-bottom-right-radius: 5px !important;
+  background: var(--black);
+  border-top-left-radius: 5px !important;
+  border-top-right-radius: 5px !important;
+  border-bottom-left-radius: 5px !important;
+  border-bottom-right-radius: 5px !important;
 }
 .navbar .navbar-nav {
-    /*flex-direction: row;*/
-    display: contents;
-    justify-content: normal;
+  /*flex-direction: row;*/
+  display: contents;
+  justify-content: normal;
 }
 
 .navbar .navbar-nav .nav-item .nav-link {
-    padding-left: 1em;
-    padding-right: 1em;
-    justify-content: normal;
-    border-bottom: 0.2rem solid transparent;
+  padding-left: 1em;
+  padding-right: 1em;
+  justify-content: normal;
+  border-bottom: 0.2rem solid transparent;
 }
 
 .navbar .navbar-nav .nav-item .nav-link:hover {
-    border-bottom: 0.2rem solid yellow;
+  border-bottom: 0.2rem solid yellow;
 }
 
 .navbar .navbar-nav .nav-item .nav-active {
-    border-bottom: 0.2rem solid white;
+  border-bottom: 0.2rem solid white;
 }
 
 /*neon effect*/
@@ -125,52 +145,54 @@ object {
 .fa-wind,
 .fa-database,
 .fa-utensils,
-.fa-map
-{
-    font-size: 2em;
-    color: #ffffff;
-    text-shadow: 0 0 5px #0072ff, 0 0 10px #0072ff, 0 0 20px #0072ff, 0 0 30px #0072ff;
-    animation: animate 10s linear infinite;
+.fa-map {
+  font-size: 2em;
+  color: #ffffff;
+  text-shadow:
+    0 0 5px #0072ff,
+    0 0 10px #0072ff,
+    0 0 20px #0072ff,
+    0 0 30px #0072ff;
+  animation: animate 10s linear infinite;
 }
-.fa-user{
-    animation-delay: 0.0s;
+.fa-user {
+  animation-delay: 0s;
 }
-.fa-file{
-    animation-delay: 0.2s;
+.fa-file {
+  animation-delay: 0.2s;
 }
-.fa-list{
-    animation-delay: 0.4s;
+.fa-list {
+  animation-delay: 0.4s;
 }
-.fa-github{
-    animation-delay: 0.6s;
+.fa-github {
+  animation-delay: 0.6s;
 }
-.fa-blogger{
-    animation-delay: 0.8s;
+.fa-blogger {
+  animation-delay: 0.8s;
 }
-.fa-linkedin{
-    animation-delay: 1s;
+.fa-linkedin {
+  animation-delay: 1s;
 }
-.fa-right-left{
-    animation-delay: 1.2s;
+.fa-right-left {
+  animation-delay: 1.2s;
 }
-.fa-wind{
-    animation-delay: 1.4s;
+.fa-wind {
+  animation-delay: 1.4s;
 }
-.fa-database{
-    animation-delay: 1.6s;
+.fa-database {
+  animation-delay: 1.6s;
 }
-.fa-utensils{
-    animation-delay: 1.8s;
+.fa-utensils {
+  animation-delay: 1.8s;
 }
-.fa-map{
-    animation-delay: 2.0s;
+.fa-map {
+  animation-delay: 2s;
 }
 @keyframes animate {
-    from {
-        filter: hue-rotate(0deg);
-    }
-    to {
-        filter: hue-rotate(360deg);
-    }
+  from {
+    filter: hue-rotate(0deg);
+  }
+  to {
+    filter: hue-rotate(360deg);
+  }
 }
-
