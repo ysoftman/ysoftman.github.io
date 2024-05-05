@@ -1,6 +1,7 @@
 # Projects
 
 ## Kakao MLOps
+
 - Company: kakaoenterprise
 - Participation Period: 202204~202307
 - Description: kakao i cloud 환경의 MLops
@@ -56,6 +57,7 @@
     - <https://yoonbh2714.blogspot.com/2023/04/ssh.html>
 
 ## Kakao Search Platfrom(B2B 검색 서비스 빌더)
+
 - Company: kakaoenterprise
 - Participation Period: 202001~202203
 - Description: 검색 서비스가 필요한 회사가 빌더를 통해 데이터 컬렉션등을 설정하면 k8s에 해당 검색 서비스를 생성해 검색 서비스 제공
@@ -87,6 +89,7 @@
     - <https://yoonbh2714.blogspot.com/2021/04/k8s-ingress-controller-model.html>
 
 ## Daum pc/mo 통합검색, Kakaotalk #검색
+
 - Company: kakao/kakaoenterprise(20191201~)
 - Participation Period: 201607~202203
 - Description: daum 및 카톡 #검색에서 사용자 검색 키워드를 받아 관련 결과를 취합해 응답 하는 검색 프론트 서버
@@ -143,6 +146,7 @@
     - <https://yoonbh2714.blogspot.com/2017/03/ansible-connection-to-xxx-closed.html>
 
 ## Hangame 모바일 포커
+
 - Company: nhn
 - Participation Period: 201401~201606
 - Description: 한게임 모바일 포커 게임 서버 개발
@@ -156,6 +160,7 @@
   - Develop Mobile Game Server
 
 ## Hangame 웹보드게임
+
 - Company: naver/nhn(20130801~)
 - Participation Period: 201301~201312
 - Description: 한게임 웹보드 게임(장기, 바둑, 오목) 서버 개발
@@ -170,6 +175,7 @@
   - Develop Mobile Game Server
 
 ## Hangame 게임 플랫폼
+
 - Company: naver
 - Participation Period: 201102~201201
 - Programming Language: c++, java, c#
@@ -184,6 +190,7 @@
   - Develop Game Data Storage Service Server on MongoDB
 
 ## Naver OCR(Optical Character Recognition)
+
 - Company: naver
 - Participation Period: 200709~201101
 - Description: OCR 엔진,서비스 서버 개발
@@ -200,4 +207,3 @@
   - Develop Feature Extraction
   - Develop OCR Result Tool for developing
   - Develop OCR Server
-
