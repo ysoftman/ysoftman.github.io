@@ -29,8 +29,8 @@ https://github.com/ysoftman/ysoftman.github.io/settings/pages
 # 필요시(vim 에서 파일 저장시 자동 포맷팅되도록 했뒀음)
 yarn prettier . --write
 
-# (server.js 실행)
-yarn build && yarn start
+# 실행
+yarn build && yarn serve
 ```
 
 ## 빌드 배포
