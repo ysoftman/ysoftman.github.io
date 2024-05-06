@@ -47,7 +47,7 @@ module.exports = {
         },
       },
       {
-        test: /\.(svg|png|jpg|gif)$/i,
+        test: /\.(png|jpg|gif)$/i,
         // webpack5 부터 asset/resource 타입이면 file-loader 없이 자동 번들된다.
         type: "asset/resource",
         generator: {
@@ -55,7 +55,8 @@ module.exports = {
         },
       },
       {
-        test: /\.(eot|ttf|svg)$/,
+        test: /\.(eot|svg|ttf|otf|woff|woff2)$/i,
+        // webpack5 부터 asset/resource 타입이면 file-loader 없이 자동 번들된다.
         type: "asset/resource",
         generator: {
           filename: "[name][ext]",

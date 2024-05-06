@@ -30,7 +30,7 @@ https://github.com/ysoftman/ysoftman.github.io/settings/pages
 yarn prettier . --write
 
 # 실행
-yarn build && yarn serve
+yarn serve
 ```
 
 ## 빌드 배포

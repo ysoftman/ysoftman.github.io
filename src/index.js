@@ -13,6 +13,10 @@ import "./about_me.md";
 import "./curriculum_vitae.md";
 import "./markdown_test.md";
 import "./styles.scss";
+import "./fontawesome-free-6.5.2-web/scss/fontawesome.scss";
+import "./fontawesome-free-6.5.2-web/scss/regular.scss";
+import "./fontawesome-free-6.5.2-web/scss/brands.scss";
+import "./fontawesome-free-6.5.2-web/scss/solid.scss";
 import { loadProgramList } from "./programs.js";
 import "./common.css"; // css, scss 중 마지막에 import 해야 올바르게 적용된다.
 import { marked } from "marked";
