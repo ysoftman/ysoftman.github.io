@@ -12,7 +12,7 @@ import "./images/sprite_download.png";
 import "./about_me.md";
 import "./curriculum_vitae.md";
 import "./markdown_test.md";
-import "./styles.scss";
+import "./bootstrap.scss";
 import "./fontawesome-free-6.5.2-web/scss/fontawesome.scss";
 import "./fontawesome-free-6.5.2-web/scss/regular.scss";
 import "./fontawesome-free-6.5.2-web/scss/brands.scss";
