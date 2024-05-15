@@ -76,7 +76,6 @@ export const readRestaurantAll = async function (tag) {
 
 window.onload = function () {
   if (document.getElementById("search_restaurant_input") == null) {
-    alert("can't get search_restaurant_input");
     return;
   }
   document
