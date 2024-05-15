@@ -18,6 +18,7 @@ import "./fontawesome-free-6.5.2-web/scss/regular.scss";
 import "./fontawesome-free-6.5.2-web/scss/brands.scss";
 import "./fontawesome-free-6.5.2-web/scss/solid.scss";
 import { loadProgramList } from "./programs.js";
+import "./restaurant.js";
 import "./common.css"; // css, scss 중 마지막에 import 해야 올바르게 적용된다.
 import { marked } from "marked";
 const axios = require("axios");
@@ -50,6 +51,7 @@ function activeMenu(id) {
     .getElementById("github_webhook_action")
     .classList.remove("nav-active");
   document.getElementById("watchdust").classList.remove("nav-active");
+  document.getElementById("restaurant").classList.remove("nav-active");
   document.getElementById(id).classList.add("nav-active");
 }
 
@@ -124,6 +126,11 @@ pt.then(function () {
                 document.getElementById("main_view").innerHTML = out;
               });
           });
+      } else if (param == "restaurant") {
+        axios.get("restaurant.html").then(function (response) {
+          activeMenu("restaurant");
+          document.getElementById("main_view").innerHTML = response.data;
+        });
       } else {
         axios.get("about_me.md").then(function (response) {
           activeMenu("about_me");

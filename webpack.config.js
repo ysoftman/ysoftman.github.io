@@ -33,6 +33,11 @@ module.exports = {
       template: "./src/programs.html",
       chunks: ["page3"],
     }),
+    new HtmlWebpackPlugin({
+      filename: "restaurant.html",
+      template: "./src/restaurant.html",
+      chunks: ["page4"],
+    }),
   ],
   module: {
     rules: [
