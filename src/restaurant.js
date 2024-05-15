@@ -74,10 +74,9 @@ export const readRestaurantAll = async function (tag) {
     " (결과: " + tempDocs.length + "개)";
 };
 
-window.onload = function () {
-  if (document.getElementById("search_restaurant_input") == null) {
-    return;
-  }
+//innerHTML 로 dom 변경은 window.onload 로 보장할 수 없다.
+//window.onload = function () {
+export const restaurantAddEventListener = function () {
   document
     .getElementById("search_restaurant_input")
     .addEventListener("keypress", function (event) {
