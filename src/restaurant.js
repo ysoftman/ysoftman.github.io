@@ -41,14 +41,14 @@ export const readRestaurantAll = async function (tag) {
     let detailInfo = makeDetailInfo(d.name);
     html += `
 <div class="col">
-<div class="card h-100">
+<div class="card h-100 bg-info text-dark">
 <div class="card-body">
     <h4 class="card-title">
         ${d.name}
         <i class="bi ${d.glyphicons}"></i>
     </h4>
-    <p class="card-text">${d.location}</p>
     <p class="card-text">${d.tags}</p>
+    <p class="card-text">${d.location}</p>
 </div>
 <p class="text-center">
     <a href="${detailInfo}" target="_blank" class="btn btn-primary">상세정보</a>
