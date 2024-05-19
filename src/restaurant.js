@@ -35,27 +35,42 @@ export const readRestaurantAll = async function (tag) {
   }
 
   let tempDocs = await readRestaurantAllFromJSFile(tag);
-
+  let bg_colors = [
+    "bg-blue",
+    "bg-indigo",
+    "bg-purple",
+    "bg-pink",
+    "bg-red",
+    "bg-orange",
+    "bg-yellow",
+    "bg-green",
+    "bg-teal",
+    "bg-cyan",
+    "bg-gray",
+  ];
   let html = `<div class="row row-cols-1 row-cols-md-3 g-4">`;
+  let i = 0;
   for (let d of tempDocs) {
     let detailInfo = makeDetailInfo(d.name);
+    i = i % bg_colors.length;
     html += `
 <div class="col">
-<div class="card h-100 bg-info text-dark">
-<div class="card-body">
-    <h4 class="card-title">
+  <div class="card h-100 ${bg_colors[i]}">
+    <div class="card-body">
+      <h4 class="card-title">
         ${d.name}
         <i class="bi ${d.glyphicons}"></i>
-    </h4>
-    <p class="card-text">${d.tags}</p>
-    <p class="card-text">${d.location}</p>
-</div>
-<p class="text-center">
-    <a href="${detailInfo}" target="_blank" class="btn btn-primary">상세정보</a>
-</p>
-</div>
+      </h4>
+      <p class="card-text">${d.tags}</p>
+      <p class="card-text">${d.location}</p>
+    </div>
+    <p class="text-center">
+      <a href="${detailInfo}" target="_blank" class="btn btn-secondary border-black">상세정보</a>
+    </p>
+  </div>
 </div>
 `;
+    i++;
   }
   html += `</div>`;
   document.getElementById("html_out").innerHTML = html;
