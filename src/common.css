@@ -1,55 +1,53 @@
 :root {
   /* One Half Dark https://raw.githubusercontent.com/joshdick/onedark.vim/main/img/color_reference.png */
   --black: #282c34;
-  --white: #abb2bf;
-  --blue: #61afef;
-  --cyan: #56b6c2;
-  --green: #98c379;
-  --purple: #c678dd;
   --red: #e06c75;
+  --green: #98c379;
   --yellow: #e5c07b;
-  /* custom color */
-  --black1: #333333;
+  --blue: #61afef;
+  --purple: #c678dd;
+  --cyan: #56b6c2;
+  --white: #abb2bf;
+  /* customize */
+  --bright-gray: #333333;
+  --black: #000000;
 }
 
-.black1 {
-  color: var(--black1);
-}
-.blue {
-  color: var(--blue);
-}
-.cyan {
-  color: var(--cyan);
-}
-.green {
-  color: var(--green);
-}
-.purple {
-  color: var(--purple);
+.black {
+  color: var(--black);
 }
 .red {
   color: var(--red);
 }
-.white {
-  color: var(--white);
+.green {
+  color: var(--green);
 }
 .yellow {
   color: var(--yellow);
 }
-.gray {
-  color: var(--gray);
+.blue {
+  color: var(--blue);
+}
+.purple {
+  color: var(--purple);
+}
+.cyan {
+  color: var(--cyan);
+}
+.white {
+  color: var(--white);
 }
 
 body {
   padding: 0 !imprtant;
-  color: var(--gray) !important;
-  background-color: black !important;
+  color: var(--white) !important;
+  background-color: var(--black) !important;
   word-wrap: break-word;
 }
 
 /* markdown pre code 영역 */
 pre {
-  color: var(--gray) !important;
+  color: var(--white) !important;
   font-size: large;
 }
 
@@ -64,7 +62,7 @@ object {
 }
 
 #navigation {
-  background-color: var(--black1);
+  background-color: var(--bright-gray);
   list-style-type: none;
   overflow: hidden;
   /*position: fixed;*/
@@ -86,7 +84,7 @@ object {
 }
 
 .list-group-item {
-  background: var(--black);
+  background-color: var(--black) !important;
   border-top-left-radius: 5px !important;
   border-top-right-radius: 5px !important;
   border-bottom-left-radius: 5px !important;
