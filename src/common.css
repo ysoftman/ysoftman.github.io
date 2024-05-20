@@ -1,6 +1,6 @@
 :root {
   /* One Half Dark https://raw.githubusercontent.com/joshdick/onedark.vim/main/img/color_reference.png */
-  --black: #282c34;
+  /*--black: #282c34;*/
   --red: #e06c75;
   --green: #98c379;
   --yellow: #e5c07b;
@@ -86,15 +86,19 @@ object {
 .my-title {
   font-size: 1.2em;
   font-weight: 500;
-  color: var(--green);
+  color: var(--bs-green);
 }
 /* bootstrap list-group, list-group-item */
+.list-group {
+  margin: 1em 0 0 0;
+}
 .list-group-item {
   background-color: var(--black) !important;
   border-top-left-radius: 5px !important;
   border-top-right-radius: 5px !important;
   border-bottom-left-radius: 5px !important;
   border-bottom-right-radius: 5px !important;
+  border-color: var(--bs-green);
 }
 .navbar .navbar-nav {
   /*flex-direction: row;*/
@@ -179,9 +183,15 @@ object {
   }
 }
 
+a {
+  text-decoration: none;
+  /* https://getbootstrap.com/docs/5.0/customize/css-variables/#root-variables */
+  color: var(--bs-orange);
+  font-weight: 500;
+}
 /*add external icon*/
-a[href^="http"]::after,
-a[href^="https://"]::after
+.nav-item a[href^="http"]::after,
+.nav-item a[href^="https://"]::after
 {
   content: "";
   width: 1em;
