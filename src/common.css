@@ -83,6 +83,12 @@ object {
   vertical-align: top;
 }
 
+.my-title {
+  font-size: 1.2em;
+  font-weight: 500;
+  color: var(--green);
+}
+/* bootstrap list-group, list-group-item */
 .list-group-item {
   background-color: var(--black) !important;
   border-top-left-radius: 5px !important;
