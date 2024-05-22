@@ -10,7 +10,7 @@ import "./images/icon_download.png";
 import "./images/sentimental_programmer.png";
 import "./images/sprite_download.png";
 import "./about_me.md";
-import "./curriculum_vitae.md";
+import "./projects.md";
 import "./markdown_test.md";
 import "./bootstrap.scss";
 import "./fontawesome-free-6.5.2-web/scss/fontawesome.scss";
@@ -45,7 +45,7 @@ function md2Html(md) {
 
 function activeMenu(id) {
   document.getElementById("about_me").classList.remove("nav-active");
-  document.getElementById("curriculum_vitae").classList.remove("nav-active");
+  document.getElementById("projects").classList.remove("nav-active");
   document.getElementById("programs").classList.remove("nav-active");
   document
     .getElementById("github_webhook_action")
@@ -88,9 +88,9 @@ pt.then(function () {
           document.getElementById("main_view").innerHTML = response.data;
           loadProgramList();
         });
-      } else if (param == "curriculum_vitae") {
-        axios.get("curriculum_vitae.md").then(function (response) {
-          activeMenu("curriculum_vitae");
+      } else if (param == "projects") {
+        axios.get("projects.md").then(function (response) {
+          activeMenu("projects");
           document.getElementById("main_view").innerHTML = md2Html(
             response.data,
           );
