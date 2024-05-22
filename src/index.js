@@ -17,6 +17,7 @@ import "./fontawesome-free-6.5.2-web/scss/fontawesome.scss";
 import "./fontawesome-free-6.5.2-web/scss/regular.scss";
 import "./fontawesome-free-6.5.2-web/scss/brands.scss";
 import "./fontawesome-free-6.5.2-web/scss/solid.scss";
+import "./hack-v3.003-webfonts/hack.css";
 import { loadProgramList } from "./programs.js";
 import { restaurantAddEventListener } from "./restaurant.js";
 import "./common.css"; // css, scss 중 마지막에 import 해야 올바르게 적용된다.
