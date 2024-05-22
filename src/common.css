@@ -84,9 +84,8 @@ object {
 }
 
 .my-title {
-  font-size: 1.2em;
+  font-size: 1.5em;
   font-weight: 500;
-  color: var(--bs-green);
 }
 /* bootstrap list-group, list-group-item */
 .list-group {
