@@ -43,6 +43,7 @@ body {
   color: var(--white) !important;
   background-color: var(--black) !important;
   word-wrap: break-word;
+  font-family: Hack, monospace;
 }
 
 /* markdown pre code 영역 */
