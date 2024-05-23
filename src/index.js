@@ -17,6 +17,7 @@ import "@fortawesome/fontawesome-free/scss/fontawesome.scss";
 import "@fortawesome/fontawesome-free/scss/regular.scss";
 import "@fortawesome/fontawesome-free/scss/brands.scss";
 import "@fortawesome/fontawesome-free/scss/solid.scss";
+import "@mdi/font/scss/materialdesignicons.scss";
 import "./hack-v3.003-webfonts/hack.css";
 import { loadProgramList } from "./programs.js";
 import { restaurantAddEventListener } from "./restaurant.js";
