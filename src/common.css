@@ -122,17 +122,9 @@ object {
 }
 
 /*neon effect*/
-.fa-user,
-.fa-file,
-.fa-list,
-.fa-github,
-.fa-blogger,
-.fa-linkedin,
-.fa-right-left,
-.fa-wind,
-.fa-database,
-.fa-utensils,
-.fa-map {
+[class*="mdi-"],
+[class*="fa-"] {
+  font-size: 2rem;
   color: #ffffff;
   text-shadow:
     0 0 5px #0072ff,
