@@ -133,36 +133,46 @@ object {
     0 0 30px #0072ff;
   animation: animate 10s linear infinite;
 }
+.mdi-face-man,
 .fa-user {
   animation-delay: 0s;
 }
+.mdi-history,
 .fa-file {
   animation-delay: 0.2s;
 }
+.mdi-apps,
 .fa-list {
   animation-delay: 0.4s;
 }
+.mdi-github,
 .fa-github {
   animation-delay: 0.6s;
 }
 .fa-blogger {
   animation-delay: 0.8s;
 }
+.mdi-linkedin,
 .fa-linkedin {
   animation-delay: 1s;
 }
+.mdi-webhook,
 .fa-right-left {
   animation-delay: 1.2s;
 }
+.mdi-weather-windy,
 .fa-wind {
   animation-delay: 1.4s;
 }
+.mdi-firebase,
 .fa-database {
   animation-delay: 1.6s;
 }
+.mdi-silverware-fork-knife,
 .fa-utensils {
   animation-delay: 1.8s;
 }
+.mdi-google-maps,
 .fa-map {
   animation-delay: 2s;
 }
