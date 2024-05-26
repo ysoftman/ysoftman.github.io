@@ -62,6 +62,11 @@ object {
   width: 100%;
 }
 
+img {
+  max-width: 100%;
+  height: auto;
+}
+
 #navigation {
   background-color: var(--bright-gray);
   list-style-type: none;
