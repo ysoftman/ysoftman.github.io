@@ -29,6 +29,18 @@ function sleep(ms = 0) {
   return new Promise((msg) => setTimeout(msg, ms));
 }
 
+function activeMenu(id) {
+  document.getElementById("about_me").classList.remove("nav-active");
+  document.getElementById("projects").classList.remove("nav-active");
+  document.getElementById("programs").classList.remove("nav-active");
+  document
+    .getElementById("github_webhook_action")
+    .classList.remove("nav-active");
+  document.getElementById("watchdust").classList.remove("nav-active");
+  document.getElementById("restaurant").classList.remove("nav-active");
+  document.getElementById(id).classList.add("nav-active");
+}
+
 function md2Html(md) {
   // showdown 사용할때
   // let html = converter.makeHtml(md);
@@ -45,18 +57,6 @@ function md2Html(md) {
   return marked.parse(md);
 }
 
-function activeMenu(id) {
-  document.getElementById("about_me").classList.remove("nav-active");
-  document.getElementById("projects").classList.remove("nav-active");
-  document.getElementById("programs").classList.remove("nav-active");
-  document
-    .getElementById("github_webhook_action")
-    .classList.remove("nav-active");
-  document.getElementById("watchdust").classList.remove("nav-active");
-  document.getElementById("restaurant").classList.remove("nav-active");
-  document.getElementById(id).classList.add("nav-active");
-}
-
 function text2html(text) {
   text = text.replace(
     /https?:\/\/([^ (\r\n|\r|\n)]+)/g,
@@ -65,6 +65,13 @@ function text2html(text) {
   text = text.replace(/(?:\r\n|\r|\n)/g, "<br>");
   return text;
 }
+
+function Atag2Imgtag(html) {
+  html = html.replace(/<a target="_blank" href=/g, "<img src=");
+  html = html.replace("</a>", "</img>");
+  return html;
+}
+
 let pt = new Promise(function (success, fail) {
   success("success");
 });
@@ -124,7 +131,7 @@ pt.then(function () {
               .get("https://watchdust.appspot.com/watchDust")
               .then(function (response) {
                 out += "<h3>----------<br><br></h3>";
-                out += "<h3>" + text2html(response.data) + "</h3>";
+                out += "<h3>" + Atag2Imgtag(text2html(response.data)) + "</h3>";
                 document.getElementById("main_view").innerHTML = out;
               });
           });
