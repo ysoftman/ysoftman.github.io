@@ -119,7 +119,8 @@ pt.then(function () {
             axios
               .get("https://github-webhook-action.appspot.com/v1/log")
               .then(function (response) {
-                out += "<h3>----- /v1/log -----<br><br></h3>";
+                out += "<h3>----- /v1/log -----</h3>";
+                out += "<br>";
                 out += "<h3>" + text2html(response.data) + "</h3>";
                 document.getElementById("main_view").innerHTML = out;
               });
@@ -139,7 +140,8 @@ pt.then(function () {
             axios
               .get("https://watchdust.appspot.com/watchDust")
               .then(function (response) {
-                out += "<h3>----- /watchDust -----<br><br></h3>";
+                out += "<h3>----- /watchDust -----</h3>";
+                out += "<br>";
                 out += "<h3>" + Atag2Imgtag(text2html(response.data)) + "</h3>";
                 document.getElementById("main_view").innerHTML = out;
               });
