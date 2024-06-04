@@ -58,6 +58,10 @@ function md2Html(md) {
 }
 
 function text2html(text) {
+  //json(object) 은 replace 함수가 없다.
+  if (typeof text === "object") {
+    return JSON.stringify(text);
+  }
   text = text.replace(
     /https?:\/\/([^ (\r\n|\r|\n)]+)/g,
     '<a target="_blank" href="$&">$&</a>',
