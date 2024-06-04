@@ -105,6 +105,7 @@ pt.then(function () {
           );
         });
       } else if (param == "github-webhook-action") {
+        let out = "";
         // CORS 이슈로 서버 응답에 다음 헤더 추가함
         // Access-Control-Allow-Origin: *
         // Access-Control-Allow-Methods: get
@@ -112,8 +113,16 @@ pt.then(function () {
           .get("https://github-webhook-action.appspot.com")
           .then(function (response) {
             activeMenu("github_webhook_action");
-            document.getElementById("main_view").innerHTML =
-              "<h3>" + text2html(response.data) + "</h3>";
+            out += "<h3>" + text2html(response.data) + "</h3>";
+          })
+          .then(function (response) {
+            axios
+              .get("https://github-webhook-action.appspot.com/v1/log")
+              .then(function (response) {
+                out += "<h3>----- /v1/log -----<br><br></h3>";
+                out += "<h3>" + text2html(response.data) + "</h3>";
+                document.getElementById("main_view").innerHTML = out;
+              });
           });
       } else if (param == "watchdust") {
         let out = "";
@@ -130,7 +139,7 @@ pt.then(function () {
             axios
               .get("https://watchdust.appspot.com/watchDust")
               .then(function (response) {
-                out += "<h3>----------<br><br></h3>";
+                out += "<h3>----- /watchDust -----<br><br></h3>";
                 out += "<h3>" + Atag2Imgtag(text2html(response.data)) + "</h3>";
                 document.getElementById("main_view").innerHTML = out;
               });
