@@ -67,8 +67,14 @@ function text2html(text) {
 }
 
 function Atag2Imgtag(html) {
-  html = html.replace(/<a target="_blank" href=/g, "<img src=");
-  html = html.replace("</a>", "</img>");
+  html = html.replace(/<br>/g, "\n");
+  html = html.replace(
+    /("http.*.png")/g,
+    "__img_start__<img src=$& />__img_end__",
+  );
+  html = html.replace(/.*__img_start__/g, "");
+  html = html.replace(/__img_end__.*/g, "");
+  html = html.replace(/(?:\r\n|\r|\n)/g, "<br>");
   return html;
 }
 
