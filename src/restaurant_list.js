@@ -1,5 +1,17 @@
 export let restaurantlist = [
   {
+    name: "정글 바베큐",
+    glyphicons: "bi-heart",
+    tags: "돼지고기 바베큐, 라면, 과자",
+    location: "경기 성남시 수정구 금토동 63",
+  },
+  {
+    name: "고기리막국수",
+    glyphicons: "bi-heart",
+    tags: "들기름 막국수, 물/비냉 막국수",
+    location: "경기 용인시 수지구 고기동 194",
+  },
+  {
     name: "네코부루",
     glyphicons: "bi-star",
     tags: "돈까스,카레우동,카레돌솥밥,메밀소바",
@@ -558,19 +570,19 @@ export let restaurantlist = [
   {
     name: "림꼬또",
     glyphicons: "bi-x-circle",
-    tags: "치킨 덮밥, 소고기 덮밥 😠",
+    tags: "치킨 덮밥, 소고기 덮밥",
     location: "분당구 판교역로 240 삼환하이펙스 A동 지하 1층",
   },
   {
     name: "등심촌",
     glyphicons: "bi-x-circle",
-    tags: "밀면 (고무줄) 😠",
+    tags: "밀면 (고무줄)",
     location: "분당구 삼평동 681 H스퀘어 N동 1층",
   },
   {
     name: "챠오바라이트",
     glyphicons: "bi-x-circle",
-    tags: "파스타 (서비스,음식 엉망) 😠",
+    tags: "파스타 (서비스,음식 엉망)",
     location: "판교역로192번길 14-2",
   },
 ];
