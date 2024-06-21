@@ -1,7 +1,7 @@
 export let restaurantlist = [
   {
     name: "정글 바베큐",
-    glyphicons: "bi-start",
+    glyphicons: "bi-star",
     tags: "돼지고기 바베큐, 라면, 과자",
     location: "경기 성남시 수정구 금토동 63",
   },
