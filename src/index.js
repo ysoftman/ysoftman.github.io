@@ -129,9 +129,10 @@ pt.then(function () {
             axios
               .get("https://github-webhook-action.appspot.com/v1/log")
               .then(function (response) {
-                out += "<h3>----- /v1/log -----</h3>";
+                out +=
+                  "<h3>/v1/log (google appengine /tmp/ 에 기록되며 일정시간이 지나면 사라집니다)</h3>";
                 out += "<br>";
-                out += "<h3>" + text2html(response.data) + "</h3>";
+                out += "<div>" + text2html(response.data) + "<div>";
                 document.getElementById("main_view").innerHTML = out;
               });
           });
