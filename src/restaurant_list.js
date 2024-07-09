@@ -1,5 +1,11 @@
 export let restaurantlist = [
   {
+    name: "마루심",
+    glyphicons: "bi-star",
+    tags: "장어덮밥",
+    location: "경기 성남시 분당구 동판교로177번길 25 236호. 237호",
+  },
+  {
     name: "정글 바베큐",
     glyphicons: "bi-star",
     tags: "돼지고기 바베큐, 라면, 과자",
