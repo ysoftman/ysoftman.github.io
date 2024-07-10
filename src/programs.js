@@ -68,7 +68,7 @@ export function loadProgramList() {
     "nmap",
     "node",
     "npp",
-    "nvidia-gefore-drvier",
+    "nvidia-gefore-driver",
     "ollydbg",
     "openssl",
     "potplayer",

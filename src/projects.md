@@ -47,16 +47,16 @@
   - mongodb 조회시 특정크기이상 조회시 에러 발생
     - <https://yoonbh2714.blogspot.com/2023/02/mongodb-go-driver-cursor-not-found-error.html>
   - k8s 클러스터 마이그레이션시 대부분의 리소스는 helm chart 로 관리돼 마이그레이션이 수월한데, 회사별로 n 개의 nas 를 마운트해서 사용하는 pv,pvc 를 일괄마이그레이션 해야함
-    - 모든 pv,pvc manifect(.yaml)을 생성후 sd 로ip 를 변경해 apply 하는 sh script 작성해 해결
+    - 모든 pv,pvc manifest(.yaml)을 생성후 sd 로ip 를 변경해 apply 하는 sh script 작성해 해결
     - <https://yoonbh2714.blogspot.com/2023/05/k8s-persistentvolume.html>
   - 사용자에 제공된 ssh (websocket 을 접속 할 수 있는 pod)에서 커서가 프롬프트가 아닌 다음 줄에 표시됨
-    - kubernetes > python > ws_clinet.py 에서 socket 수신 조건이 https 일때 동작 하지 않음
+    - kubernetes > python > ws_client.py 에서 socket 수신 조건이 https 일때 동작 하지 않음
     - <https://yoonbh2714.blogspot.com/2023/05/nginx-https-websocket-newline-error.html>
   - 사용자가 ssh 접속시 바로 종료됨
     - ~/.ssh/environment 크기가 너무 크다.
     - <https://yoonbh2714.blogspot.com/2023/04/ssh.html>
 
-## Kakao Search Platfrom(B2B 검색 서비스 빌더)
+## Kakao Search Platform(B2B 검색 서비스 빌더)
 
 - Company: kakaoenterprise
 - Participation Period: 202001~202203
@@ -153,7 +153,7 @@
 - Programming Language: c++, lua, golang, python
 - OS: Windows
 - DB: MySQL
-- Platform: Hangame Game Platfrom
+- Platform: Hangame Game Platform
 - Achievement
   - Hangame Mobile Poker <https://play.google.com/store/apps/details?id=com.nhnent.Qpoker>
 - Contribution/Responsibilities
@@ -167,7 +167,7 @@
 - Programming Language: c++, lua, golang, python
 - OS: Windows
 - DB: Oracle
-- Platform: Hangame Game Platfrom
+- Platform: Hangame Game Platform
 - Achievement
   - Hangame PC Janggi <https://janggi.hangame.com/>
   - Hangame PC Baduk <https://baduk.hangame.com/>
