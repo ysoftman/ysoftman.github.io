@@ -39,7 +39,7 @@
 }
 
 body {
-  padding: 0 !imprtant;
+  padding: 0 !important;
   color: var(--white) !important;
   background-color: var(--black) !important;
   word-wrap: break-word;
