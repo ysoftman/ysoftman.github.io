@@ -63,7 +63,7 @@ function text2html(text) {
     return JSON.stringify(text);
   }
   text = text.replace(
-    /https?:\/\/([^ (\r\n|\r|\n)]+)/g,
+    /https?:\/\/([^ (\r\n|\r|\n)]+[a-z0-9])/g,
     '<a target="_blank" href="$&">$&</a>',
   );
   text = text.replace(/(?:\r\n|\r|\n)/g, "<br>");
