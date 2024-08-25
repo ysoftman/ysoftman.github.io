@@ -14,6 +14,13 @@ export let restaurantlist = [
     review: "https://maps.app.goo.gl/9dcuZc3R6otRGQi26",
   },
   {
+    name: "두오모",
+    glyphicons: "bi-star",
+    tags: "파스타, 이탈리아음식",
+    location: "서울 종로구 자하문로16길 5 1층",
+    review: "https://maps.app.goo.gl/PmcrVjbCsYxXduPMA",
+  },
+  {
     name: "청국장과 보리밥",
     glyphicons: "bi-star",
     tags: "청국장, 보리밥",
@@ -28,11 +35,26 @@ export let restaurantlist = [
     review: "https://maps.app.goo.gl/rB8FYjj1qfeM5Sxt6",
   },
   {
+    name: "양구 담스포",
+    glyphicons: "bi-star",
+    tags: "쌀국수",
+    location: "강원 양구군 양구읍 중앙길 35 1층",
+    review: "https://maps.app.goo.gl/TkJRJFhVGDHjaxfTA",
+  },
+  {
     name: "양구 아이쇼야",
     glyphicons: "bi-star",
     tags: "라멘",
     location: "강원 양구군 양구읍 중앙길 49",
     review: "https://maps.app.goo.gl/k7RLHSAayNjfUMvx7",
+  },
+  {
+    name: "디저트39 판교역점",
+    glyphicons: "bi-star",
+    tags: "빵, 카페, 디저트",
+    location:
+      "경기 성남시 분당구 판교역로 136 힐스테이트판교역 B1107호, B1108호",
+    review: "https://maps.app.goo.gl/4GhJw9XtcoZG7Fhg8",
   },
   {
     name: "Artique(아티크)",
@@ -67,25 +89,36 @@ export let restaurantlist = [
     glyphicons: "bi-star",
     tags: "장어덮밥",
     location: "경기 성남시 분당구 동판교로177번길 25 236호. 237호",
+    review: "https://maps.app.goo.gl/qgYHGwSv19s8saMA9",
   },
   {
     name: "정글 바베큐",
     glyphicons: "bi-star",
     tags: "돼지고기 바베큐, 라면, 과자",
     location: "경기 성남시 수정구 금토동 63",
+    review: "https://maps.app.goo.gl/pdT5ru1A2SAnvW8eA",
   },
   {
     name: "고기리막국수",
     glyphicons: "bi-heart",
     tags: "들기름 막국수, 물/비냉 막국수",
     location: "경기 용인시 수지구 고기동 194",
-    review: "https://maps.app.goo.gl/TsLdezRvU9hvBeq28",
+    review: "https://maps.app.goo.gl/CLdH3K2nFfpW55WT6",
   },
   {
     name: "네코부루",
     glyphicons: "bi-star",
     tags: "돈까스,카레우동,카레돌솥밥,메밀소바",
     location: "성남시 분당구 판교로319번길 13 디테라스 1층",
+    review: "https://maps.app.goo.gl/xzAJvrFtcZcAzyzf7",
+  },
+  {
+    name: "아비뉴파랑 후라토식당",
+    glyphicons: "bi-star",
+    tags: "돈까스",
+    location:
+      "경기 성남시 분당구 동판교로177번길 25 판교아브뉴프랑 2층 220호 후라토식당",
+    review: "https://maps.app.goo.gl/FKGhxCddHySxpQF57",
   },
   {
     name: "덕후선생 판교아비뉴프랑",
@@ -93,12 +126,20 @@ export let restaurantlist = [
     tags: "북경오리,베이징덕",
     location:
       "경기 성남시 분당구 동판교로177번길 25 판교호밋써밋플레이스 2층 233-2,234,235호",
+    review: "https://maps.app.goo.gl/7yMUQ5P2y4Vko3Tk9",
   },
   {
     name: "서울감자탕 정자점",
     glyphicons: "bi-star",
     tags: "감자탕",
     location: "경기 성남시 분당구 내정로31번길 7-13",
+  },
+  {
+    name: "아티제 판교알파리움점",
+    glyphicons: "bi-star",
+    tags: "카페",
+    location: "경기 성남시 분당구 대왕판교로606번길 10",
+    review: "https://maps.app.goo.gl/yghFyDCLqAUXpQZ29",
   },
   {
     name: "최가돈까스",
@@ -111,6 +152,7 @@ export let restaurantlist = [
     glyphicons: "bi-star",
     tags: "샤브샤브",
     location: "경기 성남시 분당구 황새울로 315 대현빌딩 1층",
+    review: "https://maps.app.goo.gl/6cV6wjn4QqpD5HZK6",
   },
   {
     name: "야마다야",
@@ -132,10 +174,18 @@ export let restaurantlist = [
     location: "분당구 삼평동 681 H스퀘어 N동 1층",
   },
   {
+    name: "판교 커먼치킨",
+    glyphicons: "bi-star",
+    tags: "함박 정식",
+    location: "판교 H스퀘어 N동(투썸건물) 지하1층",
+    review: "https://maps.app.goo.gl/1KfC5EJh8oTgqVNy5",
+  },
+  {
     name: "라디오베이",
     glyphicons: "bi-star",
     tags: "파스타,피자,콥샐러드",
     location: "경기 성남시 분당구 삼평동 664 미래에셋센터 2층",
+    review: "https://maps.app.goo.gl/8tSRdmVwHDHVHybB6",
   },
   {
     name: "감성타코",
@@ -143,6 +193,7 @@ export let restaurantlist = [
     tags: "타코,멕시칸요리",
     location:
       "경기 성남시 분당구 삼평동 740 판교호반써밋플레이스 2층 231,232호",
+    review: "https://maps.app.goo.gl/6xo5yBGUSTMoEVzb6",
   },
   {
     name: "신승반점 현대백화점판교점",
@@ -155,18 +206,21 @@ export let restaurantlist = [
     glyphicons: "bi-heart",
     tags: "칠리치킨타코,치킨퀘사디아",
     location: "경기 성남시 분당구 백현동 541 지하1층",
+    review: "https://maps.app.goo.gl/5GCg8mgPVcW4mBKB6",
   },
   {
     name: "춘천명물닭갈비",
     glyphicons: "bi-heart",
     tags: "닭갈비",
     location: "경기 성남시 분당구 운중동 933-1 1층",
+    review: "https://maps.app.goo.gl/MdENfWxXkq8RWUuw8",
   },
   {
     name: "숙성도",
     glyphicons: "bi-heart",
     tags: "숙성 돼지고기,동치미국수,된장술밥",
     location: "경기 성남시 분당구 판교역로 136 힐스테이트판교역 1층 1042호",
+    review: "https://maps.app.goo.gl/awDmVrMgbz3a5nyp8",
   },
   {
     name: "우테이블",
@@ -181,16 +235,60 @@ export let restaurantlist = [
     location: "경기 성남시 분당구 동판교로177번길 25 판교아브뉴프랑 1층 127호",
   },
   {
+    name: "와플대학 분당정자캠퍼스",
+    glyphicons: "bi-star",
+    tags: "와플, 주스, 쉐이크",
+    location: "경기 성남시 분당구 성남대로 389 1층 112호",
+    review: "https://maps.app.goo.gl/oNSereFJ4wYwEdR99",
+  },
+  {
+    name: "봄날에 청국장",
+    glyphicons: "bi-star",
+    tags: "보리밥",
+    location:
+      "경기 성남시 분당구 정자일로 210 동양정자파라곤102동지하상가102호",
+    review: "https://maps.app.goo.gl/mRPCAp4LXWTd1qhj7",
+  },
+  {
+    name: "보릿골 강동점",
+    glyphicons: "bi-star",
+    tags: "보리밥",
+    location: "서울 강동구 동남로 708",
+    review: "https://maps.app.goo.gl/e3KbCkbhGgYVXEWS8",
+  },
+  {
+    name: "고향가는길",
+    glyphicons: "bi-star",
+    tags: "보리밥",
+    location: "경기 남양주시 강변북로 716 고향가는길",
+    review: "https://maps.app.goo.gl/FQ2oWPDaziEJhEw7A",
+  },
+  {
     name: "붓처스컷",
     glyphicons: "bi-star",
     tags: "스테이크,아메리칸브런치",
     location: "경기 성남시 분당구 삼평동 740 2층",
   },
   {
+    name: "grado",
+    glyphicons: "bi-star",
+    tags: "파스타",
+    location: "경기 성남시 분당구 정자일로 135 D동 127호 일부",
+    review: "https://maps.app.goo.gl/bCgo3YXVRmyFvs7w8",
+  },
+  {
+    name: "bellra rosa",
+    glyphicons: "bi-star",
+    tags: "파스타",
+    location: "경기 성남시 분당구 성남대로 295 대림아크로텔 A동 상가 118호",
+    review: "https://maps.app.goo.gl/fvpKpmpwYBtGhBrw8",
+  },
+  {
     name: "코이라멘",
     glyphicons: "bi-star",
     tags: "라멘,치킨가라아게,차슈덮밥",
-    location: "경기 성남시 분당구 삼평동 679 삼환하이펙스 B동 지하층 B113호",
+    location: "경기 성남시 분당구 정자로 13 월드비터 102호",
+    review: "https://maps.app.goo.gl/mqyA8YerbBffHAX69",
   },
   {
     name: "본설렁탕",
@@ -266,10 +364,26 @@ export let restaurantlist = [
     location: "분당구 삼평동 685 미래에셋 지하 1층",
   },
   {
+    name: "댓짱돈까스",
+    glyphicons: "bi-heart",
+    tags: "돈까스",
+    location: "주소 경기 성남시 분당구 운중로166번길 10 1층",
+    review: "https://maps.app.goo.gl/DGqLPxFbvrwF18NW6",
+  },
+  {
+    name: "집나간 고등어",
+    glyphicons: "bi-heart",
+    tags: "고등어 구이",
+    location:
+      "경기 성남시 수정구 위례광장로 70 위례 아트리버 푸르지오 1단지 상가동 107호~111호",
+    review: "https://maps.app.goo.gl/U1CoWMaWZ8fpZ2LH7",
+  },
+  {
     name: "스마일쿡",
     glyphicons: "bi-heart",
     tags: "백반(6천원, 현금 쿠폰구입시 10장에 5만원)",
     location: "판교 테크노밸리 H스퀘어 S동 지하 1층",
+    review: "https://maps.app.goo.gl/PrGY81XhSB8GCPYY6",
   },
   {
     name: "밥먹은 닭",
@@ -516,6 +630,7 @@ export let restaurantlist = [
     glyphicons: "bi-heart",
     tags: "파이탄라멘, 매운라멘, 차슈동",
     location: "분당구 판교역로 240 삼환하이펙스 A동 지하1층",
+    review: "https://maps.app.goo.gl/EQ8nfS3NJCsvhLb38",
   },
   {
     name: "다루마 라멘",
@@ -564,6 +679,7 @@ export let restaurantlist = [
     glyphicons: "bi-star",
     tags: "김치찌개, 제육볶음, 김치찜",
     location: "판교 테크노밸리 H스퀘에 S동 지하 1층",
+    review: "https://maps.app.goo.gl/TDDmBMZLyuBbe2gn8",
   },
   {
     name: "죠샌드위치",
@@ -588,6 +704,13 @@ export let restaurantlist = [
     glyphicons: "bi-star",
     tags: "쌀국수, 볶음밥",
     location: "분당구 삼평동 682 유스페이스1 제3층 313호",
+  },
+  {
+    name: "샐러드박스",
+    glyphicons: "bi-heart",
+    tags: "다이어트, 샐러드",
+    location: "경기 성남시 분당구 판교역로 231 H스퀘어 S동 지하1층 106호",
+    review: "https://maps.app.goo.gl/GCobvQCuAZbSKes68",
   },
   {
     name: "써브웨이",
