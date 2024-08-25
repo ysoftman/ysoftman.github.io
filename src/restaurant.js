@@ -4,17 +4,12 @@ import { restaurantlist } from "./restaurant_list.js";
 export const readRestaurantAllFromJSFile = async function (tag) {
   let tempDocs = [];
   restaurantlist.forEach((doc) => {
-    if (
-      !doc.name.includes(tag) &&
-      !doc.location.includes(tag) &&
-      !doc.tags.includes(tag)
-    ) {
+    if (!doc.name.includes(tag) && !doc.tags.includes(tag)) {
       return;
     }
     let d = {};
     d.name = doc.name;
     d.glyphicons = doc.glyphicons;
-    d.location = doc.location;
     d.tags = doc.tags;
     d.review = doc.review;
     tempDocs.push(d);
@@ -66,7 +61,6 @@ export const readRestaurantAll = async function (tag) {
         <i class="bi ${d.glyphicons}"></i>
       </h4>
       <p class="card-text">${d.tags}</p>
-      <p class="card-text">${d.location}</p>
     </div>
     <p class="text-center">
       ${reviewTag}
