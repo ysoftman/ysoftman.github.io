@@ -9,7 +9,6 @@ export const readRestaurantAllFromJSFile = async function (tag) {
     }
     let d = {};
     d.name = doc.name;
-    d.glyphicons = doc.glyphicons;
     d.tags = doc.tags;
     d.review = doc.review;
     tempDocs.push(d);
@@ -58,7 +57,6 @@ export const readRestaurantAll = async function (tag) {
     <div class="card-body">
       <h4 class="card-title">
         ${d.name}
-        <i class="bi ${d.glyphicons}"></i>
       </h4>
       <p class="card-text">${d.tags}</p>
     </div>
