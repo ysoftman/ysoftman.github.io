@@ -101,6 +101,7 @@ export let restaurantlist = [
   {
     name: "정자 최가돈까스",
     tags: "돈까스",
+    review: "https://maps.app.goo.gl/dH9UuAjW9JUJphWE8",
   },
   {
     name: "서현 화수목 샤브샤브",
@@ -110,6 +111,7 @@ export let restaurantlist = [
   {
     name: "분당 구미동 야마다야",
     tags: "수타 우동,튀김",
+    review: "https://maps.app.goo.gl/2x1YdZW4PB5iumMz5",
   },
   {
     name: "판교 칠리셔스",
@@ -137,6 +139,7 @@ export let restaurantlist = [
   {
     name: "신승반점 현대백화점판교점",
     tags: "유니짜장,짬뽕,탕수육",
+    review: "https://maps.app.goo.gl/QbQ2kdnZEux9Geco8",
   },
   {
     name: "이터스 현대백화점판교점",
@@ -156,10 +159,12 @@ export let restaurantlist = [
   {
     name: "판교 우테이블",
     tags: "소고기구이",
+    review: "https://maps.app.goo.gl/siw3Mor8Kb1dHYTN7",
   },
   {
     name: "판교 Bientoi(비앙또아)",
     tags: "오일파스타,오일샌드위치,스튜,브런치",
+    review: "https://maps.app.goo.gl/3ZWWGyeYZmeitrsz6",
   },
   {
     name: "와플대학 분당정자캠퍼스",
@@ -184,6 +189,7 @@ export let restaurantlist = [
   {
     name: "판교 붓처스컷",
     tags: "스테이크,아메리칸브런치",
+    review: "https://maps.app.goo.gl/edNLHdoXKTLXon2P6",
   },
   {
     name: "정자 grado",
@@ -207,6 +213,7 @@ export let restaurantlist = [
   {
     name: "판교 담솥",
     tags: "가지솥밥",
+    review: "https://maps.app.goo.gl/ELLxJtod56yDUjhg7",
   },
   {
     name: "일면식",
@@ -215,6 +222,7 @@ export let restaurantlist = [
   {
     name: "빕스",
     tags: "패밀리레스토랑",
+    review: "https://maps.app.goo.gl/ryvPvwvamaTmEarDA",
   },
   {
     name: "판교 양육점",
@@ -223,6 +231,7 @@ export let restaurantlist = [
   {
     name: "판교 매일식당",
     tags: "수제돈까스",
+    review: "https://maps.app.goo.gl/t6zzQgHu7FJ72ahc7",
   },
   {
     name: "인디테이블",
@@ -466,7 +475,7 @@ export let restaurantlist = [
     tags: "샌드위치",
   },
   {
-    name: "메콩타이",
+    name: "정자 메콩타이",
     tags: "소고기 쌀국수, 파인애플 볶음밥",
   },
   {
