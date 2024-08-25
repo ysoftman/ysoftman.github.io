@@ -53,6 +53,10 @@ export const readRestaurantAll = async function (tag) {
   for (let d of tempDocs) {
     let searchURL = makeSearchURL(d.name);
     i = i % bg_colors.length;
+    let reviewTag = "";
+    if (d.review != null && d.review.length > 0) {
+      reviewTag = `<a href="${d.review}" target="_blank" class="btn btn-secondary border-black">리뷰</a>`;
+    }
     html += `
 <div class="col">
   <div class="card h-100 ${bg_colors[i]}">
@@ -65,7 +69,7 @@ export const readRestaurantAll = async function (tag) {
       <p class="card-text">${d.location}</p>
     </div>
     <p class="text-center">
-      <a href="${d.review}" target="_blank" class="btn btn-secondary border-black">리뷰</a>
+      ${reviewTag}
       <a href="${searchURL}" target="_blank" class="btn btn-secondary border-black">검색</a>
     </p>
   </div>
