@@ -52,6 +52,9 @@
     - <https://yoonbh2714.blogspot.com/2024/03/change-grafana-pod-localtime.html>
   - grafana dashboard 백업
     - <https://yoonbh2714.blogspot.com/2024/08/backup-grafana-dashboard.html>
+  - argo workflow 이슈
+    - <https://yoonbh2714.blogspot.com/2024/07/argo-workflow-parameter-json-escape.html>
+    - <https://yoonbh2714.blogspot.com/2024/07/argo-workflow-onexit-and-hooks.html>
   - vector 로그 수집기 구성
     - <https://yoonbh2714.blogspot.com/2024/03/observability-data-pipeline-vector.html>
     - <https://yoonbh2714.blogspot.com/2024/05/vector-certificate-verify-failed.html>
@@ -65,9 +68,6 @@
     - <https://yoonbh2714.blogspot.com/2024/04/keep-swag-fmt.html>
   - kaniko args 에러
     - <https://yoonbh2714.blogspot.com/2024/05/kaniko-args.html>
-  - argo workflow 이슈
-    - <https://yoonbh2714.blogspot.com/2024/07/argo-workflow-parameter-json-escape.html>
-    - <https://yoonbh2714.blogspot.com/2024/07/argo-workflow-onexit-and-hooks.html>
 
 ## Kakao MLOps
 
