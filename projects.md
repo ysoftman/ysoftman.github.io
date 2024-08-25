@@ -52,6 +52,8 @@
     - <https://yoonbh2714.blogspot.com/2024/03/change-grafana-pod-localtime.html>
   - grafana dashboard 백업
     - <https://yoonbh2714.blogspot.com/2024/08/backup-grafana-dashboard.html>
+  - argocd updater, notification 구성
+    - <https://yoonbh2714.blogspot.com/2024/03/argocd-image-updater-and-notification.html>
   - argo workflow 이슈
     - <https://yoonbh2714.blogspot.com/2024/07/argo-workflow-parameter-json-escape.html>
     - <https://yoonbh2714.blogspot.com/2024/07/argo-workflow-onexit-and-hooks.html>
@@ -60,8 +62,6 @@
     - <https://yoonbh2714.blogspot.com/2024/05/vector-certificate-verify-failed.html>
   - gorm join table
     - <https://yoonbh2714.blogspot.com/2024/03/gorm-join-table.html>
-  - argocd updater, notification 구성
-    - <https://yoonbh2714.blogspot.com/2024/03/argocd-image-updater-and-notification.html>
   - golang lint 에러
     - <https://yoonbh2714.blogspot.com/2024/04/golangci-lint.html>
   - swag fmt 유지하기
