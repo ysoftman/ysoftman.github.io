@@ -1,5 +1,74 @@
 # Projects
 
+## Kakao Search System
+
+- Company: kakaoenterprise
+- Participation Period: 202308~
+- Description: kakao i cloud 환경의 MLops
+- Programming Language: golang, sh, python
+- OS: Linux, Mac
+- DB
+  - 기존: consul, postgreSQL
+  - 신규: rqlite, Percona-MySQL
+- Platform: Kubernetes
+- CI/CD:
+  - (기존시스템)Jenkins (빌드/배포) with Ansible(빌배스크립트)
+  - (신규시스템)Github Action 비슷한 사내 개발 빌드시스템 -> ArgoCD(배포)
+- Monitoring
+  - log: k8s node -> vector -> kafka -> es -> kibana
+  - metrics: prometheus, grafana
+  - server alarm: 사내 모니터링 시스템
+  - service alarm: 사내 카톡 알람 시스템
+- Achievement
+  - kakaoenterprise Search System Builder
+- Contribution/Responsibilities
+  - 기존 검색 시스템 빌더 개선 및 유지보수
+    - jenkins 설정 백업잡
+    - phase 별 인증 구분으로 로그인 세션 유지 될 수 있도록 개선
+    - 존(IDC) 마이그레이션
+    - 검색 시스템 빌드 digdag workflow 오류 대응 및 버전업으로 인한 ansible 이슈 해결
+  - 신규 검식 시스템 빌더 개발
+    - 검색 전용 k8s 개발 클러스터 구성 및 형상관리
+    - 형태소 분석기를 빌더에 맞게 패키징하는 argo workflow 작성
+    - 정적색인을 위한 argo workflow 작성
+    - api-server 컴포넌트 개발
+    - mysql db migration
+    - helm-chart, argocd 를 통한 배포 환경 구성
+    - db,grafana 설정 백업등 클러스터 운영을 위한 보조 툴 작성
+- Troubleshooting
+  - openJDK 버전 업데이트 이슈
+    - <https://yoonbh2714.blogspot.com/2023/09/openjdk-for-latest-jenkins.html>
+  - centos7 에 postgreSQL-15 설치
+    - <https://yoonbh2714.blogspot.com/2023/10/install-postresql-by-yum.html>
+    - <https://yoonbh2714.blogspot.com/2023/12/yum-modular-filtering.html>
+  - rocky8 에 mysql8 설치
+    - <https://yoonbh2714.blogspot.com/2023/11/install-mysql8-in-rocky8.html>
+  - docker serivce dameon failed 상태
+    - <https://yoonbh2714.blogspot.com/2023/11/failed-to-start-docker-service.html>
+  - consul 복구
+    - <https://yoonbh2714.blogspot.com/2023/11/consul-no-installed-keys-error.html>
+    - <https://yoonbh2714.blogspot.com/2024/01/consul-api.html>
+  - grafana localtime 변경
+    - <https://yoonbh2714.blogspot.com/2024/03/change-grafana-pod-localtime.html>
+  - grafana dashboard 백업
+    - <https://yoonbh2714.blogspot.com/2024/08/backup-grafana-dashboard.html>
+  - vector 로그 수집기 구성
+    - <https://yoonbh2714.blogspot.com/2024/03/observability-data-pipeline-vector.html>
+    - <https://yoonbh2714.blogspot.com/2024/05/vector-certificate-verify-failed.html>
+  - gorm join table
+    - <https://yoonbh2714.blogspot.com/2024/03/gorm-join-table.html>
+  - argocd updater, notification 구성
+    - <https://yoonbh2714.blogspot.com/2024/03/argocd-image-updater-and-notification.html>
+  - golang lint 에러
+    - <https://yoonbh2714.blogspot.com/2024/04/golangci-lint.html>
+  - swag fmt 유지하기
+    - <https://yoonbh2714.blogspot.com/2024/04/keep-swag-fmt.html>
+  - kaniko args 에러
+    - <https://yoonbh2714.blogspot.com/2024/05/kaniko-args.html>
+  - argo workflow 이슈
+    - <https://yoonbh2714.blogspot.com/2024/07/argo-workflow-parameter-json-escape.html>
+    - <https://yoonbh2714.blogspot.com/2024/07/argo-workflow-onexit-and-hooks.html>
+
 ## Kakao MLOps
 
 - Company: kakaoenterprise
@@ -75,7 +144,7 @@
 - Achievement
   - Kakao Search Platform
 - Contribution/Responsibilities
-  - (검색)builder 구현
+  - 검색 서비스 builder 구현
   - builder 개발단계에서 사용해 볼 수 있는 UI 구현(vue)
   - k8s 환경에서 실행 되는 검색 서버 구현
 - Troubleshooting
