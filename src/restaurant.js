@@ -1,4 +1,3 @@
-import "bootstrap-icons/font/bootstrap-icons.scss";
 import "./bootstrap.scss";
 import { restaurantlist } from "./restaurant_list.js";
 
@@ -17,12 +16,13 @@ export const readRestaurantAllFromJSFile = async function (tag) {
     d.glyphicons = doc.glyphicons;
     d.location = doc.location;
     d.tags = doc.tags;
+    d.review = doc.review;
     tempDocs.push(d);
   });
   return tempDocs;
 };
 
-export const makeDetailInfo = function (name) {
+export const makeSearchURL = function (name) {
   return (
     "https://search.daum.net/search?w=tot&DA=YZR&t__nil_searchbox=btn&q=" + name
   );
@@ -51,7 +51,7 @@ export const readRestaurantAll = async function (tag) {
   let html = `<div class="row row-cols-1 row-cols-md-3 g-4">`;
   let i = 0;
   for (let d of tempDocs) {
-    let detailInfo = makeDetailInfo(d.name);
+    let searchURL = makeSearchURL(d.name);
     i = i % bg_colors.length;
     html += `
 <div class="col">
@@ -65,7 +65,8 @@ export const readRestaurantAll = async function (tag) {
       <p class="card-text">${d.location}</p>
     </div>
     <p class="text-center">
-      <a href="${detailInfo}" target="_blank" class="btn btn-secondary border-black">상세정보</a>
+      <a href="${d.review}" target="_blank" class="btn btn-secondary border-black">리뷰</a>
+      <a href="${searchURL}" target="_blank" class="btn btn-secondary border-black">검색</a>
     </p>
   </div>
 </div>
