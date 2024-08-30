@@ -60,7 +60,7 @@ export let restaurantlist = [
     review: "https://maps.app.goo.gl/mfE3uE3MjBrr7dKh7",
   },
   {
-    name: "마루심",
+    name: "마루심 판교점",
     tags: "장어덮밥",
     review: "https://maps.app.goo.gl/qgYHGwSv19s8saMA9",
   },
@@ -409,7 +409,7 @@ export let restaurantlist = [
     tags: "팟타이, 나시고랭, 파인애플 볶음밥",
   },
   {
-    name: "아세야마",
+    name: "판교 아세야마",
     tags: "덴푸라 카레, 가아라게 카레",
   },
   {
@@ -429,7 +429,7 @@ export let restaurantlist = [
     tags: "고등어 구이, 순두부찌개",
   },
   {
-    name: "더 냄비",
+    name: "더 냄비 판교점",
     tags: "닭고기 정식, 쭈꾸미, 제육볶음",
   },
   {
