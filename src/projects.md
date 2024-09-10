@@ -43,7 +43,7 @@
     - <https://yoonbh2714.blogspot.com/2023/12/yum-modular-filtering.html>
   - rocky8 에 mysql8 설치
     - <https://yoonbh2714.blogspot.com/2023/11/install-mysql8-in-rocky8.html>
-  - docker serivce dameon failed 상태
+  - docker service daemeon failed 상태
     - <https://yoonbh2714.blogspot.com/2023/11/failed-to-start-docker-service.html>
   - consul 복구
     - <https://yoonbh2714.blogspot.com/2023/11/consul-no-installed-keys-error.html>
@@ -60,14 +60,10 @@
   - vector 로그 수집기 구성
     - <https://yoonbh2714.blogspot.com/2024/03/observability-data-pipeline-vector.html>
     - <https://yoonbh2714.blogspot.com/2024/05/vector-certificate-verify-failed.html>
-  - gorm join table
-    - <https://yoonbh2714.blogspot.com/2024/03/gorm-join-table.html>
-  - golang lint 에러
-    - <https://yoonbh2714.blogspot.com/2024/04/golangci-lint.html>
-  - swag fmt 유지하기
-    - <https://yoonbh2714.blogspot.com/2024/04/keep-swag-fmt.html>
   - kaniko args 에러
     - <https://yoonbh2714.blogspot.com/2024/05/kaniko-args.html>
+  - strimzi kafka 클러스터 외부에서 접근
+    - <https://yoonbh2714.blogspot.com/2024/09/strimzi-kafka-nodeport-ingress.html>
 
 ## Kakao MLOps
 
