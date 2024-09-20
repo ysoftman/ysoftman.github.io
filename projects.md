@@ -9,10 +9,10 @@
 - OS: Linux, Mac
 - DB
   - 기존: consul, postgreSQL
-  - 신규: rqlite, Percona-MySQL
+  - 신규: rqlite, MySQL
 - Platform: Kubernetes
 - CI/CD:
-  - (기존시스템)Jenkins (빌드/배포) with Ansible(빌배스크립트)
+  - (기존시스템)Jenkins (빌드/배포) with Ansible
   - (신규시스템)Github Action 비슷한 사내 개발 빌드시스템 -> ArgoCD(배포)
 - Monitoring
   - log: k8s node -> vector -> kafka -> es -> kibana
