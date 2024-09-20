@@ -4,7 +4,7 @@
 
 - Company: kakaoenterprise
 - Participation Period: 202308~
-- Description: kakao i cloud 환경의 MLops
+- Description: kakao search system builder
 - Programming Language: golang, sh, python
 - OS: Linux, Mac
 - DB
@@ -20,7 +20,7 @@
   - server alarm: 사내 모니터링 시스템
   - service alarm: 사내 카톡 알람 시스템
 - Achievement
-  - kakaoenterprise Search System Builder
+  - Kakao Search System Builder
 - Contribution/Responsibilities
   - 기존 검색 시스템 빌더 개선 및 유지보수
     - jenkins 설정 백업잡
