@@ -1,5 +1,10 @@
 export let restaurantlist = [
   {
+    name: "구우트(guut)",
+    tags: "라클렛(raclette, 치즈 곁들인 구운 소고기)",
+    review: "https://maps.app.goo.gl/fEnUyhAFS8mjMCrc6",
+  },
+  {
     name: "용인 가람오리로스",
     tags: "오리 돌판 구이",
     review: "https://maps.app.goo.gl/TsLdezRvU9hvBeq28",
