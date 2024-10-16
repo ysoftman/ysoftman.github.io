@@ -64,6 +64,8 @@
     - <https://yoonbh2714.blogspot.com/2024/05/kaniko-args.html>
   - strimzi kafka 클러스터 외부에서 접근
     - <https://yoonbh2714.blogspot.com/2024/09/strimzi-kafka-nodeport-ingress.html>
+  - k8tz pod 재시작 원인 파악
+    - <https://yoonbh2714.blogspot.com/2024/10/argocd-sync-k8tz-replicaset.html>
 
 ## Kakao MLOps
 
