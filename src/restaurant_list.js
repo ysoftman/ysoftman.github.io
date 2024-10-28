@@ -1,5 +1,15 @@
 export let restaurantlist = [
   {
+    name: "판교 문막집",
+    tags: "문어, 보쌈, 들기름 막국수",
+    review: "https://maps.app.goo.gl/SQj2SwuYnFh8FXCe7",
+  },
+  {
+    name: "판교 고화갈비살",
+    tags: "양념갈비",
+    review: "https://maps.app.goo.gl/85gxhXeMxzJqyHoW6",
+  },
+  {
     name: "구우트(guut)",
     tags: "라클렛(raclette, 치즈 곁들인 구운 소고기)",
     review: "https://maps.app.goo.gl/fEnUyhAFS8mjMCrc6",
