@@ -1,5 +1,10 @@
 export let restaurantlist = [
   {
+    name: "판교 비즐돈까스",
+    tags: "돈까스",
+    review: "https://maps.app.goo.gl/8Mwsw2TsvK2qgxU87",
+  },
+  {
     name: "판교 문막집",
     tags: "문어, 보쌈, 들기름 막국수",
     review: "https://maps.app.goo.gl/SQj2SwuYnFh8FXCe7",
