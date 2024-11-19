@@ -1,5 +1,10 @@
 export let restaurantlist = [
   {
+    name: "팔복",
+    tags: "텐미엔장(산둥 짜장면), 팔복초마(짱뽕),  유린기, 동파육",
+    review: "https://maps.app.goo.gl/VTB8XRBKwiGgosAV7",
+  },
+  {
     name: "판교 비즐돈까스",
     tags: "돈까스",
     review: "https://maps.app.goo.gl/8Mwsw2TsvK2qgxU87",
