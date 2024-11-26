@@ -1,11 +1,11 @@
 export let restaurantlist = [
   {
-    name: "보배반점",
+    name: "판교 보배반점",
     tags: "짜장면,짬뽕,볶음밥,깐풍기,탕수육",
     review: "https://maps.app.goo.gl/bL4ccG4iav3z1dPW7",
   },
   {
-    name: "팔복",
+    name: "판교 팔복",
     tags: "텐미엔장(산둥 짜장면), 팔복초마(짱뽕),  유린기, 동파육",
     review: "https://maps.app.goo.gl/VTB8XRBKwiGgosAV7",
   },
