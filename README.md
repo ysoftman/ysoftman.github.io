@@ -13,10 +13,11 @@ curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.3/install.sh | bash
 nvm install --lts
 nvm use --lts
 nvm ls
-bun add serve-static marked showdown axios connect gh-pages clean-webpack-plugin ajv \
+bun add serve-static marked showdown axios connect ajv \
+    @fortawesome/fontawesome-free @mdi/font bootstrap
+bun add --dev gh-pages clean-webpack-plugin \
     sass sass-loader css-loader style-loader \
-    @fortawesome/fontawesome-free @mdi/font \
-    bootstrap eslint prettier @babel/core babel-loader \
+    eslint prettier @babel/core babel-loader \
     html-webpack-plugin clean-webpack-plugin \
     webpack webpack-cli webpack-dev-server
 
