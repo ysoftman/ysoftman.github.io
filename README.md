@@ -2,7 +2,7 @@
 
 ## prerequisite
 
-### (최초 한번만 설정) - 깃헙 페이지 소스는 gh-pages 브랜치로 설정
+- (최초 한번만 설정) - 깃헙 페이지 소스는 gh-pages 브랜치로 설정
 
 https://github.com/ysoftman/ysoftman.github.io/settings/pages
 -> github pages -> source -> gh-pages 브랜치 설정
