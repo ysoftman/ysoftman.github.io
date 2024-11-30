@@ -50,8 +50,8 @@ function md2Html(md) {
     breaks: true,
   });
   const renderer = new marked.Renderer();
-  renderer.link = function (href, title, text) {
-    return `<a target="_blank" href="${href}">${text}` + "</a>";
+  renderer.link = function (tokens) {
+    return `<a target="_blank" href="${tokens.href}">${tokens.text}` + "</a>";
   };
   marked.use({ renderer });
   return marked.parse(md);
