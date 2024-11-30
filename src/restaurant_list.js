@@ -10,11 +10,6 @@ export let restaurantlist = [
     review: "https://maps.app.goo.gl/VTB8XRBKwiGgosAV7",
   },
   {
-    name: "판교 비즐돈까스",
-    tags: "돈까스",
-    review: "https://maps.app.goo.gl/8Mwsw2TsvK2qgxU87",
-  },
-  {
     name: "판교 문막집",
     tags: "문어, 보쌈, 들기름 막국수",
     review: "https://maps.app.goo.gl/SQj2SwuYnFh8FXCe7",
@@ -25,12 +20,17 @@ export let restaurantlist = [
     review: "https://maps.app.goo.gl/85gxhXeMxzJqyHoW6",
   },
   {
+    name: "판교 비즐돈까스",
+    tags: "돈까스",
+    review: "https://maps.app.goo.gl/8Mwsw2TsvK2qgxU87",
+  },
+  {
     name: "구우트(guut)",
     tags: "라클렛(raclette, 치즈 곁들인 구운 소고기)",
     review: "https://maps.app.goo.gl/fEnUyhAFS8mjMCrc6",
   },
   {
-    name: "용인 가람오리로스",
+    name: "용인 가람 오리로스",
     tags: "오리 돌판 구이",
     review: "https://maps.app.goo.gl/TsLdezRvU9hvBeq28",
   },
@@ -40,14 +40,14 @@ export let restaurantlist = [
     review: "https://maps.app.goo.gl/9dcuZc3R6otRGQi26",
   },
   {
-    name: "종로 두오모",
-    tags: "파스타, 이탈리아음식",
-    review: "https://maps.app.goo.gl/PmcrVjbCsYxXduPMA",
+    name: "운중동 Artique(아티크)",
+    tags: "빵, 카페, 디저트",
+    review: "https://maps.app.goo.gl/mQ3aojG9pbNYZUjh9",
   },
   {
-    name: "청국장과 보리밥",
-    tags: "청국장, 보리밥",
-    review: "https://maps.app.goo.gl/5UNzAcyt29iyYnxP7",
+    name: "운중동 능이향기",
+    tags: "오리백숙,닭 도리탕,닭백숙",
+    review: "https://maps.app.goo.gl/7MKb1NQraLKmmkz39",
   },
   {
     name: "홍익돈까스 춘천점",
@@ -68,16 +68,6 @@ export let restaurantlist = [
     name: "디저트39 판교역점",
     tags: "빵, 카페, 디저트",
     review: "https://maps.app.goo.gl/4GhJw9XtcoZG7Fhg8",
-  },
-  {
-    name: "운중동 Artique(아티크)",
-    tags: "빵, 카페, 디저트",
-    review: "https://maps.app.goo.gl/mQ3aojG9pbNYZUjh9",
-  },
-  {
-    name: "운중동 능이향기",
-    tags: "오리백숙,닭 도리탕,닭백숙",
-    review: "https://maps.app.goo.gl/7MKb1NQraLKmmkz39",
   },
   {
     name: "AU BON BEURRE",
@@ -118,6 +108,16 @@ export let restaurantlist = [
     name: "덕후선생 판교아비뉴프랑",
     tags: "북경오리,베이징덕",
     review: "https://maps.app.goo.gl/7yMUQ5P2y4Vko3Tk9",
+  },
+  {
+    name: "종로 두오모",
+    tags: "파스타, 이탈리아음식",
+    review: "https://maps.app.goo.gl/PmcrVjbCsYxXduPMA",
+  },
+  {
+    name: "청국장과 보리밥",
+    tags: "청국장, 보리밥",
+    review: "https://maps.app.goo.gl/5UNzAcyt29iyYnxP7",
   },
   {
     name: "서현 서울감자탕 정자점",
