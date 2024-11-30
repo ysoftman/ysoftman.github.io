@@ -20,11 +20,14 @@ nvm use --lts
 nvm ls
 bun add serve-static marked showdown axios connect ajv \
     @fortawesome/fontawesome-free @mdi/font bootstrap
+# sass deprecation warning 문제가 있어 아래 버전을 사용해야 한다.
 bun add --dev gh-pages clean-webpack-plugin \
-    sass sass-loader css-loader style-loader \
-    eslint prettier @babel/core babel-loader \
+    sass@1.77.6 sass-loader css-loader style-loader \
+    eslint prettier @babel/core babel-loader @babel/preset-env \
     html-webpack-plugin clean-webpack-plugin \
     webpack webpack-cli webpack-dev-server
+
+bun install sass@1.77.6
 ```
 
 ## local 테스트
