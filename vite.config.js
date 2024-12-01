@@ -1,7 +1,6 @@
 import { defineConfig } from "vite";
 import CleanBuild from "vite-plugin-clean-build";
 import { createHtmlPlugin } from "vite-plugin-html";
-import commonjs from "@rollup/plugin-commonjs";
 import path from "path";
 
 export default defineConfig({
@@ -24,7 +23,8 @@ export default defineConfig({
     rollupOptions: {
       output: {
         assetFileNames: (assetInfo) => {
-          let extType = assetInfo.names.split(".").at(1);
+          let extType = assetInfo.names[0].split(".").at(1);
+          //console.log("---------", assetInfo.names);
           // image 파일등 번들 위치 수정
           if (/png|jpe?g|svg|gif|tiff|bmp|ico/i.test(extType)) {
             return `images/[name][extname]`;
@@ -44,7 +44,6 @@ export default defineConfig({
 
   plugins: [
     CleanBuild(),
-    commonjs(),
     createHtmlPlugin({
       minify: true,
       pages: [
