@@ -19,9 +19,12 @@
     "showdown": "^2.1.0"
   },
   "scripts": {
-    "build": "webpack --mode=development",
-    "prodbuild": "webpack --mode=production",
-    "serve": "webpack serve",
+    "webpackbuild": "webpack --mode=development",
+    "webpackprodbuild": "webpack --mode=production",
+    "webpackserve": "webpack serve --mode=development",
+    "serve": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
     "deploy": "gh-pages -d dist"
   },
   "devDependencies": {
@@ -37,6 +40,9 @@
     "sass": "1.77.6",
     "sass-loader": "^16.0.3",
     "style-loader": "^4.0.0",
+    "vite": "^6.0.1",
+    "vite-plugin-clean-build": "^1.2.1",
+    "vite-plugin-html": "^3.2.2",
     "webpack": "^5.96.1",
     "webpack-cli": "^5.1.4",
     "webpack-dev-server": "^5.1.0"

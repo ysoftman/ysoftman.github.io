@@ -23,7 +23,8 @@ import { loadProgramList } from "./programs.js";
 import { restaurantAddEventListener } from "./restaurant.js";
 import "./common.css"; // css, scss 중 마지막에 import 해야 올바르게 적용된다.
 import { marked } from "marked";
-const axios = require("axios");
+//const axios = require("axios"); // commonJS node 표준인데 import 방식으로 점차 변경중
+import axios from "axios"; // ES module  방식
 
 function sleep(ms = 0) {
   return new Promise((msg) => setTimeout(msg, ms));

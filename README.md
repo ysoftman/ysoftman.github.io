@@ -24,10 +24,8 @@ bun add serve-static marked showdown axios connect ajv \
 bun add --dev gh-pages clean-webpack-plugin \
     sass@1.77.6 sass-loader css-loader style-loader \
     eslint prettier @babel/core babel-loader @babel/preset-env \
-    html-webpack-plugin clean-webpack-plugin \
-    webpack webpack-cli webpack-dev-server
-
-bun install sass@1.77.6
+    webpack webpack-cli webpack-dev-server html-webpack-plugin clean-webpack-plugin \
+    vite vite-plugin-html vite-plugin-clean-build
 ```
 
 ## local 테스트
