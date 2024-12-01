@@ -65,6 +65,10 @@ export default defineConfig({
           filename: "restaurant.html",
           template: "restaurant.html",
         },
+        {
+          filename: "pageinfo.html",
+          template: "pageinfo.html",
+        },
       ],
     }),
   ],
