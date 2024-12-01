@@ -45,7 +45,7 @@ bun run build && node server.js
 
 ```bash
 # 다음과 같이 빌드 후 배포하면 자동으로 ./dist 내용이 gh-pages 브랜치로 푸시된다.
-bun run build && burn run deploy
+bun run build && bun run deploy
 
 # 주의 gh-pages 브랜치는 배포용이기 때문에 마스터에 머지 금지!!!
 ```
