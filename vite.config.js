@@ -8,7 +8,7 @@ export default defineConfig({
   root: process.cwd() + "/src",
   entry: "./src/index.js",
   mode: "development",
-  base: "/dist/",
+  base: "/",
   server: {
     host: "127.0.0.1",
     port: 8080,
