@@ -8,7 +8,7 @@ export default defineConfig({
   root: process.cwd() + "/src",
   entry: "./src/index.js",
   mode: "development",
-  base: "/",
+  base: "/dist/",
   server: {
     host: "127.0.0.1",
     port: 8080,
@@ -35,7 +35,7 @@ export default defineConfig({
         entryFileNames: "[name]-[hash].js",
       },
     },
-    outDir: "dist",
+    outDir: "../dist",
   },
 
   // css, font(.woff, ttf, ...), image(png, jpg...) 은 자동 으로 번들링된다.
