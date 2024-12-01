@@ -1,5 +1,4 @@
 import { defineConfig } from "vite";
-import CleanBuild from "vite-plugin-clean-build";
 import { createHtmlPlugin } from "vite-plugin-html";
 import path from "path";
 
@@ -35,6 +34,7 @@ export default defineConfig({
         entryFileNames: "[name]-[hash].js",
       },
     },
+    emptyOutDir: true,
     outDir: "../dist",
   },
 
@@ -43,7 +43,6 @@ export default defineConfig({
   assetsInclude: ["**/*.md"],
 
   plugins: [
-    CleanBuild(),
     createHtmlPlugin({
       minify: true,
       pages: [
