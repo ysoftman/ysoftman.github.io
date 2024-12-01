@@ -164,6 +164,11 @@ pt.then(function () {
           document.getElementById("main_view").innerHTML = response.data;
           restaurantAddEventListener();
         });
+      } else if (param == "pageinfo") {
+        axios.get("pageinfo.html").then(function (response) {
+          activeMenu("pageinfo");
+          document.getElementById("main_view").innerHTML = response.data;
+        });
       } else {
         axios.get("about_me.md").then(function (response) {
           activeMenu("about_me");

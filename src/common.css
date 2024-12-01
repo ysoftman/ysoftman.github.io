@@ -181,6 +181,9 @@ img {
 .fa-map {
   animation-delay: 2s;
 }
+.mdi-information {
+  animation-delay: 2.2s;
+}
 @keyframes animate {
   from {
     filter: hue-rotate(0deg);
