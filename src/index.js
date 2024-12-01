@@ -21,6 +21,7 @@ import "@mdi/font/scss/materialdesignicons.scss";
 import "./hack-v3.003-webfonts/hack.css";
 import { loadProgramList } from "./programs.js";
 import { restaurantAddEventListener } from "./restaurant.js";
+import { pageinfoAddEventListener } from "./pageinfo.js";
 import "./common.css"; // css, scss 중 마지막에 import 해야 올바르게 적용된다.
 import { marked } from "marked";
 //const axios = require("axios"); // commonJS node 표준인데 import 방식으로 점차 변경중
@@ -168,6 +169,7 @@ pt.then(function () {
         axios.get("pageinfo.html").then(function (response) {
           activeMenu("pageinfo");
           document.getElementById("main_view").innerHTML = response.data;
+          pageinfoAddEventListener();
         });
       } else {
         axios.get("about_me.md").then(function (response) {
