@@ -18,6 +18,12 @@ export default defineConfig({
     port: 8080,
     open: true,
   },
+
+  define: {
+    __PAGE_VERSION__: JSON.stringify("v0.1.0"),
+    __BUILD_TIMESTAMP__: "'" + new Date().toLocaleString("ko-kr") + "'",
+  },
+
   build: {
     rollupOptions: {
       output: {
