@@ -38,7 +38,7 @@ bun prettier . --write
 bun serve
 
 # 빌드(/dist 번들링) 후 로컬에서 확인
-bun run build && node server.js
+bun run build --base "dist/" && node server.js
 ```
 
 ## 빌드 배포
