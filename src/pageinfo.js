@@ -5,7 +5,7 @@ import packageJSON from "../package.json" assert { type: "json" };
 //window.onload = function () {
 export const pageinfoAddEventListener = function () {
   let html = "<br>";
-  html += "[env from vite.config.js (vite 로 빌드시)]";
+  html += "[env from vite.config.js]";
   html += "<br>";
   html += "page version: " + __PAGE_VERSION__;
   html += "<br>";

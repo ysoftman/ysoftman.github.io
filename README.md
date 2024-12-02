@@ -19,14 +19,13 @@ nvm install --lts
 nvm use --lts
 nvm ls
 # sass deprecation warning 문제가 있어 아래 버전을 사용해야 한다.
-bun add --dev gh-pages clean-webpack-plugin \
+bun add --dev gh-pages serve-static marked showdown axios connect ajv \
+    @fortawesome/fontawesome-free @mdi/font bootstrap \
     sass@1.77.6 sass-loader css-loader style-loader \
     eslint prettier @babel/core babel-loader @babel/preset-env \
     webpack webpack-cli webpack-dev-server html-webpack-plugin clean-webpack-plugin \
     vite vite-plugin-html \
     tailwindcss
-bun add serve-static marked showdown axios connect ajv \
-    @fortawesome/fontawesome-free @mdi/font bootstrap
 ```
 
 ## local 테스트
