@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "main": "index.js",
   "repository": "https://github.com/ysoftman/ysoftman.github.io",
-  "author": "ysoftman <ysoftman@gmail.com>",
+  "author": "ysoftman",
   "private": true,
   "license": "MIT",
   "scripts": {
