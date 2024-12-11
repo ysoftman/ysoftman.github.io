@@ -1,5 +1,10 @@
 export let restaurantlist = [
   {
+    name: "판교 브루클린",
+    tags: "피자, 파스타, 치킨 텐더",
+    review: "https://maps.app.goo.gl/nx5RCGtHNyzu2Nz7A",
+  },
+  {
     name: "판교 보배반점",
     tags: "짜장면,짬뽕,볶음밥,깐풍기,탕수육",
     review: "https://maps.app.goo.gl/bL4ccG4iav3z1dPW7",
