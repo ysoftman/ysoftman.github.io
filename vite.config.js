@@ -4,6 +4,10 @@ import dotenv from "dotenv";
 import path from "path";
 dotenv.config({ path: path.resolve(__dirname, ".env") });
 
+const date = new Date();
+const kstOffset = 9 * 60 * 60 * 1000;
+const kstDate = new Date(date.getTime() + kstOffset);
+
 export default defineConfig({
   // inex.html 위치,  아래 모든 설정의 경로의 시작
   root: process.cwd() + "/src",
@@ -23,12 +27,7 @@ export default defineConfig({
 
   define: {
     __PAGE_VERSION__: JSON.stringify("v0.1.0"),
-    __BUILD_TIMESTAMP__:
-      "'" +
-      new Date(date.getTime() + 9 * 60 * 60 * 1000).toLocaleString("ko-KR", {
-        timezone: "Asia/Seoul",
-      }) +
-      "'",
+    __BUILD_TIMESTAMP__: "'" + kstDate + "'",
     __MYENV_READONLY_TOKEN__: "'" + process.env.myenv_readonly_token + "'",
   },
 
