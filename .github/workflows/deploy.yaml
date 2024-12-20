@@ -18,12 +18,14 @@ jobs:
       - uses: oven-sh/setup-bun@v2
 
       - name: for test
-        run: echo $myenv_readonly_token
-        run: echo $variable_test
+        run: |
+          echo "myenv_readonly_token:$myenv_readonly_token"
+          echo "variable_test       :$variable_test"
       
       - name: Build
-        run: bun install
-        run: bun run build
+        run: |
+          bun install
+          bun run build
 
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
