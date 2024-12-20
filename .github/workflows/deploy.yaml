@@ -11,7 +11,7 @@ jobs:
     env:
       # vite.config.js > __MYENV_READONLY_TOKEN__ 환경변수 설정을 위해 settings > secrets and variables > actions > secrets 로 추가했다.
       myenv_readonly_token: ${{ secrets.MYENV_READONLY_TOKEN_SECRET }}
-      variable_test: ${{ variables.TEST1 }}
+      variable_test: ${{ vars.TEST1 }}
     steps:
       - uses: actions/checkout@v3
       
