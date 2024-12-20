@@ -4,11 +4,13 @@ import dotenv from "dotenv";
 import path from "path";
 dotenv.config({ path: path.resolve(__dirname, ".env") });
 
+// github action 에서는 UTC라서 KST 로 변경
 let kstOffset = 0;
 if (Date().toString().includes("GMT+0000")) {
   kstOffset = 9 * 60 * 60 * 1000;
 }
-const kstDate = new Date(new Date().getTime() + kstOffset);
+let kstDate = new Date(new Date().getTime() + kstOffset).toString();
+kstDate = kstDate.replace(/GMT.*/, "");
 
 export default defineConfig({
   // inex.html 위치,  아래 모든 설정의 경로의 시작
