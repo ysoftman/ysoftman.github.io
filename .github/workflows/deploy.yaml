@@ -9,9 +9,8 @@ jobs:
   deploy:
     runs-on: ubuntu-latest
     env:
-      # vite.config.js > __MYENV_READONLY_TOKEN__ 환경변수 설정을 위해 settings > secrets and variables > actions > secrets 로 추가했다.
-      myenv_readonly_token: ${{ secrets.MYENV_READONLY_TOKEN_SECRET }}
-      variable_test: ${{ vars.TEST1 }}
+      secrets_test: ${{ secrets.TEST }}
+      variables_test: ${{ vars.TEST }}
     steps:
       - uses: actions/checkout@v4
       # https://bun.sh/guides/runtime/cicd
@@ -19,11 +18,8 @@ jobs:
 
       - name: for test
         run: |
-          echo "myenv_readonly_token:$myenv_readonly_token"
-          echo "variable_test       :$variable_test"
-          curl -L https://api.github.com/repos/ysoftman/myenv/contents/nvim/lua/plugins \
-            -H "Accept: application/vnd.github+json" \
-            -H "Authorization: Bearer $myenv_readonly_token"
+          echo "secrets_test: $secrets_test"
+          echo "variables_test: $variables_test"
 
       - name: Build
         run: |
