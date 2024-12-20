@@ -13,7 +13,7 @@ let kstDate = new Date(new Date().getTime() + kstOffset).toString();
 kstDate = kstDate.replace(/GMT.*/, "");
 
 export default defineConfig({
-  // inex.html 위치,  아래 모든 설정의 경로의 시작
+  // index.html 위치,  아래 모든 설정의 경로의 시작
   root: process.cwd() + "/src",
   entry: "./src/index.js",
   mode: "development",
