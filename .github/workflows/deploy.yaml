@@ -21,7 +21,10 @@ jobs:
         run: |
           echo "myenv_readonly_token:$myenv_readonly_token"
           echo "variable_test       :$variable_test"
-      
+          curl -L https://api.github.com/repos/ysoftman/myenv/contents/nvim/lua/plugins \
+            -H "Accept: application/vnd.github+json" \
+            -H "Authorization: Bearer $myenv_readonly_token"
+
       - name: Build
         run: |
           bun install
