@@ -27,7 +27,12 @@ export default defineConfig({
 
   define: {
     __PAGE_VERSION__: JSON.stringify("v0.1.0"),
-    __BUILD_TIMESTAMP__: "'" + kstDate + "'",
+    __BUILD_TIMESTAMP__:
+      "'" +
+      kstDate.toLocaleString("ko-KR", {
+        timezone: "Asia/Seoul",
+      }) +
+      "'",
     __MYENV_READONLY_TOKEN__: "'" + process.env.myenv_readonly_token + "'",
   },
 
