@@ -184,6 +184,28 @@ export function loadProgramList() {
     .then(function () {});
   axios
     .get(
+      "https://api.github.com/repos/ysoftman/myenv/contents/nvim/lua/plugins",
+      {
+        headers: {
+          Accept: "application/vnd.github+json",
+          Authorization: "Bearer " + __MYENV_READONLY_TOKEN__,
+        },
+      },
+    )
+    .then(function (response) {
+      const json = response.data;
+      let result = "";
+      for (let v of json) {
+        result += v.path + "<br>";
+      }
+      document.getElementById("neovim_plugins").innerHTML = result;
+    })
+    .catch(function (error) {
+      console.log(error);
+    })
+    .then(function () {});
+  axios
+    .get(
       "https://raw.githubusercontent.com/ysoftman/myenv/master/installvscodeextension.sh",
     )
     .then(function (response) {

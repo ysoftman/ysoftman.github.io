@@ -1,6 +1,8 @@
 import { defineConfig } from "vite";
 import { createHtmlPlugin } from "vite-plugin-html";
+import dotenv from "dotenv";
 import path from "path";
+dotenv.config({ path: path.resolve(__dirname, ".env") });
 
 export default defineConfig({
   // inex.html 위치,  아래 모든 설정의 경로의 시작
@@ -22,6 +24,7 @@ export default defineConfig({
   define: {
     __PAGE_VERSION__: JSON.stringify("v0.1.0"),
     __BUILD_TIMESTAMP__: "'" + new Date().toLocaleString("ko-kr") + "'",
+    __MYENV_READONLY_TOKEN__: "'" + process.env.myenv_readonly_token + "'",
   },
 
   build: {
