@@ -4,9 +4,11 @@ import dotenv from "dotenv";
 import path from "path";
 dotenv.config({ path: path.resolve(__dirname, ".env") });
 
-const date = new Date();
-const kstOffset = 9 * 60 * 60 * 1000;
-const kstDate = new Date(date.getTime() + kstOffset);
+let kstOffset = 0;
+if (Date().toString().includes("Korean Standard Time")) {
+  kstOffset = 9 * 60 * 60 * 1000;
+}
+const kstDate = new Date(new Date().getTime() + kstOffset);
 
 export default defineConfig({
   // inex.html 위치,  아래 모든 설정의 경로의 시작
@@ -27,12 +29,7 @@ export default defineConfig({
 
   define: {
     __PAGE_VERSION__: JSON.stringify("v0.1.0"),
-    __BUILD_TIMESTAMP__:
-      "'" +
-      kstDate.toLocaleString("ko-KR", {
-        timezone: "Asia/Seoul",
-      }) +
-      "'",
+    __BUILD_TIMESTAMP__: "'" + kstDate + "'",
     // token 은 푸시가 안된다. gitub action secret  로 등록해도 배포하면 보안을 위해 토큰을 만료 시켜버려 사용하지 않기로 함.
     // https://docs.github.com/ko/authentication/keeping-your-account-and-data-secure/token-expiration-and-revocation#token-revoked-when-pushed-to-a-public-repository-or-public-gist
     // __MYENV_READONLY_TOKEN__: "'" + process.env.myenv_readonly_token + "'",
