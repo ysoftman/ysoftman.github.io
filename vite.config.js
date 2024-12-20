@@ -5,7 +5,7 @@ import path from "path";
 dotenv.config({ path: path.resolve(__dirname, ".env") });
 
 let kstOffset = 0;
-if (Date().toString().includes("Korean Standard Time")) {
+if (Date().toString().includes("GMT+0000")) {
   kstOffset = 9 * 60 * 60 * 1000;
 }
 const kstDate = new Date(new Date().getTime() + kstOffset);
