@@ -56,5 +56,4 @@ bun run build --base "dist/" && node server.cjs
 ```bash
 # 다음과 같이 빌드 후 배포하면 자동으로 ./dist 내용이 gh-pages 브랜치로 푸시된다.
 bun run build && bun run deploy
-
 ```
