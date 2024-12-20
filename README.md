@@ -4,7 +4,7 @@
 
 - (최초 한번만 설정) - 깃헙 페이지 소스는 gh-pages 브랜치로 설정
 
-https://github.com/ysoftman/ysoftman.github.io/settings/pages
+<https://github.com/ysoftman/ysoftman.github.io/settings/pages>
 -> github pages -> source -> gh-pages 브랜치 설정
 
 ```bash
@@ -42,7 +42,7 @@ npx tailwindcss -i ./src/tailwind_input.css -o ./src/tailwind_output.css --watch
 bun serve
 
 # 빌드(/dist 번들링) 후 로컬에서 확인
-bun run build --base "dist/" && node server.js
+bun run build --base "dist/" && node server.cjs
 ```
 
 ## 빌드 배포

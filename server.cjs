@@ -1,3 +1,5 @@
+// 이 파일은 CommonJS 스타일로 .cjs  파일 확장자를 사용
+
 // var http = require("http");
 // var server = http.createServer(function(request, response){
 //     response.writeHead(200, {'Content-Type':'text/html'});
