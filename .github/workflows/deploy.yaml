@@ -1,0 +1,36 @@
+name: Deploy to GitHub Pages
+
+on:
+  push:
+    branches:
+      - master  # 배포하려는 브랜치 이름
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    env:
+      # vite.config.js > __MYENV_READONLY_TOKEN__ 환경변수 설정을 위해 settings > secrets and variables > actions > secrets 로 추가했다.
+      myenv_readonly_token: ${{ secrets.MYENV_READONLY_TOKEN_SECRET }}
+      variable_test: ${{ variables.TEST1 }}
+    steps:
+      - uses: actions/checkout@v3
+      
+      - name: Install Bun<D-s>
+        run: curl -fsSL https://bun.sh/install | bash
+      
+      - name: Set up Bun
+        run: |
+          export BUN_INSTALL="/home/runner/.bun"
+          export PATH="$BUN_INSTALL/bin:$PATH"
+
+      - name: Install dependencies
+        run: bun install
+
+      - name: Build
+        run: bun run build  # 빌드 명령어는 프로젝트에 따라 다를 수 있습니다.
+
+      - name: Deploy
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          publish_dir: ./dist  # 빌드 결과물이 있는 디렉토리
+

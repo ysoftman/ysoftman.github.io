@@ -49,9 +49,11 @@ bun run build --base "dist/" && node server.cjs
 
 ## 빌드 배포
 
-```bash
-# 다음과 같이 빌드 후 배포하면 자동으로 ./dist 내용이 gh-pages 브랜치로 푸시된다.
-bun run build && bun run deploy
+- 주의 gh-pages 브랜치는 배포용이기 때문에 master 에 머지 금지!!!
+- master 브랜치로 푸시하면 github action 으로 자동 배포
 
-# 주의 gh-pages 브랜치는 배포용이기 때문에 마스터에 머지 금지!!!
+```bash
+# 다음과 같이 빌드 후 배포하면 자동으로 ./dist 내용이 gh-pages 브랜치로 푸시된다.(token 값이 포함되어 github 푸시할 수 없게 되었다.)
+#bun run build && bun run deploy
+
 ```
