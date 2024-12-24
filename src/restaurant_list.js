@@ -1,5 +1,10 @@
 export let restaurantlist = [
   {
+    name: "남한산성 두부공방",
+    tags: "두부보쌈, 두부전골, 감자전, 더덕황태구이",
+    review: "https://maps.app.goo.gl/MKuHKmu8Nw1HzbDz7",
+  },
+  {
     name: "판교 브루클린",
     tags: "피자, 파스타, 치킨 텐더",
     review: "https://maps.app.goo.gl/nx5RCGtHNyzu2Nz7A",
