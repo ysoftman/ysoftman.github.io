@@ -25,7 +25,8 @@ bun add --dev gh-pages serve-static marked showdown axios connect ajv dotenv \
     eslint prettier @babel/core babel-loader @babel/preset-env \
     webpack webpack-cli webpack-dev-server html-webpack-plugin clean-webpack-plugin \
     vite vite-plugin-html \
-    tailwindcss
+    tailwindcss \
+    three threejs-toys
 ```
 
 - .env 파일에 myenv readonly 토큰 명시(.gitignore 로 커밋에서 제외)

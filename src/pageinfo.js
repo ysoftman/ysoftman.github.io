@@ -1,5 +1,6 @@
 import packageJSON from "../package.json" assert { type: "json" };
 //const packageJSON = require("package.json");
+import { neonCursor } from "threejs-toys";
 
 //innerHTML 로 dom 변경은 window.onload 로 보장할 수 없다.
 //window.onload = function () {
@@ -15,5 +16,30 @@ export const pageinfoAddEventListener = function () {
   html += "[package.json]";
   html += "<br>";
   html += JSON.stringify(packageJSON, null, 2);
-  document.getElementById("html_out").innerHTML = html;
+  document.getElementById("page_info_body").innerHTML = html;
+
+  neonCursor({
+    el: document.getElementById("neon_cursor"),
+    shaderPoints: 16,
+    curvePoints: 80,
+    curveLerp: 0.5,
+    radius1: 5,
+    radius2: 30,
+    velocityTreshold: 10,
+    sleepRadiusX: 100,
+    sleepRadiusY: 100,
+    sleepTimeCoefX: 0.0025,
+    sleepTimeCoefY: 0.0025,
+  });
+
+  // neon cursor canvas 크기 조절
+  const nav_height = document.querySelector("#navigation").offsetHeight;
+  const title_height = document.querySelector("#main_view h1").offsetHeight;
+  const canvas = document.querySelector("#neon_cursor canvas");
+  function resizeCanvas() {
+    canvas.style.width = window.innerWidth + "px";
+    canvas.style.height = window.innerHeight + nav_height + title_height + "px";
+  }
+  resizeCanvas();
+  window.addEventListener("resize", resizeCanvas);
 };
