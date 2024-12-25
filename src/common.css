@@ -75,7 +75,7 @@ img {
   top: 0;
   width: 100%;
   flex-wrap: wrap;
-  z-index: 1;
+  z-index: 10;
 }
 
 #main_view {
@@ -83,6 +83,26 @@ img {
   padding-top: 10px;
   padding-right: 10px;
   padding-bottom: 10px;
+  /* absolute 로 지정하면 상속되는 neon_cursor의 width, height 가 작게 고정돼서 사용안함 */
+  /* position: absolute; */
+  z-index: 1;
+}
+
+#neon_cursor canvas {
+  display: block;
+  z-index: 0;
+  overflow: hidden;
+  touch-action: pan-up;
+  color: #ffffff;
+  /* position: fixed; */
+  margin: 0;
+  width: 100%;
+  height: 100%;
+}
+
+#page_info_body {
+  position: absolute;
+  z-index: 1;
 }
 
 .inline-icon {
