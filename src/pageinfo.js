@@ -16,7 +16,8 @@ export const pageinfoAddEventListener = function () {
   html += "[package.json]";
   html += "<br>";
   html += JSON.stringify(packageJSON, null, 2);
-  document.getElementById("page_info_body").innerHTML = html;
+  let page_info_body = document.getElementById("page_info_body");
+  page_info_body.innerHTML = html;
 
   neonCursor({
     el: document.getElementById("neon_cursor"),
@@ -32,14 +33,28 @@ export const pageinfoAddEventListener = function () {
     sleepTimeCoefY: 0.0025,
   });
 
-  // neon cursor canvas 크기 조절
-  const nav_height = document.querySelector("#navigation").offsetHeight;
-  const title_height = document.querySelector("#main_view h1").offsetHeight;
-  const canvas = document.querySelector("#neon_cursor canvas");
-  function resizeCanvas() {
-    canvas.style.width = window.innerWidth + "px";
-    canvas.style.height = window.innerHeight + nav_height + title_height + "px";
-  }
-  resizeCanvas();
-  window.addEventListener("resize", resizeCanvas);
+  // innerHTML 사용으로 page_info_body 의 height 가 실제 렌더링 보다 크게 설정되는 문제가 있다
+  page_info_body.onload = resizeCanvas();
 };
+
+function resizeCanvas() {
+  if (document.getElementById("page_info_body") == null) {
+    return;
+  }
+
+  let page_info_body = document
+    .getElementById("page_info_body")
+    .getBoundingClientRect();
+  let canvas = document.querySelector("#neon_cursor canvas");
+  // absolute 는 화면 맨 왼쪽,위를 기준으로 좌표 계산
+  canvas.style.position = "absolute";
+  canvas.style.left = page_info_body.left + "px";
+  canvas.style.top = page_info_body.top + "px";
+  canvas.style.width = window.innerWidth + "px"; // innerWidth 를 사용하면 navbar폭까지 고려돼서 모바일 환경에서는 횡스크롤로 화면을 벗어날 수 도 있다.
+  // canvas.style.height = `${window.innerHeight}px`; // 스크롤퇼 높이 까지 계산이 안된다.
+  canvas.style.height = `${page_info_body.height}px`;
+  // console.log(window.innerHeight);
+  // console.log(page_info_body.height);
+  // console.log(document.body.scrollHeight);
+  // console.log(canvas);
+}
