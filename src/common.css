@@ -90,18 +90,17 @@ img {
 
 #neon_cursor canvas {
   display: block;
-  z-index: 0;
+  z-index: -1;
   overflow: hidden;
   touch-action: pan-up;
   color: #ffffff;
-  /* position: fixed; */
   margin: 0;
   width: 100%;
   height: 100%;
 }
 
 #page_info_body {
-  position: absolute;
+  /* position: static; */
   z-index: 1;
 }
 
