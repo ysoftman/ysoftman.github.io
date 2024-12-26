@@ -33,7 +33,7 @@ export const pageinfoAddEventListener = function () {
     sleepTimeCoefY: 0.0025,
   });
 
-  // innerHTML 사용으로 page_info_body 의 height 가 실제 렌더링 보다 크게 설정되는 문제가 있다
+  // innerHTML 사용으로 page_info_body 의 height 가 refresh, 페이지 이동후등에서 실제 렌더링 보다 크게 설정될 수 있다.
   page_info_body.onload = resizeCanvas();
 };
 
