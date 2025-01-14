@@ -1,5 +1,10 @@
 export let restaurantlist = [
   {
+    name: "판교 아웃백",
+    tags: "스테이크, 파스타",
+    review: "https://maps.app.goo.gl/CZBWeNQT6k7DBP2C8",
+  },
+  {
     name: "남한산성 두부공방",
     tags: "두부보쌈, 두부전골, 감자전, 더덕황태구이",
     review: "https://maps.app.goo.gl/MKuHKmu8Nw1HzbDz7",
