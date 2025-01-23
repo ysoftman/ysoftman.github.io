@@ -1,5 +1,10 @@
 export let restaurantlist = [
   {
+    name: "판교 바스 버거",
+    tags: "햄버거, 감자튀김, 버팔로윙",
+    review: "https://maps.app.goo.gl/HQWdjiDqZx7XYUzAA",
+  },
+  {
     name: "판교 아웃백",
     tags: "스테이크, 파스타",
     review: "https://maps.app.goo.gl/CZBWeNQT6k7DBP2C8",
