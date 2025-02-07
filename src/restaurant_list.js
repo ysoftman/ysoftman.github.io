@@ -6,7 +6,7 @@ export let restaurantlist = [
   },
   {
     name: "판교 흑화돗",
-    tags: "제주 숙성 돼지고",
+    tags: "제주 숙성 돼지고기",
     review: "https://maps.app.goo.gl/TeCFxpmGqTFk5N4T9",
   },
   {
