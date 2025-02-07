@@ -1,5 +1,15 @@
 export let restaurantlist = [
   {
+    name: "판교 season",
+    tags: "생맥주, 피자",
+    review: "https://maps.app.goo.gl/M46ZASUgVrWNDwGy9",
+  },
+  {
+    name: "판교 흑화돗",
+    tags: "제주 숙성 돼지고",
+    review: "https://maps.app.goo.gl/TeCFxpmGqTFk5N4T9",
+  },
+  {
     name: "판교 바스 버거",
     tags: "햄버거, 감자튀김, 버팔로윙",
     review: "https://maps.app.goo.gl/HQWdjiDqZx7XYUzAA",
