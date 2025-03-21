@@ -1,5 +1,30 @@
 export let restaurantlist = [
   {
+    name: "제주 델문도",
+    tags: "커피,빵",
+    review: "https://maps.app.goo.gl/2qzC4P38RUf76vdP8",
+  },
+  {
+    name: "제주 맥파이",
+    tags: "맥주,화덕피자,화덕치킨",
+    review: "https://maps.app.goo.gl/UMdFvbFSqCs6FMMp7",
+  },
+  {
+    name: "제주 일통이반",
+    tags: "해산물,회",
+    review: "https://maps.app.goo.gl/oWWGkkxXExVtg2V9A",
+  },
+  {
+    name: "제주 유일반점",
+    tags: "짜장면,탕수육,유산슬,난자완스",
+    review: "https://maps.app.goo.gl/66NxPKrCMuqiLD6d7",
+  },
+  {
+    name: "제주 숙성도",
+    tags: "숙성 숙성 돼지고기",
+    review: "https://maps.app.goo.gl/1UkFa7BnYK52W8F67",
+  },
+  {
     name: "판교 season",
     tags: "생맥주, 피자",
     review: "https://maps.app.goo.gl/M46ZASUgVrWNDwGy9",
