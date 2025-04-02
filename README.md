@@ -37,7 +37,7 @@ bun add --dev gh-pages serve-static marked showdown axios connect ajv dotenv \
 # 필요시(vim 에서 파일 저장시 자동 포맷팅되도록 했뒀음)
 bun prettier . --write
 
-# tailwindcss 사용시
+# tailwindcss 변경 확인시
 # 필요한 tailwindcss  가 코드 변화에 따라 필요한 요소들이 tailwind_output.css 로 실시간으로 생성되도록 띄워 둔다.
 npx tailwindcss -i ./src/tailwind_input.css -o ./src/tailwind_output.css --watch
 

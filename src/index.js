@@ -117,27 +117,33 @@ pt.then(function () {
           );
         });
       } else if (param == "github-webhook-action") {
-        let out = "";
+        document.getElementById("main_view").innerHTML = `
+<h3>비용 발생으로 app engine 삭제(2025.04.02)
+<br>
+<a target="_blank" href="https://github.com/ysoftman/github_webhook_action">https://github.com/ysoftman/github_webhook_action</a>
+</h3>
+`;
         // CORS 이슈로 서버 응답에 다음 헤더 추가함
         // Access-Control-Allow-Origin: *
         // Access-Control-Allow-Methods: get
-        axios
-          .get("https://github-webhook-action.appspot.com")
-          .then(function (response) {
-            activeMenu("github_webhook_action");
-            out += "<h3>" + text2html(response.data) + "</h3>";
-          })
-          .then(function (response) {
-            axios
-              .get("https://github-webhook-action.appspot.com/v1/log")
-              .then(function (response) {
-                out +=
-                  "<h3>/v1/log (google appengine /tmp/ 에 기록되며 일정시간이 지나면 사라집니다)</h3>";
-                out += "<br>";
-                out += "<div>" + text2html(response.data) + "<div>";
-                document.getElementById("main_view").innerHTML = out;
-              });
-          });
+        // let out = "";
+        // axios
+        //   .get("https://github-webhook-action.appspot.com")
+        //   .then(function (response) {
+        //     activeMenu("github_webhook_action");
+        //     out += "<h3>" + text2html(response.data) + "</h3>";
+        //   })
+        //   .then(function (response) {
+        //     axios
+        //       .get("https://github-webhook-action.appspot.com/v1/log")
+        //       .then(function (response) {
+        //         out +=
+        //           "<h3>/v1/log (google appengine /tmp/ 에 기록되며 일정시간이 지나면 사라집니다)</h3>";
+        //         out += "<br>";
+        //         out += "<div>" + text2html(response.data) + "<div>";
+        //         document.getElementById("main_view").innerHTML = out;
+        //       });
+        //   });
       } else if (param == "watchdust") {
         let out = "";
         // CORS 이슈로 서버 응답에 다음 헤더 추가함
