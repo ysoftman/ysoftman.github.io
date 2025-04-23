@@ -1,5 +1,10 @@
 export let restaurantlist = [
   {
+    name: "판교 미방",
+    tags: "양고기",
+    review: "https://maps.app.goo.gl/dhVUmDoF4iGbpgmS7",
+  },
+  {
     name: "제주 델문도",
     tags: "커피,빵",
     review: "https://maps.app.goo.gl/2qzC4P38RUf76vdP8",
