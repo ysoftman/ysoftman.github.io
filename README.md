@@ -14,10 +14,12 @@ https://github.com/nodesource/distributions
 # install nvm
 curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.3/install.sh | bash
 
-# (최초 한번만 설정) - 패키지 설치
+# (최초 한번만 설정) 최신 node 설치 및 사용 패키지 설치
 nvm install --lts
 nvm use --lts
 nvm ls
+
+# package.json 설정
 # sass deprecation warning 문제가 있어 아래 버전을 사용해야 한다.
 bun add --dev gh-pages serve-static marked showdown axios connect ajv dotenv \
     @fortawesome/fontawesome-free @mdi/font bootstrap \
@@ -34,6 +36,13 @@ bun add --dev gh-pages serve-static marked showdown axios connect ajv dotenv \
 ## local 테스트
 
 ```bash
+# 필요시 패키지 다시 설치
+rm -rf node_modules package-lock.json
+bun install
+
+# 필요시 최신 패키지(dependencies)로 업데이트
+bun update --latest
+
 # 필요시(vim 에서 파일 저장시 자동 포맷팅되도록 했뒀음)
 bun prettier . --write
 
