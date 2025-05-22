@@ -1,5 +1,10 @@
 export let restaurantlist = [
   {
+    name: "판교 꿰다",
+    tags: "오마카세",
+    review: "https://maps.app.goo.gl/moBMWaB3YyHETH3X8",
+  },
+  {
     name: "판교 미방",
     tags: "양고기",
     review: "https://maps.app.goo.gl/dhVUmDoF4iGbpgmS7",
