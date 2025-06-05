@@ -1,5 +1,10 @@
 export let restaurantlist = [
   {
+    name: "판교 핏제리아체뽀",
+    tags: "화덕피자,파스타",
+    review: "https://maps.app.goo.gl/tUmZyriNQxUzzn6L7",
+  },
+  {
     name: "판교 꿰다",
     tags: "오마카세",
     review: "https://maps.app.goo.gl/moBMWaB3YyHETH3X8",
