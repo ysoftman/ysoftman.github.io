@@ -130,8 +130,7 @@ export function loadProgramList() {
     })
     .catch(function (error) {
       console.log(error);
-    })
-    .then(function () {});
+    });
   axios
     .get(
       "https://raw.githubusercontent.com/ysoftman/myenv/master/installbrew.sh",
@@ -142,8 +141,7 @@ export function loadProgramList() {
     })
     .catch(function (error) {
       console.log(error);
-    })
-    .then(function () {});
+    });
   axios
     .get(
       "https://raw.githubusercontent.com/ysoftman/myenv/master/installcargo.sh",
@@ -154,8 +152,7 @@ export function loadProgramList() {
     })
     .catch(function (error) {
       console.log(error);
-    })
-    .then(function () {});
+    });
   axios
     .get(
       "https://raw.githubusercontent.com/ysoftman/myenv/master/installpip.sh",
@@ -166,10 +163,11 @@ export function loadProgramList() {
     })
     .catch(function (error) {
       console.log(error);
-    })
-    .then(function () {});
+    });
   axios
     // NOTE: api 사용이라 자주 호출하면 403 응답으로 사용할수 없게 된다.
+    // 비인증 요청 (Unauthenticated): IP당 시간당 60회
+    // 인증 요청 (Authenticated): 사용자당 시간당 5,000회
     .get(
       "https://api.github.com/repositories/77009402/contents/nvim/lua/plugins",
     )
@@ -198,8 +196,7 @@ export function loadProgramList() {
     })
     .catch(function (error) {
       console.log(error);
-    })
-    .then(function () {});
+    });
   axios
     .get(
       "https://raw.githubusercontent.com/ysoftman/myenv/master/installvscodeextension.sh",
@@ -210,6 +207,5 @@ export function loadProgramList() {
     })
     .catch(function (error) {
       console.log(error);
-    })
-    .then(function () {});
+    });
 }
