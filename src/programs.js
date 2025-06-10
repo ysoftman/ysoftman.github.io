@@ -169,6 +169,24 @@ export function loadProgramList() {
     })
     .then(function () {});
   axios
+    // NOTE: api 사용이라 자주 호출하면 403 응답으로 사용할수 없게 된다.
+    .get(
+      "https://api.github.com/repositories/77009402/contents/nvim/lua/plugins",
+    )
+    .then((response) => {
+      const files = response.data
+        .filter((item) => item.type === "file")
+        .map((item) => item.name);
+      let result = "";
+      for (let v of files) {
+        result += v + "<br>";
+      }
+      document.getElementById("nvim_plugins").innerHTML = result;
+    })
+    .catch(function (error) {
+      console.log(error);
+    });
+  axios
     .get("https://raw.githubusercontent.com/ysoftman/myenv/master/.vimrc")
     .then(function (response) {
       let data = response.data.match(/^call plug.*|^Plug.*|.*:Plug.*/gm);
