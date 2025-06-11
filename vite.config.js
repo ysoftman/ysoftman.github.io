@@ -6,7 +6,7 @@ import path from "path";
 dotenv.config({ path: path.resolve(__dirname, ".env") });
 // 현재 커밋에 Git 태그가 매칭되면 태그 사용 아니면 "develop"
 const gitTag = execSync(
-  "git describe --tags --exact-match 2> /dev/null || echo 'develop'",
+  "git describe master --tags --exact-match 2> /dev/null || echo 'develop'",
 )
   .toString()
   .trim();
