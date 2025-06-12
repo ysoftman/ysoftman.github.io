@@ -51,7 +51,7 @@ export default defineConfig({
     __COMMIT_HASH__: JSON.stringify(gitCommit),
     __COMMIT_DATE__: JSON.stringify(gitCommitDate),
     __BUILD_DATE__: "'" + kstDate + "'",
-    // token 은 푸시가 안된다. gitub action secret  로 등록해도 배포하면 보안을 위해 토큰을 만료 시켜버려 사용하지 않기로 함.
+    // NOTE: myenv file 조회등의 api 사용을 위해 사용하려고했었는데 token 은 푸시가 안된다. github action secret 로 등록해도 배포하면 보안을 위해 토큰을 만료 시켜버려 사용하지 않기로 함.
     // https://docs.github.com/ko/authentication/keeping-your-account-and-data-secure/token-expiration-and-revocation#token-revoked-when-pushed-to-a-public-repository-or-public-gist
     // __MYENV_READONLY_TOKEN__: "'" + process.env.myenv_readonly_token + "'",
   },
