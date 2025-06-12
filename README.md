@@ -31,8 +31,6 @@ bun add --dev gh-pages serve-static marked showdown axios connect ajv dotenv \
     three threejs-toys
 ```
 
-- .env 파일에 myenv readonly 토큰 명시(.gitignore 로 커밋에서 제외)
-
 ## local 테스트
 
 ```bash
