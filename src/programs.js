@@ -172,6 +172,8 @@ export function loadProgramList() {
       "https://api.github.com/repositories/77009402/contents/nvim/lua/plugins",
     )
     .then((response) => {
+      document.getElementById("nvim_plugins_api_limit").innerHTML =
+        `github api request(remaining/limit_per_hour): ${response.headers["x-ratelimit-remaining"]}/${response.headers["x-ratelimit-limit"]}`;
       const files = response.data
         .filter((item) => item.type === "file")
         .map((item) => item.name);
