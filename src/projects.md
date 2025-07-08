@@ -6,14 +6,16 @@
 - Participation Period: 202308~
 - Description: kakao search system builder
 - Programming Language: golang, sh, python
-- OS: Linux, Mac
+- OS: linux, mac
 - DB
   - 기존: consul, postgreSQL
-  - 신규: rqlite, MySQL
-- Platform: Kubernetes
+  - 신규: rqlite, mysql
+- Platform(Environment)
+  - 기존: digdag
+  - 신규: kubernetes, argo-workflows
 - CI/CD:
-  - (기존시스템)Jenkins (빌드/배포) with Ansible
-  - (신규시스템)Github Action 비슷한 사내 개발 빌드시스템 -> ArgoCD(배포)
+  - 기존: jenkins (빌드/배포) with ansible
+  - 신규: github action 비슷한 사내 개발 빌드시스템 -> argocd(배포)
 - Monitoring
   - log: k8s node -> vector -> kafka -> es -> kibana
   - metrics: prometheus, grafana
@@ -71,14 +73,14 @@
 
 - Company: kakaoenterprise
 - Participation Period: 202204~202307
-- Description: kakao i cloud 환경의 MLops
+- Description: kakao i cloud 환경의 MLOps
 - Programming Language: golang, sh, python
-- OS: Linux, Mac
+- OS: linux, mac
 - DB
-  - 사용자데이터: MongoDB
-  - iam 데이터: bitnami-etcd-cluster
-- Platform: Kubernetes
-- CI/CD: Github Action(빌드) -> ArgoCD(배포)
+  - 사용자데이터: mongodb
+  - iam 데이터: etcd
+- Platform(Environment): kubernetes, fluentd, es
+- CI/CD: github action(빌드) -> ArgoCD(배포)
   - argocd 를 사용할 수 없는 외부 환경 배포시: helmfile 사용
 - Monitoring
   - log: k8s node -> fluentd -> es -> kibana
@@ -129,11 +131,11 @@
 - Participation Period: 202001~202203
 - Description: 검색 서비스가 필요한 회사가 빌더를 통해 데이터 컬렉션등을 설정하면 k8s에 해당 검색 서비스를 생성해 검색 서비스 제공
 - Programming Language: golang, sh, python
-- OS: Linux, Mac
-- DB: MySQL
-- Cache: Redis-cluster
-- Platform: Kubernetes, AWS(ec2,vpc,alb,nlb,eks)
-- CI/CD: Github Action(빌드&배포)
+- OS: linux, mac
+- DB: mysql
+- Cache: redis
+- Platform(Environment): kubernetes, aws(ec2,vpc,alb,nlb,eks), fluentd, kafka, es
+- CI/CD: github action
 - Monitoring
   - log: k8s node -> fluentd -> kafka -> es -> kibana
   - metrics: prometheus, grafana
@@ -143,7 +145,7 @@
   - Kakao Search Platform
 - Contribution/Responsibilities
   - 검색 서비스 builder 구현
-  - builder 개발단계에서 사용해 볼 수 있는 UI 구현(vue)
+  - builder 개발단계에서 사용해 볼 수 있는 UI(based on vue) 구현
   - k8s 환경에서 실행 되는 검색 서버 구현
 - Troubleshooting
   - 잘못된 ingress 설정 적용 방지
@@ -160,13 +162,12 @@
 - Company: kakao/kakaoenterprise(20191201~)
 - Participation Period: 201607~202203
 - Description: daum 및 카톡 #검색에서 사용자 검색 키워드를 받아 관련 결과를 취합해 응답 하는 검색 프론트 서버
-- Programming Language: c++, sh, python, lua
-- OS: Linux, Mac
-- DB: MySQL
-- Cache: Memcached, Redis
-- Platform: Apache Httpd, Nginx, Docker, vagrant(vm)
-- CI/CD: Jenkins pipeline(script)
-  - 배포 스크립트: ansible
+- Programming Language: c++, sh, python, lua, javascript
+- OS: linux, mac
+- DB: mysql
+- Cache: memcached, redis
+- Platform(Environment): apache-httpd, nginx, docker, vagrant, kafka, es
+- CI/CD: jenkins pipeline(script) with ansible
 - 서비스 구성: client -> nginx -> apache -> 통합검색 서버
 - Monitoring
   - log: query/access logs -> kafka/redis -> es -> kibana
@@ -218,9 +219,9 @@
 - Participation Period: 201401~201606
 - Description: 한게임 모바일 포커 게임 서버 개발
 - Programming Language: c++, lua, golang, python
-- OS: Windows
-- DB: MySQL
-- Platform: Hangame Game Platform
+- OS: windows
+- DB: mysql
+- Platform(Environment): Hangame Game Platform
 - Achievement
   - Hangame Mobile Poker <https://play.google.com/store/apps/details?id=com.nhnent.Qpoker>
 - Contribution/Responsibilities
@@ -231,10 +232,10 @@
 - Company: naver/nhn(20130801~)
 - Participation Period: 201301~201312
 - Description: 한게임 웹보드 게임(장기, 바둑, 오목) 서버 개발
-- Programming Language: c++, lua, golang, python
-- OS: Windows
-- DB: Oracle
-- Platform: Hangame Game Platform
+- Programming Language: c++
+- OS: windows
+- DB: oracle
+- Platform(Environment): Hangame Game Platform
 - Achievement
   - Hangame PC Janggi <https://janggi.hangame.com/>
   - Hangame PC Baduk <https://baduk.hangame.com/>
@@ -247,23 +248,23 @@
 - Participation Period: 201102~201201
 - Programming Language: c++, java, c#
 - Description: 한게임 게임 플랫폼 서버 개발
-- OS: Linux, Windows
-- DB: Oracle, MSSQL, MongoDB
+- OS: linux, windows
+- DB: oracle, mssql, mongodb
 - Achievement
   - Hangame Game Backend Platform
 - Contribution/Responsibilities
   - Develop Game Message Server
   - Develop Game String Server
-  - Develop Game Data Storage Service Server on MongoDB
+  - Develop Game Data Storage Service Server on mongodb
 
 ## Naver OCR(Optical Character Recognition)
 
 - Company: naver
 - Participation Period: 200709~201101
 - Description: OCR 엔진,서비스 서버 개발
-- Programming Language: c/c++, php, javascript
-- OS: Linux, Windows
-- DB: MySQL
+- Programming Language: c/c++, sh, php, javascript
+- OS: linux, windows
+- DB: mysql
   - HDFS(Hadoop FileSystem)
 - Achievement
   - <http://lab.naver.com/ocr/>
