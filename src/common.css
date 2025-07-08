@@ -75,10 +75,10 @@ body {
   font-family: Hack, monospace;
 }
 
-/* markdown pre code 영역 */
-pre {
-  color: var(--white) !important;
-  font-size: large;
+/* programs pre 영역 */
+li > pre {
+  font-size: medium;
+  white-space: pre-wrap;
 }
 
 iframe {
