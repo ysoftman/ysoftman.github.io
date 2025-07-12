@@ -1,5 +1,20 @@
 export let restaurantlist = [
   {
+    name: "판교 삼동소바",
+    tags: "메밀소바,우동,돈까스",
+    review: "https://maps.app.goo.gl/2VDUnPiGe8QJ3sRK8",
+  },
+  {
+    name: "판교 포레스트 오늘 숲",
+    tags: "쌀국수",
+    review: "https://maps.app.goo.gl/sJZNUmdGZHcydNoQ6",
+  },
+  {
+    name: "양재 제레미 버거",
+    tags: "수제버거",
+    review: "https://maps.app.goo.gl/xSWKtDBtknWdYYt59",
+  },
+  {
     name: "판교 핏제리아체뽀",
     tags: "화덕피자,파스타",
     review: "https://maps.app.goo.gl/tUmZyriNQxUzzn6L7",
