@@ -7,11 +7,19 @@ dotenv.config({ path: path.resolve(__dirname, ".env") });
 function getGitInfo() {
   try {
     // 현재 커밋에 Git 태그가 매칭되면 태그 사용 아니면 "develop"
+    // const gitTag = execSync(
+    //   "git describe master --tags --exact-match 2> /dev/null || echo 'develop'",
+    // )
+    //   .toString()
+    //   .trim();
+    // --abbrev=0: 커밋 해시나 태그 이후의 커밋 수를 포함하지 않고, 가장 가까운 태그 이름만 출력합니다.
     const gitTag = execSync(
-      "git describe master --tags --exact-match 2> /dev/null || echo 'develop'",
+      // "git describe --tags --abbrev=0 2> /dev/null || echo 'develop'",
+      "git describe --tags 2> /dev/null || echo 'develop'",
     )
       .toString()
       .trim();
+
     const gitCommit = execSync(
       "git log master -1 --date=iso-strict --pretty=format:'%H'",
     )
