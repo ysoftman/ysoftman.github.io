@@ -5,21 +5,39 @@ import dotenv from "dotenv";
 import path from "path";
 dotenv.config({ path: path.resolve(__dirname, ".env") });
 // 현재 커밋에 Git 태그가 매칭되면 태그 사용 아니면 "develop"
-const gitTag = execSync(
-  "git describe master --tags --exact-match 2> /dev/null || echo 'develop'",
-)
-  .toString()
-  .trim();
-const gitCommit = execSync(
-  "git log master -1 --date=iso-strict --pretty=format:'%H'",
-)
-  .toString()
-  .trim();
-const gitCommitDate = execSync(
-  "git log master -1 --date=iso-strict --pretty=format:'%cd'",
-)
-  .toString()
-  .trim();
+function getGitInfo() {
+  try {
+    const gitTag = execSync(
+      "git describe master --tags --exact-match 2> /dev/null || echo 'develop'",
+    )
+      .toString()
+      .trim();
+    const gitCommit = execSync(
+      "git log master -1 --date=iso-strict --pretty=format:'%H'",
+    )
+      .toString()
+      .trim();
+    const gitCommitDate = execSync(
+      "git log master -1 --date=iso-strict --pretty=format:'%cd'",
+    )
+      .toString()
+      .trim();
+
+    return {
+      GIT_TAG: JSON.stringify(gitTag),
+      GIT_COMMIT: JSON.stringify(gitCommit),
+      GIT_COMMIT_DATE: JSON.stringify(gitCommitDate),
+    };
+  } catch {
+    console.warn("Git command failed, returning default values.");
+    return {
+      GIT_TAG: JSON.stringify("unknown"),
+      GIT_COMMIT: JSON.stringify("unknown"),
+      GIT_COMMIT_DATE: JSON.stringify("unknown"),
+    };
+  }
+}
+const gitInfo = getGitInfo();
 
 // github action 에서는 UTC라서 KST 로 변경
 let kstOffset = 0;
@@ -47,9 +65,9 @@ export default defineConfig({
   },
 
   define: {
-    __VERSION_TAG__: JSON.stringify(gitTag),
-    __COMMIT_HASH__: JSON.stringify(gitCommit),
-    __COMMIT_DATE__: JSON.stringify(gitCommitDate),
+    __VERSION_TAG__: gitInfo.GIT_TAG,
+    __COMMIT_HASH__: gitInfo.GIT_COMMIT,
+    __COMMIT_DATE__: gitInfo.GIT_COMMIT_DATE,
     __BUILD_DATE__: "'" + kstDate + "'",
     // NOTE: myenv file 조회등의 api 사용을 위해 사용하려고했었는데 token 은 푸시가 안된다. github action secret 로 등록해도 배포하면 보안을 위해 토큰을 만료 시켜버려 사용하지 않기로 함.
     // https://docs.github.com/ko/authentication/keeping-your-account-and-data-secure/token-expiration-and-revocation#token-revoked-when-pushed-to-a-public-repository-or-public-gist
