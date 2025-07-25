@@ -19,33 +19,40 @@ function getGitInfo() {
     // "git describe master --tags --exact-match 2> /dev/null || echo 'develop'",
     // 커밋 해시나 태그 이후의 커밋 수를 포함하지 않고, 가장 가까운 태그 이름만 출력
     // "git describe master --tags --abbrev=0 2> /dev/null || echo 'develop'",
-    const gitTag = execSync(
+    const lastGitTag = execSync(
       "git describe master --tags 2> /dev/null || echo 'develop'",
     )
       .toString()
       .trim();
 
-    const gitCommit = execSync(
+    const lastGitCommit = execSync(
       "git log master -1 --date=iso-strict --pretty=format:'%H'",
     )
       .toString()
       .trim();
-    const gitCommitDate = execSync(
+    const lastGitCommitDate = execSync(
       "git log master -1 --date=iso-strict --pretty=format:'%cd'",
     )
       .toString()
       .trim();
+    const lastGitCommitMessage = execSync(
+      "git log master -1 --pretty=format:'%s'",
+    )
+      .toString()
+      .trim();
     return {
-      GIT_TAG: JSON.stringify(gitTag),
-      GIT_COMMIT: JSON.stringify(gitCommit),
-      GIT_COMMIT_DATE: JSON.stringify(gitCommitDate),
+      LAST_GIT_TAG: JSON.stringify(lastGitTag),
+      LAST_GIT_COMMIT: JSON.stringify(lastGitCommit),
+      LAST_GIT_COMMIT_DATE: JSON.stringify(lastGitCommitDate),
+      LAST_GIT_COMMIT_MESSAGE: JSON.stringify(lastGitCommitMessage),
     };
   } catch {
     console.warn("Git command failed, returning default values.");
     return {
       GIT_TAG: JSON.stringify("unknown"),
-      GIT_COMMIT: JSON.stringify("unknown"),
-      GIT_COMMIT_DATE: JSON.stringify("unknown"),
+      LAST_GIT_COMMIT: JSON.stringify("unknown"),
+      LAST_GIT_COMMIT_DATE: JSON.stringify("unknown"),
+      LAST_GIT_COMMIT_MESSAGE: JSON.stringify("unknown"),
     };
   }
 }
@@ -77,9 +84,10 @@ export default defineConfig({
   },
 
   define: {
-    __VERSION_TAG__: gitInfo.GIT_TAG,
-    __COMMIT_HASH__: gitInfo.GIT_COMMIT,
-    __COMMIT_DATE__: gitInfo.GIT_COMMIT_DATE,
+    __LAST_VERSION_TAG__: gitInfo.LAST_GIT_TAG,
+    __LAST_COMMIT_HASH__: gitInfo.LAST_GIT_COMMIT,
+    __LAST_COMMIT_DATE__: gitInfo.LAST_GIT_COMMIT_DATE,
+    __LAST_COMMIT_MESSAGE__: gitInfo.LAST_GIT_COMMIT_MESSAGE,
     __BUILD_DATE__: "'" + kstDate + "'",
     // NOTE: myenv file 조회등의 api 사용을 위해 사용하려고했었는데 token 은 푸시가 안된다. github action secret 로 등록해도 배포하면 보안을 위해 토큰을 만료 시켜버려 사용하지 않기로 함.
     // https://docs.github.com/ko/authentication/keeping-your-account-and-data-secure/token-expiration-and-revocation#token-revoked-when-pushed-to-a-public-repository-or-public-gist
