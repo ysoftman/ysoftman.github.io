@@ -1,9 +1,9 @@
-name: Deploy to GitHub Pages
+name: Deploy to ysoftman gitHub pages
 
 on:
   push:
     branches:
-      - master  # 배포하려는 브랜치 이름
+      - master # 배포하려는 브랜치 이름
 
 jobs:
   deploy:
@@ -29,6 +29,7 @@ jobs:
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
         with:
+          # 전체 이력(tags 포함)을 가져오기
+          fetch-depth: 0
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./dist  # 빌드 결과물이 있는 디렉토리
-
+          publish_dir: ./dist # 빌드 결과물이 있는 디렉토리

@@ -6,6 +6,9 @@ import path from "path";
 dotenv.config({ path: path.resolve(__dirname, ".env") });
 function getGitInfo() {
   try {
+    // github action 에 fetch-depth: 0 을 설정해서th: # 전체 이력(tags 포함)을 가져오기
+    //    fetch-depth: 0
+
     // 현재 커밋에 Git 태그가 매칭되면 태그 사용 아니면 "develop"
     // "git describe master --tags --exact-match 2> /dev/null || echo 'develop'",
     // 커밋 해시나 태그 이후의 커밋 수를 포함하지 않고, 가장 가까운 태그 이름만 출력
@@ -26,7 +29,6 @@ function getGitInfo() {
     )
       .toString()
       .trim();
-
     return {
       GIT_TAG: JSON.stringify(gitTag),
       GIT_COMMIT: JSON.stringify(gitCommit),
