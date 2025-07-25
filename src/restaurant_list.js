@@ -1,5 +1,14 @@
 export let restaurantlist = [
   {
+    name: "판교 도미노 피자",
+    tags: "피자",
+    review: "https://maps.app.goo.gl/n9yBwTEUk6Tk8a9P6",
+  },
+  {
+    name: "서판교 노모어피자(no more pizza)",
+    tags: "피자",
+  },
+  {
     name: "판교 삼동소바",
     tags: "메밀소바,우동,돈까스",
     review: "https://maps.app.goo.gl/2VDUnPiGe8QJ3sRK8",
