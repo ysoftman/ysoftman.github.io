@@ -6,8 +6,14 @@ import path from "path";
 dotenv.config({ path: path.resolve(__dirname, ".env") });
 function getGitInfo() {
   try {
-    // github action 에 fetch-depth: 0 을 설정해서th: # 전체 이력(tags 포함)을 가져오기
-    //    fetch-depth: 0
+    // github action 에서 태그정보를 파악할 수 있도록 다음 설정 추가
+    // - name: Checkout repository
+    //   uses: actions/checkout@v4
+    //   with:
+    //     # 전체 이력(tags 포함) 가져오기
+    //     fetch-depth: 0
+    //     # 또는 태그 정보  표시
+    //     # tags: true
 
     // 현재 커밋에 Git 태그가 매칭되면 태그 사용 아니면 "develop"
     // "git describe master --tags --exact-match 2> /dev/null || echo 'develop'",

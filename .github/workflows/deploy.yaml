@@ -12,7 +12,13 @@ jobs:
       secrets_test: ${{ secrets.TEST }}
       variables_test: ${{ vars.TEST }}
     steps:
-      - uses: actions/checkout@v4
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          # 전체 이력(tags 포함) 가져오기
+          fetch-depth: 0
+          # 또는 태그 정보  표시
+          # tags: true
       # https://bun.sh/guides/runtime/cicd
       - uses: oven-sh/setup-bun@v2
 
@@ -29,7 +35,5 @@ jobs:
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
         with:
-          # 전체 이력(tags 포함)을 가져오기
-          fetch-depth: 0
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./dist # 빌드 결과물이 있는 디렉토리
