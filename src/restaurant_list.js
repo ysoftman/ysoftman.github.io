@@ -1,5 +1,10 @@
 export let restaurantlist = [
   {
+    name: "판교 하루",
+    tags: "소바,덴푸라",
+    review: "https://maps.app.goo.gl/PdmFaSKAhVaiCMMbA",
+  },
+  {
     name: "판교 도미노 피자",
     tags: "피자",
     review: "https://maps.app.goo.gl/n9yBwTEUk6Tk8a9P6",
