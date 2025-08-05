@@ -25,7 +25,7 @@ function getGitInfo() {
       .toString()
       .trim();
 
-    const lastGitCommit = execSync(
+    const lastGitCommitHash = execSync(
       "git log master -1 --date=iso-strict --pretty=format:'%H'",
     )
       .toString()
@@ -42,7 +42,7 @@ function getGitInfo() {
       .trim();
     return {
       LAST_GIT_TAG: JSON.stringify(lastGitTag),
-      LAST_GIT_COMMIT: JSON.stringify(lastGitCommit),
+      LAST_GIT_COMMIT_HASH: JSON.stringify(lastGitCommitHash),
       LAST_GIT_COMMIT_DATE: JSON.stringify(lastGitCommitDate),
       LAST_GIT_COMMIT_MESSAGE: JSON.stringify(lastGitCommitMessage),
     };
@@ -50,7 +50,7 @@ function getGitInfo() {
     console.warn("Git command failed, returning default values.");
     return {
       GIT_TAG: JSON.stringify("unknown"),
-      LAST_GIT_COMMIT: JSON.stringify("unknown"),
+      LAST_GIT_COMMIT_HASH: JSON.stringify("unknown"),
       LAST_GIT_COMMIT_DATE: JSON.stringify("unknown"),
       LAST_GIT_COMMIT_MESSAGE: JSON.stringify("unknown"),
     };
@@ -85,7 +85,7 @@ export default defineConfig({
 
   define: {
     __LAST_VERSION_TAG__: gitInfo.LAST_GIT_TAG,
-    __LAST_COMMIT_HASH__: gitInfo.LAST_GIT_COMMIT,
+    __LAST_COMMIT_HASH__: gitInfo.LAST_GIT_COMMIT_HASH,
     __LAST_COMMIT_DATE__: gitInfo.LAST_GIT_COMMIT_DATE,
     __LAST_COMMIT_MESSAGE__: gitInfo.LAST_GIT_COMMIT_MESSAGE,
     __BUILD_DATE__: "'" + kstDate + "'",
