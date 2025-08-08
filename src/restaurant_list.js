@@ -1,5 +1,10 @@
 export let restaurantlist = [
   {
+    name: "판교 대장동 와플대학",
+    tags: "와플,아이스크림,밀크쉐이크",
+    review: "https://maps.app.goo.gl/xfhCkSEzGT6Mxg636",
+  },
+  {
     name: "판교 하루",
     tags: "소바,덴푸라",
     review: "https://maps.app.goo.gl/PdmFaSKAhVaiCMMbA",
