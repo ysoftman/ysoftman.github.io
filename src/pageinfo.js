@@ -40,10 +40,10 @@ export const pageinfoAddEventListener = function () {
   });
 
   // innerHTML 사용으로 page_info_body 의 height 가 refresh, 페이지 이동후등에서 실제 렌더링 보다 크게 설정될 수 있다.
-  page_info_body.onload = resizeCanvas();
+  page_info_body.onload = resizeNeonCursorCanvas();
 };
 
-function resizeCanvas() {
+function resizeNeonCursorCanvas() {
   if (document.getElementById("page_info_body") == null) {
     return;
   }
