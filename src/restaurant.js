@@ -82,8 +82,7 @@ export const readRestaurantAll = async function (tag) {
   //    onDisLikeClick(name, name + "_싫어요");
   //  });
   //}
-  document.getElementById("restaurant_cnt").innerHTML =
-    " (결과: " + tempDocs.length + "개)";
+  document.getElementById("restaurant_cnt").innerHTML = tempDocs.length + "개";
 };
 
 //innerHTML 로 dom 변경은 window.onload 로 보장할 수 없다.
