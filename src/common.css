@@ -117,8 +117,13 @@ img {
   z-index: 1;
 }
 
-#neon_cursor canvas {
-  display: block;
+#main_view canvas {
+  position: fixed; /* stick to viewport regardless of page flow */
+  /* top:0; right:0; bottom:0; left:0 */
+  inset: 0;
+  /* top:0px; bottom:0px; right:10px; left:10px */
+  /* inset: 0px 10px; */
+  display: block; /* remove potential inline gaps */
   z-index: -1;
   overflow: hidden;
   touch-action: pan-up;
