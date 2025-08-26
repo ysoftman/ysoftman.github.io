@@ -13,4 +13,4 @@ let r=[{name:"판교 울프스덴(Wolf's Den)",tags:"파스타,리조또,피자"
     </p>
   </div>
 </div>
-`,p++}t+="</div>",document.getElementById("html_out").innerHTML=t,document.getElementById("restaurant_cnt").innerHTML=" (결과: "+g.length+"개)"},h=function(){document.getElementById("search_restaurant_input").addEventListener("keypress",function(a){a.key==="Enter"&&(a.preventDefault(),document.getElementById("search_restaurant_button").click())}),document.getElementById("search_restaurant_button").addEventListener("click",()=>{n(document.getElementById("search_restaurant_input").value)}),n("")};export{h as r};
+`,p++}t+="</div>",document.getElementById("html_out").innerHTML=t,document.getElementById("restaurant_cnt").innerHTML=g.length+"개"},h=function(){document.getElementById("search_restaurant_input").addEventListener("keypress",function(a){a.key==="Enter"&&(a.preventDefault(),document.getElementById("search_restaurant_button").click())}),document.getElementById("search_restaurant_button").addEventListener("click",()=>{n(document.getElementById("search_restaurant_input").value)}),n("")};export{h as r};
