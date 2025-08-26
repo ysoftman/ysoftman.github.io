@@ -1,5 +1,10 @@
 export let restaurantlist = [
   {
+    name: "판교 울프스덴(Wolf's Den)",
+    tags: "파스타,리조또,피자",
+    review: "https://maps.app.goo.gl/DuoHkFCYRKVzKoQXA",
+  },
+  {
     name: "판교 gravity andish",
     tags: "호텔 뷔페",
     review: "https://maps.app.goo.gl/LbSpMT43k6tvuHjY8",
