@@ -159,7 +159,7 @@
     - 중복된 host,path 의 경우 오래된 ingress 설정이 우선하게 된다.
     - <https://yoonbh2714.blogspot.com/2021/04/k8s-ingress-controller-model.html>
 
-## Daum pc/mo 통합검색, Kakaotalk #검색
+## Daum pc/mo 통합검색, Kakaotalk #검색, 3탭검색
 
 - Company: kakao/kakaoenterprise(20191201~)
 - Participation Period: 201607~202203
@@ -199,6 +199,7 @@
   - grafana로 분석 되지 않는 데이터 산출 툴 구현
   - elastalert(elasticsearch 데이터 기반으로 timeout 을 슬랙,카톡알림)
   - phase 분리, idc 이전 작업
+  - 카카오 3탭 검색 랭킹 운영툴 UI(based on vue) 개발
 - Troubleshooting
   - chi framework cpu 사용률 이슈
     - <https://yoonbh2714.blogspot.com/2021/06/golang-chi-cpu.html>
