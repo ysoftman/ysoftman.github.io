@@ -127,7 +127,7 @@
     - ~/.ssh/environment 크기가 너무 크다.
     - <https://yoonbh2714.blogspot.com/2023/04/ssh.html>
 
-## Kakao Search Platform(B2B 검색 서비스 빌더)
+## Kakao Search Platform(B2B Search Service Builder)
 
 - Company: kakaoenterprise
 - Participation Period: 202001~202203
@@ -159,11 +159,11 @@
     - 중복된 host,path 의 경우 오래된 ingress 설정이 우선하게 된다.
     - <https://yoonbh2714.blogspot.com/2021/04/k8s-ingress-controller-model.html>
 
-## Daum pc/mo 통합검색, Kakaotalk #검색, 3탭검색
+## Daum pc/mo search, Kakaotalk #(sharp)search/3tab search
 
 - Company: kakao/kakaoenterprise(20191201~)
 - Participation Period: 201607~202203
-- Description: daum 및 카톡 #검색에서 사용자 검색 키워드를 받아 관련 결과를 취합해 응답 하는 검색 프론트 서버
+- Description: daum 통합검색 및 카톡 #검색에서 사용자 검색 키워드를 받아 관련 결과를 취합해 응답 하는 검색 프론트 서버
 - Programming Language: c++, sh, python, lua, javascript
 - OS: linux, mac
 - DB: mysql
@@ -216,7 +216,7 @@
   - multi ansible 처리시 connection 에러
     - <https://yoonbh2714.blogspot.com/2017/03/ansible-connection-to-xxx-closed.html>
 
-## Hangame 모바일 포커
+## Hangame Mobile Poker
 
 - Company: nhn
 - Participation Period: 201401~201606
@@ -230,7 +230,7 @@
 - Contribution/Responsibilities
   - Develop Mobile Game Server
 
-## Hangame 웹보드게임
+## Hangame WebBoard Game
 
 - Company: naver/nhn(20130801~)
 - Participation Period: 201301~201312
@@ -245,7 +245,7 @@
 - Contribution/Responsibilities
   - Develop Mobile Game Server
 
-## Hangame 게임 플랫폼
+## Hangame Game Platform
 
 - Company: naver
 - Participation Period: 201102~201201
@@ -268,7 +268,7 @@
 - Programming Language: c/c++, sh, php, javascript
 - OS: linux, windows
 - DB: mysql
-  - HDFS(Hadoop FileSystem)
+- Storage: HDFS(Hadoop FileSystem)
 - Achievement
   - <http://lab.naver.com/ocr/>
 - Contribution/Responsibilities
