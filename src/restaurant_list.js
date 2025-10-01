@@ -577,7 +577,7 @@ export let restaurantlist = [
     tags: "닭고기 정식, 쭈꾸미, 제육볶음",
   },
   {
-    name: "판교 준영",
+    name: "판교 클준빛날영",
     tags: "파이탄라멘, 매운라멘, 차슈동",
     review: "https://maps.app.goo.gl/EQ8nfS3NJCsvhLb38",
   },
