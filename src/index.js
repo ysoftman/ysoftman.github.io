@@ -19,17 +19,17 @@ import "@fortawesome/fontawesome-free/scss/brands.scss";
 import "@fortawesome/fontawesome-free/scss/solid.scss";
 import "@mdi/font/scss/materialdesignicons.scss";
 import "./hack-v3.003-webfonts/hack.css";
+import { pageinfoAddEventListener } from "./pageinfo.js";
 import { loadProgramList } from "./programs.js";
 import { restaurantAddEventListener } from "./restaurant.js";
-import { pageinfoAddEventListener } from "./pageinfo.js";
 import "./common.css"; // css, scss 중 마지막에 import 해야 올바르게 적용된다.
-import { marked } from "marked";
 //const axios = require("axios"); // commonJS node 표준인데 import 방식으로 점차 변경중
 import axios from "axios"; // ES module  방식
+import { marked } from "marked";
 
-function sleep(ms = 0) {
-  return new Promise((msg) => setTimeout(msg, ms));
-}
+// function sleep(ms = 0) {
+//   return new Promise((msg) => setTimeout(msg, ms));
+// }
 
 function activeMenu(id) {
   document.getElementById("about_me").classList.remove("nav-active");
@@ -52,9 +52,8 @@ function md2Html(md) {
     breaks: true,
   });
   const renderer = new marked.Renderer();
-  renderer.link = function (tokens) {
-    return `<a target="_blank" href="${tokens.href}">${tokens.text}` + "</a>";
-  };
+  renderer.link = (tokens) =>
+    `<a target="_blank" href="${tokens.href}">${tokens.text}</a>`;
   marked.use({ renderer });
   return marked.parse(md);
 }
@@ -84,39 +83,38 @@ function Atag2Imgtag(html) {
   return html;
 }
 
-let pt = new Promise(function (success, fail) {
+const pt = new Promise((success) => {
   success("success");
 });
 
-pt.then(function () {
+pt.then(() => {
   //for test
   //await sleep(1000);
   //console.log("---");
-
   let param = "";
   //load 는 비동기로 동작,혹시 navbar.html 이 로딩이 선행 후 dom 을 사용하도록 함
   axios
     .get("navbar.html")
-    .then(function (response) {
+    .then((response) => {
       document.getElementById("navigation").innerHTML = response.data;
       console.log("navbar.html loaded");
       param = window.location.search.substring(1);
     })
-    .then(function (response) {
-      if (param == "programs") {
-        axios.get("programs.html").then(function (response) {
+    .then(() => {
+      if (param === "programs") {
+        axios.get("programs.html").then((response) => {
           activeMenu("programs");
           document.getElementById("main_view").innerHTML = response.data;
           loadProgramList();
         });
-      } else if (param == "projects") {
-        axios.get("projects.md").then(function (response) {
+      } else if (param === "projects") {
+        axios.get("projects.md").then((response) => {
           activeMenu("projects");
           document.getElementById("main_view").innerHTML = md2Html(
             response.data,
           );
         });
-      } else if (param == "github-webhook-action") {
+      } else if (param === "github-webhook-action") {
         document.getElementById("main_view").innerHTML = `
 <h3>비용 발생으로 app engine 삭제(2025.04.02)
 <br>
@@ -144,41 +142,41 @@ pt.then(function () {
         //         document.getElementById("main_view").innerHTML = out;
         //       });
         //   });
-      } else if (param == "watchdust") {
+      } else if (param === "watchdust") {
         let out = "";
         // CORS 이슈로 서버 응답에 다음 헤더 추가함
         // Access-Control-Allow-Origin: *
         // Access-Control-Allow-Methods: get
         axios
           .get("https://watchdust.appspot.com")
-          .then(function (response) {
+          .then((response) => {
             activeMenu("watchdust");
-            out += "<h3>" + text2html(response.data) + "</h3>";
+            out += `<h3>${text2html(response.data)}</h3>`;
           })
-          .then(function (response) {
+          .then(() => {
             axios
               .get("https://watchdust.appspot.com/watchDust")
-              .then(function (response) {
+              .then((response) => {
                 out += "<h3>----- /watchDust -----</h3>";
                 out += "<br>";
-                out += "<h3>" + Atag2Imgtag(text2html(response.data)) + "</h3>";
+                out += `<h3>${Atag2Imgtag(text2html(response.data))}</h3>`;
                 document.getElementById("main_view").innerHTML = out;
               });
           });
-      } else if (param == "restaurant") {
-        axios.get("restaurant.html").then(function (response) {
+      } else if (param === "restaurant") {
+        axios.get("restaurant.html").then((response) => {
           activeMenu("restaurant");
           document.getElementById("main_view").innerHTML = response.data;
           restaurantAddEventListener();
         });
-      } else if (param == "pageinfo") {
-        axios.get("pageinfo.html").then(function (response) {
+      } else if (param === "pageinfo") {
+        axios.get("pageinfo.html").then((response) => {
           activeMenu("pageinfo");
           document.getElementById("main_view").innerHTML = response.data;
           pageinfoAddEventListener();
         });
       } else {
-        axios.get("about_me.md").then(function (response) {
+        axios.get("about_me.md").then((response) => {
           activeMenu("about_me");
           document.getElementById("main_view").innerHTML = md2Html(
             response.data,
@@ -197,6 +195,6 @@ pt.then(function () {
 //    console.log("document ready");
 //})
 
-document.addEventListener("DOMContentLoaded", function () {
+document.addEventListener("DOMContentLoaded", () => {
   console.log("document ready");
 });

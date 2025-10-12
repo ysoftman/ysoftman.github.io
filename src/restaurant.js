@@ -1,13 +1,13 @@
 import "./bootstrap.scss";
 import { restaurantlist } from "./restaurant_list.js";
 
-export const readRestaurantAllFromJSFile = async function (tag) {
-  let tempDocs = [];
+export const readRestaurantAllFromJSFile = async (tag) => {
+  const tempDocs = [];
   restaurantlist.forEach((doc) => {
     if (!doc.name.includes(tag) && !doc.tags.includes(tag)) {
       return;
     }
-    let d = {};
+    const d = {};
     d.name = doc.name;
     d.tags = doc.tags;
     d.review = doc.review;
@@ -16,20 +16,18 @@ export const readRestaurantAllFromJSFile = async function (tag) {
   return tempDocs;
 };
 
-export const makeSearchURL = function (name) {
-  return (
-    "https://search.daum.net/search?w=tot&DA=YZR&t__nil_searchbox=btn&q=" + name
-  );
+export const makeSearchURL = (name) => {
+  return `https://search.daum.net/search?w=tot&DA=YZR&t__nil_searchbox=btn&q=${name}`;
 };
 
-export const readRestaurantAll = async function (tag) {
-  if (tag == undefined) {
+export const readRestaurantAll = async (tag) => {
+  if (tag === undefined) {
     console.log("undefined tag");
     tag = "";
   }
 
-  let tempDocs = await readRestaurantAllFromJSFile(tag);
-  let bg_colors = [
+  const tempDocs = await readRestaurantAllFromJSFile(tag);
+  const bg_colors = [
     "bg-blue",
     "bg-indigo",
     "bg-purple",
@@ -44,8 +42,8 @@ export const readRestaurantAll = async function (tag) {
   ];
   let html = `<div class="row row-cols-1 row-cols-md-3 g-4">`;
   let i = 0;
-  for (let d of tempDocs) {
-    let searchURL = makeSearchURL(d.name);
+  for (const d of tempDocs) {
+    const searchURL = makeSearchURL(d.name);
     i = i % bg_colors.length;
     let reviewTag = "";
     if (d.review != null && d.review.length > 0) {
@@ -82,15 +80,15 @@ export const readRestaurantAll = async function (tag) {
   //    onDisLikeClick(name, name + "_싫어요");
   //  });
   //}
-  document.getElementById("restaurant_cnt").innerHTML = tempDocs.length + "개";
+  document.getElementById("restaurant_cnt").innerHTML = `${tempDocs.length}개`;
 };
 
 //innerHTML 로 dom 변경은 window.onload 로 보장할 수 없다.
 //window.onload = function () {
-export const restaurantAddEventListener = function () {
+export const restaurantAddEventListener = () => {
   document
     .getElementById("search_restaurant_input")
-    .addEventListener("keypress", function (event) {
+    .addEventListener("keypress", (event) => {
       if (event.key === "Enter") {
         event.preventDefault();
         document.getElementById("search_restaurant_button").click();

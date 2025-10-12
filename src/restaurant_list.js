@@ -1,4 +1,4 @@
-export let restaurantlist = [
+export const restaurantlist = [
   {
     name: "판교 울프스덴(Wolf's Den)",
     tags: "파스타,리조또,피자",
