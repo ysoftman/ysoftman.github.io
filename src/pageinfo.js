@@ -22,7 +22,7 @@ export const pageinfoAddEventListener = function () {
   html += "[package.json]";
   html += "<br>";
   html += JSON.stringify(packageJSON, null, 2);
-  let page_info_body = document.getElementById("page_info_body");
+  const page_info_body = document.getElementById("page_info_body");
   page_info_body.innerHTML = html;
 
   neonCursor({

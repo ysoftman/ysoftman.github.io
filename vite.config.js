@@ -1,9 +1,12 @@
+import { execSync } from "node:child_process";
+import path from "node:path";
+
+import dotenv from "dotenv";
 import { defineConfig } from "vite";
 import { createHtmlPlugin } from "vite-plugin-html";
-import { execSync } from "child_process";
-import dotenv from "dotenv";
-import path from "path";
+
 dotenv.config({ path: path.resolve(__dirname, ".env") });
+
 function getGitInfo() {
   try {
     // github action 에서 태그정보를 파악할 수 있도록 다음 설정 추가
@@ -63,12 +66,12 @@ let kstOffset = 0;
 if (Date().toString().includes("GMT+0000")) {
   kstOffset = 9 * 60 * 60 * 1000;
 }
-let kstDate = new Date(new Date().getTime() + kstOffset).toString();
+let kstDate = new Date(Date.now() + kstOffset).toString();
 kstDate = kstDate.replace(/GMT.*/, "");
 
 export default defineConfig({
   // index.html 위치,  아래 모든 설정의 경로의 시작
-  root: process.cwd() + "/src",
+  root: `${process.cwd()}/src`,
   entry: "./src/index.js",
   mode: "development",
   base: "/",
@@ -88,7 +91,7 @@ export default defineConfig({
     __LAST_COMMIT_HASH__: gitInfo.LAST_GIT_COMMIT_HASH,
     __LAST_COMMIT_DATE__: gitInfo.LAST_GIT_COMMIT_DATE,
     __LAST_COMMIT_MESSAGE__: gitInfo.LAST_GIT_COMMIT_MESSAGE,
-    __BUILD_DATE__: "'" + kstDate + "'",
+    __BUILD_DATE__: `'${kstDate}'`,
     // NOTE: myenv file 조회등의 api 사용을 위해 사용하려고했었는데 token 은 푸시가 안된다. github action secret 로 등록해도 배포하면 보안을 위해 토큰을 만료 시켜버려 사용하지 않기로 함.
     // https://docs.github.com/ko/authentication/keeping-your-account-and-data-secure/token-expiration-and-revocation#token-revoked-when-pushed-to-a-public-repository-or-public-gist
     // __MYENV_READONLY_TOKEN__: "'" + process.env.myenv_readonly_token + "'",
@@ -98,7 +101,7 @@ export default defineConfig({
     rollupOptions: {
       output: {
         assetFileNames: (assetInfo) => {
-          let extType = assetInfo.names[0].split(".").at(1);
+          const extType = assetInfo.names[0].split(".").at(1);
           //console.log("---------", assetInfo.names);
           // image 파일등 번들 위치 수정
           if (/png|jpe?g|svg|gif|tiff|bmp|ico/i.test(extType)) {
