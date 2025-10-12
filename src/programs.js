@@ -1,7 +1,7 @@
 import axios from "axios";
 
 export function loadProgramList() {
-  let windowsPrograms = [
+  const windowsPrograms = [
     "4kvideodownloader",
     "7z",
     "bandizip",
@@ -109,7 +109,7 @@ export function loadProgramList() {
     "winmerge",
     "wireshark",
   ];
-  windowsPrograms.forEach(function (item, index) {
+  windowsPrograms.forEach((item, _index) => {
     document.getElementById("windows_programs").innerHTML +=
       `<a href="http://www.google.com/search?q=` +
       item +
@@ -122,45 +122,45 @@ export function loadProgramList() {
     .get(
       "https://raw.githubusercontent.com/ysoftman/myenv/master/installcommon.sh",
     )
-    .then(function (response) {
+    .then((response) => {
       let data = response.data.split("sudo_cmd=")[0];
       data = data.replace(/(?:\r\n|\r|\n)/g, "<br>");
       document.getElementById("linux_programs").innerHTML = data;
     })
-    .catch(function (error) {
+    .catch((error) => {
       console.log(error);
     });
   axios
     .get(
       "https://raw.githubusercontent.com/ysoftman/myenv/master/installbrew.sh",
     )
-    .then(function (response) {
-      let data = response.data.replace(/(?:\r\n|\r|\n)/g, "<br>");
+    .then((response) => {
+      const data = response.data.replace(/(?:\r\n|\r|\n)/g, "<br>");
       document.getElementById("brew_programs").innerHTML = data;
     })
-    .catch(function (error) {
+    .catch((error) => {
       console.log(error);
     });
   axios
     .get(
       "https://raw.githubusercontent.com/ysoftman/myenv/master/installcargo.sh",
     )
-    .then(function (response) {
-      let data = response.data.replace(/(?:\r\n|\r|\n)/g, "<br>");
+    .then((response) => {
+      const data = response.data.replace(/(?:\r\n|\r|\n)/g, "<br>");
       document.getElementById("cargo_programs").innerHTML = data;
     })
-    .catch(function (error) {
+    .catch((error) => {
       console.log(error);
     });
   axios
     .get(
       "https://raw.githubusercontent.com/ysoftman/myenv/master/installpip.sh",
     )
-    .then(function (response) {
-      let data = response.data.replace(/(?:\r\n|\r|\n)/g, "<br>");
+    .then((response) => {
+      const data = response.data.replace(/(?:\r\n|\r|\n)/g, "<br>");
       document.getElementById("pip_programs").innerHTML = data;
     })
-    .catch(function (error) {
+    .catch((error) => {
       console.log(error);
     });
   axios
@@ -177,36 +177,36 @@ export function loadProgramList() {
         .filter((item) => item.type === "file")
         .map((item) => item.name);
       let result = "";
-      for (let v of files) {
-        result += v + "<br>";
+      for (const v of files) {
+        result += `${v}<br>`;
       }
       document.getElementById("nvim_plugins").innerHTML = result;
     })
-    .catch(function (error) {
+    .catch((error) => {
       console.log(error);
     });
   axios
     .get("https://raw.githubusercontent.com/ysoftman/myenv/master/.vimrc")
-    .then(function (response) {
-      let data = response.data.match(/^call plug.*|^Plug.*|.*:Plug.*/gm);
+    .then((response) => {
+      const data = response.data.match(/^call plug.*|^Plug.*|.*:Plug.*/gm);
       let result = "";
-      for (let v of data) {
-        result += v + "<br>";
+      for (const v of data) {
+        result += `${v}<br>`;
       }
       document.getElementById("vim_plugins").innerHTML = result;
     })
-    .catch(function (error) {
+    .catch((error) => {
       console.log(error);
     });
   axios
     .get(
       "https://raw.githubusercontent.com/ysoftman/myenv/master/installvscodeextension.sh",
     )
-    .then(function (response) {
-      let data = response.data.replace(/(?:\r\n|\r|\n)/g, "<br>");
+    .then((response) => {
+      const data = response.data.replace(/(?:\r\n|\r|\n)/g, "<br>");
       document.getElementById("vscode_extensions").innerHTML = data;
     })
-    .catch(function (error) {
+    .catch((error) => {
       console.log(error);
     });
 }

@@ -1,22 +1,22 @@
-import packageJSON from "../package.json" assert { type: "json" };
 //const packageJSON = require("package.json");
 import { neonCursor } from "threejs-toys";
+import packageJSON from "../package.json";
 
 //innerHTML 로 dom 변경은 window.onload 로 보장할 수 없다.
 //window.onload = function () {
-export const pageinfoAddEventListener = function () {
+export const pageinfoAddEventListener = () => {
   let html = "<br>";
   html += "[env from vite.config.js]";
   html += "<br>";
-  html += "last version(tag): " + __LAST_VERSION_TAG__;
+  html += `last version(tag): ${__LAST_VERSION_TAG__}`;
   html += "<br>";
-  html += "last commit hash: " + __LAST_COMMIT_HASH__;
+  html += `last commit hash: ${__LAST_COMMIT_HASH__}`;
   html += "<br>";
-  html += "last commit date: " + __LAST_COMMIT_DATE__;
+  html += `last commit date: ${__LAST_COMMIT_DATE__}`;
   html += "<br>";
-  html += "last commit message: " + __LAST_COMMIT_MESSAGE__;
+  html += `last commit message: ${__LAST_COMMIT_MESSAGE__}`;
   html += "<br>";
-  html += "build date: " + __BUILD_DATE__;
+  html += `build date: ${__BUILD_DATE__}`;
   html += "<br>";
   html += "<br>";
   html += "[package.json]";
