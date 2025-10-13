@@ -1,5 +1,10 @@
 export const restaurantlist = [
   {
+    name: "홍대 오레타치 카레 ",
+    tags: "일본식 카레,돈까스",
+    review: "https://maps.app.goo.gl/k9ueGZKPAQMCbTUK9",
+  },
+  {
     name: "판교 울프스덴(Wolf's Den)",
     tags: "파스타,리조또,피자",
     review: "https://maps.app.goo.gl/DuoHkFCYRKVzKoQXA",
