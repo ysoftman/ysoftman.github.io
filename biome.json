@@ -1,20 +1,50 @@
 {
-  "$schema": "https://biomejs.dev/schemas/2.2.5/schema.json",
+  "$schema": "https://biomejs.dev/schemas/2.2.6/schema.json",
   "vcs": {
     "enabled": false,
     "clientKind": "git",
     "useIgnoreFile": false
   },
   "files": {
+    "includes": [
+      "**/*.{js,jsx,ts,tsx,css}",
+      "!biome.json",
+      "!tailwind.config.js",
+      "!vite.config.ts",
+      "!eslint.config.js",
+      "!**/.*",
+      "!dist/*",
+      "!node_modules"
+    ],
     "ignoreUnknown": false
   },
   "formatter": {
+    "includes": [
+      "**/*.{js,jsx,ts,tsx,css}",
+      "!biome.json",
+      "!tailwind.config.js",
+      "!vite.config.ts",
+      "!eslint.config.js",
+      "!**/.*",
+      "!dist/*",
+      "!node_modules"
+    ],
     "enabled": true,
     "indentStyle": "space",
     "lineWidth": 80,
     "indentWidth": 2
   },
   "linter": {
+    "includes": [
+      "**/*.{js,jsx,ts,tsx,css}",
+      "!biome.json",
+      "!tailwind.config.js",
+      "!vite.config.ts",
+      "!eslint.config.js",
+      "!**/.*",
+      "!dist/*",
+      "!node_modules"
+    ],
     "enabled": true,
     "rules": {
       "recommended": true
