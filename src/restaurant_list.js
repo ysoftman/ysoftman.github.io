@@ -1,5 +1,10 @@
 export const restaurantlist = [
   {
+    name: "판교 후루룩손칼국수 ",
+    tags: "손칼국수",
+    review: "https://maps.app.goo.gl/xTxSqpbTakoqmpPE8",
+  },
+  {
     name: "홍대 오레타치 카레 ",
     tags: "일본식 카레,돈까스",
     review: "https://maps.app.goo.gl/k9ueGZKPAQMCbTUK9",
