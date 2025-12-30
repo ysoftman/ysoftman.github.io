@@ -1,4 +1,9 @@
 import axios from "axios";
+import hljs from "highlight.js";
+// import "highlight.js/styles/github-dark.css";
+// import "highlight.js/styles/atom-one-dark.css";
+import "highlight.js/styles/night-owl.css";
+// import "highlight.js/styles/xt256.css";
 
 export function loadProgramList() {
   const windowsPrograms = [
@@ -123,9 +128,10 @@ export function loadProgramList() {
       "https://raw.githubusercontent.com/ysoftman/myenv/master/installcommon.sh",
     )
     .then((response) => {
-      let data = response.data.split("sudo_cmd=")[0];
-      data = data.replace(/(?:\r\n|\r|\n)/g, "<br>");
-      document.getElementById("linux_programs").innerHTML = data;
+      const data = response.data.split("sudo_cmd=")[0];
+      // data = data.replace(/(?:\r\n|\r|\n)/g, "<br>");
+      document.getElementById("linux_programs").textContent = data;
+      hljs.highlightElement(document.getElementById("linux_programs"));
     })
     .catch((error) => {
       console.log(error);
@@ -135,8 +141,10 @@ export function loadProgramList() {
       "https://raw.githubusercontent.com/ysoftman/myenv/master/installbrew.sh",
     )
     .then((response) => {
-      const data = response.data.replace(/(?:\r\n|\r|\n)/g, "<br>");
-      document.getElementById("brew_programs").innerHTML = data;
+      // const data = response.data.replace(/(?:\r\n|\r|\n)/g, "<br>");
+      const data = response.data;
+      document.getElementById("brew_programs").textContent = data;
+      hljs.highlightElement(document.getElementById("brew_programs"));
     })
     .catch((error) => {
       console.log(error);
@@ -146,8 +154,10 @@ export function loadProgramList() {
       "https://raw.githubusercontent.com/ysoftman/myenv/master/installcargo.sh",
     )
     .then((response) => {
-      const data = response.data.replace(/(?:\r\n|\r|\n)/g, "<br>");
-      document.getElementById("cargo_programs").innerHTML = data;
+      // const data = response.data.replace(/(?:\r\n|\r|\n)/g, "<br>");
+      const data = response.data;
+      document.getElementById("cargo_programs").textContent = data;
+      hljs.highlightElement(document.getElementById("cargo_programs"));
     })
     .catch((error) => {
       console.log(error);
@@ -157,8 +167,10 @@ export function loadProgramList() {
       "https://raw.githubusercontent.com/ysoftman/myenv/master/installpip.sh",
     )
     .then((response) => {
-      const data = response.data.replace(/(?:\r\n|\r|\n)/g, "<br>");
-      document.getElementById("pip_programs").innerHTML = data;
+      // const data = response.data.replace(/(?:\r\n|\r|\n)/g, "<br>");
+      const data = response.data;
+      document.getElementById("pip_programs").textContent = data;
+      hljs.highlightElement(document.getElementById("pip_programs"));
     })
     .catch((error) => {
       console.log(error);
@@ -171,16 +183,17 @@ export function loadProgramList() {
       "https://api.github.com/repositories/77009402/contents/nvim/lua/plugins",
     )
     .then((response) => {
-      document.getElementById("nvim_plugins_api_limit").innerHTML =
+      document.getElementById("nvim_plugins_api_limit").textContent =
         `github api request(remaining/limit_per_hour): ${response.headers["x-ratelimit-remaining"]}/${response.headers["x-ratelimit-limit"]}`;
       const files = response.data
         .filter((item) => item.type === "file")
         .map((item) => item.name);
       let result = "";
       for (const v of files) {
-        result += `${v}<br>`;
+        result += `${v}\n`;
       }
-      document.getElementById("nvim_plugins").innerHTML = result;
+      document.getElementById("nvim_plugins").textContent = result;
+      hljs.highlightElement(document.getElementById("nvim_plugins"));
     })
     .catch((error) => {
       console.log(error);
@@ -191,9 +204,10 @@ export function loadProgramList() {
       const data = response.data.match(/^call plug.*|^Plug.*|.*:Plug.*/gm);
       let result = "";
       for (const v of data) {
-        result += `${v}<br>`;
+        result += `${v}\n`;
       }
-      document.getElementById("vim_plugins").innerHTML = result;
+      document.getElementById("vim_plugins").textContent = result;
+      hljs.highlightElement(document.getElementById("vim_plugins"));
     })
     .catch((error) => {
       console.log(error);
@@ -203,8 +217,10 @@ export function loadProgramList() {
       "https://raw.githubusercontent.com/ysoftman/myenv/master/installvscodeextension.sh",
     )
     .then((response) => {
-      const data = response.data.replace(/(?:\r\n|\r|\n)/g, "<br>");
-      document.getElementById("vscode_extensions").innerHTML = data;
+      // const data = response.data.replace(/(?:\r\n|\r|\n)/g, "<br>");
+      const data = response.data;
+      document.getElementById("vscode_extensions").textContent = data;
+      hljs.highlightElement(document.getElementById("vscode_extensions"));
     })
     .catch((error) => {
       console.log(error);

@@ -52,6 +52,7 @@
     "webpack-dev-server": "^5.2.2"
   },
   "dependencies": {
-    "biome": "^0.3.3"
+    "biome": "^0.3.3",
+    "highlight.js": "^11.11.1"
   }
 }

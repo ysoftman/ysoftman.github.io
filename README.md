@@ -28,7 +28,8 @@ bun add --dev gh-pages serve-static marked showdown axios connect ajv dotenv \
     webpack webpack-cli webpack-dev-server html-webpack-plugin clean-webpack-plugin \
     vite vite-plugin-html \
     tailwindcss \
-    three threejs-toys
+    three threejs-toys \
+    highlight.js
 ```
 
 ## local 테스트
