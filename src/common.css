@@ -77,17 +77,6 @@ body {
   font-family: Hack, monospace;
 }
 
-/* programs pre 영역 */
-li > pre {
-  font-size: medium;
-  white-space: pre-wrap;
-}
-
-
-pre code.hljs {
-  padding: 0; /* 내부 code 태그의 기본 패딩 제거 */
-}
-
 iframe {
   max-width: 100%;
   width: 100%;
@@ -151,20 +140,31 @@ img {
 
 .my-title {
   font-size: 1.5em;
-  font-weight: 500;
+  margin-top: 1em;
 }
-/* bootstrap list-group, list-group-item */
-.list-group {
-  margin: 1em 0 0 0;
+
+#windows_programs {
+  padding: 10px;
 }
-.list-group-item {
-  background-color: var(--black) !important;
+pre {
+  font-size: medium;
+  white-space: pre-wrap;
+  padding: 0px;
+  margin: 0px;
   border-top-left-radius: 5px !important;
   border-top-right-radius: 5px !important;
   border-bottom-left-radius: 5px !important;
   border-bottom-right-radius: 5px !important;
+  border-width: 1px;
+  border-style: solid;
   border-color: var(--bs-green);
 }
+code {
+  padding: 10px !important;
+  margin: 0px !important;
+  border-radius: 5px !important;
+}
+
 .navbar .navbar-nav {
   /*flex-direction: row;*/
   display: contents;
