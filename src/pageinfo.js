@@ -5,8 +5,7 @@ import packageJSON from "../package.json";
 //innerHTML 로 dom 변경은 window.onload 로 보장할 수 없다.
 //window.onload = function () {
 export const pageinfoAddEventListener = () => {
-  let html = "<br>";
-  html += "[env from vite.config.js]";
+  let html = "[env from vite.config.js]";
   html += "<br>";
   html += `last version(tag): ${__LAST_VERSION_TAG__}`;
   html += "<br>";
