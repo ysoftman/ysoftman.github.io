@@ -7,29 +7,12 @@
 <https://github.com/ysoftman/ysoftman.github.io/settings/pages>
 -> github pages -> source -> gh-pages 브랜치 설정
 
+- mise(nvm 대체) 로 node 설치/구성
+
 ```bash
 # install latest nodejs
-https://github.com/nodesource/distributions
-
-# install nvm
-curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.3/install.sh | bash
-
-# (최초 한번만 설정) 최신 node 설치 및 사용 패키지 설치
-nvm install --lts
-nvm use --lts
-nvm ls
-
-# package.json 설정
-# sass deprecation warning 문제가 있어 아래 버전을 사용해야 한다.
-bun add --dev gh-pages serve-static marked showdown axios connect ajv dotenv \
-    @fortawesome/fontawesome-free @mdi/font bootstrap \
-    sass@1.77.6 sass-loader css-loader style-loader \
-    eslint prettier @babel/core babel-loader @babel/preset-env \
-    webpack webpack-cli webpack-dev-server html-webpack-plugin clean-webpack-plugin \
-    vite vite-plugin-html \
-    tailwindcss \
-    three threejs-toys \
-    highlight.js
+brew install mise
+mise use node@latest
 ```
 
 ## local 테스트
