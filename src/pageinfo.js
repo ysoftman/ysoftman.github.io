@@ -1,9 +1,7 @@
-//const packageJSON = require("package.json");
-import { neonCursor } from "threejs-toys";
+import { loadBasic } from "@tsparticles/basic";
+import { tsParticles } from "@tsparticles/engine";
 import packageJSON from "../package.json";
 
-//innerHTML 로 dom 변경은 window.onload 로 보장할 수 없다.
-//window.onload = function () {
 export const pageinfoAddEventListener = () => {
   let html = "[env from vite.config.js]";
   html += "<br>";
@@ -22,19 +20,41 @@ export const pageinfoAddEventListener = () => {
   html += "<br>";
   html += JSON.stringify(packageJSON, null, 2);
   const page_info_body = document.getElementById("page_info_body");
-  page_info_body.innerHTML = html;
+  if (page_info_body) {
+    page_info_body.innerHTML = html;
+  }
 
-  neonCursor({
-    el: document.getElementById("main_view"),
-    shaderPoints: 16,
-    curvePoints: 80,
-    curveLerp: 0.5,
-    radius1: 5,
-    radius2: 30,
-    velocityTreshold: 10,
-    sleepRadiusX: 100,
-    sleepRadiusY: 100,
-    sleepTimeCoefX: 0.0025,
-    sleepTimeCoefY: 0.0025,
+  loadBasic(tsParticles).then(() => {
+    tsParticles
+      .load({
+        id: "tsparticles",
+        options: {
+          particles: {
+            number: {
+              value: 80,
+            },
+            size: {
+              value: 3,
+            },
+            move: {
+              enable: true,
+              speed: 2,
+            },
+            links: {
+              enable: true,
+              distance: 150,
+            },
+            color: {
+              value: "#ffffff",
+            },
+          },
+        },
+      })
+      .then((container) => {
+        console.log("tsparticles loaded successfully:", container);
+      })
+      .catch((error) => {
+        console.error("Error loading tsparticles:", error);
+      });
   });
 };

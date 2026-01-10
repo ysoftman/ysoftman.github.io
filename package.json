@@ -24,7 +24,6 @@
     "@biomejs/biome": "^2.3.3",
     "@fortawesome/fontawesome-free": "^7.0.1",
     "@mdi/font": "^7.4.47",
-    "ajv": "^8.17.1",
     "axios": "^1.12.2",
     "babel-loader": "^10.0.0",
     "bootstrap": "^5.3.8",
@@ -43,8 +42,6 @@
     "showdown": "^2.1.0",
     "style-loader": "^4.0.0",
     "tailwindcss": "^4.1.13",
-    "three": "^0.181.0",
-    "threejs-toys": "^0.0.8",
     "vite": "^7.1.7",
     "vite-plugin-html": "^3.2.2",
     "webpack": "^5.102.0",
@@ -52,6 +49,8 @@
     "webpack-dev-server": "^5.2.2"
   },
   "dependencies": {
+    "@tsparticles/basic": "^3.9.1",
+    "@tsparticles/engine": "^3.9.1",
     "biome": "^0.3.3",
     "highlight.js": "^11.11.1"
   }
