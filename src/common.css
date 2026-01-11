@@ -165,27 +165,6 @@ code {
   border-radius: 5px !important;
 }
 
-.navbar .navbar-nav {
-  /*flex-direction: row;*/
-  display: contents;
-  justify-content: normal;
-}
-
-.navbar .navbar-nav .nav-item .nav-link {
-  padding-left: 1em;
-  padding-right: 1em;
-  justify-content: normal;
-  border-bottom: 0.2rem solid transparent;
-}
-
-.navbar .navbar-nav .nav-item .nav-link:hover {
-  border-bottom: 0.2rem solid yellow;
-}
-
-.navbar .navbar-nav .nav-item .nav-active {
-  border-bottom: 0.2rem solid white;
-}
-
 /*neon effect*/
 [class*="mdi-"],
 [class*="fa-"] {
@@ -207,15 +186,9 @@ code {
   }
 }
 
-a {
-  text-decoration: none;
-  /* https://getbootstrap.com/docs/5.0/customize/css-variables/#root-variables */
-  color: var(--bs-orange);
-  font-weight: 500;
-}
 /*add external icon*/
-.nav-item a[href^="http"]::after,
-.nav-item a[href^="https://"]::after {
+.nav-menu-item a[href^="http"]::after,
+.nav-menu-item a[href^="https://"]::after {
   content: "";
   width: 1em;
   height: 1em;
