@@ -18,6 +18,7 @@ last commit date: ${__LAST_COMMIT_DATE__}
 last commit message: ${__LAST_COMMIT_MESSAGE__}
 build date: ${__BUILD_DATE__}`;
   }
+  hljs.highlightElement(document.getElementById("vite_config"));
 
   const package_json = document.getElementById("package_json");
   if (package_json) {
