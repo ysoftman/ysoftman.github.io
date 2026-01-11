@@ -6,29 +6,24 @@ import { loadSeaAnemonePreset } from "@tsparticles/preset-sea-anemone";
 import { loadSnowPreset } from "@tsparticles/preset-snow";
 import { loadLinksPreset } from "@tsparticles/preset-links";
 import { tsParticles } from "@tsparticles/engine";
+import hljs from "highlight.js";
 import packageJSON from "../package.json";
 
 export const pageinfoAddEventListener = () => {
-  let html = "[env from vite.config.js]";
-  html += "<br>";
-  html += `last version(tag): ${__LAST_VERSION_TAG__}`;
-  html += "<br>";
-  html += `last commit hash: ${__LAST_COMMIT_HASH__}`;
-  html += "<br>";
-  html += `last commit date: ${__LAST_COMMIT_DATE__}`;
-  html += "<br>";
-  html += `last commit message: ${__LAST_COMMIT_MESSAGE__}`;
-  html += "<br>";
-  html += `build date: ${__BUILD_DATE__}`;
-  html += "<br>";
-  html += "<br>";
-  html += "[package.json]";
-  html += "<br>";
-  html += JSON.stringify(packageJSON, null, 2);
-  const page_info_body = document.getElementById("page_info_body");
-  if (page_info_body) {
-    page_info_body.innerHTML = html;
+  const vite_config = document.getElementById("vite_config");
+  if (vite_config) {
+    vite_config.textContent = `last version(tag): ${__LAST_VERSION_TAG__}
+last commit hash: ${__LAST_COMMIT_HASH__}
+last commit date: ${__LAST_COMMIT_DATE__}
+last commit message: ${__LAST_COMMIT_MESSAGE__}
+build date: ${__BUILD_DATE__}`;
   }
+
+  const package_json = document.getElementById("package_json");
+  if (package_json) {
+    package_json.textContent = JSON.stringify(packageJSON, null, 2);
+  }
+  hljs.highlightElement(document.getElementById("package_json"));
 
   loadBasic(tsParticles)
     .then(() => {
