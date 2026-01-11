@@ -17,7 +17,8 @@ export const pageinfoAddEventListener = () => {
 last commit hash: ${__LAST_COMMIT_HASH__}
 last commit date: ${__LAST_COMMIT_DATE__}
 last commit message: ${__LAST_COMMIT_MESSAGE__}
-build date: ${__BUILD_DATE__}`;
+build date: ${__BUILD_DATE__}
+runtime(Bun🐇/Node.js🐢): ${__RUNTIME__}`;
   }
   hljs.highlightElement(document.getElementById("vite_config"));
 
