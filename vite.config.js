@@ -4,6 +4,7 @@ import path from "node:path";
 import dotenv from "dotenv";
 import { defineConfig } from "vite";
 import { createHtmlPlugin } from "vite-plugin-html";
+import tailwindcss from "@tailwindcss/vite";
 
 dotenv.config({ path: path.resolve(__dirname, ".env") });
 
@@ -124,6 +125,7 @@ export default defineConfig({
   assetsInclude: ["**/*.md"],
 
   plugins: [
+    tailwindcss(),
     createHtmlPlugin({
       minify: true,
       pages: [

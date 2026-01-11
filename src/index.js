@@ -22,7 +22,7 @@ import "./hack-v3.003-webfonts/hack.css";
 import { pageinfoAddEventListener } from "./pageinfo.js";
 import { loadProgramList } from "./programs.js";
 import { restaurantAddEventListener } from "./restaurant.js";
-import "./common.css"; // css, scss 중 마지막에 import 해야 올바르게 적용된다.
+import "./common.css";
 //const axios = require("axios"); // commonJS node 표준인데 import 방식으로 점차 변경중
 import axios from "axios"; // ES module  방식
 import { marked } from "marked";

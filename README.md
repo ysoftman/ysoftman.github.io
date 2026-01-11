@@ -28,7 +28,7 @@ bun update --latest
 # 필요시(vim 에서 파일 저장시 자동 포맷팅되도록 했뒀음)
 bun prettier . --write
 
-# tailwindcss 변경 확인시
+# tailwindcss 변경 확인시(vite 에 tailwindcss 설정이 되어 있다면 vite 가 자동 빌드한다.)
 # 필요한 tailwindcss  가 코드 변화에 따라 필요한 요소들이 tailwind_output.css 로 실시간으로 생성되도록 띄워 둔다.
 npx @tailwindcss/cli -i ./src/tailwind_input.css -o ./src/tailwind_output.css --watch
 

@@ -1,5 +1,8 @@
 /** biome-ignore-all lint/suspicious/noDuplicateCustomProperties: by ysoftman */
 /** biome-ignore-all lint/complexity/noImportantStyles: by ysoftman */
+
+@import "./tailwind_output.css";
+
 :root {
   /* https://getbootstrap.com/docs/5.0/customize/color/#all-colors */
   --blue: #0d6efd;
