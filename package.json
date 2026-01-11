@@ -51,6 +51,12 @@
   "dependencies": {
     "@tsparticles/basic": "^3.9.1",
     "@tsparticles/engine": "^3.9.1",
+    "@tsparticles/preset-bubbles": "3.2.0",
+    "@tsparticles/preset-fire": "3.2.0",
+    "@tsparticles/preset-fireworks": "^3.2.0",
+    "@tsparticles/preset-links": "^3.2.0",
+    "@tsparticles/preset-sea-anemone": "^3.2.0",
+    "@tsparticles/preset-snow": "3.2.0",
     "biome": "^0.3.3",
     "highlight.js": "^11.11.1"
   }

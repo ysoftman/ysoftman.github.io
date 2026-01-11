@@ -1,4 +1,10 @@
 import { loadBasic } from "@tsparticles/basic";
+import { loadBubblesPreset } from "@tsparticles/preset-bubbles";
+import { loadFirePreset } from "@tsparticles/preset-fire";
+import { loadFireworksPreset } from "@tsparticles/preset-fireworks";
+import { loadSeaAnemonePreset } from "@tsparticles/preset-sea-anemone";
+import { loadSnowPreset } from "@tsparticles/preset-snow";
+import { loadLinksPreset } from "@tsparticles/preset-links";
 import { tsParticles } from "@tsparticles/engine";
 import packageJSON from "../package.json";
 
@@ -24,37 +30,47 @@ export const pageinfoAddEventListener = () => {
     page_info_body.innerHTML = html;
   }
 
-  loadBasic(tsParticles).then(() => {
-    tsParticles
-      .load({
-        id: "tsparticles",
-        options: {
-          particles: {
-            number: {
-              value: 80,
-            },
-            size: {
-              value: 3,
-            },
-            move: {
-              enable: true,
-              speed: 2,
-            },
-            links: {
-              enable: true,
-              distance: 150,
-            },
-            color: {
-              value: "#ffffff",
+  loadBasic(tsParticles)
+    .then(() => {
+      return Promise.all([
+        loadSnowPreset(tsParticles),
+        loadFirePreset(tsParticles),
+        loadBubblesPreset(tsParticles),
+        loadFireworksPreset(tsParticles),
+        loadLinksPreset(tsParticles),
+        loadSeaAnemonePreset(tsParticles),
+      ]);
+    })
+    .then(() => {
+      const presets = [
+        "snow",
+        "fire",
+        "bubbles",
+        "fireworks",
+        "seaAnemone",
+        "links",
+      ];
+      const randomPreset = presets[Math.floor(Math.random() * presets.length)];
+      tsParticles
+        .load({
+          id: "tsparticles",
+          options: {
+            preset: randomPreset,
+            background: {
+              color: {
+                value: "#000000",
+              },
             },
           },
-        },
-      })
-      .then((container) => {
-        console.log("tsparticles loaded successfully:", container);
-      })
-      .catch((error) => {
-        console.error("Error loading tsparticles:", error);
-      });
-  });
+        })
+        .then((container) => {
+          console.log(
+            `tsparticles loaded with preset: ${randomPreset}`,
+            container,
+          );
+        })
+        .catch((error) => {
+          console.error("Error loading tsparticles:", error);
+        });
+    });
 };
