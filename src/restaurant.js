@@ -1,4 +1,3 @@
-import "./bootstrap.scss";
 import { restaurantlist } from "./restaurant_list.js";
 
 export const readRestaurantAllFromJSFile = async (tag) => {
@@ -28,41 +27,39 @@ export const readRestaurantAll = async (tag) => {
 
   const tempDocs = await readRestaurantAllFromJSFile(tag);
   const bg_colors = [
-    "bg-blue",
-    "bg-indigo",
-    "bg-purple",
-    "bg-pink",
-    "bg-red",
-    "bg-orange",
-    "bg-yellow",
-    "bg-green",
-    "bg-teal",
-    "bg-cyan",
-    "bg-gray",
+    "bg-blue-400",
+    "bg-indigo-400",
+    "bg-purple-400",
+    "bg-pink-400",
+    "bg-red-400",
+    "bg-orange-400",
+    "bg-yellow-400",
+    "bg-green-400",
+    "bg-teal-400",
+    "bg-cyan-400",
+    "bg-gray-400",
   ];
-  let html = `<div class="row row-cols-1 row-cols-md-3 g-4">`;
+  let html = `<div class="grid grid-cols-1 md:grid-cols-3 gap-4">`;
   let i = 0;
   for (const d of tempDocs) {
     const searchURL = makeSearchURL(d.name);
     i = i % bg_colors.length;
     let reviewTag = "";
     if (d.review != null && d.review.length > 0) {
-      reviewTag = `<a href="${d.review}" target="_blank" class="btn btn-secondary border-black">리뷰</a>`;
+      reviewTag = `<a href="${d.review}" target="_blank" class="bg-gray-600 hover:bg-gray-700 text-white px-4 py-2 rounded border border-black inline-block transition-colors">리뷰</a>`;
     }
     html += `
-<div class="col">
-  <div class="card h-100 ${bg_colors[i]}">
-    <div class="card-body">
-      <h4 class="card-title">
-        ${d.name}
-      </h4>
-      <p class="card-text">${d.tags}</p>
-    </div>
-    <p class="text-center">
-      ${reviewTag}
-      <a href="${searchURL}" target="_blank" class="btn btn-secondary border-black">검색</a>
-    </p>
+<div class="rounded shadow overflow-hidden ${bg_colors[i]} flex flex-col h-full">
+  <div class="p-3">
+    <h4 class="text-xl text-black font-semibold mb-2">
+      ${d.name}
+    </h4>
+    <p class="text-gray-900">${d.tags}</p>
   </div>
+  <p class="text-center p-2">
+    ${reviewTag}
+    <a href="${searchURL}" target="_blank" class="bg-gray-600 hover:bg-gray-700 text-white px-4 py-2 rounded border border-black inline-block transition-colors">검색</a>
+  </p>
 </div>
 `;
     i++;
