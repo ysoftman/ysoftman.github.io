@@ -1,22 +1,38 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss";
 
+/* 1. Theme 설정 (기존 theme.extend 부분) */
+@theme {
+  --list-style-type-none: none;
+}
+
+/* 2. 소스 경로 설정 (기존 content 부분) */
+@source "./src/**/*.{html,js}";
+
+/* 3. Base 스타일 및 a 태그 문제 해결 */
 @layer base {
-  h1 {
-    @apply text-4xl font-extrabold tracking-tight;
-  }
-  h2 {
-    @apply text-3xl font-bold;
-  }
-  h3 {
-    @apply text-2xl font-bold;
-  }
-  h4 {
-    @apply text-xl font-semibold;
-  }
-  a {
-    @apply text-orange-500 font-medium no-underline;
-  }
+  h1 { @apply text-4xl font-extrabold tracking-tight; }
+  h2 { @apply text-3xl font-bold; }
+  h3 { @apply text-2xl font-bold; }
+  h4 { @apply text-xl font-semibold; }
 
+  /* a 태그가 안 바뀌는 경우를 대비해 명시적으로 작성 */
+  a {
+    color: var(--color-orange-500);
+    font-weight: var(--font-weight-medium);
+    text-decoration: none;
+  }
+  a:hover {
+    color: var(--color-orange-600);
+    text-decoration: underline;
+  }
+}
+
+/* 4. Safelist 설정 (v4 방식) */
+/* v4는 정규식을 직접 지원하지 않으므로, 동적으로 생성되는 클래스가 있다면
+   아래와 같이 명시적으로 선언해두어야 빌드에 포함됩니다. */
+@layer utilities {
+  /* 패턴에 있던 주요 클래스들을 강제로 빌드에 포함 */
+  .text-orange-500, .hover\:text-orange-600, .bg-gray-100, .text-gray-700 {
+    @apply transition-colors; /* 예시로 하나만 걸어두어도 빌드에 포함됩니다 */
+  }
 }
