@@ -1,8 +1,9 @@
 import { loadBasic } from "@tsparticles/basic";
 import { loadBubblesPreset } from "@tsparticles/preset-bubbles";
-import { loadFirePreset } from "@tsparticles/preset-fire";
-import { loadFireworksPreset } from "@tsparticles/preset-fireworks";
-import { loadSeaAnemonePreset } from "@tsparticles/preset-sea-anemone";
+// 다음 효과들은 배경색이 transparent 이 동작하지 않아 사용하지 않는다.
+// import { loadFirePreset } from "@tspartic les/preset-fire";
+// import { loadFireworksPreset } from "@tsparticles/preset-fireworks";
+// import { loadSeaAnemonePreset } from "@tsparticles/preset-sea-anemone";
 import { loadSnowPreset } from "@tsparticles/preset-snow";
 import { loadLinksPreset } from "@tsparticles/preset-links";
 import { tsParticles } from "@tsparticles/engine";
@@ -30,22 +31,15 @@ build date: ${__BUILD_DATE__}`;
     .then(() => {
       return Promise.all([
         loadSnowPreset(tsParticles),
-        loadFirePreset(tsParticles),
         loadBubblesPreset(tsParticles),
-        loadFireworksPreset(tsParticles),
         loadLinksPreset(tsParticles),
-        loadSeaAnemonePreset(tsParticles),
+        // loadFirePreset(tsParticles),
+        // loadFireworksPreset(tsParticles),
+        // loadSeaAnemonePreset(tsParticles),
       ]);
     })
     .then(() => {
-      const presets = [
-        "snow",
-        "fire",
-        "bubbles",
-        "fireworks",
-        "seaAnemone",
-        "links",
-      ];
+      const presets = ["snow", "bubbles", "links"];
       const randomPreset = presets[Math.floor(Math.random() * presets.length)];
       tsParticles
         .load({
@@ -54,7 +48,7 @@ build date: ${__BUILD_DATE__}`;
             preset: randomPreset,
             background: {
               color: {
-                value: "#000000",
+                value: "transparent",
               },
             },
           },
