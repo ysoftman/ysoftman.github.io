@@ -54,7 +54,7 @@ function md2Html(md) {
   renderer.link = (tokens) =>
     `<a target="_blank" href="${tokens.href}">${tokens.text}</a>`;
   marked.use({ renderer });
-  return marked.parse(md);
+  return `<div class=prose>${marked.parse(md)}</div>`;
 }
 
 function text2html(text) {
