@@ -20,9 +20,6 @@
   a {
     @apply text-orange-500 font-medium no-underline;
   }
-  a:hover {
-    @apply text-orange-600 underline;
-  }
   .prose li {
     line-height: 1.2;
   }
