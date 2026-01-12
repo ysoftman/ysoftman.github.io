@@ -2,6 +2,7 @@
 /** biome-ignore-all lint/complexity/noImportantStyles: by ysoftman */
 
 @import "./tailwind.css";
+@import "remixicon/fonts/remixicon.css";
 
 :root {
   /* https://getbootstrap.com/docs/5.0/customize/color/#all-colors */
@@ -169,8 +170,7 @@ code {
 }
 
 /*neon effect*/
-[class*="mdi-"],
-[class*="fa-"] {
+[class*="ri-"] {
   font-size: 2rem;
   color: #ffffff;
   text-shadow:

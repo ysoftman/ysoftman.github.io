@@ -22,8 +22,6 @@
     "@babel/core": "^7.28.5",
     "@babel/preset-env": "^7.28.5",
     "@biomejs/biome": "^2.3.11",
-    "@fortawesome/fontawesome-free": "^7.1.0",
-    "@mdi/font": "^7.4.47",
     "@tailwindcss/typography": "^0.5.19",
     "axios": "^1.13.2",
     "babel-loader": "^10.0.0",
@@ -59,6 +57,7 @@
     "@tsparticles/preset-sea-anemone": "^3.2.0",
     "@tsparticles/preset-snow": "3.2.0",
     "biome": "^0.3.3",
-    "highlight.js": "^11.11.1"
+    "highlight.js": "^11.11.1",
+    "remixicon": "^4.8.0"
   }
 }
