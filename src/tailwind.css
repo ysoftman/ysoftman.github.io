@@ -6,7 +6,7 @@
 }
 
 /* 2. 소스 경로 설정 (기존 content 부분) */
-@source "./src/**/*.{html,js}";
+@source "./**/*.{html,js}";
 
 /* 3. Base 스타일 및 a 태그 문제 해결 */
 @layer base {
@@ -16,14 +16,11 @@
   h4 { @apply text-xl font-semibold; }
 
   /* a 태그가 안 바뀌는 경우를 대비해 명시적으로 작성 */
-  a {
-    color: var(--color-orange-500);
-    font-weight: var(--font-weight-medium);
-    text-decoration: none;
+    a {
+    @apply text-orange-500 font-medium no-underline;
   }
   a:hover {
-    color: var(--color-orange-600);
-    text-decoration: underline;
+    @apply text-orange-600 underline;
   }
 }
 

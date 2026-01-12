@@ -16,8 +16,7 @@
       "!dist/*",
       "!node_modules",
       "!stylesheets/*",
-      "!**/tailwind_input.css",
-      "!**/tailwind_output.css"
+      "!**/tailwind.css"
     ],
     "ignoreUnknown": false
   },
