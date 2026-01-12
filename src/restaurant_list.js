@@ -1,5 +1,10 @@
 export const restaurantlist = [
   {
+    name: "강남 따롱이 훠궈",
+    tags: "훠궈",
+    review: "https://maps.app.goo.gl/VahZ4tDXZpttj7Ac8",
+  },
+  {
     name: "판교 차이펑",
     tags: "짜장면,짬뽕,탕수육,중화요리",
     review: "https://maps.app.goo.gl/XvHcu6c9L7itURhw8",
