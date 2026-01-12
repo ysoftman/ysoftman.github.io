@@ -23,6 +23,13 @@
   a:hover {
     @apply text-orange-600 underline;
   }
+  .prose li {
+    line-height: 1.2;
+  }
+  .prose h2 {
+    margin-top: 2rem !important;   /* 위쪽 간격 */
+    margin-bottom: 0.75rem !important; /* 아래쪽 간격 */
+  }
 }
 
 /* 4. Safelist 설정 (v4 방식) */
