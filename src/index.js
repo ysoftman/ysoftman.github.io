@@ -51,10 +51,12 @@ function md2Html(md) {
     breaks: true,
   });
   const renderer = new marked.Renderer();
+  // not-prose 로 prose 클래스를 적용하지 않는 영역 설정
   renderer.link = (tokens) =>
-    `<a target="_blank" href="${tokens.href}">${tokens.text}</a>`;
+    `<span class="not-prose"><a target="_blank" href="${tokens.href}">${tokens.text}</a></span>`;
   marked.use({ renderer });
-  return `<div class=prose>${marked.parse(md)}</div>`;
+  // tailwind 사용으로 기본 스타일 모두제거된다. "@tailwindcss/typography" 플러그인으로 렌더링된 md -> html 을 prose 클래스로 이쁘게 보여준다.
+  return `<article class="prose dark:prose-invert max-w-none">${marked.parse(md)}</article>`;
 }
 
 function text2html(text) {

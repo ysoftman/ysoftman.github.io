@@ -1,4 +1,5 @@
 @import "tailwindcss";
+@plugin "@tailwindcss/typography";
 
 /* 1. Theme 설정 (기존 theme.extend 부분) */
 @theme {
