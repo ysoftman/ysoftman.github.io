@@ -26,7 +26,6 @@
     "@mdi/font": "^7.4.47",
     "axios": "^1.13.2",
     "babel-loader": "^10.0.0",
-    "bootstrap": "^5.3.8",
     "clean-webpack-plugin": "^4.0.0",
     "connect": "^3.7.0",
     "css-loader": "^7.1.2",

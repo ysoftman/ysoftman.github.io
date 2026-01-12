@@ -12,7 +12,6 @@ import "./images/sprite_download.png";
 import "./about_me.md";
 import "./projects.md";
 import "./markdown_test.md";
-import "./bootstrap.scss";
 import "@fortawesome/fontawesome-free/scss/fontawesome.scss";
 import "@fortawesome/fontawesome-free/scss/regular.scss";
 import "@fortawesome/fontawesome-free/scss/brands.scss";
