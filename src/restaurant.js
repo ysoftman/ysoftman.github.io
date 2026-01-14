@@ -1,6 +1,6 @@
 import { restaurantlist } from "./restaurant_list.js";
 
-export const readRestaurantAllFromJSFile = async (tag) => {
+const readRestaurantAllFromJSFile = async (tag) => {
   const tempDocs = [];
   restaurantlist.forEach((doc) => {
     if (!doc.name.includes(tag) && !doc.tags.includes(tag)) {
@@ -15,11 +15,11 @@ export const readRestaurantAllFromJSFile = async (tag) => {
   return tempDocs;
 };
 
-export const makeSearchURL = (name) => {
+const makeSearchURL = (name) => {
   return `https://search.daum.net/search?w=tot&DA=YZR&t__nil_searchbox=btn&q=${name}`;
 };
 
-export const readRestaurantAll = async (tag) => {
+const readRestaurantAll = async (tag) => {
   if (tag === undefined) {
     console.log("undefined tag");
     tag = "";

@@ -1,7 +1,7 @@
 {
   "name": "ysoftman.github.io",
   "version": "1.0.0",
-  "main": "index.js",
+  "main": "src/index.js",
   "repository": "https://github.com/ysoftman/ysoftman.github.io",
   "author": "ysoftman",
   "private": true,
@@ -21,10 +21,10 @@
   "devDependencies": {
     "@babel/core": "^7.28.5",
     "@babel/preset-env": "^7.28.5",
-    "@biomejs/biome": "^2.3.11",
     "@tailwindcss/typography": "^0.5.19",
     "axios": "^1.13.2",
     "babel-loader": "^10.0.0",
+    "biome": "^0.3.3",
     "clean-webpack-plugin": "^4.0.0",
     "connect": "^3.7.0",
     "css-loader": "^7.1.2",
@@ -35,7 +35,6 @@
     "sass": "1.97.2",
     "sass-loader": "^16.0.6",
     "serve-static": "^2.2.1",
-    "showdown": "^2.1.0",
     "style-loader": "^4.0.0",
     "tailwindcss": "^4.1.18",
     "vite": "^7.3.1",
@@ -54,7 +53,6 @@
     "@tsparticles/preset-links": "^3.2.0",
     "@tsparticles/preset-sea-anemone": "^3.2.0",
     "@tsparticles/preset-snow": "3.2.0",
-    "biome": "^0.3.3",
     "highlight.js": "^11.11.1",
     "remixicon": "^4.8.0"
   }

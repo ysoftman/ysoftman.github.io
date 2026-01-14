@@ -13,6 +13,7 @@ import "./about_me.md";
 import "./projects.md";
 import "./markdown_test.md";
 import "./hack-v3.003-webfonts/hack.css";
+// import "./hack-v3.003-webfonts/hack-subset.css"; // hack-subset(경량버전)
 import { pageinfoAddEventListener } from "./pageinfo.js";
 import { loadProgramList } from "./programs.js";
 import { restaurantAddEventListener } from "./restaurant.js";

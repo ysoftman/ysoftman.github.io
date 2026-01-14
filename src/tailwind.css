@@ -1,15 +1,10 @@
 @import "tailwindcss";
 @plugin "@tailwindcss/typography";
 
-/* 1. Theme 설정 (기존 theme.extend 부분) */
 @theme {
   --list-style-type-none: none;
 }
 
-/* 2. 소스 경로 설정 (기존 content 부분) */
-@source "./**/*.{html,js}";
-
-/* 3. Base 스타일 및 a 태그 문제 해결 */
 @layer base {
   h1 { @apply text-4xl font-extrabold tracking-tight; }
   h2 { @apply text-3xl font-bold; }
