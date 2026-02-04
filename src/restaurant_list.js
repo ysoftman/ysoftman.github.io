@@ -1,5 +1,15 @@
 export const restaurantlist = [
   {
+    name: "제주 맥파이 탑동점",
+    tags: "맥주,피자,치킨",
+    review: "https://maps.app.goo.gl/KE1CGoorwsQyxjKA7",
+  },
+  {
+    name: "제주 해금강 횟집",
+    tags: "회",
+    review: "https://maps.app.goo.gl/pW6whM13MZ6rjeE96",
+  },
+  {
     name: "강남 따롱이 훠궈",
     tags: "훠궈",
     review: "https://maps.app.goo.gl/VahZ4tDXZpttj7Ac8",

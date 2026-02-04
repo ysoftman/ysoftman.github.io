@@ -39,7 +39,7 @@ knip
 # tailwind v4 물리적인 파일 생성 없이 메모리 상에서 즉시 처리, 원본(tailwind.css)을 import
 
 # 실행
-bun serve
+bun run serve
 
 # 빌드(/dist 번들링) 후
 bun run build --base "dist/"
