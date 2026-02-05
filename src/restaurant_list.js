@@ -1,5 +1,15 @@
 export const restaurantlist = [
   {
+    name: "제주 구제제포",
+    tags: "오뎅탕,순대볶음,맥주",
+    review: "https://maps.app.goo.gl/kjxztY6tw5JEPpzh9",
+  },
+  {
+    name: "제주 태광식당",
+    tags: "한치주물럭",
+    review: "https://maps.app.goo.gl/TXM4UqbcMDPi7W5E6",
+  },
+  {
     name: "제주 맥파이 탑동점",
     tags: "맥주,피자,치킨",
     review: "https://maps.app.goo.gl/KE1CGoorwsQyxjKA7",
