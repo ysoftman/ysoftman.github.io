@@ -1,6 +1,6 @@
 export const restaurantlist = [
   {
-    name: "제주 구제제포",
+    name: "제주 구제주포차",
     tags: "오뎅탕,순대볶음,맥주",
     review: "https://maps.app.goo.gl/kjxztY6tw5JEPpzh9",
   },
