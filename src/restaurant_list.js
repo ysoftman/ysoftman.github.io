@@ -1,5 +1,15 @@
 export const restaurantlist = [
   {
+    name: "제주 양과자회관",
+    tags: "커피,라테",
+    review: "https://maps.app.goo.gl/5afLbxcrDLN53fuXA",
+  },
+  {
+    name: "제주 나목도식당",
+    tags: "흑돼지삼겹살,순대국수,멸치국수",
+    review: "https://maps.app.goo.gl/kWAPpWmQpcDa5rDJA",
+  },
+  {
     name: "제주 구제주포차",
     tags: "오뎅탕,순대볶음,맥주",
     review: "https://maps.app.goo.gl/kjxztY6tw5JEPpzh9",
