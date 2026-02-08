@@ -1,5 +1,10 @@
 export const restaurantlist = [
   {
+    name: "판교 아티제",
+    tags: "커피,소금빵,카스텔라,밀크베베치노",
+    review: "https://maps.app.goo.gl/2P73bwbM2VNPdn5n7",
+  },
+  {
     name: "제주 양과자회관",
     tags: "커피,라테",
     review: "https://maps.app.goo.gl/5afLbxcrDLN53fuXA",
