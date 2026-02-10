@@ -24,7 +24,7 @@ function getGitInfo() {
     // 커밋 해시나 태그 이후의 커밋 수를 포함하지 않고, 가장 가까운 태그 이름만 출력
     // "git describe master --tags --abbrev=0 2> /dev/null || echo 'develop'",
     const lastGitTag = execSync(
-      "git describe master --tags 2> /dev/null || echo 'develop'",
+      "git describe master --tags --exact-match 2> /dev/null || echo 'develop'",
     )
       .toString()
       .trim();
