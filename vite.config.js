@@ -70,6 +70,39 @@ if (Date().toString().includes("GMT+0000")) {
 let kstDate = new Date(Date.now() + kstOffset).toString();
 kstDate = kstDate.replace(/GMT.*/, "");
 
+// SPA 라우트를 index.html로 폴백시키는 Vite 플러그인
+// dev/preview 서버에서 /programs, /projects 등 경로 접근 시 index.html을 서빙
+const spaRoutes = [
+  "/programs",
+  "/projects",
+  "/restaurant",
+  "/watchdust",
+  "/github-webhook-action",
+  "/pageinfo",
+];
+
+function spaFallbackPlugin() {
+  return {
+    name: "spa-fallback",
+    configureServer(server) {
+      server.middlewares.use((req, res, next) => {
+        if (spaRoutes.includes(req.url)) {
+          req.url = "/index.html";
+        }
+        next();
+      });
+    },
+    configurePreviewServer(server) {
+      server.middlewares.use((req, res, next) => {
+        if (spaRoutes.includes(req.url)) {
+          req.url = "/index.html";
+        }
+        next();
+      });
+    },
+  };
+}
+
 export default defineConfig({
   // index.html 위치,  아래 모든 설정의 경로의 시작
   root: `${process.cwd()}/src`,
@@ -125,6 +158,7 @@ export default defineConfig({
   assetsInclude: ["**/*.md"],
 
   plugins: [
+    spaFallbackPlugin(),
     tailwindcss(),
     createHtmlPlugin({
       minify: true,
