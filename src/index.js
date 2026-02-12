@@ -56,7 +56,7 @@ function text2html(text) {
   }
   text = text.replace(
     /https?:\/\/([^ (\r\n|\r|\n)]+[a-z0-9])/g,
-    '<a target="_blank" href="$&">$&</a>',
+    '<a target="_blank" rel="noopener noreferrer" href="$&">$&</a>',
   );
   text = text.replace(/(?:\r\n|\r|\n)/g, "<br>");
   return text;
