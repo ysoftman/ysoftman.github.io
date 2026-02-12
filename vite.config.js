@@ -135,6 +135,11 @@ export default defineConfig({
           template: "index.html",
         },
         {
+          entry: "index.js",
+          filename: "404.html",
+          template: "404.html",
+        },
+        {
           filename: "navbar.html",
           template: "navbar.html",
         },

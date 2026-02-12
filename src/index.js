@@ -34,6 +34,7 @@ function activeMenu(id) {
     .classList.remove("nav-active");
   document.getElementById("watchdust").classList.remove("nav-active");
   document.getElementById("restaurant").classList.remove("nav-active");
+  document.getElementById("pageinfo").classList.remove("nav-active");
   document.getElementById(id).classList.add("nav-active");
 }
 
@@ -85,94 +86,113 @@ function showError(err) {
     `<h3 class="text-red-400">페이지를 불러오는 중 오류가 발생했습니다: ${err.message}</h3>`;
 }
 
+function loadPage(path) {
+  // pathname에서 선행 슬래시 제거
+  const page = path.replace(/^\//, "");
+
+  if (page === "programs") {
+    axios
+      .get("programs.html")
+      .then((response) => {
+        activeMenu("programs");
+        document.getElementById("main_view").innerHTML = response.data;
+        loadProgramList();
+      })
+      .catch(showError);
+  } else if (page === "projects") {
+    axios
+      .get("projects.md")
+      .then((response) => {
+        activeMenu("projects");
+        document.getElementById("main_view").innerHTML = md2Html(response.data);
+      })
+      .catch(showError);
+  } else if (page === "github-webhook-action") {
+    activeMenu("github_webhook_action");
+    document.getElementById("main_view").innerHTML = `
+<h3>비용 발생으로 app engine 삭제(2025.04.02)
+<br>
+<a target="_blank" href="https://github.com/ysoftman/github_webhook_action">https://github.com/ysoftman/github_webhook_action</a>
+</h3>
+`;
+  } else if (page === "watchdust") {
+    let out = "";
+    // CORS 이슈로 서버 응답에 다음 헤더 추가함
+    // Access-Control-Allow-Origin: *
+    // Access-Control-Allow-Methods: get
+    axios
+      .get("https://watchdust.appspot.com")
+      .then((response) => {
+        activeMenu("watchdust");
+        out += `<h3>${text2html(response.data)}</h3>`;
+      })
+      .then(() => {
+        axios
+          .get("https://watchdust.appspot.com/watchDust")
+          .then((response) => {
+            out += "<h3>----- /watchDust -----</h3>";
+            out += "<br>";
+            out += `<h3>${Atag2Imgtag(text2html(response.data))}</h3>`;
+            document.getElementById("main_view").innerHTML = out;
+          })
+          .catch(showError);
+      })
+      .catch(showError);
+  } else if (page === "restaurant") {
+    axios
+      .get("restaurant.html")
+      .then((response) => {
+        activeMenu("restaurant");
+        document.getElementById("main_view").innerHTML = response.data;
+        restaurantAddEventListener();
+      })
+      .catch(showError);
+  } else if (page === "pageinfo") {
+    axios
+      .get("pageinfo.html")
+      .then((response) => {
+        activeMenu("pageinfo");
+        document.getElementById("main_view").innerHTML = response.data;
+        pageinfoAddEventListener();
+      })
+      .catch(showError);
+  } else {
+    axios
+      .get("about_me.md")
+      .then((response) => {
+        activeMenu("about_me");
+        document.getElementById("main_view").innerHTML = md2Html(response.data);
+      })
+      .catch(showError);
+  }
+}
+
+function setupRouteLinks() {
+  document.querySelectorAll("a[data-route]").forEach((link) => {
+    link.addEventListener("click", (e) => {
+      e.preventDefault();
+      const path = link.getAttribute("href");
+      history.pushState(null, "", path);
+      loadPage(path);
+    });
+  });
+}
+
 //load 는 비동기로 동작,혹시 navbar.html 이 로딩이 선행 후 dom 을 사용하도록 함
 axios
   .get("navbar.html")
   .then((response) => {
     document.getElementById("navigation").innerHTML = response.data;
     console.log("navbar.html loaded");
-    const param = window.location.search.substring(1);
-
-    if (param === "programs") {
-      axios
-        .get("programs.html")
-        .then((response) => {
-          activeMenu("programs");
-          document.getElementById("main_view").innerHTML = response.data;
-          loadProgramList();
-        })
-        .catch(showError);
-    } else if (param === "projects") {
-      axios
-        .get("projects.md")
-        .then((response) => {
-          activeMenu("projects");
-          document.getElementById("main_view").innerHTML = md2Html(
-            response.data,
-          );
-        })
-        .catch(showError);
-    } else if (param === "github-webhook-action") {
-      document.getElementById("main_view").innerHTML = `
-<h3>비용 발생으로 app engine 삭제(2025.04.02)
-<br>
-<a target="_blank" href="https://github.com/ysoftman/github_webhook_action">https://github.com/ysoftman/github_webhook_action</a>
-</h3>
-`;
-    } else if (param === "watchdust") {
-      let out = "";
-      // CORS 이슈로 서버 응답에 다음 헤더 추가함
-      // Access-Control-Allow-Origin: *
-      // Access-Control-Allow-Methods: get
-      axios
-        .get("https://watchdust.appspot.com")
-        .then((response) => {
-          activeMenu("watchdust");
-          out += `<h3>${text2html(response.data)}</h3>`;
-        })
-        .then(() => {
-          axios
-            .get("https://watchdust.appspot.com/watchDust")
-            .then((response) => {
-              out += "<h3>----- /watchDust -----</h3>";
-              out += "<br>";
-              out += `<h3>${Atag2Imgtag(text2html(response.data))}</h3>`;
-              document.getElementById("main_view").innerHTML = out;
-            })
-            .catch(showError);
-        })
-        .catch(showError);
-    } else if (param === "restaurant") {
-      axios
-        .get("restaurant.html")
-        .then((response) => {
-          activeMenu("restaurant");
-          document.getElementById("main_view").innerHTML = response.data;
-          restaurantAddEventListener();
-        })
-        .catch(showError);
-    } else if (param === "pageinfo") {
-      axios
-        .get("pageinfo.html")
-        .then((response) => {
-          activeMenu("pageinfo");
-          document.getElementById("main_view").innerHTML = response.data;
-          pageinfoAddEventListener();
-        })
-        .catch(showError);
-    } else {
-      axios
-        .get("about_me.md")
-        .then((response) => {
-          activeMenu("about_me");
-          document.getElementById("main_view").innerHTML = md2Html(
-            response.data,
-          );
-        })
-        .catch(showError);
-    }
+    setupRouteLinks();
+    loadPage(window.location.pathname);
   })
   .catch(showError);
+
+// 브라우저 뒤로가기/앞으로가기 지원
+window.addEventListener("popstate", () => {
+  loadPage(window.location.pathname);
+});
 
 // deprecated in jquery 1.8 and it can't be used starting from jquery 3.0
 //$(document).ready(function () {
