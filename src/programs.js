@@ -116,7 +116,7 @@ export function loadProgramList() {
   ];
   let windowsProgramsHtml = "";
   windowsPrograms.forEach((item) => {
-    windowsProgramsHtml += `<a href="http://www.google.com/search?q=${item}" target="_blank">${item}</a> `;
+    windowsProgramsHtml += `<a href="http://www.google.com/search?q=${item}" target="_blank" rel="noopener noreferrer">${item}</a> `;
   });
   document.getElementById("windows_programs").innerHTML = windowsProgramsHtml;
 

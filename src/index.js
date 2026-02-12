@@ -49,7 +49,7 @@ function md2Html(md) {
   const renderer = new marked.Renderer();
   // not-prose 로 prose 클래스를 적용하지 않는 영역 설정
   renderer.link = (tokens) =>
-    `<span class="not-prose"><a target="_blank" href="${tokens.href}">${tokens.text}</a></span>`;
+    `<span class="not-prose"><a target="_blank" rel="noopener noreferrer" href="${tokens.href}">${tokens.text}</a></span>`;
   marked.use({ renderer });
   // tailwind 사용으로 기본 스타일 모두제거된다. "@tailwindcss/typography" 플러그인으로 렌더링된 md -> html 을 prose 클래스로 이쁘게 보여준다.
   return `<article class="prose dark:prose-invert max-w-none">${marked.parse(md)}</article>`;
@@ -112,30 +112,24 @@ function loadPage(path) {
     document.getElementById("main_view").innerHTML = `
 <h3>비용 발생으로 app engine 삭제(2025.04.02)
 <br>
-<a target="_blank" href="https://github.com/ysoftman/github_webhook_action">https://github.com/ysoftman/github_webhook_action</a>
+<a target="_blank" rel="noopener noreferrer" href="https://github.com/ysoftman/github_webhook_action">https://github.com/ysoftman/github_webhook_action</a>
 </h3>
 `;
   } else if (page === "watchdust") {
-    let out = "";
     // CORS 이슈로 서버 응답에 다음 헤더 추가함
     // Access-Control-Allow-Origin: *
     // Access-Control-Allow-Methods: get
-    axios
-      .get("https://watchdust.appspot.com")
-      .then((response) => {
+    Promise.all([
+      axios.get("https://watchdust.appspot.com"),
+      axios.get("https://watchdust.appspot.com/watchDust"),
+    ])
+      .then(([res1, res2]) => {
         activeMenu("watchdust");
-        out += `<h3>${text2html(response.data)}</h3>`;
-      })
-      .then(() => {
-        axios
-          .get("https://watchdust.appspot.com/watchDust")
-          .then((response) => {
-            out += "<h3>----- /watchDust -----</h3>";
-            out += "<br>";
-            out += `<h3>${Atag2Imgtag(text2html(response.data))}</h3>`;
-            document.getElementById("main_view").innerHTML = out;
-          })
-          .catch(showError);
+        let out = `<h3>${text2html(res1.data)}</h3>`;
+        out += "<h3>----- /watchDust -----</h3>";
+        out += "<br>";
+        out += `<h3>${Atag2Imgtag(text2html(res2.data))}</h3>`;
+        document.getElementById("main_view").innerHTML = out;
       })
       .catch(showError);
   } else if (page === "restaurant") {

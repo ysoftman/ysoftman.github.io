@@ -46,7 +46,7 @@ const readRestaurantAll = async (tag) => {
     i = i % bg_colors.length;
     let reviewTag = "";
     if (d.review != null && d.review.length > 0) {
-      reviewTag = `<a href="${d.review}" target="_blank" class="bg-gray-600 hover:bg-gray-700 text-white px-4 py-2 rounded border border-black inline-block transition-colors">리뷰</a>`;
+      reviewTag = `<a href="${d.review}" target="_blank" rel="noopener noreferrer" class="bg-gray-600 hover:bg-gray-700 text-white px-4 py-2 rounded border border-black inline-block transition-colors">리뷰</a>`;
     }
     html += `
 <div class="rounded shadow overflow-hidden ${bg_colors[i]} flex flex-col h-full">
@@ -58,7 +58,7 @@ const readRestaurantAll = async (tag) => {
   </div>
   <p class="text-center p-2">
     ${reviewTag}
-    <a href="${searchURL}" target="_blank" class="bg-gray-600 hover:bg-gray-700 text-white px-4 py-2 rounded border border-black inline-block transition-colors">검색</a>
+    <a href="${searchURL}" target="_blank" rel="noopener noreferrer" class="bg-gray-600 hover:bg-gray-700 text-white px-4 py-2 rounded border border-black inline-block transition-colors">검색</a>
   </p>
 </div>
 `;
