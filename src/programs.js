@@ -131,7 +131,7 @@ export function loadProgramList() {
       hljs.highlightElement(document.getElementById("linux_programs"));
     })
     .catch((error) => {
-      console.log(error);
+      console.error(error);
     });
   axios
     .get(
@@ -144,7 +144,7 @@ export function loadProgramList() {
       hljs.highlightElement(document.getElementById("brew_programs"));
     })
     .catch((error) => {
-      console.log(error);
+      console.error(error);
     });
   axios
     .get(
@@ -157,7 +157,7 @@ export function loadProgramList() {
       hljs.highlightElement(document.getElementById("cargo_programs"));
     })
     .catch((error) => {
-      console.log(error);
+      console.error(error);
     });
   axios
     .get(
@@ -170,7 +170,7 @@ export function loadProgramList() {
       hljs.highlightElement(document.getElementById("pip_programs"));
     })
     .catch((error) => {
-      console.log(error);
+      console.error(error);
     });
   axios
     // https://github.com/ysoftman/myenv/tree/master/nvim/lua/plugins 는 CORS 에러로 브라우저에서 요청할수 없다.
@@ -194,7 +194,7 @@ export function loadProgramList() {
       hljs.highlightElement(document.getElementById("nvim_plugins"));
     })
     .catch((error) => {
-      console.log(error);
+      console.error(error);
     });
   axios
     .get("https://raw.githubusercontent.com/ysoftman/myenv/master/.vimrc")
@@ -208,7 +208,7 @@ export function loadProgramList() {
       hljs.highlightElement(document.getElementById("vim_plugins"));
     })
     .catch((error) => {
-      console.log(error);
+      console.error(error);
     });
   axios
     .get(
@@ -221,6 +221,6 @@ export function loadProgramList() {
       hljs.highlightElement(document.getElementById("vscode_extensions"));
     })
     .catch((error) => {
-      console.log(error);
+      console.error(error);
     });
 }

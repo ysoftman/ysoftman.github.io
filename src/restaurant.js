@@ -21,7 +21,6 @@ const makeSearchURL = (name) => {
 
 const readRestaurantAll = async (tag) => {
   if (tag === undefined) {
-    console.log("undefined tag");
     tag = "";
   }
 

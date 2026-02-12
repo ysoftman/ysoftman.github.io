@@ -171,7 +171,6 @@ axios
   .get("/partials/navbar.html")
   .then((response) => {
     document.getElementById("navigation").innerHTML = response.data;
-    console.log("navbar.html loaded");
     setupRouteLinks();
     loadPage(window.location.pathname);
   })
@@ -191,6 +190,3 @@ window.addEventListener("popstate", () => {
 //    console.log("document ready");
 //})
 
-document.addEventListener("DOMContentLoaded", () => {
-  console.log("document ready");
-});
