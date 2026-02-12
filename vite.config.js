@@ -173,10 +173,6 @@ export default defineConfig({
           filename: "404.html",
           template: "404.html",
         },
-        {
-          filename: "navbar.html",
-          template: "navbar.html",
-        },
       ],
     }),
   ],

@@ -26,15 +26,9 @@ import { marked } from "marked";
 // }
 
 function activeMenu(id) {
-  document.getElementById("about_me").classList.remove("nav-active");
-  document.getElementById("projects").classList.remove("nav-active");
-  document.getElementById("programs").classList.remove("nav-active");
   document
-    .getElementById("github_webhook_action")
-    .classList.remove("nav-active");
-  document.getElementById("watchdust").classList.remove("nav-active");
-  document.getElementById("restaurant").classList.remove("nav-active");
-  document.getElementById("pageinfo").classList.remove("nav-active");
+    .querySelectorAll(".nav-active")
+    .forEach((el) => el.classList.remove("nav-active"));
   document.getElementById(id).classList.add("nav-active");
 }
 
@@ -174,7 +168,7 @@ function setupRouteLinks() {
 
 //load 는 비동기로 동작,혹시 navbar.html 이 로딩이 선행 후 dom 을 사용하도록 함
 axios
-  .get("navbar.html")
+  .get("/partials/navbar.html")
   .then((response) => {
     document.getElementById("navigation").innerHTML = response.data;
     console.log("navbar.html loaded");
