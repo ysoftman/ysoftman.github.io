@@ -177,20 +177,6 @@ export default defineConfig({
           filename: "navbar.html",
           template: "navbar.html",
         },
-        {
-          entry: "programs.js",
-          filename: "programs.html",
-          template: "programs.html",
-        },
-        {
-          entry: "restaurant.js",
-          filename: "restaurant.html",
-          template: "restaurant.html",
-        },
-        {
-          filename: "pageinfo.html",
-          template: "pageinfo.html",
-        },
       ],
     }),
   ],

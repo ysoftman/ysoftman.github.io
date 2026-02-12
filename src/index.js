@@ -92,7 +92,7 @@ function loadPage(path) {
 
   if (page === "programs") {
     axios
-      .get("programs.html")
+      .get("/partials/programs.html")
       .then((response) => {
         activeMenu("programs");
         document.getElementById("main_view").innerHTML = response.data;
@@ -134,7 +134,7 @@ function loadPage(path) {
       .catch(showError);
   } else if (page === "restaurant") {
     axios
-      .get("restaurant.html")
+      .get("/partials/restaurant.html")
       .then((response) => {
         activeMenu("restaurant");
         document.getElementById("main_view").innerHTML = response.data;
@@ -143,7 +143,7 @@ function loadPage(path) {
       .catch(showError);
   } else if (page === "pageinfo") {
     axios
-      .get("pageinfo.html")
+      .get("/partials/pageinfo.html")
       .then((response) => {
         activeMenu("pageinfo");
         document.getElementById("main_view").innerHTML = response.data;
