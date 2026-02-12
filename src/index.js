@@ -26,9 +26,9 @@ import { marked } from "marked";
 // }
 
 function activeMenu(id) {
-  document
-    .querySelectorAll(".nav-active")
-    .forEach((el) => { el.classList.remove("nav-active"); });
+  document.querySelectorAll(".nav-active").forEach((el) => {
+    el.classList.remove("nav-active");
+  });
   document.getElementById(id).classList.add("nav-active");
 }
 
@@ -189,4 +189,3 @@ window.addEventListener("popstate", () => {
 //$(function(){
 //    console.log("document ready");
 //})
-

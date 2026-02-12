@@ -1,10 +1,9 @@
 import { execSync } from "node:child_process";
 import path from "node:path";
-
+import tailwindcss from "@tailwindcss/vite";
 import dotenv from "dotenv";
 import { defineConfig } from "vite";
 import { createHtmlPlugin } from "vite-plugin-html";
-import tailwindcss from "@tailwindcss/vite";
 
 dotenv.config({ path: path.resolve(__dirname, ".env") });
 
@@ -85,7 +84,7 @@ function spaFallbackPlugin() {
   return {
     name: "spa-fallback",
     configureServer(server) {
-      server.middlewares.use((req, res, next) => {
+      server.middlewares.use((req, _res, next) => {
         if (spaRoutes.includes(req.url)) {
           req.url = "/index.html";
         }
@@ -93,7 +92,7 @@ function spaFallbackPlugin() {
       });
     },
     configurePreviewServer(server) {
-      server.middlewares.use((req, res, next) => {
+      server.middlewares.use((req, _res, next) => {
         if (spaRoutes.includes(req.url)) {
           req.url = "/index.html";
         }

@@ -1,12 +1,12 @@
 import { loadBasic } from "@tsparticles/basic";
+import { tsParticles } from "@tsparticles/engine";
 import { loadBubblesPreset } from "@tsparticles/preset-bubbles";
+import { loadLinksPreset } from "@tsparticles/preset-links";
 // 다음 효과들은 배경색이 transparent 이 동작하지 않아 사용하지 않는다.
 // import { loadFirePreset } from "@tspartic les/preset-fire";
 // import { loadFireworksPreset } from "@tsparticles/preset-fireworks";
 // import { loadSeaAnemonePreset } from "@tsparticles/preset-sea-anemone";
 import { loadSnowPreset } from "@tsparticles/preset-snow";
-import { loadLinksPreset } from "@tsparticles/preset-links";
-import { tsParticles } from "@tsparticles/engine";
 import hljs from "highlight.js";
 import packageJSON from "../package.json";
 
@@ -29,7 +29,9 @@ runtime(Bun🐇/Node.js🐢): ${__RUNTIME__}`;
   hljs.highlightElement(document.getElementById("package_json"));
 
   // 이전 tsParticles 인스턴스 정리 (SPA 네비게이션으로 재진입 시 stale 컨테이너 방지)
-  tsParticles.dom().forEach((c) => { c.destroy(); });
+  tsParticles.dom().forEach((c) => {
+    c.destroy();
+  });
 
   loadBasic(tsParticles)
     .then(() => {
