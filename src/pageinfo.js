@@ -65,3 +65,9 @@ runtime(Bun🐇/Node.js🐢): ${__RUNTIME__}`;
         });
     });
 };
+
+// 독립 페이지(/pageinfo)로 직접 접근 시 자동 초기화
+// SPA(index.html)에서는 해당 DOM 요소가 없으므로 스킵됨
+if (document.getElementById("vite_config")) {
+  pageinfoAddEventListener();
+}
