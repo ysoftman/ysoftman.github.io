@@ -28,6 +28,9 @@ runtime(Bun🐇/Node.js🐢): ${__RUNTIME__}`;
   }
   hljs.highlightElement(document.getElementById("package_json"));
 
+  // 이전 tsParticles 인스턴스 정리 (SPA 네비게이션으로 재진입 시 stale 컨테이너 방지)
+  tsParticles.dom().forEach((c) => c.destroy());
+
   loadBasic(tsParticles)
     .then(() => {
       return Promise.all([
@@ -53,12 +56,6 @@ runtime(Bun🐇/Node.js🐢): ${__RUNTIME__}`;
               },
             },
           },
-        })
-        .then((container) => {
-          console.log(
-            `tsparticles loaded with preset: ${randomPreset}`,
-            container,
-          );
         })
         .catch((error) => {
           console.error("Error loading tsparticles:", error);
