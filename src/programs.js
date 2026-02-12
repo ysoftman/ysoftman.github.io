@@ -114,14 +114,11 @@ export function loadProgramList() {
     "winmerge",
     "wireshark",
   ];
-  windowsPrograms.forEach((item, _index) => {
-    document.getElementById("windows_programs").innerHTML +=
-      `<a href="http://www.google.com/search?q=` +
-      item +
-      `"target="_blank">` +
-      item +
-      `</a> `;
+  let windowsProgramsHtml = "";
+  windowsPrograms.forEach((item) => {
+    windowsProgramsHtml += `<a href="http://www.google.com/search?q=${item}" target="_blank">${item}</a> `;
   });
+  document.getElementById("windows_programs").innerHTML = windowsProgramsHtml;
 
   axios
     .get(
@@ -204,7 +201,7 @@ export function loadProgramList() {
     .then((response) => {
       const data = response.data.match(/^call plug.*|^Plug.*|.*:Plug.*/gm);
       let result = "";
-      for (const v of data) {
+      for (const v of data ?? []) {
         result += `${v}\n`;
       }
       document.getElementById("vim_plugins").textContent = result;
