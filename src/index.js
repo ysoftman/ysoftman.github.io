@@ -8,9 +8,9 @@ import "./images/blacktocat.png";
 import "./images/icon_download.png";
 import "./images/sentimental_programmer.png";
 import "./images/sprite_download.png";
-import "./about_me.md";
-import "./projects.md";
-import "./markdown_test.md";
+// .md 파일을 ?raw 로 빌드 시 JS 번들에 인라인하여 .md 파일 직접 접근을 막는다
+import aboutMeMd from "./about_me.md?raw";
+import projectsMd from "./projects.md?raw";
 import "./hack-v3.003-webfonts/hack.css";
 // import "./hack-v3.003-webfonts/hack-subset.css"; // hack-subset(경량버전)
 import { pageinfoAddEventListener } from "./pageinfo.js";
@@ -94,13 +94,8 @@ function loadPage(path) {
       })
       .catch(showError);
   } else if (page === "projects") {
-    axios
-      .get("projects.md")
-      .then((response) => {
-        activeMenu("projects");
-        document.getElementById("main_view").innerHTML = md2Html(response.data);
-      })
-      .catch(showError);
+    activeMenu("projects");
+    document.getElementById("main_view").innerHTML = md2Html(projectsMd);
   } else if (page === "github-webhook-action") {
     activeMenu("github_webhook_action");
     document.getElementById("main_view").innerHTML = `
@@ -145,13 +140,8 @@ function loadPage(path) {
       })
       .catch(showError);
   } else {
-    axios
-      .get("about_me.md")
-      .then((response) => {
-        activeMenu("about_me");
-        document.getElementById("main_view").innerHTML = md2Html(response.data);
-      })
-      .catch(showError);
+    activeMenu("about_me");
+    document.getElementById("main_view").innerHTML = md2Html(aboutMeMd);
   }
 }
 

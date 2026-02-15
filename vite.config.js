@@ -153,8 +153,7 @@ export default defineConfig({
   },
 
   // css, font(.woff, ttf, ...), image(png, jpg...) 은 자동 으로 번들링된다.
-  // md 파일 번들에 포함
-  assetsInclude: ["**/*.md"],
+  // md 파일은 ?raw import 로 JS 번들에 인라인하여 .md 파일 직접 접근을 막는다
 
   plugins: [
     spaFallbackPlugin(),
