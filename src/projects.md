@@ -29,14 +29,14 @@
     - phase 별 인증 구분으로 로그인 세션 유지 될 수 있도록 개선
     - 존(IDC) 마이그레이션
     - 검색 시스템 빌드 digdag workflow 오류 대응 및 버전업으로 인한 ansible 이슈 해결
-  - 신규 검식 시스템 빌더 개발
+  - 신규 검색 시스템 빌더 개발
     - 검색 전용 k8s 개발 클러스터 구성 및 형상관리
     - 형태소 분석기를 빌더에 맞게 패키징하는 argo workflow 작성
     - 정적색인을 위한 argo workflow 작성
     - api-server 컴포넌트 개발
     - mysql db migration
     - helm-chart, argocd 를 통한 배포 환경 구성
-    - db,grafana 설정 백업등 클러스터 운영을 위한 보조 툴 작성
+    - db, grafana 설정 백업 등 클러스터 운영을 위한 보조 툴 작성
 - Troubleshooting
   - openJDK 버전 업데이트 이슈
     - <https://yoonbh2714.blogspot.com/2023/09/openjdk-for-latest-jenkins.html>
@@ -94,9 +94,9 @@
 - Contribution/Responsibilities
   - cli(command-line-interface) client 구현(python)
   - 사용자 요청을 처리하는 common-api-server 개발
-  - 사용자 데이터 업로드/조회등을 위한 storage-server 개발
-  - 사용자 인증(Ldap,keystone,oauth) 및 권한(role,policy,resource)처리를 위한 iam-server 개발
-  - 사용자 필요로 하는 리소스(cpu,gpu,mem) 관리(할당, 거부등..)를 위한 quota-server 개발
+  - 사용자 데이터 업로드/조회 등을 위한 storage-server 개발
+  - 사용자 인증(Ldap, Keystone, OAuth) 및 권한(role, policy, resource)처리를 위한 iam-server 개발
+  - 사용자 필요로 하는 리소스(cpu, gpu, mem) 관리(할당, 거부 등..)를 위한 quota-server 개발
   - quota/metric 수집을 위한 prometheus servicemonitor 리소스 추가
   - 비용 청구를 위한 리소스 사용량 취합서버 report-server 개발
   - node 장애 처리
@@ -118,7 +118,7 @@
   - mongodb 조회시 특정크기이상 조회시 에러 발생
     - <https://yoonbh2714.blogspot.com/2023/02/mongodb-go-driver-cursor-not-found-error.html>
   - k8s 클러스터 마이그레이션시 대부분의 리소스는 helm chart 로 관리돼 마이그레이션이 수월한데, 회사별로 n 개의 nas 를 마운트해서 사용하는 pv,pvc 를 일괄마이그레이션 해야함
-    - 모든 pv,pvc manifest(.yaml)을 생성후 sd 로ip 를 변경해 apply 하는 sh script 작성해 해결
+    - 모든 pv, pvc manifest(.yaml)을 생성후 IP 를 변경해 apply 하는 sh script 작성해 해결
     - <https://yoonbh2714.blogspot.com/2023/05/k8s-persistentvolume.html>
   - 사용자에 제공된 ssh (websocket 을 접속 할 수 있는 pod)에서 커서가 프롬프트가 아닌 다음 줄에 표시됨
     - kubernetes > python > ws_client.py 에서 socket 수신 조건이 https 일때 동작 하지 않음
