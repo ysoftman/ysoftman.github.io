@@ -9,6 +9,11 @@
       type="image/x-icon"
       href="./images/blacktocat.png"
     />
+    <!-- remixicon 폰트 로딩 전 x박스(tofu) 방지: 렌더링 전에 숨김 처리 -->
+    <style>
+      [class*="ri-"] { visibility: hidden; }
+      .remixicon-loaded [class*="ri-"] { visibility: visible; }
+    </style>
   </head>
 
   <body>
