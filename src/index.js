@@ -17,6 +17,11 @@ import { pageinfoAddEventListener } from "./pageinfo.js";
 import { loadProgramList } from "./programs.js";
 import { restaurantAddEventListener } from "./restaurant.js";
 import "./common.css";
+// remixicon 폰트 로딩 완료 후 아이콘 표시 (x박스 방지)
+document.fonts.ready.then(() => {
+  document.documentElement.classList.add("remixicon-loaded");
+});
+
 //const axios = require("axios"); // commonJS node 표준인데 import 방식으로 점차 변경중
 import axios from "axios"; // ES module  방식
 import { marked } from "marked";

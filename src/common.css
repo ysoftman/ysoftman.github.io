@@ -4,10 +4,12 @@
 @import "./tailwind.css";
 @import "remixicon/fonts/remixicon.css";
 
-/* remixicon font-display: swap -> block 으로 오버라이드하여 로딩 전 x박스(tofu) 방지 */
-@font-face {
-  font-family: "remixicon";
-  font-display: block;
+/* remixicon 폰트 로딩 전 x박스(tofu) 방지: JS(document.fonts.ready)에서 .remixicon-loaded 추가 */
+[class*="ri-"] {
+  visibility: hidden;
+}
+.remixicon-loaded [class*="ri-"] {
+  visibility: visible;
 }
 
 :root {
