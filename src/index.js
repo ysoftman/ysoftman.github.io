@@ -6,7 +6,6 @@
 import "./images/bg_hr.png";
 import "./images/blacktocat.png";
 import "./images/icon_download.png";
-import "./images/sentimental_programmer.png";
 import "./images/sprite_download.png";
 // .md 파일을 ?raw 로 빌드 시 JS 번들에 인라인하여 .md 파일 직접 접근을 막는다
 import aboutMeMd from "./about_me.md?raw";
