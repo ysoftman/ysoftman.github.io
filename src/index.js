@@ -12,7 +12,7 @@ import aboutMeMd from "./about_me.md?raw";
 import projectsMd from "./projects.md?raw";
 import "./hack-v3.003-webfonts/hack.css";
 // import "./hack-v3.003-webfonts/hack-subset.css"; // hack-subset(경량버전)
-import { pageinfoAddEventListener } from "./pageinfo.js";
+// pageinfo.js는 tsParticles 등 큰 라이브러리를 포함하므로 동적 import로 지연 로딩한다
 import { loadProgramList } from "./programs.js";
 import { restaurantAddEventListener } from "./restaurant.js";
 import "./common.css";
@@ -136,7 +136,7 @@ function loadPage(path) {
       .then((response) => {
         activeMenu("pageinfo");
         document.getElementById("main_view").innerHTML = response.data;
-        pageinfoAddEventListener();
+        import("./pageinfo.js").then((m) => m.pageinfoAddEventListener());
       })
       .catch(showError);
   } else {
