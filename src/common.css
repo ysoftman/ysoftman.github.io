@@ -151,7 +151,7 @@ code {
   content: "";
   width: 0.7em;
   height: 0.7em;
-  /* stroke color: --sky (#38bdf8) */
+  /* stroke color: sky-400(#38bdf8), data URI 안에서는 CSS 변수 사용 불가 */
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='none' stroke='%2338bdf8' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round' viewBox='0 0 16 16'%3E%3Cpath d='M4 12L14 2'/%3E%3Cpath d='M6 2h8v8'/%3E%3C/svg%3E");
   background-position: center;
   background-repeat: no-repeat;

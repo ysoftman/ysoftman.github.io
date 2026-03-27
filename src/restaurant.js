@@ -25,39 +25,39 @@ const readRestaurantAll = async (tag) => {
   }
 
   const tempDocs = await readRestaurantAllFromJSFile(tag);
-  const bg_colors = [
-    "bg-blue-400",
-    "bg-indigo-400",
-    "bg-purple-400",
-    "bg-pink-400",
-    "bg-red-400",
-    "bg-orange-400",
-    "bg-yellow-400",
-    "bg-green-400",
-    "bg-teal-400",
-    "bg-cyan-400",
-    "bg-gray-400",
+  const border_colors = [
+    "border-blue-400",
+    "border-indigo-400",
+    "border-purple-400",
+    "border-pink-400",
+    "border-red-400",
+    "border-orange-400",
+    "border-yellow-400",
+    "border-green-400",
+    "border-teal-400",
+    "border-cyan-400",
+    "border-gray-400",
   ];
   let html = `<div class="grid grid-cols-1 md:grid-cols-3 gap-4">`;
   let i = 0;
   for (const d of tempDocs) {
     const searchURL = makeSearchURL(d.name);
-    i = i % bg_colors.length;
+    i = i % border_colors.length;
     let reviewTag = "";
     if (d.review != null && d.review.length > 0) {
-      reviewTag = `<a href="${d.review}" target="_blank" rel="noopener noreferrer" class="bg-gray-600 hover:bg-gray-700 text-white px-4 py-2 rounded border border-black inline-block transition-colors">리뷰</a>`;
+      reviewTag = `<a href="${d.review}" target="_blank" rel="noopener noreferrer" class="bg-gray-600 hover:bg-gray-500 text-white px-4 py-2 rounded inline-block transition-colors">리뷰</a>`;
     }
     html += `
-<div class="rounded shadow overflow-hidden ${bg_colors[i]} flex flex-col h-full">
+<div class="rounded shadow overflow-hidden bg-gray-800 border-l-4 ${border_colors[i]} flex flex-col h-full">
   <div class="p-3">
-    <h4 class="text-xl text-black font-semibold mb-2">
+    <h4 class="text-xl text-white font-semibold mb-2">
       ${d.name}
     </h4>
-    <p class="text-gray-900">${d.tags}</p>
+    <p class="text-gray-400">${d.tags}</p>
   </div>
   <p class="text-center p-2">
     ${reviewTag}
-    <a href="${searchURL}" target="_blank" rel="noopener noreferrer" class="bg-gray-600 hover:bg-gray-700 text-white px-4 py-2 rounded border border-black inline-block transition-colors">검색</a>
+    <a href="${searchURL}" target="_blank" rel="noopener noreferrer" class="bg-gray-600 hover:bg-gray-500 text-white px-4 py-2 rounded inline-block transition-colors">검색</a>
   </p>
 </div>
 `;
