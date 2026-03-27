@@ -132,6 +132,8 @@ export function loadProgramList() {
     })
     .catch((error) => {
       console.error(error);
+      document.getElementById("linux_programs").textContent =
+        `Failed to load data: ${error.message}`;
     });
   axios
     .get(
@@ -145,6 +147,8 @@ export function loadProgramList() {
     })
     .catch((error) => {
       console.error(error);
+      document.getElementById("brew_programs").textContent =
+        `Failed to load data: ${error.message}`;
     });
   axios
     .get(
@@ -158,6 +162,8 @@ export function loadProgramList() {
     })
     .catch((error) => {
       console.error(error);
+      document.getElementById("cargo_programs").textContent =
+        `Failed to load data: ${error.message}`;
     });
   axios
     .get(
@@ -171,6 +177,8 @@ export function loadProgramList() {
     })
     .catch((error) => {
       console.error(error);
+      document.getElementById("pip_programs").textContent =
+        `Failed to load data: ${error.message}`;
     });
   axios
     // https://github.com/ysoftman/myenv/tree/master/nvim/lua/plugins 는 CORS 에러로 브라우저에서 요청할수 없다.
@@ -195,6 +203,8 @@ export function loadProgramList() {
     })
     .catch((error) => {
       console.error(error);
+      document.getElementById("nvim_plugins").textContent =
+        `Failed to load data: ${error.message}`;
     });
   axios
     .get("https://raw.githubusercontent.com/ysoftman/myenv/master/.vimrc")
@@ -209,6 +219,8 @@ export function loadProgramList() {
     })
     .catch((error) => {
       console.error(error);
+      document.getElementById("vim_plugins").textContent =
+        `Failed to load data: ${error.message}`;
     });
   axios
     .get(
@@ -222,5 +234,7 @@ export function loadProgramList() {
     })
     .catch((error) => {
       console.error(error);
+      document.getElementById("vscode_extensions").textContent =
+        `Failed to load data: ${error.message}`;
     });
 }

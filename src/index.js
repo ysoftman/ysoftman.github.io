@@ -77,7 +77,7 @@ function Atag2Imgtag(html) {
 function showError(err) {
   console.error(err);
   document.getElementById("main_view").innerHTML =
-    `<h3 class="text-red-400">페이지를 불러오는 중 오류가 발생했습니다: ${err.message}</h3>`;
+    `<h3 class="text-red-400">Failed to load page: ${err.message}</h3>`;
 }
 
 function loadPage(path) {
