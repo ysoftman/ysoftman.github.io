@@ -53,7 +53,13 @@ const readRestaurantAll = async (tag) => {
     <h4 class="text-xl text-white font-semibold mb-2">
       ${d.name}
     </h4>
-    <p class="text-gray-400">${d.tags}</p>
+    <div class="flex flex-wrap gap-1.5">${d.tags
+      .split(",")
+      .map(
+        (t) =>
+          `<span class="restaurant-tag border border-gray-500 text-gray-300 hover:border-sky-400 hover:text-sky-400 px-2 py-0.5 rounded-full text-sm cursor-pointer transition-colors">${t.trim()}</span>`,
+      )
+      .join("")}</div>
   </div>
   <p class="text-center p-2">
     ${reviewTag}
@@ -77,11 +83,23 @@ const readRestaurantAll = async (tag) => {
   //  });
   //}
   document.getElementById("restaurant_cnt").innerHTML = `${tempDocs.length}개`;
+  document.querySelectorAll(".restaurant-tag").forEach((el) => {
+    el.addEventListener("click", () => {
+      const tagText = el.textContent;
+      document.getElementById("search_restaurant_input").value = tagText;
+      history.pushState(
+        null,
+        "",
+        `/restaurant?q=${encodeURIComponent(tagText)}`,
+      );
+      readRestaurantAll(tagText);
+    });
+  });
 };
 
 //innerHTML 로 dom 변경은 window.onload 로 보장할 수 없다.
 //window.onload = function () {
-export const restaurantAddEventListener = () => {
+export const restaurantAddEventListener = (initialTag = "") => {
   document
     .getElementById("search_restaurant_input")
     .addEventListener("keypress", (event) => {
@@ -97,5 +115,5 @@ export const restaurantAddEventListener = () => {
         document.getElementById("search_restaurant_input").value,
       );
     });
-  readRestaurantAll("");
+  readRestaurantAll(initialTag);
 };

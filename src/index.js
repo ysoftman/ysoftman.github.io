@@ -81,8 +81,8 @@ function showError(err) {
 }
 
 function loadPage(path) {
-  // pathname에서 선행 슬래시 제거
-  const page = path.replace(/^\//, "");
+  // pathname에서 선행 슬래시와 쿼리스트링 제거
+  const page = path.replace(/^\//, "").replace(/\?.*$/, "");
 
   if (page === "programs") {
     axios
@@ -127,7 +127,11 @@ function loadPage(path) {
       .then((response) => {
         activeMenu("restaurant");
         document.getElementById("main_view").innerHTML = response.data;
-        restaurantAddEventListener();
+        const q = new URLSearchParams(window.location.search).get("q") || "";
+        if (q) {
+          document.getElementById("search_restaurant_input").value = q;
+        }
+        restaurantAddEventListener(q);
       })
       .catch(showError);
   } else if (page === "pageinfo") {
