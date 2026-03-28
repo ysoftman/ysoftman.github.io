@@ -737,6 +737,6 @@ export const restaurantlist = [
   },
   {
     name: "판교 챠오바라이트",
-    tags: "파스타 (서비스,음식 엉망)",
+    tags: "파스타 (서비스음식 실망)",
   },
 ];
