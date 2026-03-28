@@ -1,5 +1,10 @@
 export const restaurantlist = [
   {
+    name: "서판교 아티제",
+    tags: "버터떡,빙수,커피",
+    review: "https://maps.app.goo.gl/JXqSRSr6MAgjby7j9",
+  },
+  {
     name: "판교 아티제",
     tags: "커피,소금빵,카스텔라,밀크베베치노",
     review: "https://maps.app.goo.gl/2P73bwbM2VNPdn5n7",
