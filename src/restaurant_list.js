@@ -1,6 +1,6 @@
 export const restaurantlist = [
   {
-    name: "서판교 아티제",
+    name: "서판교 더블크림",
     tags: "버터떡,빙수,커피",
     review: "https://maps.app.goo.gl/JXqSRSr6MAgjby7j9",
   },
