@@ -11,8 +11,7 @@
     "serve": "bun x --bun vite",
     "build": "bun x --bun vite build",
     "lint": "biome lint .",
-    "preview": "vite preview",
-    "deploy": "gh-pages -d dist"
+    "preview": "vite preview"
   },
   "type": "module",
   "devDependencies": {
@@ -21,7 +20,6 @@
     "axios": "^1.13.6",
     "connect": "^3.7.0",
     "dotenv": "^17.3.1",
-    "gh-pages": "^6.3.0",
     "marked": "^17.0.5",
     "serve-static": "^2.2.1",
     "tailwindcss": "^4.2.2",
