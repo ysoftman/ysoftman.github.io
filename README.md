@@ -2,10 +2,10 @@
 
 ## prerequisite
 
-- (최초 한번만 설정) - 깃헙 페이지 소스는 gh-pages 브랜치로 설정
+- (최초 한번만 설정) - 깃헙 페이지 소스는 GitHub Actions 로 설정
 
 <https://github.com/ysoftman/ysoftman.github.io/settings/pages>
--> github pages -> source -> gh-pages 브랜치 설정
+-> github pages -> Build and deployment -> Source -> GitHub Actions 선택
 
 - mise(nvm 대체) 로 node 설치/구성
 
@@ -51,11 +51,4 @@ bun x serve dist
 
 ## 빌드 배포
 
-- 주의 gh-pages 브랜치는 배포용이기 때문에 master 에 머지 금지!!!
-- master 브랜치로 푸시하면 github action 으로 자동 배포
-- 또는
-
-```bash
-# 다음과 같이 빌드 후 배포하면 자동으로 ./dist 내용이 gh-pages 브랜치로 푸시된다.
-bun run build && bun run deploy
-```
+- master 브랜치로 푸시하면 GitHub Actions 로 자동 빌드 및 배포
