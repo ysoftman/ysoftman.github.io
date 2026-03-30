@@ -13,7 +13,7 @@ jobs:
       variables_test: ${{ vars.TEST }}
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5
         with:
           # 전체 이력(tags 포함) 가져오기
           fetch-depth: 0
@@ -33,7 +33,7 @@ jobs:
           bun run build
 
       - name: Deploy
-        uses: peaceiris/actions-gh-pages@v3
+        uses: peaceiris/actions-gh-pages@v4
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./dist # 빌드 결과물이 있는 디렉토리
