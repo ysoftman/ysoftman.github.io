@@ -18,6 +18,12 @@
   .prose li {
     line-height: 1.2;
   }
+  .prose h1,
+  .prose h2,
+  .prose h3,
+  .prose h4 {
+    color: #abb2bf !important; /* match body --white color (One Half Dark) */
+  }
   .prose h2 {
     margin-top: 2rem !important;   /* 위쪽 간격 */
     margin-bottom: 0.75rem !important; /* 아래쪽 간격 */
