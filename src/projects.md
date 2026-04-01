@@ -2,7 +2,7 @@
 
 ## Kakao Search System
 
-- Company: kakaoenterprise
+- Company: kakaoenterprise/axz(2025012~)
 - Period: 202308~
 - Description: kakao search system builder
 - Programming Language: golang, sh, python
