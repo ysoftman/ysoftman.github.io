@@ -5,40 +5,13 @@
 @import "remixicon/fonts/remixicon.css";
 
 :root {
-  /* https://getbootstrap.com/docs/5.0/customize/color/#all-colors */
-  --blue: #0d6efd;
-  --indigo: #6610f2;
-  --purple: #6f42c1;
-  --pink: #d63384;
-  --red: #dc3545;
-  --yellow: #ffc107;
-  --green: #198754;
-  --teal: #20c997;
-  --cyan: #0dcaf0;
-  --gray: #adb5bd;
-  --black: #000000;
-  --white: #ffffff;
-
-  /* override */
-  /* One Half Dark https://raw.githubusercontent.com/joshdick/onedark.vim/main/img/color_reference.png */
-  --black: #282c34;
-  --red: #e06c75;
-  --green: #98c379;
-  --yellow: #e5c07b;
-  --blue: #61afef;
-  --purple: #c678dd;
-  --cyan: #56b6c2;
-  --white: #abb2bf;
-
-  /* custom */
-  --bright-gray: #333333;
-  --black: #000000;
+  /* 색상은 tailwind.css @theme 의 --color-onedark-* 으로 통합 관리 */
 }
 
 body {
   padding: 0 !important;
-  color: var(--white) !important;
-  background-color: var(--black) !important;
+  color: var(--color-onedark-white) !important;
+  background-color: var(--color-onedark-black) !important;
   word-wrap: break-word;
   font-family: Hack, monospace;
 }

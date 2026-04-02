@@ -3,6 +3,18 @@
 
 @theme {
   --list-style-type-none: none;
+
+  /* One Half Dark https://raw.githubusercontent.com/joshdick/onedark.vim/main/img/color_reference.png */
+  --color-onedark-black: #000000;
+  --color-onedark-red: #e06c75;
+  --color-onedark-green: #98c379;
+  --color-onedark-yellow: #e5c07b;
+  --color-onedark-blue: #61afef;
+  --color-onedark-purple: #c678dd;
+  --color-onedark-cyan: #56b6c2;
+  --color-onedark-white: #abb2bf;
+  --color-onedark-bright-gray: #333333;
+  --color-onedark-bg: #282c34;
 }
 
 @layer base {
@@ -18,11 +30,14 @@
   .prose li {
     line-height: 1.2;
   }
+  .prose {
+    color: var(--color-onedark-white) !important;
+  }
   .prose h1,
   .prose h2,
   .prose h3,
   .prose h4 {
-    color: #abb2bf !important; /* match body --white color (One Half Dark) */
+    color: var(--color-onedark-white) !important;
   }
   .prose h2 {
     margin-top: 2rem !important;   /* 위쪽 간격 */
