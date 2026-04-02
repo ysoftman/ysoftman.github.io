@@ -43,9 +43,6 @@ bun run serve
 
 # 빌드(/dist 번들링) 후
 bun run build --base "dist/"
-# 로컬에서 확인
-node server.cjs
-# 또는
 bun x serve dist
 ```
 
