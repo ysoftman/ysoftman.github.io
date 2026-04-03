@@ -36,13 +36,11 @@ runtime(Bun🐇/Node.js🐢): ${__RUNTIME__}`;
       return Promise.all([loadSnowPreset(tsParticles)]);
     })
     .then(() => {
-      const presets = ["snow", "bubbles", "links"];
-      const randomPreset = presets[Math.floor(Math.random() * presets.length)];
       tsParticles
         .load({
           id: "tsparticles",
           options: {
-            preset: randomPreset,
+            preset: "snow",
             background: {
               color: {
                 value: "transparent",
