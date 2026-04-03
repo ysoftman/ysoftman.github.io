@@ -1,7 +1,7 @@
 import { loadBasic } from "@tsparticles/basic";
 import { tsParticles } from "@tsparticles/engine";
 // 다음 효과들은 배경색이 transparent 이 동작하지 않아 사용하지 않는다.
-// import { loadFirePreset } from "@tspartic les/preset-fire";
+// import { loadFirePreset } from "@tsparticles/preset-fire";
 // import { loadFireworksPreset } from "@tsparticles/preset-fireworks";
 // import { loadSeaAnemonePreset } from "@tsparticles/preset-sea-anemone";
 import { loadSnowPreset } from "@tsparticles/preset-snow";
