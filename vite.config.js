@@ -3,7 +3,6 @@ import path from "node:path";
 import tailwindcss from "@tailwindcss/vite";
 import dotenv from "dotenv";
 import { defineConfig } from "vite";
-import { createHtmlPlugin } from "vite-plugin-html";
 
 dotenv.config({ path: path.resolve(__dirname, ".env") });
 
@@ -134,6 +133,10 @@ export default defineConfig({
 
   build: {
     rollupOptions: {
+      input: {
+        main: path.resolve(__dirname, "src/index.html"),
+        404: path.resolve(__dirname, "src/404.html"),
+      },
       output: {
         assetFileNames: (assetInfo) => {
           const extType = assetInfo.names[0].split(".").at(1);
@@ -155,25 +158,7 @@ export default defineConfig({
   // css, font(.woff, ttf, ...), image(png, jpg...) 은 자동 으로 번들링된다.
   // md 파일은 ?raw import 로 JS 번들에 인라인하여 .md 파일 직접 접근을 막는다
 
-  plugins: [
-    spaFallbackPlugin(),
-    tailwindcss(),
-    createHtmlPlugin({
-      minify: true,
-      pages: [
-        {
-          entry: "index.js",
-          filename: "index.html",
-          template: "index.html",
-        },
-        {
-          entry: "index.js",
-          filename: "404.html",
-          template: "404.html",
-        },
-      ],
-    }),
-  ],
+  plugins: [spaFallbackPlugin(), tailwindcss()],
   resolve: {
     //alias: [
     //  { find: "@", replacement: path.resolve(__dirname, "src") },
