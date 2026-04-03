@@ -15,10 +15,10 @@
   },
   "type": "module",
   "devDependencies": {
-    "@biomejs/biome": "^2.4.9",
+    "@biomejs/biome": "^2.4.10",
     "@tailwindcss/typography": "^0.5.19",
     "axios": "^1.14.0",
-    "dotenv": "^17.3.1",
+    "dotenv": "^17.4.0",
     "marked": "^17.0.5",
     "tailwindcss": "^4.2.2",
     "vite": "^8.0.3",
@@ -28,8 +28,6 @@
     "@tailwindcss/vite": "^4.2.2",
     "@tsparticles/basic": "^3.9.1",
     "@tsparticles/engine": "^3.9.1",
-    "@tsparticles/preset-bubbles": "3.2.0",
-    "@tsparticles/preset-links": "^3.2.0",
     "@tsparticles/preset-snow": "3.2.0",
     "highlight.js": "^11.11.1",
     "remixicon": "^4.9.1"

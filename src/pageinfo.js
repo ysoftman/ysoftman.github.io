@@ -1,7 +1,5 @@
 import { loadBasic } from "@tsparticles/basic";
 import { tsParticles } from "@tsparticles/engine";
-import { loadBubblesPreset } from "@tsparticles/preset-bubbles";
-import { loadLinksPreset } from "@tsparticles/preset-links";
 // 다음 효과들은 배경색이 transparent 이 동작하지 않아 사용하지 않는다.
 // import { loadFirePreset } from "@tspartic les/preset-fire";
 // import { loadFireworksPreset } from "@tsparticles/preset-fireworks";
@@ -35,14 +33,7 @@ runtime(Bun🐇/Node.js🐢): ${__RUNTIME__}`;
 
   loadBasic(tsParticles)
     .then(() => {
-      return Promise.all([
-        loadSnowPreset(tsParticles),
-        loadBubblesPreset(tsParticles),
-        loadLinksPreset(tsParticles),
-        // loadFirePreset(tsParticles),
-        // loadFireworksPreset(tsParticles),
-        // loadSeaAnemonePreset(tsParticles),
-      ]);
+      return Promise.all([loadSnowPreset(tsParticles)]);
     })
     .then(() => {
       const presets = ["snow", "bubbles", "links"];
