@@ -1,23 +1,19 @@
-name: Deploy to ysoftman gitHub pages
+name: Deploy to ysoftman GitHub Pages
 
 on:
   push:
     branches:
-      - main # 배포하려는 브랜치 이름
+      - main
 
-# GitHub Pages 배포를 위한 권한 설정
 permissions:
-  contents: read
-  pages: write
-  id-token: write
+  contents: write
 
-# 동시 배포 방지
 concurrency:
-  group: "pages"
+  group: pages
   cancel-in-progress: false
 
 jobs:
-  build:
+  deploy:
     runs-on: ubuntu-latest
     env:
       secrets_test: ${{ secrets.TEST }}
@@ -26,12 +22,10 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v5
         with:
-          # 전체 이력(tags 포함) 가져오기
           fetch-depth: 0
-          # 또는 태그 정보  표시
-          # tags: true
-      # https://bun.sh/guides/runtime/cicd
-      - uses: oven-sh/setup-bun@v2
+
+      - name: Setup Bun
+        uses: oven-sh/setup-bun@v2
 
       - name: for test
         run: |
@@ -43,21 +37,10 @@ jobs:
           bun install
           bun run build
 
-      - name: Setup Pages
-        uses: actions/configure-pages@v5
-
-      - name: Upload artifact
-        uses: actions/upload-pages-artifact@v3
+      - name: Deploy dist to gh-pages
+        uses: peaceiris/actions-gh-pages@v4
         with:
-          path: ./dist
-
-  deploy:
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
-    runs-on: ubuntu-latest
-    needs: build
-    steps:
-      - name: Deploy to GitHub Pages
-        id: deployment
-        uses: actions/deploy-pages@v4
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_branch: gh-pages
+          publish_dir: ./dist
+          force_orphan: true
