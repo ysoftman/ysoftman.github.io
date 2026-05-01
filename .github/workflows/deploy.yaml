@@ -3,7 +3,7 @@ name: Deploy to ysoftman gitHub pages
 on:
   push:
     branches:
-      - master # 배포하려는 브랜치 이름
+      - main # 배포하려는 브랜치 이름
 
 # GitHub Pages 배포를 위한 권한 설정
 permissions:

@@ -48,4 +48,4 @@ bun x serve dist
 
 ## 빌드 배포
 
-- master 브랜치로 푸시하면 GitHub Actions 로 자동 빌드 및 배포
+- main 브랜치로 푸시하면 GitHub Actions 로 자동 빌드 및 배포
