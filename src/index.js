@@ -70,6 +70,11 @@ function Atag2Imgtag(html) {
   );
   html = html.replace(/.*__img_start__/g, "");
   html = html.replace(/__img_end__.*/g, "");
+  // 연속된 image 라인은 한 줄에 수평으로 나열 (가로 폭 부족 시 줄바꿈)
+  html = html.replace(/(?:<img[^>]*\/>\n?){2,}/g, (match) => {
+    const imgs = match.replace(/\n/g, "");
+    return `<div class="flex flex-wrap gap-2 my-2 items-start">${imgs}</div>\n`;
+  });
   html = html.replace(/(?:\r\n|\r|\n)/g, "<br>");
   return html;
 }
