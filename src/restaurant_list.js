@@ -1,5 +1,10 @@
 export const restaurantlist = [
   {
+    name: "판교 HAPA",
+    tags: "짜장면,짬뽕,탕수육,중화요리",
+    review: "https://maps.app.goo.gl/N1qhxRdaGFQq7qGn9",
+  },
+  {
     name: "서판교 더블크림",
     tags: "버터떡,빙수,커피",
     review: "https://maps.app.goo.gl/JXqSRSr6MAgjby7j9",
