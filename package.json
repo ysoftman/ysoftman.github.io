@@ -25,9 +25,6 @@
   },
   "dependencies": {
     "@tailwindcss/vite": "^4.2.2",
-    "@tsparticles/basic": "^3.9.1",
-    "@tsparticles/engine": "^3.9.1",
-    "@tsparticles/preset-snow": "3.2.0",
     "highlight.js": "^11.11.1",
     "picomatch": "^4.0.4",
     "remixicon": "^4.9.1"

@@ -12,7 +12,7 @@ import aboutMeMd from "./about_me.md?raw";
 import projectsMd from "./projects.md?raw";
 import "./hack-v3.003-webfonts/hack.css";
 // import "./hack-v3.003-webfonts/hack-subset.css"; // hack-subset(경량버전)
-// pageinfo.js는 tsParticles 등 큰 라이브러리를 포함하므로 동적 import로 지연 로딩한다
+// pageinfo.js는 highlight.js 등 큰 라이브러리를 포함하므로 동적 import로 지연 로딩한다
 import { loadProgramList } from "./programs.js";
 import { restaurantAddEventListener } from "./restaurant.js";
 import "./common.css";
