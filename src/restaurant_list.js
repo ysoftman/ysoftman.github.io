@@ -1,5 +1,10 @@
 export const restaurantlist = [
   {
+    name: "몽중헌 판교점",
+    tags: "짜장면,짬뽕,중국요리",
+    review: "https://maps.app.goo.gl/GE6dJobV3fVZu6vq6",
+  },
+  {
     name: "이가네양꼬치 판교본점",
     tags: "양꼬치, 양갈비, 꿔바로, 가지볶음",
     review: "https://maps.app.goo.gl/XkXS851wf52py1zAA",
