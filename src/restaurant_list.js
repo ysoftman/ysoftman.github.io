@@ -1,5 +1,10 @@
 export const restaurantlist = [
   {
+    name: "판교 하얏트 플레이스",
+    tags: "호텔, 뷔페",
+    review: "https://maps.app.goo.gl/iSjn5cKhuVTYZpZn7",
+  },
+  {
     name: "몽중헌 판교점",
     tags: "짜장면,짬뽕,중국요리",
     review: "https://maps.app.goo.gl/GE6dJobV3fVZu6vq6",
