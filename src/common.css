@@ -98,8 +98,8 @@ code {
   border-radius: 5px !important;
 }
 
-/*neon effect*/
-[class*="ri-"] {
+/* neon effect: 내비게이션 메뉴(#navigation) 아이콘에만 적용 */
+#navigation [class*="ri-"] {
   font-size: 2rem;
   color: #ffffff;
   text-shadow:

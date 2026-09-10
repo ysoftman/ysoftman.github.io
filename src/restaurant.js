@@ -25,66 +25,55 @@ const readRestaurantAll = async (tag) => {
   }
 
   const tempDocs = await readRestaurantAllFromJSFile(tag);
-  const border_colors = [
-    "border-blue-400",
-    "border-indigo-400",
-    "border-purple-400",
-    "border-pink-400",
-    "border-red-400",
-    "border-orange-400",
-    "border-yellow-400",
-    "border-green-400",
-    "border-teal-400",
-    "border-cyan-400",
-    "border-gray-400",
-  ];
-  let html = `<div class="grid grid-cols-1 md:grid-cols-3 gap-4">`;
-  let i = 0;
-  for (const d of tempDocs) {
-    const searchURL = makeSearchURL(d.name);
-    i = i % border_colors.length;
-    let reviewTag = "";
-    if (d.review != null && d.review.length > 0) {
-      reviewTag = `<a href="${d.review}" target="_blank" rel="noopener noreferrer" class="bg-gray-600 hover:bg-gray-500 text-white px-4 py-2 rounded inline-block transition-colors">리뷰</a>`;
-    }
-    html += `
-<div class="rounded shadow overflow-hidden bg-gray-800 border-l-4 ${border_colors[i]} flex flex-col h-full">
-  <div class="p-3">
-    <h4 class="text-xl text-white font-semibold mb-2">
-      ${d.name}
-    </h4>
+
+  let html = "";
+  if (tempDocs.length === 0) {
+    html = `
+<div class="flex flex-col items-center justify-center px-4 py-24 text-center">
+  <i class="ri-restaurant-line text-5xl text-gray-600" aria-hidden="true"></i>
+  <p class="mt-5 text-lg font-medium text-gray-300">검색 결과가 없습니다</p>
+  <p class="mt-1.5 text-sm text-gray-500">다른 키워드로 다시 검색해 보세요</p>
+</div>`;
+  } else {
+    html = `<div class="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3">`;
+    for (const d of tempDocs) {
+      const searchURL = makeSearchURL(d.name);
+      let reviewTag = "";
+      if (d.review != null && d.review.length > 0) {
+        reviewTag = `<a href="${d.review}" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 rounded-md bg-gray-700 px-3 py-1.5 text-sm font-medium text-gray-200 hover:bg-gray-600">
+  <i class="ri-article-line" aria-hidden="true"></i>리뷰
+</a>`;
+      }
+      html += `
+<div class="flex h-full flex-col rounded-xl bg-gray-800 ring-1 ring-white/10">
+  <div class="flex items-start gap-2.5 border-b border-white/5 p-4">
+    <i class="ri-restaurant-line mt-0.5 text-lg text-sky-400" aria-hidden="true"></i>
+    <h4 class="text-base font-semibold leading-snug text-white">${d.name}</h4>
+  </div>
+  <div class="flex flex-1 flex-col p-4">
     <div class="flex flex-wrap gap-1.5">${d.tags
       .split(",")
       .map(
         (t) =>
-          `<span class="restaurant-tag border border-gray-500 text-gray-300 hover:border-sky-400 hover:text-sky-400 px-2 py-0.5 rounded-full text-sm cursor-pointer transition-colors">${t.trim()}</span>`,
+          `<span tabindex="0" role="button" class="restaurant-tag cursor-pointer rounded-full bg-white/5 px-2.5 py-0.5 text-xs text-gray-400 ring-1 ring-white/10 hover:bg-white/10 hover:text-gray-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-sky-400">${t.trim()}</span>`,
       )
       .join("")}</div>
+    <div class="mt-auto flex items-center gap-2 pt-4">
+      ${reviewTag}
+      <a href="${searchURL}" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 rounded-md bg-gray-700 px-3 py-1.5 text-sm font-medium text-gray-200 hover:bg-gray-600">
+        <i class="ri-search-line" aria-hidden="true"></i>검색
+      </a>
+    </div>
   </div>
-  <p class="text-center p-2">
-    ${reviewTag}
-    <a href="${searchURL}" target="_blank" rel="noopener noreferrer" class="bg-gray-600 hover:bg-gray-500 text-white px-4 py-2 rounded inline-block transition-colors">검색</a>
-  </p>
 </div>
 `;
-    i++;
+    }
+    html += `</div>`;
   }
-  html += `</div>`;
   document.getElementById("html_out").innerHTML = html;
-  //for (const name of tempDocs) {
-  //  //console.log("name:", name)
-  //  //<button onClick="onLikeClick"  으로 하면 onLikeClick 함수를 찾지 못하는 에러가 발생한다.
-  //  //따라서 다음과 같이 이벤트 리스터를 추가한다.
-  //  document.getElementById(name + "_like").addEventListener("click", () => {
-  //    onLikeClick(name, name + "_좋아요");
-  //  });
-  //  document.getElementById(name + "_dislike").addEventListener("click", () => {
-  //    onDisLikeClick(name, name + "_싫어요");
-  //  });
-  //}
   document.getElementById("restaurant_cnt").innerHTML = `${tempDocs.length}개`;
   document.querySelectorAll(".restaurant-tag").forEach((el) => {
-    el.addEventListener("click", () => {
+    const handleTagClick = () => {
       const tagText = el.textContent;
       document.getElementById("search_restaurant_input").value = tagText;
       history.pushState(
@@ -93,6 +82,13 @@ const readRestaurantAll = async (tag) => {
         `/restaurant?q=${encodeURIComponent(tagText)}`,
       );
       readRestaurantAll(tagText);
+    };
+    el.addEventListener("click", handleTagClick);
+    el.addEventListener("keydown", (event) => {
+      if (event.key === "Enter" || event.key === " ") {
+        event.preventDefault();
+        handleTagClick();
+      }
     });
   });
 };
