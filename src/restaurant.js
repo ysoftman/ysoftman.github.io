@@ -46,8 +46,8 @@ const readRestaurantAll = async (tag) => {
       }
       html += `
 <div class="flex h-full flex-col rounded-xl bg-gray-800 ring-1 ring-white/10">
-  <div class="flex items-start gap-2.5 border-b border-white/5 p-4">
-    <i class="ri-restaurant-line mt-0.5 text-lg text-sky-400" aria-hidden="true"></i>
+  <div class="flex items-center gap-2.5 border-b border-white/5 p-4">
+    <i class="ri-restaurant-line text-lg leading-none text-sky-400" aria-hidden="true"></i>
     <h4 class="text-base font-semibold leading-snug text-white">${d.name}</h4>
   </div>
   <div class="flex flex-1 flex-col p-4">
