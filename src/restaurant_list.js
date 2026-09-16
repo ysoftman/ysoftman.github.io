@@ -1,5 +1,10 @@
 export const restaurantlist = [
   {
+    name: "현대백화점 판교점 텍사스로드하우스",
+    tags: "스테이크, 파스타, 햄버거",
+    review: "https://maps.app.goo.gl/U4eD4uxnypBBd9yM9",
+  },
+  {
     name: "판교 하얏트 플레이스",
     tags: "호텔, 뷔페",
     review: "https://maps.app.goo.gl/iSjn5cKhuVTYZpZn7",
