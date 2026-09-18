@@ -1,21 +1,21 @@
 # <https://ysoftman.github.io>
 
-## prerequisite
+## Prerequisites
 
-- (최초 한번만 설정) - 깃헙 페이지 소스는 GitHub Actions 로 설정
+- (최초 한 번만 설정) - GitHub Pages 소스는 GitHub Actions 로 설정
 
 <https://github.com/ysoftman/ysoftman.github.io/settings/pages>
--> github pages -> Build and deployment -> Source -> GitHub Actions 선택
+-> GitHub Pages -> Build and deployment -> Source -> GitHub Actions 선택
 
-- mise(nvm 대체) 로 node 설치/구성
+- mise(nvm 대체) 로 Node.js 설치/구성
 
 ```bash
-# install latest nodejs
+# install latest Node.js
 brew install mise
 mise use node@latest
 ```
 
-## local 테스트
+## Local 테스트
 
 ```bash
 # 필요시 패키지 다시 설치
@@ -25,14 +25,14 @@ bun install
 # 필요시 최신 패키지(dependencies)로 업데이트
 bun update --latest
 
-# 필요시(vim 에서 파일 저장시 자동 포맷팅되도록 했뒀음)
+# 필요시(vim 에서 파일 저장 시 자동 포맷팅되도록 해뒀음)
 bun prettier . --write
 
 # Find unused dependencies, exports and files in your JavaScript and TypeScript projects
 bun i -g knip
 knip
 
-# tailwind v3 css 변경 확인시(vite 에 tailwindcss 설정이 되어 있다면 vite 가 자동 빌드한다.)
+# tailwind v3 css 변경 확인 시(vite 에 tailwindcss 설정이 되어 있다면 vite 가 자동 빌드한다.)
 # 필요한 tailwindcss 가 코드 변화에 따라 필요한 요소들이 tailwind_output.css 로 실시간으로 생성되도록 띄워 둔다.
 # npx @tailwindcss/cli -i ./src/tailwind.css -o ./src/tailwind_output.css --watch
 # vite 에 tailwindcss 설정이 되어 있다면 vite 가 자동 빌드한다.
@@ -43,7 +43,7 @@ bun run serve
 
 # 빌드(/dist 번들링) 후
 bun run build --base "dist/"
-bun x serve dist
+bunx serve dist
 ```
 
 ## 빌드 배포

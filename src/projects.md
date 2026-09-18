@@ -8,14 +8,14 @@
 - Programming Language: golang, sh, python
 - OS: linux, mac
 - DB
-  - 기존: consul, postgreSQL
+  - 기존: consul, PostgreSQL
   - 신규: rqlite, mysql
 - Platform(Environment)
   - 기존: digdag
   - 신규: kubernetes, argo-workflows
 - CI/CD:
   - 기존: jenkins (빌드/배포) with ansible
-  - 신규: github action 비슷한 사내 개발 빌드시스템 -> argocd(배포)
+  - 신규: GitHub Actions 비슷한 사내 개발 빌드 시스템 -> Argo CD(배포)
 - Monitoring
   - log: k8s node -> vector -> kafka -> es -> kibana
   - metrics: prometheus, grafana
@@ -25,8 +25,8 @@
   - Kakao Search System Builder
 - Contribution/Responsibilities
   - 기존 검색 시스템 빌더 개선 및 유지보수
-    - jenkins 설정 백업잡
-    - phase 별 인증 구분으로 로그인 세션 유지 될 수 있도록 개선
+    - jenkins 설정 백업 잡
+    - phase 별 인증 구분으로 로그인 세션 유지될 수 있도록 개선
     - 존(IDC) 마이그레이션
     - 검색 시스템 빌드 digdag workflow 오류 대응 및 버전업으로 인한 ansible 이슈 해결
   - 신규 검색 시스템 빌더 개발
@@ -35,15 +35,15 @@
     - 정적색인을 위한 argo workflow 작성
     - api-server 컴포넌트 개발
     - mysql db migration
-    - helm-chart, argocd 를 통한 배포 환경 구성
+    - helm-chart, Argo CD 를 통한 배포 환경 구성
     - db, grafana 설정 백업 등 클러스터 운영을 위한 보조 툴 작성
 - Troubleshooting
-  - openJDK 버전 업데이트 이슈
+  - OpenJDK 버전 업데이트 이슈
     - <https://yoonbh2714.blogspot.com/2023/09/openjdk-for-latest-jenkins.html>
-  - centos7 에 postgreSQL-15 설치
+  - CentOS 7 에 PostgreSQL 15 설치
     - <https://yoonbh2714.blogspot.com/2023/10/install-postresql-by-yum.html>
     - <https://yoonbh2714.blogspot.com/2023/12/yum-modular-filtering.html>
-  - rocky8 에 mysql8 설치
+  - Rocky 8 에 MySQL 8 설치
     - <https://yoonbh2714.blogspot.com/2023/11/install-mysql8-in-rocky8.html>
   - docker service daemon failed 상태
     - <https://yoonbh2714.blogspot.com/2023/11/failed-to-start-docker-service.html>
@@ -54,7 +54,7 @@
     - <https://yoonbh2714.blogspot.com/2024/03/change-grafana-pod-localtime.html>
   - grafana dashboard 백업
     - <https://yoonbh2714.blogspot.com/2024/08/backup-grafana-dashboard.html>
-  - argocd updater, notification 구성
+  - Argo CD updater, notification 구성
     - <https://yoonbh2714.blogspot.com/2024/03/argocd-image-updater-and-notification.html>
   - argo workflow 이슈
     - <https://yoonbh2714.blogspot.com/2024/07/argo-workflow-parameter-json-escape.html>
@@ -68,7 +68,7 @@
     - <https://yoonbh2714.blogspot.com/2024/09/strimzi-kafka-nodeport-ingress.html>
   - k8tz pod 재시작 원인 파악
     - <https://yoonbh2714.blogspot.com/2024/10/argocd-sync-k8tz-replicaset.html>
-  - chartmuseum 에서 harbor 로 대체
+  - ChartMuseum 에서 Harbor 로 대체
     - <https://yoonbh2714.blogspot.com/2025/08/install-harbor.html>
 
 ## Kakao MLOps
@@ -82,8 +82,8 @@
   - 사용자데이터: mongodb
   - iam 데이터: etcd
 - Platform(Environment): kubernetes, fluentd, es
-- CI/CD: github action(빌드) -> ArgoCD(배포)
-  - argocd 를 사용할 수 없는 외부 환경 배포시: helmfile 사용
+- CI/CD: GitHub Actions(빌드) -> Argo CD(배포)
+  - Argo CD 를 사용할 수 없는 외부 환경 배포 시: helmfile 사용
 - Monitoring
   - log: k8s node -> fluentd -> es -> kibana
   - metrics: prometheus, grafana
@@ -95,35 +95,35 @@
   - cli(command-line-interface) client 구현(python)
   - 사용자 요청을 처리하는 common-api-server 개발
   - 사용자 데이터 업로드/조회 등을 위한 storage-server 개발
-  - 사용자 인증(Ldap, Keystone, OAuth) 및 권한(role, policy, resource)처리를 위한 iam-server 개발
+  - 사용자 인증(LDAP, Keystone, OAuth) 및 권한(role, policy, resource) 처리를 위한 iam-server 개발
   - 사용자 필요로 하는 리소스(cpu, gpu, mem) 관리(할당, 거부 등..)를 위한 quota-server 개발
   - quota/metric 수집을 위한 prometheus servicemonitor 리소스 추가
-  - 비용 청구를 위한 리소스 사용량 취합서버 report-server 개발
+  - 비용 청구를 위한 리소스 사용량 취합 서버 report-server 개발
   - node 장애 처리
 - Troubleshooting
-  - windows 환경에서 cli client 동작에서 에러 발생
+  - Windows 환경에서 cli client 동작에서 에러 발생
     - 기존 코드를 POSIX 기준으로 변경해 해결
   - 사용자 권한 데이터가 저장된 etcd 의 노드가 장애로 shutdown
     - snapshot 으로 백업은 되어 있었지만 복구되지 않았음, 시행착오 끝에 bitnami-etcd 시작하면서 snapshot 을 로딩 하는 방법을 알아내 해결
     - <https://yoonbh2714.blogspot.com/2023/01/bitnami-etcd-snapshot.html>
-  - local 에서 iam 테스트를 위해 etcd 접속시 EOF 에러로 특정개수 이상은 조회가 되지 않음
+  - local 에서 iam 테스트를 위해 etcd 접속 시 EOF 에러로 특정 개수 이상은 조회가 되지 않음
     - grpc 소스에서 stream window size 수정으로 해결
     - <https://yoonbh2714.blogspot.com/2023/02/k8s-etcdctl-unexpected-eof.html>
-  - webdav 로 수천개의 파일 업로드시 hangup 발생
-    - 여러 테스트를 거쳐 keepalive 로 연결 세션이 늘어나면 그에 따로 thread 도 늘어 나야 함
+  - webdav 로 수천 개의 파일 업로드 시 hangup 발생
+    - 여러 테스트를 거쳐 keepalive 로 연결 세션이 늘어나면 그에 따라 thread 도 늘어나야 함
     - <https://yoonbh2714.blogspot.com/2022/07/wsgidavwebdav-session-hang.html>
-  - webdav 파일 업로드시 cpu 100% 인 상태에서 진행되지 않음
-    - rfc 명세 위한사항으로 특정헤더를 명시해야함
+  - webdav 파일 업로드 시 cpu 100% 인 상태에서 진행되지 않음
+    - RFC 명세 위반 사항으로 특정 헤더를 명시해야 함
     - <https://yoonbh2714.blogspot.com/2022/07/webdav-chunked-size.html>
-  - mongodb 조회시 특정크기이상 조회시 에러 발생
+  - mongodb 조회 시 특정 크기 이상 조회 시 에러 발생
     - <https://yoonbh2714.blogspot.com/2023/02/mongodb-go-driver-cursor-not-found-error.html>
-  - k8s 클러스터 마이그레이션시 대부분의 리소스는 helm chart 로 관리돼 마이그레이션이 수월한데, 회사별로 n 개의 nas 를 마운트해서 사용하는 pv,pvc 를 일괄마이그레이션 해야함
-    - 모든 pv, pvc manifest(.yaml)을 생성후 IP 를 변경해 apply 하는 sh script 작성해 해결
+  - k8s 클러스터 마이그레이션 시 대부분의 리소스는 helm chart 로 관리돼 마이그레이션이 수월한데, 회사별로 n 개의 nas 를 마운트해서 사용하는 pv,pvc 를 일괄 마이그레이션해야 함
+    - 모든 pv, pvc manifest(.yaml)을 생성 후 IP 를 변경해 apply 하는 sh script 작성해 해결
     - <https://yoonbh2714.blogspot.com/2023/05/k8s-persistentvolume.html>
   - 사용자에 제공된 ssh (websocket 을 접속 할 수 있는 pod)에서 커서가 프롬프트가 아닌 다음 줄에 표시됨
     - kubernetes > python > ws_client.py 에서 socket 수신 조건이 https 일때 동작 하지 않음
     - <https://yoonbh2714.blogspot.com/2023/05/nginx-https-websocket-newline-error.html>
-  - 사용자가 ssh 접속시 바로 종료됨
+  - 사용자가 ssh 접속 시 바로 종료됨
     - ~/.ssh/environment 크기가 너무 크다.
     - <https://yoonbh2714.blogspot.com/2023/04/ssh.html>
 
@@ -137,7 +137,7 @@
 - DB: mysql
 - Cache: redis
 - Platform(Environment): kubernetes, aws(ec2,vpc,alb,nlb,eks), fluentd, kafka, es
-- CI/CD: github action
+- CI/CD: GitHub Actions
 - Monitoring
   - log: k8s node -> fluentd -> kafka -> es -> kibana
   - metrics: prometheus, grafana
@@ -153,7 +153,7 @@
   - 잘못된 ingress 설정 적용 방지
     - <https://yoonbh2714.blogspot.com/2021/12/k8s-validatingwebhookconfiguration.html>
   - pod 생성시 warning 발생
-    - 테스트를 통해 바로 종료 되는 컨테이너에 발생 가능성 파악 및 sleep 으로 해결
+    - 테스트를 통해 바로 종료되는 컨테이너에 발생 가능성 파악 및 sleep 으로 해결
     - <https://yoonbh2714.blogspot.com/2021/08/k8s-sandbox-oci-runtime-create-failed.html>
   - 인그레스 설정이 반영되지 않음
     - 중복된 host,path 의 경우 오래된 ingress 설정이 우선하게 된다.
@@ -163,7 +163,7 @@
 
 - Company: kakao/kakaoenterprise(20191201~)
 - Period: 201607~202203
-- Description: daum 통합검색 및 카톡 #검색에서 사용자 검색 키워드를 받아 관련 결과를 취합해 응답 하는 검색 프론트 서버
+- Description: daum 통합검색 및 카톡 #검색에서 사용자 검색 키워드를 받아 관련 결과를 취합해 응답하는 검색 프론트 서버
 - Programming Language: c++, sh, python, lua, javascript
 - OS: linux, mac
 - DB: mysql
@@ -183,10 +183,10 @@
 - Contribution/Responsibilities
   - 통합검색 로직 구현
   - 개발자를 위한 로컬 통합검색 빌드 배포(vagrant, docker)
-  - 배포시 필요한 패키지들 다운로드 할수 있는 파일 서버(caddy) 구축
-  - CI/CD 구성 빌드 jenkins 구축 및 배포 자동을 위한 ansible 작성
+  - 배포 시 필요한 패키지들 다운로드할 수 있는 파일 서버(caddy) 구축
+  - CI/CD 구성 빌드 jenkins 구축 및 배포 자동화를 위한 ansible 작성
   - 노드 모니터링 agent(script) 구현
-  - access log masking 을 위한 apache 코드수정
+  - access log masking 을 위한 apache 코드 수정
   - apache brotli 압축 적용
     - <https://yoonbh2714.blogspot.com/2017/06/nginx-http2-brotli.html>
   - AB 테스트 운영
@@ -196,7 +196,7 @@
     - <https://yoonbh2714.blogspot.com/2018/11/kibana-urlencoding-string-field.html>
   - chromium 주소창 검색(daum omnibox search/suggest) Contribution (68.0.3432.3 버전에 포함)
     - <https://yoonbh2714.blogspot.com/2018/05/chromium.html>
-  - grafana로 분석 되지 않는 데이터 산출 툴 구현
+  - grafana 로 분석되지 않는 데이터 산출 툴 구현
   - elastalert(elasticsearch 데이터 기반으로 timeout 을 슬랙,카톡알림)
   - phase 분리, idc 이전 작업
   - 카카오 3탭 검색 랭킹 운영툴 UI(based on vue) 개발
@@ -206,10 +206,10 @@
   - log 파일 끊기는 이슈
     - 오래된 리눅스 버전에서 file write 기능이 atomic 하게 동작 하지 않음.
     - <https://yoonbh2714.blogspot.com/2017/03/linux-write-atomic.html>
-  - jenkins 배포시 간헐적 ssh 연결 실패
-    - socket 파일계속 유지되가 갑자기 삭제 되어 간헐적으로 연결 실패 발생
+  - jenkins 배포 시 간헐적 ssh 연결 실패
+    - socket 파일이 계속 유지되다가 갑자기 삭제되어 간헐적으로 연결 실패 발생
     - <https://yoonbh2714.blogspot.com/2019/12/jenkins-job-ssh.html>
-  - httpd brotli content-encoding 누락이슈
+  - httpd brotli content-encoding 누락 이슈
     - <https://yoonbh2714.blogspot.com/2019/10/httpd-content-encoding.html>
   - httpd accesslog null 400 에러
     - <https://yoonbh2714.blogspot.com/2019/01/access-log-get-null-400.html>
