@@ -32,19 +32,20 @@ function activeMenu(id) {
   document.getElementById(id).classList.add("nav-active");
 }
 
+// marked 설정은 모듈 로드 시 한 번만 등록한다 (md2Html 호출마다 누적 방지)
+// 렌더링된 md 의 링크부분 새창에서 열기
+marked.setOptions({
+  breaks: true,
+});
+const renderer = new marked.Renderer();
+// not-prose 로 prose 클래스를 적용하지 않는 영역 설정
+renderer.link = (tokens) =>
+  `<span class="not-prose"><a target="_blank" rel="noopener noreferrer" href="${tokens.href}">${tokens.text}</a></span>`;
+marked.use({ renderer });
+
 function md2Html(md) {
   // showdown 사용할때
   // let html = converter.makeHtml(md);
-  // marked 사용할때
-  // 렌더링된 md 의 링크부분 새창에서 열기
-  marked.setOptions({
-    breaks: true,
-  });
-  const renderer = new marked.Renderer();
-  // not-prose 로 prose 클래스를 적용하지 않는 영역 설정
-  renderer.link = (tokens) =>
-    `<span class="not-prose"><a target="_blank" rel="noopener noreferrer" href="${tokens.href}">${tokens.text}</a></span>`;
-  marked.use({ renderer });
   // tailwind 사용으로 기본 스타일 모두제거된다. "@tailwindcss/typography" 플러그인으로 렌더링된 md -> html 을 prose 클래스로 이쁘게 보여준다.
   return `<article class="prose dark:prose-invert max-w-none">${marked.parse(md)}</article>`;
 }

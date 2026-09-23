@@ -16,7 +16,7 @@ const readRestaurantAllFromJSFile = async (tag) => {
 };
 
 const makeSearchURL = (name) => {
-  return `https://search.daum.net/search?w=tot&DA=YZR&t__nil_searchbox=btn&q=${name}`;
+  return `https://search.daum.net/search?w=tot&DA=YZR&t__nil_searchbox=btn&q=${encodeURIComponent(name)}`;
 };
 
 const readRestaurantAll = async (tag) => {
