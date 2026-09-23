@@ -1,4 +1,5 @@
 import hljs from "highlight.js";
+import "highlight.js/styles/night-owl.css";
 import packageJSON from "../package.json";
 
 export const pageinfoAddEventListener = () => {

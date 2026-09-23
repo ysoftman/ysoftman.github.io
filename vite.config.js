@@ -101,8 +101,6 @@ function spaFallbackPlugin() {
 export default defineConfig({
   // index.html 위치,  아래 모든 설정의 경로의 시작
   root: `${process.cwd()}/src`,
-  entry: "./src/index.js",
-  mode: "development",
   base: "/",
   server: {
     host: "127.0.0.1",
@@ -131,8 +129,8 @@ export default defineConfig({
   build: {
     rollupOptions: {
       input: {
-        main: path.resolve(__dirname, "src/index.html"),
-        404: path.resolve(__dirname, "src/404.html"),
+        main: path.resolve(import.meta.dirname, "src/index.html"),
+        404: path.resolve(import.meta.dirname, "src/404.html"),
       },
       output: {
         assetFileNames: (assetInfo) => {
@@ -158,8 +156,8 @@ export default defineConfig({
   plugins: [spaFallbackPlugin(), tailwindcss()],
   resolve: {
     //alias: [
-    //  { find: "@", replacement: path.resolve(__dirname, "src") },
-    //  { find: "@assets", replacement: path.resolve(__dirname, "src/images") },
+    //  { find: "@", replacement: path.resolve(import.meta.dirname, "src") },
+    //  { find: "@assets", replacement: path.resolve(import.meta.dirname, "src/images") },
     //],
   },
 });
