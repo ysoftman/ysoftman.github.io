@@ -1,10 +1,7 @@
 import { execSync } from "node:child_process";
 import path from "node:path";
 import tailwindcss from "@tailwindcss/vite";
-import dotenv from "dotenv";
 import { defineConfig } from "vite";
-
-dotenv.config({ path: path.resolve(__dirname, ".env") });
 
 function getGitInfo() {
   try {
