@@ -17,7 +17,6 @@
   "devDependencies": {
     "@biomejs/biome": "2.5.9",
     "@tailwindcss/typography": "0.5.20",
-    "axios": "1.19.0",
     "marked": "18.0.10",
     "tailwindcss": "4.3.3",
     "vite": "8.2.2"

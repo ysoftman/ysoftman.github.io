@@ -1,5 +1,5 @@
-import axios from "axios";
 import hljs from "highlight.js";
+import { get } from "./http.js";
 // import "highlight.js/styles/github-dark.css";
 // import "highlight.js/styles/atom-one-dark.css";
 import "highlight.js/styles/night-owl.css";
@@ -120,10 +120,7 @@ export function loadProgramList() {
   });
   document.getElementById("windows_programs").innerHTML = windowsProgramsHtml;
 
-  axios
-    .get(
-      "https://raw.githubusercontent.com/ysoftman/myenv/main/installcommon.sh",
-    )
+  get("https://raw.githubusercontent.com/ysoftman/myenv/main/installcommon.sh")
     .then((response) => {
       const data = response.data.split("sudo_cmd=")[0];
       // data = data.replace(/(?:\r\n|\r|\n)/g, "<br>");
@@ -135,8 +132,7 @@ export function loadProgramList() {
       document.getElementById("linux_programs").textContent =
         `Failed to load data: ${error.message}`;
     });
-  axios
-    .get("https://raw.githubusercontent.com/ysoftman/myenv/main/installbrew.sh")
+  get("https://raw.githubusercontent.com/ysoftman/myenv/main/installbrew.sh")
     .then((response) => {
       // const data = response.data.replace(/(?:\r\n|\r|\n)/g, "<br>");
       const data = response.data;
@@ -148,10 +144,7 @@ export function loadProgramList() {
       document.getElementById("brew_programs").textContent =
         `Failed to load data: ${error.message}`;
     });
-  axios
-    .get(
-      "https://raw.githubusercontent.com/ysoftman/myenv/main/installcargo.sh",
-    )
+  get("https://raw.githubusercontent.com/ysoftman/myenv/main/installcargo.sh")
     .then((response) => {
       // const data = response.data.replace(/(?:\r\n|\r|\n)/g, "<br>");
       const data = response.data;
@@ -163,8 +156,7 @@ export function loadProgramList() {
       document.getElementById("cargo_programs").textContent =
         `Failed to load data: ${error.message}`;
     });
-  axios
-    .get("https://raw.githubusercontent.com/ysoftman/myenv/main/installpip.sh")
+  get("https://raw.githubusercontent.com/ysoftman/myenv/main/installpip.sh")
     .then((response) => {
       // const data = response.data.replace(/(?:\r\n|\r|\n)/g, "<br>");
       const data = response.data;
@@ -176,17 +168,14 @@ export function loadProgramList() {
       document.getElementById("pip_programs").textContent =
         `Failed to load data: ${error.message}`;
     });
-  axios
-    // https://github.com/ysoftman/myenv/tree/main/nvim/lua/plugins 는 CORS 에러로 브라우저에서 요청할수 없다.
-    // NOTE: api 사용이라 자주 호출하면 403 응답으로 사용할수 없게 된다.
-    // 비인증 요청 (Unauthenticated): IP당 시간당 60회
-    // 인증 요청 (Authenticated): 사용자당 시간당 5,000회
-    .get(
-      "https://api.github.com/repositories/77009402/contents/nvim/lua/plugins",
-    )
+  // https://github.com/ysoftman/myenv/tree/main/nvim/lua/plugins 는 CORS 에러로 브라우저에서 요청할수 없다.
+  // NOTE: api 사용이라 자주 호출하면 403 응답으로 사용할수 없게 된다.
+  // 비인증 요청 (Unauthenticated): IP당 시간당 60회
+  // 인증 요청 (Authenticated): 사용자당 시간당 5,000회
+  get("https://api.github.com/repositories/77009402/contents/nvim/lua/plugins")
     .then((response) => {
       document.getElementById("nvim_plugins_api_limit").textContent =
-        `github api request(remaining/limit_per_hour): ${response.headers["x-ratelimit-remaining"]}/${response.headers["x-ratelimit-limit"]}`;
+        `github api request(remaining/limit_per_hour): ${response.headers.get("x-ratelimit-remaining")}/${response.headers.get("x-ratelimit-limit")}`;
       const files = response.data
         .filter((item) => item.type === "file")
         .map((item) => item.name);
@@ -202,8 +191,7 @@ export function loadProgramList() {
       document.getElementById("nvim_plugins").textContent =
         `Failed to load data: ${error.message}`;
     });
-  axios
-    .get("https://raw.githubusercontent.com/ysoftman/myenv/main/.vimrc")
+  get("https://raw.githubusercontent.com/ysoftman/myenv/main/.vimrc")
     .then((response) => {
       const data = response.data.match(/^call plug.*|^Plug.*|.*:Plug.*/gm);
       let result = "";
@@ -218,10 +206,9 @@ export function loadProgramList() {
       document.getElementById("vim_plugins").textContent =
         `Failed to load data: ${error.message}`;
     });
-  axios
-    .get(
-      "https://raw.githubusercontent.com/ysoftman/myenv/main/installvscodeextension.sh",
-    )
+  get(
+    "https://raw.githubusercontent.com/ysoftman/myenv/main/installvscodeextension.sh",
+  )
     .then((response) => {
       // const data = response.data.replace(/(?:\r\n|\r|\n)/g, "<br>");
       const data = response.data;

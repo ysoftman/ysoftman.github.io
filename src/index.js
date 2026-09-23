@@ -13,12 +13,11 @@ import projectsMd from "./projects.md?raw";
 import "./hack-v3.003-webfonts/hack.css";
 // import "./hack-v3.003-webfonts/hack-subset.css"; // hack-subset(경량버전)
 // pageinfo.js는 highlight.js 등 큰 라이브러리를 포함하므로 동적 import로 지연 로딩한다
+import { get } from "./http.js";
 import { loadProgramList } from "./programs.js";
 import { restaurantAddEventListener } from "./restaurant.js";
 import "./common.css";
 
-//const axios = require("axios"); // commonJS node 표준인데 import 방식으로 점차 변경중
-import axios from "axios"; // ES module  방식
 import { marked } from "marked";
 
 // function sleep(ms = 0) {
@@ -91,8 +90,7 @@ function loadPage(path) {
   const page = path.replace(/^\//, "").replace(/\?.*$/, "");
 
   if (page === "programs") {
-    axios
-      .get("/partials/programs.html")
+    get("/partials/programs.html")
       .then((response) => {
         activeMenu("programs");
         document.getElementById("main_view").innerHTML = response.data;
@@ -115,8 +113,8 @@ function loadPage(path) {
     // Access-Control-Allow-Origin: *
     // Access-Control-Allow-Methods: get
     Promise.all([
-      axios.get("https://watchdust.appspot.com"),
-      axios.get("https://watchdust.appspot.com/watchDust"),
+      get("https://watchdust.appspot.com"),
+      get("https://watchdust.appspot.com/watchDust"),
     ])
       .then(([res1, res2]) => {
         activeMenu("watchdust");
@@ -128,8 +126,7 @@ function loadPage(path) {
       })
       .catch(showError);
   } else if (page === "restaurant") {
-    axios
-      .get("/partials/restaurant.html")
+    get("/partials/restaurant.html")
       .then((response) => {
         activeMenu("restaurant");
         document.getElementById("main_view").innerHTML = response.data;
@@ -141,8 +138,7 @@ function loadPage(path) {
       })
       .catch(showError);
   } else if (page === "pageinfo") {
-    axios
-      .get("/partials/pageinfo.html")
+    get("/partials/pageinfo.html")
       .then((response) => {
         activeMenu("pageinfo");
         document.getElementById("main_view").innerHTML = response.data;
@@ -167,8 +163,7 @@ function setupRouteLinks() {
 }
 
 //load 는 비동기로 동작,혹시 navbar.html 이 로딩이 선행 후 dom 을 사용하도록 함
-axios
-  .get("/partials/navbar.html")
+get("/partials/navbar.html")
   .then((response) => {
     document.getElementById("navigation").innerHTML = response.data;
     // remixicon 폰트 로딩 완료 후 아이콘 표시 (x박스 방지)
