@@ -119,105 +119,48 @@ export function loadProgramList() {
     windowsProgramsHtml += `<a href="http://www.google.com/search?q=${item}" target="_blank" rel="noopener noreferrer">${item}</a> `;
   });
   document.getElementById("windows_programs").innerHTML = windowsProgramsHtml;
-
-  get("https://raw.githubusercontent.com/ysoftman/myenv/main/installcommon.sh")
-    .then((response) => {
-      const data = response.data.split("sudo_cmd=")[0];
-      // data = data.replace(/(?:\r\n|\r|\n)/g, "<br>");
-      document.getElementById("linux_programs").textContent = data;
-      hljs.highlightElement(document.getElementById("linux_programs"));
-    })
-    .catch((error) => {
-      console.error(error);
-      document.getElementById("linux_programs").textContent =
-        `Failed to load data: ${error.message}`;
-    });
-  get("https://raw.githubusercontent.com/ysoftman/myenv/main/installbrew.sh")
-    .then((response) => {
-      // const data = response.data.replace(/(?:\r\n|\r|\n)/g, "<br>");
-      const data = response.data;
-      document.getElementById("brew_programs").textContent = data;
-      hljs.highlightElement(document.getElementById("brew_programs"));
-    })
-    .catch((error) => {
-      console.error(error);
-      document.getElementById("brew_programs").textContent =
-        `Failed to load data: ${error.message}`;
-    });
-  get("https://raw.githubusercontent.com/ysoftman/myenv/main/installcargo.sh")
-    .then((response) => {
-      // const data = response.data.replace(/(?:\r\n|\r|\n)/g, "<br>");
-      const data = response.data;
-      document.getElementById("cargo_programs").textContent = data;
-      hljs.highlightElement(document.getElementById("cargo_programs"));
-    })
-    .catch((error) => {
-      console.error(error);
-      document.getElementById("cargo_programs").textContent =
-        `Failed to load data: ${error.message}`;
-    });
-  get("https://raw.githubusercontent.com/ysoftman/myenv/main/installpip.sh")
-    .then((response) => {
-      // const data = response.data.replace(/(?:\r\n|\r|\n)/g, "<br>");
-      const data = response.data;
-      document.getElementById("pip_programs").textContent = data;
-      hljs.highlightElement(document.getElementById("pip_programs"));
-    })
-    .catch((error) => {
-      console.error(error);
-      document.getElementById("pip_programs").textContent =
-        `Failed to load data: ${error.message}`;
-    });
+  load(
+    "linux_programs",
+    `${MYENV}/installcommon.sh`,
+    (res) => res.data.split("sudo_cmd=")[0],
+  );
+  load("brew_programs", `${MYENV}/installbrew.sh`);
+  load("cargo_programs", `${MYENV}/installcargo.sh`);
+  load("pip_programs", `${MYENV}/installpip.sh`);
   // https://github.com/ysoftman/myenv/tree/main/nvim/lua/plugins 는 CORS 에러로 브라우저에서 요청할수 없다.
   // NOTE: api 사용이라 자주 호출하면 403 응답으로 사용할수 없게 된다.
   // 비인증 요청 (Unauthenticated): IP당 시간당 60회
   // 인증 요청 (Authenticated): 사용자당 시간당 5,000회
-  get("https://api.github.com/repositories/77009402/contents/nvim/lua/plugins")
-    .then((response) => {
+  load(
+    "nvim_plugins",
+    "https://api.github.com/repositories/77009402/contents/nvim/lua/plugins",
+    (res) => {
       document.getElementById("nvim_plugins_api_limit").textContent =
-        `github api request(remaining/limit_per_hour): ${response.headers.get("x-ratelimit-remaining")}/${response.headers.get("x-ratelimit-limit")}`;
-      const files = response.data
+        `github api request(remaining/limit_per_hour): ${res.headers.get("x-ratelimit-remaining")}/${res.headers.get("x-ratelimit-limit")}`;
+      return res.data
         .filter((item) => item.type === "file")
-        .map((item) => item.name);
-      let result = "";
-      for (const v of files) {
-        result += `${v}\n`;
-      }
-      document.getElementById("nvim_plugins").textContent = result;
-      hljs.highlightElement(document.getElementById("nvim_plugins"));
+        .map((item) => item.name)
+        .join("\n");
+    },
+  );
+  load("vim_plugins", `${MYENV}/.vimrc`, (res) =>
+    (res.data.match(/^call plug.*|^Plug.*|.*:Plug.*/gm) ?? []).join("\n"),
+  );
+  load("vscode_extensions", `${MYENV}/installvscodeextension.sh`);
+}
+
+const MYENV = "https://raw.githubusercontent.com/ysoftman/myenv/main";
+
+// url 을 받아 transform 결과를 id 요소에 넣고 하이라이트, 실패 시 에러 메시지 표시
+function load(id, url, transform = (res) => res.data) {
+  const el = document.getElementById(id);
+  get(url)
+    .then((res) => {
+      el.textContent = transform(res);
+      hljs.highlightElement(el);
     })
     .catch((error) => {
       console.error(error);
-      document.getElementById("nvim_plugins").textContent =
-        `Failed to load data: ${error.message}`;
-    });
-  get("https://raw.githubusercontent.com/ysoftman/myenv/main/.vimrc")
-    .then((response) => {
-      const data = response.data.match(/^call plug.*|^Plug.*|.*:Plug.*/gm);
-      let result = "";
-      for (const v of data ?? []) {
-        result += `${v}\n`;
-      }
-      document.getElementById("vim_plugins").textContent = result;
-      hljs.highlightElement(document.getElementById("vim_plugins"));
-    })
-    .catch((error) => {
-      console.error(error);
-      document.getElementById("vim_plugins").textContent =
-        `Failed to load data: ${error.message}`;
-    });
-  get(
-    "https://raw.githubusercontent.com/ysoftman/myenv/main/installvscodeextension.sh",
-  )
-    .then((response) => {
-      // const data = response.data.replace(/(?:\r\n|\r|\n)/g, "<br>");
-      const data = response.data;
-      document.getElementById("vscode_extensions").textContent = data;
-      hljs.highlightElement(document.getElementById("vscode_extensions"));
-    })
-    .catch((error) => {
-      console.error(error);
-      document.getElementById("vscode_extensions").textContent =
-        `Failed to load data: ${error.message}`;
+      el.textContent = `Failed to load data: ${error.message}`;
     });
 }
