@@ -1,5 +1,10 @@
 export const restaurantlist = [
   {
+    name: "고기리 흥만소",
+    tags: "팥빙수, 쌀베이커리, 아이스크림, 커피",
+    review: "https://maps.app.goo.gl/4qp9jzHMrkZbws4s8",
+  },
+  {
     name: "현대백화점 판교점 텍사스로드하우스",
     tags: "스테이크, 파스타, 햄버거",
     review: "https://maps.app.goo.gl/U4eD4uxnypBBd9yM9",
