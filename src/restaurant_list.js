@@ -10,6 +10,11 @@ export const restaurantlist = [
     review: "https://maps.app.goo.gl/U4eD4uxnypBBd9yM9",
   },
   {
+    name: "강남 DOWN TOWNER",
+    tags: "점보 치즈스틱, 햄버거",
+    review: "https://maps.app.goo.gl/Ldq63xwnx4PwdnmT8",
+  },
+  {
     name: "판교 하얏트 플레이스",
     tags: "호텔, 뷔페",
     review: "https://maps.app.goo.gl/iSjn5cKhuVTYZpZn7",
