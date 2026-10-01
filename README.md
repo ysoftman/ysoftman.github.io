@@ -38,6 +38,9 @@ knip
 # vite 에 tailwindcss 설정이 되어 있다면 vite 가 자동 빌드한다.
 # tailwind v4 물리적인 파일 생성 없이 메모리 상에서 즉시 처리, 원본(tailwind.css)을 import
 
+# dev 실행
+bun run dev
+
 # 실행
 bun run serve
 
