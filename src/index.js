@@ -13,7 +13,6 @@ import projectsMd from "./projects.md?raw";
 import "./hack-v3.003-webfonts/hack.css";
 // import "./hack-v3.003-webfonts/hack-subset.css"; // hack-subset(경량버전)
 import { get } from "./http.js";
-import { restaurantAddEventListener } from "./restaurant.js";
 import "./common.css";
 
 import { marked } from "marked";
@@ -122,18 +121,6 @@ function loadPage(path) {
         out += "<br>";
         out += `<h3>${Atag2Imgtag(text2html(res2.data))}</h3>`;
         document.getElementById("main_view").innerHTML = out;
-      })
-      .catch(showError);
-  } else if (page === "restaurant") {
-    get("/partials/restaurant.html")
-      .then((response) => {
-        activeMenu("restaurant");
-        document.getElementById("main_view").innerHTML = response.data;
-        const q = new URLSearchParams(window.location.search).get("q") || "";
-        if (q) {
-          document.getElementById("search_restaurant_input").value = q;
-        }
-        restaurantAddEventListener(q);
       })
       .catch(showError);
   } else if (page === "pageinfo") {

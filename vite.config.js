@@ -70,7 +70,6 @@ kstDate = kstDate.replace(/GMT.*/, "");
 const spaRoutes = [
   "/programs",
   "/projects",
-  "/restaurant",
   "/watchdust",
   "/github-webhook-action",
   "/pageinfo",
