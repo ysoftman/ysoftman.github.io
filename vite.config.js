@@ -1,4 +1,5 @@
 import { execSync } from "node:child_process";
+import { copyFileSync } from "node:fs";
 import path from "node:path";
 import tailwindcss from "@tailwindcss/vite";
 import { defineConfig } from "vite";
@@ -93,6 +94,16 @@ function spaFallbackPlugin() {
         }
         next();
       });
+    },
+    // GitHub Pages 는 서버 rewrite 가 없어 /programs 요청이 404.html(상태 404)로 폴백된다.
+    // 빌드 시 라우트별 <route>.html 을 복사해 두면 GitHub Pages 가 /programs 를 programs.html 로 200 응답한다.
+    writeBundle(options) {
+      for (const route of spaRoutes) {
+        copyFileSync(
+          `${options.dir}/index.html`,
+          `${options.dir}${route}.html`,
+        );
+      }
     },
   };
 }
