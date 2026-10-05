@@ -126,6 +126,7 @@ export function loadProgramList() {
   );
   load("brew_programs", `${MYENV}/installbrew.sh`);
   load("cargo_programs", `${MYENV}/installcargo.sh`);
+  load("golang_programs", `${MYENV}/installgolangtools.sh`);
   load("pip_programs", `${MYENV}/installpip.sh`);
   // https://github.com/ysoftman/myenv/tree/main/nvim/lua/plugins 는 CORS 에러로 브라우저에서 요청할 수 없다.
   // NOTE: api 사용이라 자주 호출하면 403 응답으로 사용할 수 없게 된다.
