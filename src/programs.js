@@ -127,8 +127,8 @@ export function loadProgramList() {
   load("brew_programs", `${MYENV}/installbrew.sh`);
   load("cargo_programs", `${MYENV}/installcargo.sh`);
   load("pip_programs", `${MYENV}/installpip.sh`);
-  // https://github.com/ysoftman/myenv/tree/main/nvim/lua/plugins 는 CORS 에러로 브라우저에서 요청할수 없다.
-  // NOTE: api 사용이라 자주 호출하면 403 응답으로 사용할수 없게 된다.
+  // https://github.com/ysoftman/myenv/tree/main/nvim/lua/plugins 는 CORS 에러로 브라우저에서 요청할 수 없다.
+  // NOTE: api 사용이라 자주 호출하면 403 응답으로 사용할 수 없게 된다.
   // 비인증 요청 (Unauthenticated): IP당 시간당 60회
   // 인증 요청 (Authenticated): 사용자당 시간당 5,000회
   load(

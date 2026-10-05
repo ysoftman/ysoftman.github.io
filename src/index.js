@@ -1,4 +1,4 @@
-// showdownjs 은 리스트 하위 항목 들여쓰기 기능이 동작하지 않는다.
+// showdownjs 는 리스트 하위 항목 들여쓰기 기능이 동작하지 않는다.
 // https://github.com/showdownjs/showdown/issues/615
 // let converter = new showdown.Converter();
 // converter.disableForced4SpacesIndentedSublists = true;
@@ -29,7 +29,7 @@ function activeMenu(id) {
 }
 
 // marked 설정은 모듈 로드 시 한 번만 등록한다 (md2Html 호출마다 누적 방지)
-// 렌더링된 md 의 링크부분 새창에서 열기
+// 렌더링된 md 의 링크 부분 새 창에서 열기
 marked.setOptions({
   breaks: true,
 });
@@ -40,14 +40,14 @@ renderer.link = (tokens) =>
 marked.use({ renderer });
 
 function md2Html(md) {
-  // showdown 사용할때
+  // showdown 사용할 때
   // let html = converter.makeHtml(md);
-  // tailwind 사용으로 기본 스타일 모두제거된다. "@tailwindcss/typography" 플러그인으로 렌더링된 md -> html 을 prose 클래스로 이쁘게 보여준다.
+  // tailwind 사용으로 기본 스타일 모두 제거된다. "@tailwindcss/typography" 플러그인으로 렌더링된 md -> html 을 prose 클래스로 이쁘게 보여준다.
   return `<article class="prose dark:prose-invert max-w-none">${marked.parse(md)}</article>`;
 }
 
-function text2html(text) {
-  //json(object) 은 replace 함수가 없다.
+function text2Html(text) {
+  // json(object) 은 replace 함수가 없다.
   if (typeof text === "object") {
     return JSON.stringify(text);
   }
@@ -59,7 +59,7 @@ function text2html(text) {
   return text;
 }
 
-function Atag2Imgtag(html) {
+function aTag2ImgTag(html) {
   html = html.replace(/<br>/g, "\n");
   html = html.replace(
     /("http.*.png")/g,
@@ -116,10 +116,10 @@ function loadPage(path) {
     ])
       .then(([res1, res2]) => {
         activeMenu("watchdust");
-        let out = `<h3>${text2html(res1.data)}</h3>`;
+        let out = `<h3>${text2Html(res1.data)}</h3>`;
         out += "<h3>----- /watchDust -----</h3>";
         out += "<br>";
-        out += `<h3>${Atag2Imgtag(text2html(res2.data))}</h3>`;
+        out += `<h3>${aTag2ImgTag(text2Html(res2.data))}</h3>`;
         document.getElementById("main_view").innerHTML = out;
       })
       .catch(showError);
@@ -128,7 +128,7 @@ function loadPage(path) {
       .then((response) => {
         activeMenu("pageinfo");
         document.getElementById("main_view").innerHTML = response.data;
-        import("./pageinfo.js").then((m) => m.pageinfoAddEventListener());
+        import("./pageinfo.js").then((m) => m.loadPageInfo());
       })
       .catch(showError);
   } else {
@@ -148,7 +148,7 @@ function setupRouteLinks() {
   });
 }
 
-//load 는 비동기로 동작,혹시 navbar.html 이 로딩이 선행 후 dom 을 사용하도록 함
+// get 은 비동기로 동작, navbar.html 로딩이 선행된 후 dom 을 사용하도록 함
 get("/partials/navbar.html")
   .then((response) => {
     document.getElementById("navigation").innerHTML = response.data;

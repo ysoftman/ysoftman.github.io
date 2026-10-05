@@ -118,7 +118,7 @@ code {
   }
 }
 
-/*add external icon*/
+/* add external icon */
 .nav-menu-item a[href^="http"]::after,
 .nav-menu-item a[href^="https://"]::after {
   content: "";

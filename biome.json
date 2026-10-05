@@ -9,9 +9,7 @@
     "includes": [
       "**/*.{js,jsx,ts,tsx,css}",
       "!biome.json",
-      "!tailwind.config.js",
-      "!vite.config.ts",
-      "!eslint.config.js",
+      "!vite.config.js",
       "!**/.*",
       "!dist/*",
       "!node_modules",

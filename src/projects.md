@@ -13,7 +13,7 @@
 - Platform(Environment)
   - 기존: digdag
   - 신규: kubernetes, argo-workflows
-- CI/CD:
+- CI/CD
   - 기존: jenkins (빌드/배포) with ansible
   - 신규: GitHub Actions 비슷한 사내 개발 빌드 시스템 -> Argo CD(배포)
 - Monitoring
@@ -96,7 +96,7 @@
   - 사용자 요청을 처리하는 common-api-server 개발
   - 사용자 데이터 업로드/조회 등을 위한 storage-server 개발
   - 사용자 인증(LDAP, Keystone, OAuth) 및 권한(role, policy, resource) 처리를 위한 iam-server 개발
-  - 사용자 필요로 하는 리소스(cpu, gpu, mem) 관리(할당, 거부 등..)를 위한 quota-server 개발
+  - 사용자가 필요로 하는 리소스(cpu, gpu, mem) 관리(할당, 거부 등..)를 위한 quota-server 개발
   - quota/metric 수집을 위한 prometheus servicemonitor 리소스 추가
   - 비용 청구를 위한 리소스 사용량 취합 서버 report-server 개발
   - node 장애 처리
@@ -104,7 +104,7 @@
   - Windows 환경에서 cli client 동작에서 에러 발생
     - 기존 코드를 POSIX 기준으로 변경해 해결
   - 사용자 권한 데이터가 저장된 etcd 의 노드가 장애로 shutdown
-    - snapshot 으로 백업은 되어 있었지만 복구되지 않았음, 시행착오 끝에 bitnami-etcd 시작하면서 snapshot 을 로딩 하는 방법을 알아내 해결
+    - snapshot 으로 백업은 되어 있었지만 복구되지 않았음, 시행착오 끝에 bitnami-etcd 시작하면서 snapshot 을 로딩하는 방법을 알아내 해결
     - <https://yoonbh2714.blogspot.com/2023/01/bitnami-etcd-snapshot.html>
   - local 에서 iam 테스트를 위해 etcd 접속 시 EOF 에러로 특정 개수 이상은 조회가 되지 않음
     - grpc 소스에서 stream window size 수정으로 해결
@@ -120,8 +120,8 @@
   - k8s 클러스터 마이그레이션 시 대부분의 리소스는 helm chart 로 관리돼 마이그레이션이 수월한데, 회사별로 n 개의 nas 를 마운트해서 사용하는 pv,pvc 를 일괄 마이그레이션해야 함
     - 모든 pv, pvc manifest(.yaml)을 생성 후 IP 를 변경해 apply 하는 sh script 작성해 해결
     - <https://yoonbh2714.blogspot.com/2023/05/k8s-persistentvolume.html>
-  - 사용자에 제공된 ssh (websocket 을 접속 할 수 있는 pod)에서 커서가 프롬프트가 아닌 다음 줄에 표시됨
-    - kubernetes > python > ws_client.py 에서 socket 수신 조건이 https 일때 동작 하지 않음
+  - 사용자에 제공된 ssh (websocket 을 접속할 수 있는 pod)에서 커서가 프롬프트가 아닌 다음 줄에 표시됨
+    - kubernetes > python > ws_client.py 에서 socket 수신 조건이 https 일 때 동작하지 않음
     - <https://yoonbh2714.blogspot.com/2023/05/nginx-https-websocket-newline-error.html>
   - 사용자가 ssh 접속 시 바로 종료됨
     - ~/.ssh/environment 크기가 너무 크다.
@@ -131,7 +131,7 @@
 
 - Company: kakaoenterprise
 - Period: 202001~202203
-- Description: 검색 서비스가 필요한 회사가 빌더를 통해 데이터 컬렉션등을 설정하면 k8s에 해당 검색 서비스를 생성해 검색 서비스 제공
+- Description: 검색 서비스가 필요한 회사가 빌더를 통해 데이터 컬렉션 등을 설정하면 k8s에 해당 검색 서비스를 생성해 검색 서비스 제공
 - Programming Language: golang, sh, python
 - OS: linux, mac
 - DB: mysql
@@ -148,14 +148,14 @@
 - Contribution/Responsibilities
   - 검색 서비스 builder 구현
   - builder 개발단계에서 사용해 볼 수 있는 UI(based on vue) 구현
-  - k8s 환경에서 실행 되는 검색 서버 구현
+  - k8s 환경에서 실행되는 검색 서버 구현
 - Troubleshooting
   - 잘못된 ingress 설정 적용 방지
     - <https://yoonbh2714.blogspot.com/2021/12/k8s-validatingwebhookconfiguration.html>
-  - pod 생성시 warning 발생
+  - pod 생성 시 warning 발생
     - 테스트를 통해 바로 종료되는 컨테이너에 발생 가능성 파악 및 sleep 으로 해결
     - <https://yoonbh2714.blogspot.com/2021/08/k8s-sandbox-oci-runtime-create-failed.html>
-  - 인그레스 설정이 반영되지 않음
+  - ingress 설정이 반영되지 않음
     - 중복된 host,path 의 경우 오래된 ingress 설정이 우선하게 된다.
     - <https://yoonbh2714.blogspot.com/2021/04/k8s-ingress-controller-model.html>
 
@@ -197,14 +197,14 @@
   - chromium 주소창 검색(daum omnibox search/suggest) Contribution (68.0.3432.3 버전에 포함)
     - <https://yoonbh2714.blogspot.com/2018/05/chromium.html>
   - grafana 로 분석되지 않는 데이터 산출 툴 구현
-  - elastalert(elasticsearch 데이터 기반으로 timeout 을 슬랙,카톡알림)
+  - elastalert(elasticsearch 데이터 기반으로 timeout 을 슬랙, 카톡 알림)
   - phase 분리, idc 이전 작업
   - 카카오 3탭 검색 랭킹 운영툴 UI(based on vue) 개발
 - Troubleshooting
   - chi framework cpu 사용률 이슈
     - <https://yoonbh2714.blogspot.com/2021/06/golang-chi-cpu.html>
   - log 파일 끊기는 이슈
-    - 오래된 리눅스 버전에서 file write 기능이 atomic 하게 동작 하지 않음.
+    - 오래된 리눅스 버전에서 file write 기능이 atomic 하게 동작하지 않음.
     - <https://yoonbh2714.blogspot.com/2017/03/linux-write-atomic.html>
   - jenkins 배포 시 간헐적 ssh 연결 실패
     - socket 파일이 계속 유지되다가 갑자기 삭제되어 간헐적으로 연결 실패 발생
@@ -213,7 +213,7 @@
     - <https://yoonbh2714.blogspot.com/2019/10/httpd-content-encoding.html>
   - httpd accesslog null 400 에러
     - <https://yoonbh2714.blogspot.com/2019/01/access-log-get-null-400.html>
-  - multi ansible 처리시 connection 에러
+  - multi ansible 처리 시 connection 에러
     - <https://yoonbh2714.blogspot.com/2017/03/ansible-connection-to-xxx-closed.html>
 
 ## Hangame Mobile Poker
@@ -243,14 +243,14 @@
   - Hangame PC Janggi <https://janggi.hangame.com/>
   - Hangame PC Baduk <https://baduk.hangame.com/>
 - Contribution/Responsibilities
-  - Develop Mobile Game Server
+  - Develop WebBoard Game Server
 
 ## Hangame Game Platform
 
 - Company: naver
 - Period: 201102~201201
-- Programming Language: c++, java, c#
 - Description: 한게임 게임 플랫폼 서버 개발
+- Programming Language: c++, java, c#
 - OS: linux, windows
 - DB: oracle, mssql, mongodb
 - Achievement
@@ -264,7 +264,7 @@
 
 - Company: naver
 - Period: 200709~201101
-- Description: OCR 엔진,서비스 서버 개발
+- Description: OCR 엔진, 서비스 서버 개발
 - Programming Language: c/c++, sh, php, javascript
 - OS: linux, windows
 - DB: mysql

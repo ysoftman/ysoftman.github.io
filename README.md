@@ -19,14 +19,14 @@ mise use node@latest
 
 ```bash
 # 필요시 패키지 다시 설치
-rm -rf node_modules package-lock.json
+rm -rf node_modules bun.lock
 bun install
 
 # 필요시 최신 패키지(dependencies)로 업데이트
 bun update --latest
 
 # 필요시(vim 에서 파일 저장 시 자동 포맷팅되도록 해뒀음)
-bun prettier . --write
+bunx biome check --write .
 
 # Find unused dependencies, exports and files in your JavaScript and TypeScript projects
 bun i -g knip
@@ -34,8 +34,7 @@ knip
 
 # tailwind v3 css 변경 확인 시(vite 에 tailwindcss 설정이 되어 있다면 vite 가 자동 빌드한다.)
 # 필요한 tailwindcss 가 코드 변화에 따라 필요한 요소들이 tailwind_output.css 로 실시간으로 생성되도록 띄워 둔다.
-# npx @tailwindcss/cli -i ./src/tailwind.css -o ./src/tailwind_output.css --watch
-# vite 에 tailwindcss 설정이 되어 있다면 vite 가 자동 빌드한다.
+# bunx @tailwindcss/cli -i ./src/tailwind.css -o ./src/tailwind_output.css --watch
 # tailwind v4 물리적인 파일 생성 없이 메모리 상에서 즉시 처리, 원본(tailwind.css)을 import
 
 # dev 실행

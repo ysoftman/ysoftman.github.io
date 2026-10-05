@@ -2,7 +2,7 @@ import hljs from "highlight.js";
 import "highlight.js/styles/night-owl.css";
 import packageJSON from "../package.json";
 
-export const pageinfoAddEventListener = () => {
+export const loadPageInfo = () => {
   const vite_config = document.getElementById("vite_config");
   if (vite_config) {
     vite_config.textContent = `last version(tag): ${__LAST_VERSION_TAG__}

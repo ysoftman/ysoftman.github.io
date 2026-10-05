@@ -11,7 +11,7 @@ function getGitInfo() {
     //   with:
     //     # 전체 이력(tags 포함) 가져오기
     //     fetch-depth: 0
-    //     # 또는 태그 정보  표시
+    //     # 또는 태그 정보 표시
     //     # tags: true
 
     // 현재 커밋에 Git 태그가 매칭되면 태그 사용 아니면 "develop"
@@ -98,7 +98,7 @@ function spaFallbackPlugin() {
 }
 
 export default defineConfig({
-  // index.html 위치,  아래 모든 설정의 경로의 시작
+  // index.html 위치, 아래 모든 설정의 경로의 시작
   root: `${process.cwd()}/src`,
   base: "/",
   server: {
@@ -118,7 +118,7 @@ export default defineConfig({
     __LAST_COMMIT_DATE__: gitInfo.LAST_GIT_COMMIT_DATE,
     __LAST_COMMIT_MESSAGE__: gitInfo.LAST_GIT_COMMIT_MESSAGE,
     __BUILD_DATE__: `'${kstDate}'`,
-    // NOTE: myenv file 조회등의 api 사용을 위해 사용하려고했었는데 token 은 푸시가 안된다. github action secret 로 등록해도 배포하면 보안을 위해 토큰을 만료 시켜버려 사용하지 않기로 함.
+    // NOTE: myenv file 조회 등의 api 사용을 위해 사용하려고 했었는데 token 은 푸시가 안 된다. github action secret 로 등록해도 배포하면 보안을 위해 토큰을 만료시켜버려 사용하지 않기로 함.
     // https://docs.github.com/ko/authentication/keeping-your-account-and-data-secure/token-expiration-and-revocation#token-revoked-when-pushed-to-a-public-repository-or-public-gist
     // __MYENV_READONLY_TOKEN__: "'" + process.env.myenv_readonly_token + "'",
     // 현재 실행 환경이 Bun인지 체크하여 프론트엔드 코드에 전달 가능
@@ -135,7 +135,7 @@ export default defineConfig({
         assetFileNames: (assetInfo) => {
           const extType = assetInfo.names[0].split(".").at(1);
           //console.log("---------", assetInfo.names);
-          // image 파일등 번들 위치 수정
+          // image 파일 등 번들 위치 수정
           if (/png|jpe?g|svg|gif|tiff|bmp|ico/i.test(extType)) {
             return `images/[name][extname]`;
           }
@@ -149,7 +149,7 @@ export default defineConfig({
     outDir: "../dist",
   },
 
-  // css, font(.woff, ttf, ...), image(png, jpg...) 은 자동 으로 번들링된다.
+  // css, font(.woff, ttf, ...), image(png, jpg...) 은 자동으로 번들링된다.
   // md 파일은 ?raw import 로 JS 번들에 인라인하여 .md 파일 직접 접근을 막는다
 
   plugins: [spaFallbackPlugin(), tailwindcss()],
