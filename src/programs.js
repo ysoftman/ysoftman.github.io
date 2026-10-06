@@ -1,9 +1,5 @@
-import hljs from "highlight.js";
+import { codeToHtml } from "./highlighter.js";
 import { get } from "./http.js";
-// import "highlight.js/styles/github-dark.css";
-// import "highlight.js/styles/atom-one-dark.css";
-import "highlight.js/styles/night-owl.css";
-// import "highlight.js/styles/xt256.css";
 
 export function loadProgramList() {
   const windowsPrograms = [
@@ -123,11 +119,12 @@ export function loadProgramList() {
     "linux_programs",
     `${MYENV}/installcommon.sh`,
     (res) => res.data.split("sudo_cmd=")[0],
+    "bash",
   );
-  load("brew_programs", `${MYENV}/installbrew.sh`);
-  load("cargo_programs", `${MYENV}/installcargo.sh`);
-  load("golang_programs", `${MYENV}/installgolangtools.sh`);
-  load("pip_programs", `${MYENV}/installpip.sh`);
+  load("brew_programs", `${MYENV}/installbrew.sh`, undefined, "bash");
+  load("cargo_programs", `${MYENV}/installcargo.sh`, undefined, "bash");
+  load("golang_programs", `${MYENV}/installgolangtools.sh`, undefined, "bash");
+  load("pip_programs", `${MYENV}/installpip.sh`, undefined, "bash");
   // https://github.com/ysoftman/myenv/tree/main/nvim/lua/plugins 는 CORS 에러로 브라우저에서 요청할 수 없다.
   // NOTE: api 사용이라 자주 호출하면 403 응답으로 사용할 수 없게 된다.
   // 비인증 요청 (Unauthenticated): IP당 시간당 60회
@@ -143,25 +140,40 @@ export function loadProgramList() {
         .map((item) => item.name)
         .join("\n");
     },
+    "bash",
   );
-  load("vim_plugins", `${MYENV}/.vimrc`, (res) =>
-    (res.data.match(/^call plug.*|^Plug.*|.*:Plug.*/gm) ?? []).join("\n"),
+  load(
+    "vim_plugins",
+    `${MYENV}/.vimrc`,
+    (res) =>
+      (res.data.match(/^call plug.*|^Plug.*|.*:Plug.*/gm) ?? []).join("\n"),
+    "vim",
   );
-  load("vscode_extensions", `${MYENV}/installvscodeextension.sh`);
+  load(
+    "vscode_extensions",
+    `${MYENV}/installvscodeextension.sh`,
+    undefined,
+    "bash",
+  );
 }
 
 const MYENV = "https://raw.githubusercontent.com/ysoftman/myenv/main";
 
 // url 을 받아 transform 결과를 id 요소에 넣고 하이라이트, 실패 시 에러 메시지 표시
-function load(id, url, transform = (res) => res.data) {
+function load(id, url, transform = (res) => res.data, lang = "bash") {
   const el = document.getElementById(id);
   get(url)
-    .then((res) => {
-      el.textContent = transform(res);
-      hljs.highlightElement(el);
+    .then(async (res) => {
+      const code = transform(res);
+      const highlightedHtml = await codeToHtml(code, lang);
+      if (el) {
+        el.innerHTML = highlightedHtml;
+      }
     })
     .catch((error) => {
       console.error(error);
-      el.textContent = `Failed to load data: ${error.message}`;
+      if (el) {
+        el.innerHTML = `<pre class="text-red-400">Failed to load data: ${error.message}</pre>`;
+      }
     });
 }

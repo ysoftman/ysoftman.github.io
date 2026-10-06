@@ -91,7 +91,7 @@ function loadPage(path) {
       .then((response) => {
         activeMenu("programs");
         document.getElementById("main_view").innerHTML = response.data;
-        // programs.js, pageinfo.js는 highlight.js 등 큰 라이브러리를 포함하므로 동적 import로 지연 로딩한다
+        // programs.js, pageinfo.js는 shiki 등 라이브러리를 포함하므로 동적 import로 지연 로딩한다
         import("./programs.js").then((m) => m.loadProgramList());
       })
       .catch(showError);

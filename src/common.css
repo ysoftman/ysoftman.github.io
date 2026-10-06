@@ -97,6 +97,10 @@ code {
   margin: 0px !important;
   border-radius: 5px !important;
 }
+pre code {
+  display: block;
+  overflow-x: auto;
+}
 
 /* neon effect: 내비게이션 메뉴(#navigation) 아이콘에만 적용 */
 #navigation [class*="ri-"] {
