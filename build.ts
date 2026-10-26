@@ -1,8 +1,7 @@
-import { execSync } from "node:child_process";
-import { copyFileSync, cpSync, rmSync } from "node:fs";
+import { $ } from "bun";
 import tailwind from "bun-plugin-tailwind";
 
-function getGitInfo() {
+async function getGitInfo() {
   try {
     // github action 에서 태그정보를 파악할 수 있도록 다음 설정 추가
     // - name: Checkout repository
@@ -17,27 +16,20 @@ function getGitInfo() {
     // "git describe main --tags --exact-match 2> /dev/null || echo 'develop'",
     // 커밋 해시나 태그 이후의 커밋 수를 포함하지 않고, 가장 가까운 태그 이름만 출력
     // "git describe main --tags --abbrev=0 2> /dev/null || echo 'develop'",
-    const lastGitTag = execSync(
-      "git describe main --tags --exact-match 2> /dev/null || echo 'develop'",
-    )
-      .toString()
-      .trim();
+    const lastGitTag =
+      (
+        await $`git describe main --tags --exact-match`.nothrow().quiet().text()
+      ).trim() || "develop";
 
-    const lastGitCommitHash = execSync(
-      "git log main -1 --date=iso-strict --pretty=format:'%H'",
-    )
-      .toString()
-      .trim();
-    const lastGitCommitDate = execSync(
-      "git log main -1 --date=iso-strict --pretty=format:'%cd'",
-    )
-      .toString()
-      .trim();
-    const lastGitCommitMessage = execSync(
-      "git log main -1 --pretty=format:'%s'",
-    )
-      .toString()
-      .trim();
+    const lastGitCommitHash = (
+      await $`git log main -1 --date=iso-strict --pretty=format:'%H'`.text()
+    ).trim();
+    const lastGitCommitDate = (
+      await $`git log main -1 --date=iso-strict --pretty=format:'%cd'`.text()
+    ).trim();
+    const lastGitCommitMessage = (
+      await $`git log main -1 --pretty=format:'%s'`.text()
+    ).trim();
     return {
       LAST_GIT_TAG: JSON.stringify(lastGitTag),
       LAST_GIT_COMMIT_HASH: JSON.stringify(lastGitCommitHash),
@@ -66,7 +58,7 @@ export const spaRoutes = [
 ];
 
 if (import.meta.main) {
-  const gitInfo = getGitInfo();
+  const gitInfo = await getGitInfo();
 
   // github action 에서는 UTC라서 KST 로 변경
   let kstOffset = 0;
@@ -76,7 +68,7 @@ if (import.meta.main) {
   let kstDate = new Date(Date.now() + kstOffset).toString();
   kstDate = kstDate.replace(/GMT.*/, "");
 
-  rmSync("dist", { recursive: true, force: true });
+  await $`rm -rf dist`;
 
   // css, font(.woff, ttf, ...), image(png, jpg...) 은 자동으로 번들링된다.
   // NOTE: css url() 로 참조하는 128KB 미만 파일은 data: URL 로 css 에 인라인된다(끄는 옵션 없음, hack.css 참고).
@@ -97,8 +89,8 @@ if (import.meta.main) {
   });
 
   // vite publicDir 처럼 src/public(partials, images 등 고정 경로 파일)은 그대로 복사
-  cpSync("src/public", "dist", { recursive: true });
+  await $`cp -R src/public/. dist`;
   for (const route of spaRoutes) {
-    copyFileSync("dist/index.html", `dist${route}.html`);
+    await Bun.write(`dist${route}.html`, Bun.file("dist/index.html"));
   }
 }
