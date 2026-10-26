@@ -32,20 +32,17 @@ bunx biome check --write .
 bun i -g knip
 knip
 
-# tailwind v3 css 변경 확인 시(vite 에 tailwindcss 설정이 되어 있다면 vite 가 자동 빌드한다.)
+# tailwind v3 css 변경 확인 시(bun-plugin-tailwind 가 자동 빌드한다.)
 # 필요한 tailwindcss 가 코드 변화에 따라 필요한 요소들이 tailwind_output.css 로 실시간으로 생성되도록 띄워 둔다.
 # bunx @tailwindcss/cli -i ./src/tailwind.css -o ./src/tailwind_output.css --watch
 # tailwind v4 물리적인 파일 생성 없이 메모리 상에서 즉시 처리, 원본(tailwind.css)을 import
 
-# dev 실행
+# dev 실행(HMR, http://127.0.0.1:8080)
 bun run dev
 
-# 실행
-bun run serve
-
-# 빌드(/dist 번들링) 후
-bun run build --base "dist/"
-bunx serve dist
+# 빌드(/dist 번들링) 후 확인
+bun run build
+bun run preview
 ```
 
 ## 빌드 배포

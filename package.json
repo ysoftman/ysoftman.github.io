@@ -7,22 +7,20 @@
   "private": true,
   "license": "MIT",
   "scripts": {
-    "dev": "NODE_OPTIONS=--trace-warnings vite",
-    "serve": "bun x --bun vite",
-    "build": "bun x --bun vite build",
+    "dev": "bun serve.ts",
+    "build": "bun build.ts",
     "lint": "biome lint .",
-    "preview": "vite preview"
+    "preview": "bun serve.ts preview"
   },
   "type": "module",
   "devDependencies": {
     "@biomejs/biome": "2.5.9",
     "@tailwindcss/typography": "0.5.20",
+    "bun-plugin-tailwind": "0.1.2",
     "marked": "18.0.10",
-    "tailwindcss": "4.3.3",
-    "vite": "8.2.2"
+    "tailwindcss": "4.3.3"
   },
   "dependencies": {
-    "@tailwindcss/vite": "4.3.3",
     "remixicon": "4.9.1",
     "shiki": "^4.5.0"
   }

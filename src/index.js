@@ -3,13 +3,9 @@
 // let converter = new showdown.Converter();
 // converter.disableForced4SpacesIndentedSublists = true;
 
-import "./images/bg_hr.png";
-import "./images/blacktocat.png";
-import "./images/icon_download.png";
-import "./images/sprite_download.png";
-// .md 파일을 ?raw 로 빌드 시 JS 번들에 인라인하여 .md 파일 직접 접근을 막는다
-import aboutMeMd from "./about_me.md?raw";
-import projectsMd from "./projects.md?raw";
+// .md 파일을 text 로 import 해 빌드 시 JS 번들에 인라인하여 .md 파일 직접 접근을 막는다
+import aboutMeMd from "./about_me.md" with { type: "text" };
+import projectsMd from "./projects.md" with { type: "text" };
 import "./hack-v3.003-webfonts/hack.css";
 // import "./hack-v3.003-webfonts/hack-subset.css"; // hack-subset(경량버전)
 import { get } from "./http.js";

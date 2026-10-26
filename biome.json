@@ -9,7 +9,6 @@
     "includes": [
       "**/*.{js,jsx,ts,tsx,css}",
       "!biome.json",
-      "!vite.config.js",
       "!**/.*",
       "!dist/*",
       "!node_modules",

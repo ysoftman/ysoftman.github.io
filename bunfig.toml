@@ -1,0 +1,4 @@
+# bun serve.ts(개발 서버)의 html 번들링 설정, 빌드 설정은 build.ts
+[serve.static]
+plugins = ["bun-plugin-tailwind"]
+define = { __LAST_VERSION_TAG__ = "\"dev\"", __LAST_COMMIT_HASH__ = "\"dev\"", __LAST_COMMIT_DATE__ = "\"dev\"", __LAST_COMMIT_MESSAGE__ = "\"dev\"", __BUILD_DATE__ = "\"dev\"", __RUNTIME__ = "\"Bun\"" }

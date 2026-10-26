@@ -4,38 +4,31 @@
  */
 /* FONT PATHS
  * -------------------------- */
+/* bun 번들러는 css url() 로 참조하는 128KB 미만 파일을 data URL 로 인라인(끄는 옵션 없음)해 css 가 커지므로 woff2 대신 woff(128KB 이상)만 사용 */
 @font-face {
   font-family: "Hack";
-  src:
-    url("fonts/hack-regular.woff2?sha=3114f1256") format("woff2"),
-    url("fonts/hack-regular.woff?sha=3114f1256") format("woff");
+  src: url("fonts/hack-regular.woff?sha=3114f1256") format("woff");
   font-weight: 400;
   font-style: normal;
 }
 
 @font-face {
   font-family: "Hack";
-  src:
-    url("fonts/hack-bold.woff2?sha=3114f1256") format("woff2"),
-    url("fonts/hack-bold.woff?sha=3114f1256") format("woff");
+  src: url("fonts/hack-bold.woff?sha=3114f1256") format("woff");
   font-weight: 700;
   font-style: normal;
 }
 
 @font-face {
   font-family: "Hack";
-  src:
-    url("fonts/hack-italic.woff2?sha=3114f1256") format("woff2"),
-    url("fonts/hack-italic.woff?sha=3114f1256") format("woff");
+  src: url("fonts/hack-italic.woff?sha=3114f1256") format("woff");
   font-weight: 400;
   font-style: italic;
 }
 
 @font-face {
   font-family: "Hack";
-  src:
-    url("fonts/hack-bolditalic.woff2?sha=3114f1256") format("woff2"),
-    url("fonts/hack-bolditalic.woff?sha=3114f1256") format("woff");
+  src: url("fonts/hack-bolditalic.woff?sha=3114f1256") format("woff");
   font-weight: 700;
   font-style: italic;
 }
